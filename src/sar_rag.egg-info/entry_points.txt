@@ -1,0 +1,4 @@
+[console_scripts]
+sar-rag-benchmark = sar_rag.benchmark:main
+sar-rag-demo = sar_rag.cli:main
+sar-rag-prepare-dataset = sar_rag.dataset_adapters:main

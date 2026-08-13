@@ -1,0 +1,907 @@
+{
+  "summary": {
+    "status": "pilot_not_for_claims",
+    "examples": 2,
+    "model": "openai/gpt-oss-120b",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "traditional_condition": {
+      "representation": "sliding_window",
+      "static_k": 20
+    },
+    "proposed_condition": {
+      "representations": [
+        "sentence_window",
+        "paragraph",
+        "semantic",
+        "hierarchical"
+      ],
+      "probe_depth": 3,
+      "representation_selection": "normalized_rrf_greedy_weighted_set_cover",
+      "final_k": "emergent",
+      "online_llm_calls": "one final answer call"
+    },
+    "calibration_manifest": "output\\calibration\\frozen_manifest.json",
+    "offline_indexing": {
+      "unique_corpora": 1,
+      "traditional_seconds": 6.094343800010392,
+      "proposed_seconds": 29.179845100006787,
+      "scope": "one-time corpus construction; excluded from per-query latency"
+    },
+    "answerability": {
+      "traditional": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "proposed": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "paired_statistics": {
+      "answer_exact_match": {
+        "traditional_mean": 0.0,
+        "proposed_mean": 0.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "answer_relevancy": {
+        "traditional_mean": 0.74,
+        "proposed_mean": 0.9,
+        "paired_difference_proposed_minus_traditional": 0.16000000000000003,
+        "bootstrap_95_ci": [
+          0.020000000000000018,
+          0.30000000000000004
+        ],
+        "paired_randomization_p_value": 0.5114885114885115,
+        "paired_n": 2
+      },
+      "answer_token_f1": {
+        "traditional_mean": 0.14705882352941174,
+        "proposed_mean": 0.10569852941176472,
+        "paired_difference_proposed_minus_traditional": -0.04136029411764703,
+        "bootstrap_95_ci": [
+          -0.17647058823529407,
+          0.09375000000000001
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "answerability_correct": {
+        "traditional_mean": 1.0,
+        "proposed_mean": 1.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "api_calls": {
+        "traditional_mean": 1.0,
+        "proposed_mean": 1.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "api_latency_seconds": {
+        "traditional_mean": 2.4321244500024477,
+        "proposed_mean": 1.7946475000062492,
+        "paired_difference_proposed_minus_traditional": -0.6374769499961985,
+        "bootstrap_95_ci": [
+          -1.237401599995792,
+          -0.03755229999660514
+        ],
+        "paired_randomization_p_value": 0.4905094905094905,
+        "paired_n": 2
+      },
+      "cached_tokens": {
+        "traditional_mean": 0.0,
+        "proposed_mean": 0.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "completion_tokens": {
+        "traditional_mean": 659.0,
+        "proposed_mean": 554.0,
+        "paired_difference_proposed_minus_traditional": -105.0,
+        "bootstrap_95_ci": [
+          -228.0,
+          18.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "context_tokens": {
+        "traditional_mean": 1960.0,
+        "proposed_mean": 1735.5,
+        "paired_difference_proposed_minus_traditional": -224.5,
+        "bootstrap_95_ci": [
+          -248.0,
+          -201.0
+        ],
+        "paired_randomization_p_value": 0.4775224775224775,
+        "paired_n": 2
+      },
+      "context_words": {
+        "traditional_mean": 1255.5,
+        "proposed_mean": 1042.0,
+        "paired_difference_proposed_minus_traditional": -213.5,
+        "bootstrap_95_ci": [
+          -242.0,
+          -185.0
+        ],
+        "paired_randomization_p_value": 0.5264735264735265,
+        "paired_n": 2
+      },
+      "estimated_cost_usd": {
+        "traditional_mean": 0.0008688,
+        "proposed_mean": 0.00078225,
+        "paired_difference_proposed_minus_traditional": -8.655000000000002e-05,
+        "bootstrap_95_ci": [
+          -0.0001692,
+          -3.900000000000041e-06
+        ],
+        "paired_randomization_p_value": 0.5034965034965035,
+        "paired_n": 2
+      },
+      "evidence_set_precision": {
+        "traditional_mean": 0.05,
+        "proposed_mean": 0.10714285714285714,
+        "paired_difference_proposed_minus_traditional": 0.057142857142857134,
+        "bootstrap_95_ci": [
+          0.0,
+          0.11428571428571427
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "evidence_set_recall": {
+        "traditional_mean": 0.125,
+        "proposed_mean": 0.25,
+        "paired_difference_proposed_minus_traditional": 0.125,
+        "bootstrap_95_ci": [
+          0.0,
+          0.25
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "faithfulness": {
+        "traditional_mean": 0.9199999999999999,
+        "proposed_mean": 0.925,
+        "paired_difference_proposed_minus_traditional": 0.0050000000000000044,
+        "bootstrap_95_ci": [
+          0.0,
+          0.010000000000000009
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "final_k": {
+        "traditional_mean": 9.0,
+        "proposed_mean": 13.0,
+        "paired_difference_proposed_minus_traditional": 4.0,
+        "bootstrap_95_ci": [
+          4.0,
+          4.0
+        ],
+        "paired_randomization_p_value": 0.5284715284715285,
+        "paired_n": 2
+      },
+      "gold_answerable": {
+        "traditional_mean": 1.0,
+        "proposed_mean": 1.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "latency_seconds": {
+        "traditional_mean": 17.677702149987454,
+        "proposed_mean": 14.365731450001476,
+        "paired_difference_proposed_minus_traditional": -3.3119706999859773,
+        "bootstrap_95_ci": [
+          -5.367753699974855,
+          -1.2561876999970991
+        ],
+        "paired_randomization_p_value": 0.5154845154845155,
+        "paired_n": 2
+      },
+      "predicted_answerable": {
+        "traditional_mean": 1.0,
+        "proposed_mean": 1.0,
+        "paired_difference_proposed_minus_traditional": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "prompt_tokens": {
+        "traditional_mean": 3156.0,
+        "proposed_mean": 2999.0,
+        "paired_difference_proposed_minus_traditional": -157.0,
+        "bootstrap_95_ci": [
+          -216.0,
+          -98.0
+        ],
+        "paired_randomization_p_value": 0.4875124875124875,
+        "paired_n": 2
+      },
+      "retrieval_mrr": {
+        "traditional_mean": 0.16666666666666666,
+        "proposed_mean": 0.5,
+        "paired_difference_proposed_minus_traditional": 0.33333333333333337,
+        "bootstrap_95_ci": [
+          0.0,
+          0.6666666666666667
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_ndcg_at_10": {
+        "traditional_mean": 0.09759501249802542,
+        "proposed_mean": 0.27069983410995346,
+        "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+        "bootstrap_95_ci": [
+          0.0,
+          0.34620964322385606
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_ndcg_at_20": {
+        "traditional_mean": 0.09759501249802542,
+        "proposed_mean": 0.3251467146440696,
+        "paired_difference_proposed_minus_traditional": 0.22755170214604414,
+        "bootstrap_95_ci": [
+          0.0,
+          0.4551034042920883
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_ndcg_at_5": {
+        "traditional_mean": 0.09759501249802542,
+        "proposed_mean": 0.27069983410995346,
+        "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+        "bootstrap_95_ci": [
+          0.0,
+          0.34620964322385606
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_precision_at_10": {
+        "traditional_mean": 0.05,
+        "proposed_mean": 0.1,
+        "paired_difference_proposed_minus_traditional": 0.05,
+        "bootstrap_95_ci": [
+          0.0,
+          0.1
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_precision_at_20": {
+        "traditional_mean": 0.025,
+        "proposed_mean": 0.075,
+        "paired_difference_proposed_minus_traditional": 0.049999999999999996,
+        "bootstrap_95_ci": [
+          0.0,
+          0.09999999999999999
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_precision_at_5": {
+        "traditional_mean": 0.1,
+        "proposed_mean": 0.2,
+        "paired_difference_proposed_minus_traditional": 0.1,
+        "bootstrap_95_ci": [
+          0.0,
+          0.2
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_recall_at_10": {
+        "traditional_mean": 0.125,
+        "proposed_mean": 0.25,
+        "paired_difference_proposed_minus_traditional": 0.125,
+        "bootstrap_95_ci": [
+          0.0,
+          0.25
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_recall_at_20": {
+        "traditional_mean": 0.125,
+        "proposed_mean": 0.25,
+        "paired_difference_proposed_minus_traditional": 0.125,
+        "bootstrap_95_ci": [
+          0.0,
+          0.25
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "retrieval_recall_at_5": {
+        "traditional_mean": 0.125,
+        "proposed_mean": 0.25,
+        "paired_difference_proposed_minus_traditional": 0.125,
+        "bootstrap_95_ci": [
+          0.0,
+          0.25
+        ],
+        "paired_randomization_p_value": 1.0,
+        "paired_n": 2
+      },
+      "total_tokens": {
+        "traditional_mean": 3815.0,
+        "proposed_mean": 3553.0,
+        "paired_difference_proposed_minus_traditional": -262.0,
+        "bootstrap_95_ci": [
+          -444.0,
+          -80.0
+        ],
+        "paired_randomization_p_value": 0.5174825174825175,
+        "paired_n": 2
+      }
+    },
+    "metric_caveats": {
+      "answer_generator_control": "both retrieval methods use the identical Groq prompt, schema, model, decoding controls, and maximum completion tokens",
+      "faithfulness_answer_relevancy": "same Groq model family as generator; secondary and self-evaluation-biased",
+      "retrieval_relevance": "normalized containment match between final evidence text and gold evidence spans",
+      "cost_rates": "Groq GPT-OSS 120B: $0.15/M uncached input, $0.075/M cached input, $0.60/M output"
+    }
+  },
+  "records": [
+    {
+      "example_id": "qasper:validation:b6f15fb6279b82e34a5bf4828b7b5ddabfdf1d54",
+      "dataset": "qasper",
+      "split": "validation",
+      "query": "which multilingual approaches do they compare with?",
+      "gold_answers": [
+        "BIBREF19",
+        "BIBREF20",
+        "multilingual NMT (MNMT) BIBREF19"
+      ],
+      "gold_answerability": "ANSWERABLE",
+      "traditional": {
+        "retrieval_precision_at_5": 0.0,
+        "retrieval_recall_at_5": 0.0,
+        "retrieval_ndcg_at_5": 0.0,
+        "retrieval_precision_at_10": 0.0,
+        "retrieval_recall_at_10": 0.0,
+        "retrieval_ndcg_at_10": 0.0,
+        "retrieval_precision_at_20": 0.0,
+        "retrieval_recall_at_20": 0.0,
+        "retrieval_ndcg_at_20": 0.0,
+        "retrieval_mrr": 0.0,
+        "evidence_set_precision": 0.0,
+        "evidence_set_recall": 0.0,
+        "answer_exact_match": 0.0,
+        "answer_token_f1": 0.0,
+        "answerability_correct": 1.0,
+        "predicted_answerable": 1.0,
+        "gold_answerable": 1.0,
+        "latency_seconds": 3.3451943999971263,
+        "final_k": 8.0,
+        "context_words": 1252.0,
+        "context_tokens": 1936.0,
+        "api_calls": 1.0,
+        "prompt_tokens": 3153.0,
+        "completion_tokens": 881.0,
+        "total_tokens": 4034.0,
+        "cached_tokens": 0.0,
+        "api_latency_seconds": 3.2591858000087086,
+        "estimated_cost_usd": 0.00100155,
+        "answer_relevancy": 0.6,
+        "faithfulness": 0.9
+      },
+      "proposed": {
+        "retrieval_precision_at_5": 0.0,
+        "retrieval_recall_at_5": 0.0,
+        "retrieval_ndcg_at_5": 0.0,
+        "retrieval_precision_at_10": 0.0,
+        "retrieval_recall_at_10": 0.0,
+        "retrieval_ndcg_at_10": 0.0,
+        "retrieval_precision_at_20": 0.0,
+        "retrieval_recall_at_20": 0.0,
+        "retrieval_ndcg_at_20": 0.0,
+        "retrieval_mrr": 0.0,
+        "evidence_set_precision": 0.0,
+        "evidence_set_recall": 0.0,
+        "answer_exact_match": 0.0,
+        "answer_token_f1": 0.09375000000000001,
+        "answerability_correct": 1.0,
+        "predicted_answerable": 1.0,
+        "gold_answerable": 1.0,
+        "latency_seconds": 2.089006700000027,
+        "final_k": 12.0,
+        "context_words": 1010.0,
+        "context_tokens": 1688.0,
+        "api_calls": 1.0,
+        "prompt_tokens": 2937.0,
+        "completion_tokens": 653.0,
+        "total_tokens": 3590.0,
+        "cached_tokens": 0.0,
+        "api_latency_seconds": 2.0217842000129167,
+        "estimated_cost_usd": 0.0008323499999999999,
+        "answer_relevancy": 0.9,
+        "faithfulness": 0.9
+      },
+      "answers": {
+        "traditional": "The authors compare their approach with a pivoting baseline, which is reported as the strongest baseline. [E6] They compare with a cross-lingual transfer baseline, which performs worst among baselines. [E6] They compare with a Masked Language Modeling (MLM) baseline, which performs better than cross-lingual transfer and comparable to pivoting. [E6][E4] They compare with a Translation Language Modeling (TLM) baseline. [E6][E5] They compare with two BRLM variants: BRLM‑SA (soft alignment) and BRLM‑HA (hard alignment). [E6][E4][E5] They compare with two existing cross‑lingual pre‑training methods, MLM and TLM. [E5]",
+        "proposed": "The paper compares its method with Multilingual NMT (MNMT) approaches that train a single model supporting translation from multiple source languages into multiple target languages, even for unseen language pairs. [E6] It also references multilingual approaches that use shared vocabularies for source and target languages to improve transfer learning. [E6] Additionally, it mentions multilingual approaches that address vocabulary mismatch by employing cross-lingual word embeddings. [E6]"
+      },
+      "answerability": {
+        "traditional": "ANSWERABLE",
+        "proposed": "ANSWERABLE"
+      },
+      "evidence": {
+        "traditional": [
+          {
+            "candidate_id": "20faca43f60c5b38c8c221a0",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 1,
+            "text": "For MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other.\nThe three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation.\nWe use 80K BPE splits as the vocabulary.\nNote that all sentences are tokenized by the tokenize.perl script, and we lowercase all data to avoid a large vocabulary for the MultiUN corpus."
+          },
+          {
+            "candidate_id": "0c4ead5ae538d4ff95f64cbb",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 2,
+            "text": "The statistics of Europarl and MultiUN corpora are summarized in Table TABREF18.\nFor Europarl corpus, we evaluate on French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De), where English acts as the pivot language, its left side is the source language, and its right side is the target language.\nWe remove the multi-parallel sentences between different training corpora to ensure zero-shot settings.\nWe use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr.\nFor distant language pair Ro$\\rightarrow $De, we extract 1,000 overlapping sentences from newstest2016 as the test set and the 2,000 overlapping sentences split from the training set as the validation set since there is no official validation and test sets.\nFor vocabulary, we use 60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33.\nFor MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other.\nThe three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation.\nWe use 80K BPE splits as the vocabulary.\nNote that all sentences are tokenized by the tokenize.perl script, and we lowercase all data to avoid a large vocabulary for the MultiUN corpus."
+          },
+          {
+            "candidate_id": "f032ce3ab09fc3eebee5edaa",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 3,
+            "text": "Although Neural Machine Translation (NMT) has dominated recent research on translation tasks BIBREF0, BIBREF1, BIBREF2, NMT heavily relies on large-scale parallel data, resulting in poor performance on low-resource or zero-resource language pairs BIBREF3.\nTranslation between these low-resource languages (e.g., Arabic$\\rightarrow $Spanish) is usually accomplished with pivoting through a rich-resource language (such as English), i.e., Arabic (source) sentence is translated to English (pivot) first which is later translated to Spanish (target) BIBREF4, BIBREF5.\nHowever, the pivot-based method requires doubled decoding time and suffers from the propagation of translation errors.\nOne common alternative to avoid pivoting in NMT is transfer learning BIBREF6, BIBREF7, BIBREF8, BIBREF9 which leverages a high-resource pivot$\\rightarrow $target model (parent) to initialize a low-resource source$\\rightarrow $target model (child) that is further optimized with a small amount of available parallel data.\nAlthough this approach has achieved success in some low-resource language pairs, it still performs very poorly in extremely low-resource or zero-resource translation scenario.\nSpecifically, BIBREF8 reports that without any child model training data, the performance of the parent model on the child test set is miserable.\nIn this work, we argue that the language space mismatch problem, also named domain shift problem BIBREF10, brings about the zero-shot translation failure in transfer learning.\nIt is because transfer learning has no explicit training process to guarantee that the source and pivot languages share the same feature distributions, causing that the child model inherited from the parent model fails in such a situation."
+          },
+          {
+            "candidate_id": "c45e282e9ef8c616fecf240d",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 4,
+            "text": "Meanwhile, in the supervised direction of pivot$\\rightarrow $target, our approaches performs even better than the original supervised Transformer thanks to the shared encoder trained on both large-scale monolingual data and parallel data between multiple languages.\nMLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining."
+          },
+          {
+            "candidate_id": "c319c3068010e2f10bfdf668",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 5,
+            "text": "Two existing cross-lingual pre-training methods, Masked Language Modeling (MLM) and Translation Language Modeling (TLM), have shown their effectiveness on XNLI cross-lingual classification task BIBREF11, BIBREF28, but these methods have not been well studied on cross-lingual generation tasks in zero-shot condition.\nWe attempt to take advantage of the cross-lingual ability of the two methods for zero-shot translation.\nSpecifically, MLM adopts the Cloze objective of BERT BIBREF29 and predicts the masked words that are randomly selected and replaced with [MASK] token on monolingual corpus.\nIn practice, MLM takes different language monolingual corpora as input to find features shared across different languages.\nWith this method, word pieces shared in all languages have been mapped into a shared space, which makes the sentence representations across different languages close BIBREF30.\nSince MLM objective is unsupervised and only requires monolingual data, TLM is designed to leverage parallel data when it is available.\nActually, TLM is a simple extension of MLM, with the difference that TLM concatenates sentence pair into a whole sentence, and then randomly masks words in both the source and target sentences.\nIn this way, the model can either attend to surrounding words or to the translation sentence, implicitly encouraging the model to align the source and target language representations.\nNote that although each sentence pair is formed into one sentence, the positions of the target sentence are reset to count form zero."
+          },
+          {
+            "candidate_id": "b17554a2e631a7803ece0317",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 6,
+            "text": "Regarding comparison between the baselines in table TABREF19, we find that pivoting is the strongest baseline that has significant advantage over other two baselines.\nCross-lingual transfer for languages without shared vocabularies BIBREF16 manifests the worst performance because of not using source$\\leftrightarrow $pivot parallel data, which is utilized as beneficial supervised signal for the other two baselines.\nOur best approach of MLM+BRLM-SA achieves the significant superior performance to all baselines in the zero-shot directions, improving by 0.9-4.8 BLEU points over the strong pivoting.\nMeanwhile, in the supervised direction of pivot$\\rightarrow $target, our approaches performs even better than the original supervised Transformer thanks to the shared encoder trained on both large-scale monolingual data and parallel data between multiple languages.\nMLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining."
+          },
+          {
+            "candidate_id": "6c6ece05b18a7ee7d9abce65",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 7,
+            "text": "We first evaluate the representational invariance across languages for all cross-lingual pre-training methods.\nFollowing BIBREF23, we adopt max-pooling operation to collect the sentence representation of each encoder layer for all source-pivot sentence pairs in the Europarl validation sets.\nThen we calculate the cosine similarity for each sentence pair and average all cosine scores.\nAs shown in Figure FIGREF27, we can observe that, MLM+BRLM-SA has the most stable and similar cross-lingual representations of sentence pairs on all layers, while it achieves the best performance in zero-shot translation.\nThis demonstrates that better cross-lingual representations can benefit for the process of transfer learning.\nBesides, MLM+BRLM-HA is not as superior as MLM+BRLM-SA and even worse than MLM+TLM on Fr-En, since MLM+BRLM-HA may suffer from the wrong alignment knowledge from an external aligner tool.\nWe also find an interesting phenomenon that as the number of layers increases, the cosine similarity decreases."
+          },
+          {
+            "candidate_id": "af17607cba62132b4bca3cdc",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 16,
+            "text": "The three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation.\nWe use 80K BPE splits as the vocabulary.\nNote that all sentences are tokenized by the tokenize.perl script, and we lowercase all data to avoid a large vocabulary for the MultiUN corpus."
+          }
+        ],
+        "proposed": [
+          {
+            "candidate_id": "9863f716d6f2e13c33cc4fca",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 1,
+            "text": "Experiments ::: Setup ::: Datasets.\nFor distant language pair Ro$\\rightarrow $De, we extract 1,000 overlapping sentences from newstest2016 as the test set and the 2,000 overlapping sentences split from the training set as the validation set since there is no official validation and test sets.\nFor vocabulary, we use 60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33.\nFor MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other."
+          },
+          {
+            "candidate_id": "8212b1f22cbcc9b1c15df984",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 2,
+            "text": "Meanwhile, in the supervised direction of pivot$\\rightarrow $target, our approaches performs even better than the original supervised Transformer thanks to the shared encoder trained on both large-scale monolingual data and parallel data between multiple languages.\nMLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining."
+          },
+          {
+            "candidate_id": "7d5a9450b674797c6b6f946f",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 2,
+            "text": "Introduction\nAlthough Neural Machine Translation (NMT) has dominated recent research on translation tasks BIBREF0, BIBREF1, BIBREF2, NMT heavily relies on large-scale parallel data, resulting in poor performance on low-resource or zero-resource language pairs BIBREF3.\nTranslation between these low-resource languages (e.g., Arabic$\\rightarrow $Spanish) is usually accomplished with pivoting through a rich-resource language (such as English), i.e., Arabic (source) sentence is translated to English (pivot) first which is later translated to Spanish (target) BIBREF4, BIBREF5.\nHowever, the pivot-based method requires doubled decoding time and suffers from the propagation of translation errors."
+          },
+          {
+            "candidate_id": "5058254851b6e4d420dd20c0",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 4,
+            "text": "In this section, we will present a cross-lingual pre-training based transfer approach.\nThis method is designed for a common zero-shot scenario where there are a lot of source$\\leftrightarrow $pivot and pivot$\\leftrightarrow $target bilingual data but no source$\\leftrightarrow $target parallel data, and the whole training process can be summarized as follows step by step:\nPre-train a universal encoder with source/pivot monolingual or source$\\leftrightarrow $pivot bilingual data.\nTrain a pivot$\\rightarrow $target parent model built on the pre-trained universal encoder with the available parallel data."
+          },
+          {
+            "candidate_id": "cf3b3ef4e2a5c81128d35d51",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 5,
+            "text": "Experiments ::: Setup ::: Experimental Details.\nRegarding MLM, TLM and BRLM, as mentioned in the pre-training phase of transfer protocol, we first pre-train MLM on monolingual data of both source and pivot languages, then leverage the parameters of MLM to initialize TLM and the proposed BRLM, which are continued to be optimized with source-pivot bilingual data.\nIn our experiments, we use MLM+TLM, MLM+BRLM to represent this training process.\nFor the masking strategy during training, following BIBREF29, $15\\%$ of BPE tokens are selected to be masked."
+          },
+          {
+            "candidate_id": "96c1f0d2cb6db88c6047b6b2",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 6,
+            "text": "Transfer Learning is firstly introduced for NMT by BIBREF6, which leverages a high-resource parent model to initialize the low-resource child model.\nOn this basis, BIBREF7 and BIBREF8 use shared vocabularies for source/target language to improve transfer learning, while BIBREF16 relieve the vocabulary mismatch by mainly using cross-lingual word embedding.\nAlthough these methods are successful in the low-resource scene, they have limited effects in zero-shot translation.\nMultilingual NMT (MNMT) enables training a single model that supports translation from multiple source languages into multiple target languages, even those unseen language pairs BIBREF17, BIBREF18, BIBREF19, BIBREF20, BIBREF21."
+          },
+          {
+            "candidate_id": "c0edb28e5ea2da5a830b5caa",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 6,
+            "text": "Approach ::: Masked and Translation Language Model Pretraining\nTwo existing cross-lingual pre-training methods, Masked Language Modeling (MLM) and Translation Language Modeling (TLM), have shown their effectiveness on XNLI cross-lingual classification task BIBREF11, BIBREF28, but these methods have not been well studied on cross-lingual generation tasks in zero-shot condition.\nWe attempt to take advantage of the cross-lingual ability of the two methods for zero-shot translation.\nSpecifically, MLM adopts the Cloze objective of BERT BIBREF29 and predicts the masked words that are randomly selected and replaced with [MASK] token on monolingual corpus."
+          },
+          {
+            "candidate_id": "d10433789b526038d65384ef",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 7,
+            "text": "To this end, we firstly investigate the performance of two existing cross-lingual pre-training methods proposed by BIBREF11 in zero-shot translation scenario.\nBesides, a novel pre-training method called BRidge Language Modeling (BRLM) is designed to make full use of the source$\\leftrightarrow $pivot bilingual data to obtain a universal encoder for different languages.\nOnce the universal encoder is constructed, we only need to train the pivot$\\rightarrow $target model and then test this model in source$\\rightarrow $target direction directly."
+          },
+          {
+            "candidate_id": "c8db72a592b889dbd2ba166b",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 8,
+            "text": "Experiments ::: Analysis ::: Sentence Representation.\nWe first evaluate the representational invariance across languages for all cross-lingual pre-training methods.\nFollowing BIBREF23, we adopt max-pooling operation to collect the sentence representation of each encoder layer for all source-pivot sentence pairs in the Europarl validation sets.\nThen we calculate the cosine similarity for each sentence pair and average all cosine scores.\nAs shown in Figure FIGREF27, we can observe that, MLM+BRLM-SA has the most stable and similar cross-lingual representations of sentence pairs on all layers, while it achieves the best performance in zero-shot translation."
+          },
+          {
+            "candidate_id": "4d88cab3f2b84b7c3f3dc409",
+            "document_id": "qasper:1912.01214",
+            "representation": "hierarchical",
+            "rank": 3,
+            "text": "Experiments ::: Setup ::: Datasets.\nThe statistics of Europarl and MultiUN corpora are summarized in Table TABREF18.\nFor Europarl corpus, we evaluate on French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De), where English acts as the pivot language, its left side is the source language, and its right side is the target language.\nWe remove the multi-parallel sentences between different training corpora to ensure zero-shot settings.\nWe use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr."
+          },
+          {
+            "candidate_id": "cd06dff7d9fc07016d911667",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 3,
+            "text": "For MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other.\nThe three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation."
+          },
+          {
+            "candidate_id": "23fcd47f09614ff43f7f0951",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 9,
+            "text": "We use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr.\nFor distant language pair Ro$\\rightarrow $De, we extract 1,000 overlapping sentences from newstest2016 as the test set and the 2,000 overlapping sentences split from the training set as the validation set since there is no official validation and test sets.\nFor vocabulary, we use 60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33."
+          }
+        ]
+      },
+      "selected_representations": [
+        "hierarchical",
+        "semantic"
+      ],
+      "evaluator_usage": {
+        "api_calls": 1.0,
+        "prompt_tokens": 3926.0,
+        "completion_tokens": 430.0,
+        "total_tokens": 4356.0,
+        "cached_tokens": 256.0,
+        "api_latency_seconds": 1.8204946999903768,
+        "estimated_cost_usd": 0.0008277
+      }
+    },
+    {
+      "example_id": "qasper:validation:f5e6f43454332e0521a778db0b769481e23e7682",
+      "dataset": "qasper",
+      "split": "validation",
+      "query": "what are the pivot-based baselines?",
+      "gold_answers": [
+        "pivoting",
+        "pivoting$_{\\rm m}$",
+        "firstly translates a source language into the pivot language which is later translated to the target language"
+      ],
+      "gold_answerability": "ANSWERABLE",
+      "traditional": {
+        "retrieval_precision_at_5": 0.2,
+        "retrieval_recall_at_5": 0.25,
+        "retrieval_ndcg_at_5": 0.19519002499605084,
+        "retrieval_precision_at_10": 0.1,
+        "retrieval_recall_at_10": 0.25,
+        "retrieval_ndcg_at_10": 0.19519002499605084,
+        "retrieval_precision_at_20": 0.05,
+        "retrieval_recall_at_20": 0.25,
+        "retrieval_ndcg_at_20": 0.19519002499605084,
+        "retrieval_mrr": 0.3333333333333333,
+        "evidence_set_precision": 0.1,
+        "evidence_set_recall": 0.25,
+        "answer_exact_match": 0.0,
+        "answer_token_f1": 0.2941176470588235,
+        "answerability_correct": 1.0,
+        "predicted_answerable": 1.0,
+        "gold_answerable": 1.0,
+        "latency_seconds": 32.01020989997778,
+        "final_k": 10.0,
+        "context_words": 1259.0,
+        "context_tokens": 1984.0,
+        "api_calls": 1.0,
+        "prompt_tokens": 3159.0,
+        "completion_tokens": 437.0,
+        "total_tokens": 3596.0,
+        "cached_tokens": 0.0,
+        "api_latency_seconds": 1.6050630999961868,
+        "estimated_cost_usd": 0.00073605,
+        "answer_relevancy": 0.88,
+        "faithfulness": 0.94
+      },
+      "proposed": {
+        "retrieval_precision_at_5": 0.4,
+        "retrieval_recall_at_5": 0.5,
+        "retrieval_ndcg_at_5": 0.5413996682199069,
+        "retrieval_precision_at_10": 0.2,
+        "retrieval_recall_at_10": 0.5,
+        "retrieval_ndcg_at_10": 0.5413996682199069,
+        "retrieval_precision_at_20": 0.15,
+        "retrieval_recall_at_20": 0.5,
+        "retrieval_ndcg_at_20": 0.6502934292881392,
+        "retrieval_mrr": 1.0,
+        "evidence_set_precision": 0.21428571428571427,
+        "evidence_set_recall": 0.5,
+        "answer_exact_match": 0.0,
+        "answer_token_f1": 0.11764705882352941,
+        "answerability_correct": 1.0,
+        "predicted_answerable": 1.0,
+        "gold_answerable": 1.0,
+        "latency_seconds": 26.642456200002925,
+        "final_k": 14.0,
+        "context_words": 1074.0,
+        "context_tokens": 1783.0,
+        "api_calls": 1.0,
+        "prompt_tokens": 3061.0,
+        "completion_tokens": 455.0,
+        "total_tokens": 3516.0,
+        "cached_tokens": 0.0,
+        "api_latency_seconds": 1.5675107999995816,
+        "estimated_cost_usd": 0.00073215,
+        "answer_relevancy": 0.9,
+        "faithfulness": 0.95
+      },
+      "answers": {
+        "proposed": "The pivot-based baselines are pivoting and pivot-synthetic. [E1] Pivoting is identified as a strong baseline in zero-shot translation experiments. [E5][E14]",
+        "traditional": "Pivot-based baselines consist of two methods: pivoting, which first translates a source language into a pivot language and then translates the pivot language into the target language, and pivot‑synthetic, which trains a source‑to‑target model using pseudo parallel data generated from source‑pivot or pivot‑target corpora. [E3] In the experiments, the pivoting baseline is the strongest among the pivot‑based baselines, showing a significant advantage over other baselines. [E1]"
+      },
+      "answerability": {
+        "proposed": "ANSWERABLE",
+        "traditional": "ANSWERABLE"
+      },
+      "evidence": {
+        "proposed": [
+          {
+            "candidate_id": "e133d1aca8b350cb8957afa9",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 1,
+            "text": "Pivot-based Method is a common strategy to obtain a source$\\rightarrow $target model by introducing a pivot language.\nThis approach is further divided into pivoting and pivot-synthetic.\nWhile the former firstly translates a source language into the pivot language which is later translated to the target language BIBREF4, BIBREF5, BIBREF12, the latter trains a source$\\rightarrow $target model with pseudo data generated from source-pivot or pivot-target parallel data BIBREF13, BIBREF14."
+          },
+          {
+            "candidate_id": "7b0c40e645928d66d15f5b48",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 2,
+            "text": "These two structures actually extend MLM into a bilingual scenario, with the difference that BRLM leverages external aligner tool or additional attention layer to explicitly introduce alignment information during model training.\nHard Alignment (BRLM-HA).\nWe first use external aligner tool on source$\\leftrightarrow $pivot parallel data to extract the alignment information of sentence pair.\nDuring model training, given source$\\leftrightarrow $pivot sentence pair, BRLM-HA randomly masks some words in source sentence and leverages alignment information to obtain the aligned words in pivot sentence for masked words."
+          },
+          {
+            "candidate_id": "ec389bd090367d15c267b7ea",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 3,
+            "text": "Although Neural Machine Translation (NMT) has dominated recent research on translation tasks BIBREF0, BIBREF1, BIBREF2, NMT heavily relies on large-scale parallel data, resulting in poor performance on low-resource or zero-resource language pairs BIBREF3.\nTranslation between these low-resource languages (e.g., Arabic$\\rightarrow $Spanish) is usually accomplished with pivoting through a rich-resource language (such as English), i.e., Arabic (source) sentence is translated to English (pivot) first which is later translated to Spanish (target) BIBREF4, BIBREF5.\nHowever, the pivot-based method requires doubled decoding time and suffers from the propagation of translation errors."
+          },
+          {
+            "candidate_id": "10c6905d3084663e097b83a6",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 4,
+            "text": "One common alternative to avoid pivoting in NMT is transfer learning BIBREF6, BIBREF7, BIBREF8, BIBREF9 which leverages a high-resource pivot$\\rightarrow $target model (parent) to initialize a low-resource source$\\rightarrow $target model (child) that is further optimized with a small amount of available parallel data.\nAlthough this approach has achieved success in some low-resource language pairs, it still performs very poorly in extremely low-resource or zero-resource translation scenario.\nSpecifically, BIBREF8 reports that without any child model training data, the performance of the parent model on the child test set is miserable."
+          },
+          {
+            "candidate_id": "c717bb4ee05c2e78455421d1",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 6,
+            "text": "Table TABREF19 and TABREF26 report zero-shot results on Europarl and Multi-UN evaluation sets, respectively.\nWe compare our approaches with related approaches of pivoting, multilingual NMT (MNMT) BIBREF19, and cross-lingual transfer without pretraining BIBREF16.\nThe results show that our approaches consistently outperform other approaches across languages and datasets, especially surpass pivoting, which is a strong baseline in the zero-shot scenario that multilingual NMT systems often fail to beat BIBREF19, BIBREF20, BIBREF23.\nPivoting translates source to pivot then to target in two steps, causing inefficient translation process."
+          },
+          {
+            "candidate_id": "8d489a5ebfd6476b8a1a54fa",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 7,
+            "text": "We further sample an English-Russian sentence pair from the MultiUN validation sets and visualize the cosine similarity between hidden states of the top encoder layer to further investigate the difference of all cross-lingual pre-training methods.\nAs shown in Figure FIGREF38, the hidden states generated by MLM+BRLM-SA have higher similarity for two aligned words.\nIt indicates that MLM+BRLM-SA can gain better word-level representation alignment between source and pivot languages, which better relieves the burden of the domain shift problem."
+          },
+          {
+            "candidate_id": "401642c034cecc93792cc520",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 8,
+            "text": "The statistics of Europarl and MultiUN corpora are summarized in Table TABREF18.\nFor Europarl corpus, we evaluate on French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De), where English acts as the pivot language, its left side is the source language, and its right side is the target language.\nWe remove the multi-parallel sentences between different training corpora to ensure zero-shot settings.\nWe use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr."
+          },
+          {
+            "candidate_id": "788ffaaa8ea0d1626b658730",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 9,
+            "text": "MLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining."
+          },
+          {
+            "candidate_id": "5b47327a609d643036aa905a",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 10,
+            "text": "Besides, a novel pre-training method called BRidge Language Modeling (BRLM) is designed to make full use of the source$\\leftrightarrow $pivot bilingual data to obtain a universal encoder for different languages.\nOnce the universal encoder is constructed, we only need to train the pivot$\\rightarrow $target model and then test this model in source$\\rightarrow $target direction directly.\nThe main contributions of this paper are as follows:"
+          },
+          {
+            "candidate_id": "1c6948684d939106daa392b6",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 5,
+            "text": "Based on the processed input, BRLM-HA adopts the Transformer BIBREF1 encoder to gain the hidden states for source and pivot sentences respectively.\nThen the training objective of BRLM-HA is to predict the masked words by not only the surrounding words in source sentence but also the encoder outputs of the aligned words.\nNote that this training process is also carried out in a symmetric situation, in which we mask some words in pivot sentence and obtain the aligned words in the source sentence.\nSoft Alignment (BRLM-SA)."
+          },
+          {
+            "candidate_id": "3f89fda52f5bdb47a3f8812a",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 8,
+            "text": "While the former firstly translates a source language into the pivot language which is later translated to the target language BIBREF4, BIBREF5, BIBREF12, the latter trains a source$\\rightarrow $target model with pseudo data generated from source-pivot or pivot-target parallel data BIBREF13, BIBREF14.\nAlthough the pivot-based methods can achieve not bad performance, it always falls into a computation-expensive and parameter-vast dilemma of quadratic growth in the number of source languages, and suffers from the error propagation problem BIBREF15."
+          },
+          {
+            "candidate_id": "9e663f20ae7d51adc6daeb22",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 3,
+            "text": "In recent years, zero-shot translation in NMT has attracted widespread attention in academic research.\nExisting methods are mainly divided into four categories: pivot-based method, transfer learning, multilingual NMT, and unsupervised NMT.\nPivot-based Method is a common strategy to obtain a source$\\rightarrow $target model by introducing a pivot language.\nThis approach is further divided into pivoting and pivot-synthetic."
+          },
+          {
+            "candidate_id": "35ad662ebbc46d26a5610147",
+            "document_id": "qasper:1912.01214",
+            "representation": "paragraph",
+            "rank": 5,
+            "text": "Hard Alignment (BRLM-HA).\nWe first use external aligner tool on source$\\leftrightarrow $pivot parallel data to extract the alignment information of sentence pair.\nDuring model training, given source$\\leftrightarrow $pivot sentence pair, BRLM-HA randomly masks some words in source sentence and leverages alignment information to obtain the aligned words in pivot sentence for masked words.\nBased on the processed input, BRLM-HA adopts the Transformer BIBREF1 encoder to gain the hidden states for source and pivot sentences respectively."
+          },
+          {
+            "candidate_id": "30bd93f0e0fe6b82877ec78d",
+            "document_id": "qasper:1912.01214",
+            "representation": "semantic",
+            "rank": 1,
+            "text": "Regarding comparison between the baselines in table TABREF19, we find that pivoting is the strongest baseline that has significant advantage over other two baselines.\nCross-lingual transfer for languages without shared vocabularies BIBREF16 manifests the worst performance because of not using source$\\leftrightarrow $pivot parallel data, which is utilized as beneficial supervised signal for the other two baselines.\nOur best approach of MLM+BRLM-SA achieves the significant superior performance to all baselines in the zero-shot directions, improving by 0.9-4.8 BLEU points over the strong pivoting."
+          }
+        ],
+        "traditional": [
+          {
+            "candidate_id": "fc6e0ca19dbc969a22ac5db2",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 1,
+            "text": "Regarding comparison between the baselines in table TABREF19, we find that pivoting is the strongest baseline that has significant advantage over other two baselines.\nCross-lingual transfer for languages without shared vocabularies BIBREF16 manifests the worst performance because of not using source$\\leftrightarrow $pivot parallel data, which is utilized as beneficial supervised signal for the other two baselines.\nOur best approach of MLM+BRLM-SA achieves the significant superior performance to all baselines in the zero-shot directions, improving by 0.9-4.8 BLEU points over the strong pivoting.\nMeanwhile, in the supervised direction of pivot$\\rightarrow $target, our approaches performs even better than the original supervised Transformer thanks to the shared encoder trained on both large-scale monolingual data and parallel data between multiple languages.\nMLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining."
+          },
+          {
+            "candidate_id": "51fa8bae88fdcc8c37f22665",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 2,
+            "text": "With the aim of building the language invariant representation between source and pivot languages for smooth transfer of the parent model of pivot$\\rightarrow $target direction to the child model of source$\\rightarrow $target direction, we introduce one monolingual pretraining method and two bilingual pretraining methods to construct an universal encoder for the source and pivot languages.\nExperiments on public datasets show that our approaches significantly outperforms several strong baseline systems, and manifest the language invariance characteristics in both sentence level and word level neural representations."
+          },
+          {
+            "candidate_id": "e0be4e01d4f791e5a93d3e69",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 3,
+            "text": "In recent years, zero-shot translation in NMT has attracted widespread attention in academic research.\nExisting methods are mainly divided into four categories: pivot-based method, transfer learning, multilingual NMT, and unsupervised NMT.\nPivot-based Method is a common strategy to obtain a source$\\rightarrow $target model by introducing a pivot language.\nThis approach is further divided into pivoting and pivot-synthetic.\nWhile the former firstly translates a source language into the pivot language which is later translated to the target language BIBREF4, BIBREF5, BIBREF12, the latter trains a source$\\rightarrow $target model with pseudo data generated from source-pivot or pivot-target parallel data BIBREF13, BIBREF14.\nAlthough the pivot-based methods can achieve not bad performance, it always falls into a computation-expensive and parameter-vast dilemma of quadratic growth in the number of source languages, and suffers from the error propagation problem BIBREF15.\nTransfer Learning is firstly introduced for NMT by BIBREF6, which leverages a high-resource parent model to initialize the low-resource child model.\nOn this basis, BIBREF7 and BIBREF8 use shared vocabularies for source/target language to improve transfer learning, while BIBREF16 relieve the vocabulary mismatch by mainly using cross-lingual word embedding.\nAlthough these methods are successful in the low-resource scene, they have limited effects in zero-shot translation.\nMultilingual NMT (MNMT) enables training a single model that supports translation from multiple source languages into multiple target languages, even those unseen language pairs BIBREF17, BIBREF18, BIBREF19, BIBREF20, BIBREF21.\nAside from simpler deployment, MNMT benefits from transfer learning where low-resource language pairs are trained together with high-resource ones."
+          },
+          {
+            "candidate_id": "c4eaf8eb7b9f89173c5ca90f",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 4,
+            "text": "Although Neural Machine Translation (NMT) has dominated recent research on translation tasks BIBREF0, BIBREF1, BIBREF2, NMT heavily relies on large-scale parallel data, resulting in poor performance on low-resource or zero-resource language pairs BIBREF3.\nTranslation between these low-resource languages (e.g., Arabic$\\rightarrow $Spanish) is usually accomplished with pivoting through a rich-resource language (such as English), i.e., Arabic (source) sentence is translated to English (pivot) first which is later translated to Spanish (target) BIBREF4, BIBREF5.\nHowever, the pivot-based method requires doubled decoding time and suffers from the propagation of translation errors.\nOne common alternative to avoid pivoting in NMT is transfer learning BIBREF6, BIBREF7, BIBREF8, BIBREF9 which leverages a high-resource pivot$\\rightarrow $target model (parent) to initialize a low-resource source$\\rightarrow $target model (child) that is further optimized with a small amount of available parallel data.\nAlthough this approach has achieved success in some low-resource language pairs, it still performs very poorly in extremely low-resource or zero-resource translation scenario.\nSpecifically, BIBREF8 reports that without any child model training data, the performance of the parent model on the child test set is miserable.\nIn this work, we argue that the language space mismatch problem, also named domain shift problem BIBREF10, brings about the zero-shot translation failure in transfer learning.\nIt is because transfer learning has no explicit training process to guarantee that the source and pivot languages share the same feature distributions, causing that the child model inherited from the parent model fails in such a situation."
+          },
+          {
+            "candidate_id": "9427fb4dedd9b24865a35b29",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 5,
+            "text": "Experiments on two public datasets show that our approach significantly outperforms strong pivot-based baseline and various multilingual NMT approaches."
+          },
+          {
+            "candidate_id": "ea30bd60a37bfb634c4cdce2",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 6,
+            "text": "The statistics of Europarl and MultiUN corpora are summarized in Table TABREF18.\nFor Europarl corpus, we evaluate on French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De), where English acts as the pivot language, its left side is the source language, and its right side is the target language.\nWe remove the multi-parallel sentences between different training corpora to ensure zero-shot settings.\nWe use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr.\nFor distant language pair Ro$\\rightarrow $De, we extract 1,000 overlapping sentences from newstest2016 as the test set and the 2,000 overlapping sentences split from the training set as the validation set since there is no official validation and test sets.\nFor vocabulary, we use 60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33.\nFor MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other.\nThe three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation.\nWe use 80K BPE splits as the vocabulary.\nNote that all sentences are tokenized by the tokenize.perl script, and we lowercase all data to avoid a large vocabulary for the MultiUN corpus."
+          },
+          {
+            "candidate_id": "3cde51d134927d739598d695",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 7,
+            "text": "In this paper, we propose a cross-lingual pretraining based transfer approach for the challenging zero-shot translation task, in which source and target languages have no parallel data, while they both have parallel data with a high resource pivot language.\nWith the aim of building the language invariant representation between source and pivot languages for smooth transfer of the parent model of pivot$\\rightarrow $target direction to the child model of source$\\rightarrow $target direction, we introduce one monolingual pretraining method and two bilingual pretraining methods to construct an universal encoder for the source and pivot languages.\nExperiments on public datasets show that our approaches significantly outperforms several strong baseline systems, and manifest the language invariance characteristics in both sentence level and word level neural representations."
+          },
+          {
+            "candidate_id": "913275878eaf3441da0aa0bd",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 9,
+            "text": "It indicates that MLM+BRLM-SA can gain better word-level representation alignment between source and pivot languages, which better relieves the burden of the domain shift problem."
+          },
+          {
+            "candidate_id": "37f46d8c6ffb4edab1ef302f",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 10,
+            "text": "We further sample an English-Russian sentence pair from the MultiUN validation sets and visualize the cosine similarity between hidden states of the top encoder layer to further investigate the difference of all cross-lingual pre-training methods.\nAs shown in Figure FIGREF38, the hidden states generated by MLM+BRLM-SA have higher similarity for two aligned words.\nIt indicates that MLM+BRLM-SA can gain better word-level representation alignment between source and pivot languages, which better relieves the burden of the domain shift problem."
+          },
+          {
+            "candidate_id": "f381ce6a4ef68deeae35e59b",
+            "document_id": "qasper:1912.01214",
+            "representation": "sliding_window",
+            "rank": 11,
+            "text": "As shown in Figure FIGREF38, the hidden states generated by MLM+BRLM-SA have higher similarity for two aligned words.\nIt indicates that MLM+BRLM-SA can gain better word-level representation alignment between source and pivot languages, which better relieves the burden of the domain shift problem."
+          }
+        ]
+      },
+      "selected_representations": [
+        "paragraph",
+        "semantic"
+      ],
+      "evaluator_usage": {
+        "api_calls": 1.0,
+        "prompt_tokens": 3896.0,
+        "completion_tokens": 270.0,
+        "total_tokens": 4166.0,
+        "cached_tokens": 0.0,
+        "api_latency_seconds": 1.2824308999988716,
+        "estimated_cost_usd": 0.0007463999999999999
+      }
+    }
+  ]
+}

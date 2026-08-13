@@ -1,0 +1,302 @@
+{
+  "status": "smoke_not_frozen",
+  "seed": 20260803,
+  "selection_rule": {
+    "description": "shortlist configurations within 0.01 of best tuning evidence recall; choose on held-back training selection partition by complete-evidence rate, precision, context tokens, then candidates",
+    "recall_tolerance": 0.01,
+    "selection_fraction": 0.3,
+    "answer_generation_used": false
+  },
+  "dataset_sources": {
+    "qasper_train": {
+      "path": "datasets\\raw\\qasper\\data\\qasper-train-v0.3.json",
+      "sha256": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4"
+    },
+    "musique_train": {
+      "path": "datasets\\raw\\musique\\data\\musique_full_v1.0_train.jsonl",
+      "sha256": "b1cd998f7e0e2838d6fda024e4ad1eb0e7fc3edefdadb0bd9b5b10b0907f2034"
+    }
+  },
+  "population_strata": {
+    "musique_full|ANSWERABLE|2hop": 14376,
+    "musique_full|ANSWERABLE|3hop": 4387,
+    "musique_full|ANSWERABLE|4hop": 1175,
+    "musique_full|INSUFFICIENT|2hop": 14376,
+    "musique_full|INSUFFICIENT|3hop": 4387,
+    "musique_full|INSUFFICIENT|4hop": 1175,
+    "qasper|ANSWERABLE|long": 214,
+    "qasper|ANSWERABLE|medium": 1870,
+    "qasper|ANSWERABLE|short": 238,
+    "qasper|INSUFFICIENT|long": 25,
+    "qasper|INSUFFICIENT|medium": 203,
+    "qasper|INSUFFICIENT|short": 43
+  },
+  "sample_size": 2,
+  "sample_ids": [
+    "musique_full:train:2hop__536041_20093:answerable",
+    "musique_full:train:2hop__135820_89563:insufficient"
+  ],
+  "sample_partitions": {
+    "musique_full:train:2hop__536041_20093:answerable": "selection",
+    "musique_full:train:2hop__135820_89563:insufficient": "selection"
+  },
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "proposed_search_space": {
+    "method": "seeded random search plus registered anchor",
+    "trials": 2,
+    "bounds": {
+      "rrf_k0": [
+        1,
+        3,
+        10,
+        60
+      ],
+      "representation_marginal_gain_threshold": [
+        0.03,
+        0.25
+      ],
+      "similarity_threshold": [
+        0.5,
+        0.95
+      ],
+      "similarity_gap_threshold": [
+        0.25,
+        2.5
+      ],
+      "novelty_threshold": [
+        0.03,
+        0.3
+      ],
+      "redundancy_threshold": [
+        0.85,
+        0.98
+      ],
+      "marginal_utility_threshold": [
+        0.02,
+        0.2
+      ],
+      "empty_batch_patience": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "selected_proposed_parameters": {
+    "rrf_k0": 60,
+    "representation_marginal_gain_threshold": 0.1197,
+    "similarity_threshold": 0.7533,
+    "similarity_gap_threshold": 0.4128,
+    "novelty_threshold": 0.1433,
+    "redundancy_threshold": 0.9531,
+    "marginal_utility_threshold": 0.1671,
+    "empty_batch_patience": 3
+  },
+  "selected_baseline_parameters": {
+    "static_k": 3
+  },
+  "frozen_configuration": null,
+  "chosen_proposed_tuning_metrics": {
+    "answerable": 0.5,
+    "final_k": 7.5,
+    "context_tokens": 498.0,
+    "candidates_examined": 27.0,
+    "selected_representations": 1.0,
+    "evidence_recall": 0.5,
+    "evidence_precision": 0.14285714285714285,
+    "complete_evidence": 0.0,
+    "answerable_context_tokens": 540.0,
+    "insufficient_context_tokens": 456.0,
+    "insufficient_candidates_examined": 27.0
+  },
+  "chosen_proposed_selection_metrics": {
+    "answerable": 0.5,
+    "final_k": 7.5,
+    "context_tokens": 498.0,
+    "candidates_examined": 27.0,
+    "selected_representations": 1.0,
+    "evidence_recall": 0.5,
+    "evidence_precision": 0.14285714285714285,
+    "complete_evidence": 0.0,
+    "answerable_context_tokens": 540.0,
+    "insufficient_context_tokens": 456.0,
+    "insufficient_candidates_examined": 27.0
+  },
+  "chosen_baseline_tuning_metrics": {
+    "answerable": 0.5,
+    "evidence_recall": 0.5,
+    "evidence_precision": 0.3333333333333333,
+    "complete_evidence": 0.0,
+    "final_k": 3.0,
+    "context_tokens": 203.5,
+    "candidates_examined": 3.0,
+    "selected_representations": 1.0,
+    "answerable_context_tokens": 196.0,
+    "insufficient_context_tokens": 211.0,
+    "insufficient_candidates_examined": 3.0
+  },
+  "chosen_baseline_selection_metrics": {
+    "answerable": 0.5,
+    "evidence_recall": 0.5,
+    "evidence_precision": 0.3333333333333333,
+    "complete_evidence": 0.0,
+    "final_k": 3.0,
+    "context_tokens": 203.5,
+    "candidates_examined": 3.0,
+    "selected_representations": 1.0,
+    "answerable_context_tokens": 196.0,
+    "insufficient_context_tokens": 211.0,
+    "insufficient_candidates_examined": 3.0
+  },
+  "all_proposed_trials": [
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1,
+        "similarity_threshold": 0.7,
+        "similarity_gap_threshold": 0.75,
+        "novelty_threshold": 0.1,
+        "redundancy_threshold": 0.92,
+        "marginal_utility_threshold": 0.05,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.0,
+        "context_tokens": 641.0,
+        "candidates_examined": 24.0,
+        "selected_representations": 1.0,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.1111111111111111,
+        "complete_evidence": 0.0,
+        "answerable_context_tokens": 777.0,
+        "insufficient_context_tokens": 505.0,
+        "insufficient_candidates_examined": 24.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.0,
+        "context_tokens": 641.0,
+        "candidates_examined": 24.0,
+        "selected_representations": 1.0,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.1111111111111111,
+        "complete_evidence": 0.0,
+        "answerable_context_tokens": 777.0,
+        "insufficient_context_tokens": 505.0,
+        "insufficient_candidates_examined": 24.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1197,
+        "similarity_threshold": 0.7533,
+        "similarity_gap_threshold": 0.4128,
+        "novelty_threshold": 0.1433,
+        "redundancy_threshold": 0.9531,
+        "marginal_utility_threshold": 0.1671,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.5,
+        "context_tokens": 498.0,
+        "candidates_examined": 27.0,
+        "selected_representations": 1.0,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.14285714285714285,
+        "complete_evidence": 0.0,
+        "answerable_context_tokens": 540.0,
+        "insufficient_context_tokens": 456.0,
+        "insufficient_candidates_examined": 27.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.5,
+        "context_tokens": 498.0,
+        "candidates_examined": 27.0,
+        "selected_representations": 1.0,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.14285714285714285,
+        "complete_evidence": 0.0,
+        "answerable_context_tokens": 540.0,
+        "insufficient_context_tokens": 456.0,
+        "insufficient_candidates_examined": 27.0
+      }
+    }
+  ],
+  "all_baseline_trials": [
+    {
+      "parameters": {
+        "static_k": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.3333333333333333,
+        "complete_evidence": 0.0,
+        "final_k": 3.0,
+        "context_tokens": 203.5,
+        "candidates_examined": 3.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 196.0,
+        "insufficient_context_tokens": 211.0,
+        "insufficient_candidates_examined": 3.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.3333333333333333,
+        "complete_evidence": 0.0,
+        "final_k": 3.0,
+        "context_tokens": 203.5,
+        "candidates_examined": 3.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 196.0,
+        "insufficient_context_tokens": 211.0,
+        "insufficient_candidates_examined": 3.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 5
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.2,
+        "complete_evidence": 0.0,
+        "final_k": 5.0,
+        "context_tokens": 374.5,
+        "candidates_examined": 5.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 409.0,
+        "insufficient_context_tokens": 340.0,
+        "insufficient_candidates_examined": 5.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.2,
+        "complete_evidence": 0.0,
+        "final_k": 5.0,
+        "context_tokens": 374.5,
+        "candidates_examined": 5.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 409.0,
+        "insufficient_context_tokens": 340.0,
+        "insufficient_candidates_examined": 5.0
+      }
+    }
+  ],
+  "limitations": [
+    "Calibration optimizes retrieval only; it makes no API calls and does not use gold answer text.",
+    "Gold-span containment is imperfect for paraphrased evidence.",
+    "The confirmatory study must not alter this manifest after validation/test inspection.",
+    "Smoke-limit output is implementation verification and must not be used to freeze parameters."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "decision": {
+    "primary_representation_dataset": "QASPER v0.3",
+    "primary_multihop_and_insufficiency_dataset": "MuSiQue-Full v1.0",
+    "external_generalization_only": "HotpotQA distractor development split (not downloaded yet)",
+    "excluded_initially": "QuALITY",
+    "reason": "QASPER directly stresses long structured representation granularity; MuSiQue-Full adds connected multi-hop and balanced answerable/unanswerable groups. HotpotQA overlaps with MuSiQue, and QuALITY adds limited evidence supervision for this research question."
+  },
+  "qasper": {
+    "version": "0.3",
+    "license": "CC BY 4.0",
+    "official_loader": "https://huggingface.co/datasets/allenai/qasper",
+    "official_train_dev_archive": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+    "official_test_archive": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz",
+    "archive_sha256": {
+      "qasper-train-dev-v0.3.tgz": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+      "qasper-test-and-evaluator-v0.3.tgz": "72a52a41193e2838b8074f80ac074b94f956b84886c36a61c58a7df4171bdd72"
+    },
+    "files": {
+      "qasper-train-v0.3.json": {"sha256": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4", "papers": 888, "questions": 2593},
+      "qasper-dev-v0.3.json": {"sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93", "papers": 281, "questions": 1005},
+      "qasper-test-v0.3.json": {"sha256": "6e29ad410e6e39aa1936017fb965b30a20eb2e7751997f55b97c9d281aa884e5", "papers": 416, "questions": 1451}
+    }
+  },
+  "musique_full": {
+    "version": "1.0",
+    "license": "CC BY 4.0",
+    "official_repository": "https://github.com/StonyBrookNLP/musique",
+    "official_google_drive_file_id": "1tGdADlNjWFaHLeZZGShh2IRcpO6Lv24h",
+    "archive_sha256": "98f839bf2fd5319f5c688aed77901a6d5c30b3b9f9f691ab9a8ecafb045ee0cd",
+    "transport_note": "Downloaded from the authors' exact file ID. Local TLS interception required gdown certificate verification to be disabled after the current certifi CA bundle also failed; archive structure was validated and this SHA-256 was recorded immediately.",
+    "files": {
+      "musique_full_v1.0_train.jsonl": {"sha256": "b1cd998f7e0e2838d6fda024e4ad1eb0e7fc3edefdadb0bd9b5b10b0907f2034", "examples": 39876, "answerable": 19938, "unanswerable": 19938},
+      "musique_full_v1.0_dev.jsonl": {"sha256": "8cab31d56a3a1c4ef491b205a8dab3f1ac9c66e472098c6cf1de4e20294f7a4a", "examples": 4834, "answerable": 2417, "unanswerable": 2417},
+      "musique_full_v1.0_test.jsonl": {"sha256": "01d7b0f752bdc1fc98856d605560e021a89be903baeb9daff11adeb7fac61328", "examples": 4918, "labels": "hidden"},
+      "dev_test_singlehop_questions_v1.0.json": {"sha256": "013be00ab914799891e5ae40de6cdc1baf03aaffd1f3ce4bf0de796020069613"}
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "hugging_face_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "weight_file": "models/all-MiniLM-L6-v2/model.safetensors",
+  "weight_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+  "hidden_dimension": 384,
+  "max_sequence_length": 256,
+  "pooling": "attention-mask mean pooling followed by L2 normalization",
+  "loader": "huggingface transformers AutoTokenizer and AutoModel"
+}

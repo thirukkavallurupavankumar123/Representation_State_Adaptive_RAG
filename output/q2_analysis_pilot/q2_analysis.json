@@ -1,0 +1,1641 @@
+{
+  "status": "pilot_or_incomplete_not_for_claims",
+  "run_summaries": [
+    {
+      "path": "output\\pilot_fair_generator_qasper2\\results.json",
+      "status": "pilot_not_for_claims",
+      "examples": 2,
+      "model": "openai/gpt-oss-120b",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "traditional_condition": {
+        "representation": "sliding_window",
+        "static_k": 20
+      },
+      "proposed_condition": {
+        "representations": [
+          "sentence_window",
+          "paragraph",
+          "semantic",
+          "hierarchical"
+        ],
+        "probe_depth": 3,
+        "representation_selection": "normalized_rrf_greedy_weighted_set_cover",
+        "final_k": "emergent",
+        "online_llm_calls": "one final answer call"
+      },
+      "calibration_manifest": "output\\calibration\\frozen_manifest.json",
+      "offline_indexing": {
+        "unique_corpora": 1,
+        "traditional_seconds": 6.094343800010392,
+        "proposed_seconds": 29.179845100006787,
+        "scope": "one-time corpus construction; excluded from per-query latency"
+      },
+      "answerability": {
+        "traditional": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "proposed": {
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 2,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "paired_statistics": {
+        "answer_exact_match": {
+          "traditional_mean": 0.0,
+          "proposed_mean": 0.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "answer_relevancy": {
+          "traditional_mean": 0.74,
+          "proposed_mean": 0.9,
+          "paired_difference_proposed_minus_traditional": 0.16000000000000003,
+          "bootstrap_95_ci": [
+            0.020000000000000018,
+            0.30000000000000004
+          ],
+          "paired_randomization_p_value": 0.5114885114885115,
+          "paired_n": 2
+        },
+        "answer_token_f1": {
+          "traditional_mean": 0.14705882352941174,
+          "proposed_mean": 0.10569852941176472,
+          "paired_difference_proposed_minus_traditional": -0.04136029411764703,
+          "bootstrap_95_ci": [
+            -0.17647058823529407,
+            0.09375000000000001
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "answerability_correct": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "api_calls": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "api_latency_seconds": {
+          "traditional_mean": 2.4321244500024477,
+          "proposed_mean": 1.7946475000062492,
+          "paired_difference_proposed_minus_traditional": -0.6374769499961985,
+          "bootstrap_95_ci": [
+            -1.237401599995792,
+            -0.03755229999660514
+          ],
+          "paired_randomization_p_value": 0.4905094905094905,
+          "paired_n": 2
+        },
+        "cached_tokens": {
+          "traditional_mean": 0.0,
+          "proposed_mean": 0.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "completion_tokens": {
+          "traditional_mean": 659.0,
+          "proposed_mean": 554.0,
+          "paired_difference_proposed_minus_traditional": -105.0,
+          "bootstrap_95_ci": [
+            -228.0,
+            18.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "context_tokens": {
+          "traditional_mean": 1960.0,
+          "proposed_mean": 1735.5,
+          "paired_difference_proposed_minus_traditional": -224.5,
+          "bootstrap_95_ci": [
+            -248.0,
+            -201.0
+          ],
+          "paired_randomization_p_value": 0.4775224775224775,
+          "paired_n": 2
+        },
+        "context_words": {
+          "traditional_mean": 1255.5,
+          "proposed_mean": 1042.0,
+          "paired_difference_proposed_minus_traditional": -213.5,
+          "bootstrap_95_ci": [
+            -242.0,
+            -185.0
+          ],
+          "paired_randomization_p_value": 0.5264735264735265,
+          "paired_n": 2
+        },
+        "estimated_cost_usd": {
+          "traditional_mean": 0.0008688,
+          "proposed_mean": 0.00078225,
+          "paired_difference_proposed_minus_traditional": -8.655000000000002e-05,
+          "bootstrap_95_ci": [
+            -0.0001692,
+            -3.900000000000041e-06
+          ],
+          "paired_randomization_p_value": 0.5034965034965035,
+          "paired_n": 2
+        },
+        "evidence_set_precision": {
+          "traditional_mean": 0.05,
+          "proposed_mean": 0.10714285714285714,
+          "paired_difference_proposed_minus_traditional": 0.057142857142857134,
+          "bootstrap_95_ci": [
+            0.0,
+            0.11428571428571427
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "evidence_set_recall": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "faithfulness": {
+          "traditional_mean": 0.9199999999999999,
+          "proposed_mean": 0.925,
+          "paired_difference_proposed_minus_traditional": 0.0050000000000000044,
+          "bootstrap_95_ci": [
+            0.0,
+            0.010000000000000009
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "final_k": {
+          "traditional_mean": 9.0,
+          "proposed_mean": 13.0,
+          "paired_difference_proposed_minus_traditional": 4.0,
+          "bootstrap_95_ci": [
+            4.0,
+            4.0
+          ],
+          "paired_randomization_p_value": 0.5284715284715285,
+          "paired_n": 2
+        },
+        "gold_answerable": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "latency_seconds": {
+          "traditional_mean": 17.677702149987454,
+          "proposed_mean": 14.365731450001476,
+          "paired_difference_proposed_minus_traditional": -3.3119706999859773,
+          "bootstrap_95_ci": [
+            -5.367753699974855,
+            -1.2561876999970991
+          ],
+          "paired_randomization_p_value": 0.5154845154845155,
+          "paired_n": 2
+        },
+        "predicted_answerable": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "prompt_tokens": {
+          "traditional_mean": 3156.0,
+          "proposed_mean": 2999.0,
+          "paired_difference_proposed_minus_traditional": -157.0,
+          "bootstrap_95_ci": [
+            -216.0,
+            -98.0
+          ],
+          "paired_randomization_p_value": 0.4875124875124875,
+          "paired_n": 2
+        },
+        "retrieval_mrr": {
+          "traditional_mean": 0.16666666666666666,
+          "proposed_mean": 0.5,
+          "paired_difference_proposed_minus_traditional": 0.33333333333333337,
+          "bootstrap_95_ci": [
+            0.0,
+            0.6666666666666667
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_10": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.27069983410995346,
+          "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+          "bootstrap_95_ci": [
+            0.0,
+            0.34620964322385606
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_20": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.3251467146440696,
+          "paired_difference_proposed_minus_traditional": 0.22755170214604414,
+          "bootstrap_95_ci": [
+            0.0,
+            0.4551034042920883
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_5": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.27069983410995346,
+          "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+          "bootstrap_95_ci": [
+            0.0,
+            0.34620964322385606
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_10": {
+          "traditional_mean": 0.05,
+          "proposed_mean": 0.1,
+          "paired_difference_proposed_minus_traditional": 0.05,
+          "bootstrap_95_ci": [
+            0.0,
+            0.1
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_20": {
+          "traditional_mean": 0.025,
+          "proposed_mean": 0.075,
+          "paired_difference_proposed_minus_traditional": 0.049999999999999996,
+          "bootstrap_95_ci": [
+            0.0,
+            0.09999999999999999
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_5": {
+          "traditional_mean": 0.1,
+          "proposed_mean": 0.2,
+          "paired_difference_proposed_minus_traditional": 0.1,
+          "bootstrap_95_ci": [
+            0.0,
+            0.2
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_10": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_20": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_5": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_n": 2
+        },
+        "total_tokens": {
+          "traditional_mean": 3815.0,
+          "proposed_mean": 3553.0,
+          "paired_difference_proposed_minus_traditional": -262.0,
+          "bootstrap_95_ci": [
+            -444.0,
+            -80.0
+          ],
+          "paired_randomization_p_value": 0.5174825174825175,
+          "paired_n": 2
+        }
+      },
+      "metric_caveats": {
+        "answer_generator_control": "both retrieval methods use the identical Groq prompt, schema, model, decoding controls, and maximum completion tokens",
+        "faithfulness_answer_relevancy": "same Groq model family as generator; secondary and self-evaluation-biased",
+        "retrieval_relevance": "normalized containment match between final evidence text and gold evidence spans",
+        "cost_rates": "Groq GPT-OSS 120B: $0.15/M uncached input, $0.075/M cached input, $0.60/M output"
+      }
+    }
+  ],
+  "dataset_statistics": [
+    {
+      "dataset": "qasper",
+      "split": "test",
+      "questions": 1451,
+      "unique_ids": 1451,
+      "answerable": 1372,
+      "insufficient": 79,
+      "documents_mean": 1,
+      "document_words_mean": 3540.7456926257755,
+      "gold_evidence_spans_mean": 2.5678842177808407
+    },
+    {
+      "dataset": "musique_full",
+      "split": "validation",
+      "questions": 4834,
+      "unique_ids": 4834,
+      "answerable": 2417,
+      "insufficient": 2417,
+      "documents_mean": 19.988829127016963,
+      "document_words_mean": 1683.9679354571783,
+      "gold_evidence_spans_mean": 1.8893256102606537
+    }
+  ],
+  "main_results": [
+    {
+      "dataset": "qasper",
+      "metric": "answer_exact_match",
+      "traditional": 0.0,
+      "sar_rag": 0.0,
+      "difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.0,
+      "paired_n": 2,
+      "mcnemar_p": 1.0
+    },
+    {
+      "dataset": "qasper",
+      "metric": "answer_relevancy",
+      "traditional": 0.74,
+      "sar_rag": 0.9,
+      "difference": 0.16000000000000003,
+      "ci_low": 0.020000000000000018,
+      "ci_high": 0.30000000000000004,
+      "randomization_p": 0.4755244755244755,
+      "holm_p": null,
+      "effect_size_dz": 0.8081220356417687,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "answer_token_f1",
+      "traditional": 0.14705882352941174,
+      "sar_rag": 0.10569852941176472,
+      "difference": -0.04136029411764703,
+      "ci_low": -0.17647058823529407,
+      "ci_high": 0.09375000000000001,
+      "randomization_p": 1.0,
+      "holm_p": 1.0,
+      "effect_size_dz": -0.21646125954690215,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "answerability_correct",
+      "traditional": 1.0,
+      "sar_rag": 1.0,
+      "difference": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.0,
+      "paired_n": 2,
+      "mcnemar_p": 1.0
+    },
+    {
+      "dataset": "qasper",
+      "metric": "completion_tokens",
+      "traditional": 659.0,
+      "sar_rag": 554.0,
+      "difference": -105.0,
+      "ci_low": -228.0,
+      "ci_high": 18.0,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": -0.6036277400372966,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "context_tokens",
+      "traditional": 1960.0,
+      "sar_rag": 1735.5,
+      "difference": -224.5,
+      "ci_low": -248.0,
+      "ci_high": -201.0,
+      "randomization_p": 0.4955044955044955,
+      "holm_p": 1.0,
+      "effect_size_dz": -6.7551264841012735,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "estimated_cost_usd",
+      "traditional": 0.0008688,
+      "sar_rag": 0.00078225,
+      "difference": -8.655000000000002e-05,
+      "ci_low": -0.0001692,
+      "ci_high": -3.900000000000041e-06,
+      "randomization_p": 0.5364635364635365,
+      "holm_p": null,
+      "effect_size_dz": -0.740472981387728,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "evidence_set_precision",
+      "traditional": 0.05,
+      "sar_rag": 0.10714285714285714,
+      "difference": 0.057142857142857134,
+      "ci_low": 0.0,
+      "ci_high": 0.11428571428571427,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.7071067811865476,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "evidence_set_recall",
+      "traditional": 0.125,
+      "sar_rag": 0.25,
+      "difference": 0.125,
+      "ci_low": 0.0,
+      "ci_high": 0.25,
+      "randomization_p": 1.0,
+      "holm_p": 1.0,
+      "effect_size_dz": 0.7071067811865475,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "faithfulness",
+      "traditional": 0.9199999999999999,
+      "sar_rag": 0.925,
+      "difference": 0.0050000000000000044,
+      "ci_low": 0.0,
+      "ci_high": 0.010000000000000009,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.7071067811865476,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "final_k",
+      "traditional": 9.0,
+      "sar_rag": 13.0,
+      "difference": 4.0,
+      "ci_low": 4.0,
+      "ci_high": 4.0,
+      "randomization_p": 0.5114885114885115,
+      "holm_p": null,
+      "effect_size_dz": 0.0,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "latency_seconds",
+      "traditional": 17.677702149987454,
+      "sar_rag": 14.365731450001476,
+      "difference": -3.3119706999859773,
+      "ci_low": -5.367753699974855,
+      "ci_high": -1.2561876999970991,
+      "randomization_p": 0.4935064935064935,
+      "holm_p": null,
+      "effect_size_dz": -1.139184895032166,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "prompt_tokens",
+      "traditional": 3156.0,
+      "sar_rag": 2999.0,
+      "difference": -157.0,
+      "ci_low": -216.0,
+      "ci_high": -98.0,
+      "randomization_p": 0.5294705294705294,
+      "holm_p": null,
+      "effect_size_dz": -1.881623129598101,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "retrieval_mrr",
+      "traditional": 0.16666666666666666,
+      "sar_rag": 0.5,
+      "difference": 0.33333333333333337,
+      "ci_low": 0.0,
+      "ci_high": 0.6666666666666667,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.7071067811865476,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "retrieval_ndcg_at_10",
+      "traditional": 0.09759501249802542,
+      "sar_rag": 0.27069983410995346,
+      "difference": 0.17310482161192803,
+      "ci_low": 0.0,
+      "ci_high": 0.34620964322385606,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.7071067811865475,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "retrieval_ndcg_at_5",
+      "traditional": 0.09759501249802542,
+      "sar_rag": 0.27069983410995346,
+      "difference": 0.17310482161192803,
+      "ci_low": 0.0,
+      "ci_high": 0.34620964322385606,
+      "randomization_p": 1.0,
+      "holm_p": null,
+      "effect_size_dz": 0.7071067811865475,
+      "paired_n": 2,
+      "mcnemar_p": null
+    },
+    {
+      "dataset": "qasper",
+      "metric": "total_tokens",
+      "traditional": 3815.0,
+      "sar_rag": 3553.0,
+      "difference": -262.0,
+      "ci_low": -444.0,
+      "ci_high": -80.0,
+      "randomization_p": 0.5084915084915085,
+      "holm_p": null,
+      "effect_size_dz": -1.017922948741074,
+      "paired_n": 2,
+      "mcnemar_p": null
+    }
+  ],
+  "inference": {
+    "qasper": {
+      "paired_statistics": {
+        "answer_exact_match": {
+          "traditional_mean": 0.0,
+          "proposed_mean": 0.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "answer_relevancy": {
+          "traditional_mean": 0.74,
+          "proposed_mean": 0.9,
+          "paired_difference_proposed_minus_traditional": 0.16000000000000003,
+          "bootstrap_95_ci": [
+            0.020000000000000018,
+            0.30000000000000004
+          ],
+          "paired_randomization_p_value": 0.4755244755244755,
+          "paired_effect_size_dz": 0.8081220356417687,
+          "paired_n": 2
+        },
+        "answer_token_f1": {
+          "traditional_mean": 0.14705882352941174,
+          "proposed_mean": 0.10569852941176472,
+          "paired_difference_proposed_minus_traditional": -0.04136029411764703,
+          "bootstrap_95_ci": [
+            -0.17647058823529407,
+            0.09375000000000001
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": -0.21646125954690215,
+          "paired_n": 2
+        },
+        "answerability_correct": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "api_calls": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "api_latency_seconds": {
+          "traditional_mean": 2.4321244500024477,
+          "proposed_mean": 1.7946475000062492,
+          "paired_difference_proposed_minus_traditional": -0.6374769499961985,
+          "bootstrap_95_ci": [
+            -1.237401599995792,
+            -0.03755229999660514
+          ],
+          "paired_randomization_p_value": 0.5244755244755245,
+          "paired_effect_size_dz": -0.7513681496380173,
+          "paired_n": 2
+        },
+        "cached_tokens": {
+          "traditional_mean": 0.0,
+          "proposed_mean": 0.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "completion_tokens": {
+          "traditional_mean": 659.0,
+          "proposed_mean": 554.0,
+          "paired_difference_proposed_minus_traditional": -105.0,
+          "bootstrap_95_ci": [
+            -228.0,
+            18.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": -0.6036277400372966,
+          "paired_n": 2
+        },
+        "context_tokens": {
+          "traditional_mean": 1960.0,
+          "proposed_mean": 1735.5,
+          "paired_difference_proposed_minus_traditional": -224.5,
+          "bootstrap_95_ci": [
+            -248.0,
+            -201.0
+          ],
+          "paired_randomization_p_value": 0.4955044955044955,
+          "paired_effect_size_dz": -6.7551264841012735,
+          "paired_n": 2
+        },
+        "context_words": {
+          "traditional_mean": 1255.5,
+          "proposed_mean": 1042.0,
+          "paired_difference_proposed_minus_traditional": -213.5,
+          "bootstrap_95_ci": [
+            -242.0,
+            -185.0
+          ],
+          "paired_randomization_p_value": 0.5114885114885115,
+          "paired_effect_size_dz": -5.297098167836067,
+          "paired_n": 2
+        },
+        "estimated_cost_usd": {
+          "traditional_mean": 0.0008688,
+          "proposed_mean": 0.00078225,
+          "paired_difference_proposed_minus_traditional": -8.655000000000002e-05,
+          "bootstrap_95_ci": [
+            -0.0001692,
+            -3.900000000000041e-06
+          ],
+          "paired_randomization_p_value": 0.5364635364635365,
+          "paired_effect_size_dz": -0.740472981387728,
+          "paired_n": 2
+        },
+        "evidence_set_precision": {
+          "traditional_mean": 0.05,
+          "proposed_mean": 0.10714285714285714,
+          "paired_difference_proposed_minus_traditional": 0.057142857142857134,
+          "bootstrap_95_ci": [
+            0.0,
+            0.11428571428571427
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865476,
+          "paired_n": 2
+        },
+        "evidence_set_recall": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "faithfulness": {
+          "traditional_mean": 0.9199999999999999,
+          "proposed_mean": 0.925,
+          "paired_difference_proposed_minus_traditional": 0.0050000000000000044,
+          "bootstrap_95_ci": [
+            0.0,
+            0.010000000000000009
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865476,
+          "paired_n": 2
+        },
+        "final_k": {
+          "traditional_mean": 9.0,
+          "proposed_mean": 13.0,
+          "paired_difference_proposed_minus_traditional": 4.0,
+          "bootstrap_95_ci": [
+            4.0,
+            4.0
+          ],
+          "paired_randomization_p_value": 0.5114885114885115,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "gold_answerable": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "latency_seconds": {
+          "traditional_mean": 17.677702149987454,
+          "proposed_mean": 14.365731450001476,
+          "paired_difference_proposed_minus_traditional": -3.3119706999859773,
+          "bootstrap_95_ci": [
+            -5.367753699974855,
+            -1.2561876999970991
+          ],
+          "paired_randomization_p_value": 0.4935064935064935,
+          "paired_effect_size_dz": -1.139184895032166,
+          "paired_n": 2
+        },
+        "predicted_answerable": {
+          "traditional_mean": 1.0,
+          "proposed_mean": 1.0,
+          "paired_difference_proposed_minus_traditional": 0.0,
+          "bootstrap_95_ci": [
+            0.0,
+            0.0
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.0,
+          "paired_n": 2
+        },
+        "prompt_tokens": {
+          "traditional_mean": 3156.0,
+          "proposed_mean": 2999.0,
+          "paired_difference_proposed_minus_traditional": -157.0,
+          "bootstrap_95_ci": [
+            -216.0,
+            -98.0
+          ],
+          "paired_randomization_p_value": 0.5294705294705294,
+          "paired_effect_size_dz": -1.881623129598101,
+          "paired_n": 2
+        },
+        "retrieval_mrr": {
+          "traditional_mean": 0.16666666666666666,
+          "proposed_mean": 0.5,
+          "paired_difference_proposed_minus_traditional": 0.33333333333333337,
+          "bootstrap_95_ci": [
+            0.0,
+            0.6666666666666667
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865476,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_10": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.27069983410995346,
+          "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+          "bootstrap_95_ci": [
+            0.0,
+            0.34620964322385606
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_20": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.3251467146440696,
+          "paired_difference_proposed_minus_traditional": 0.22755170214604414,
+          "bootstrap_95_ci": [
+            0.0,
+            0.4551034042920883
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_ndcg_at_5": {
+          "traditional_mean": 0.09759501249802542,
+          "proposed_mean": 0.27069983410995346,
+          "paired_difference_proposed_minus_traditional": 0.17310482161192803,
+          "bootstrap_95_ci": [
+            0.0,
+            0.34620964322385606
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_10": {
+          "traditional_mean": 0.05,
+          "proposed_mean": 0.1,
+          "paired_difference_proposed_minus_traditional": 0.05,
+          "bootstrap_95_ci": [
+            0.0,
+            0.1
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_20": {
+          "traditional_mean": 0.025,
+          "proposed_mean": 0.075,
+          "paired_difference_proposed_minus_traditional": 0.049999999999999996,
+          "bootstrap_95_ci": [
+            0.0,
+            0.09999999999999999
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_precision_at_5": {
+          "traditional_mean": 0.1,
+          "proposed_mean": 0.2,
+          "paired_difference_proposed_minus_traditional": 0.1,
+          "bootstrap_95_ci": [
+            0.0,
+            0.2
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_10": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_20": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "retrieval_recall_at_5": {
+          "traditional_mean": 0.125,
+          "proposed_mean": 0.25,
+          "paired_difference_proposed_minus_traditional": 0.125,
+          "bootstrap_95_ci": [
+            0.0,
+            0.25
+          ],
+          "paired_randomization_p_value": 1.0,
+          "paired_effect_size_dz": 0.7071067811865475,
+          "paired_n": 2
+        },
+        "total_tokens": {
+          "traditional_mean": 3815.0,
+          "proposed_mean": 3553.0,
+          "paired_difference_proposed_minus_traditional": -262.0,
+          "bootstrap_95_ci": [
+            -444.0,
+            -80.0
+          ],
+          "paired_randomization_p_value": 0.5084915084915085,
+          "paired_effect_size_dz": -1.017922948741074,
+          "paired_n": 2
+        }
+      },
+      "holm": {
+        "context_tokens": 1.0,
+        "answer_token_f1": 1.0,
+        "evidence_set_recall": 1.0
+      },
+      "mcnemar": {
+        "answer_exact_match": {
+          "traditional_only_correct": 0,
+          "proposed_only_correct": 0,
+          "discordant_pairs": 0,
+          "exact_mcnemar_p_value": 1.0
+        },
+        "answerability_correct": {
+          "traditional_only_correct": 0,
+          "proposed_only_correct": 0,
+          "discordant_pairs": 0,
+          "exact_mcnemar_p_value": 1.0
+        }
+      }
+    }
+  },
+  "efficiency": [
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "latency_seconds",
+      "n": 2,
+      "mean": 17.677702149987454,
+      "median": 17.677702149987454,
+      "sd": 20.269226842853815,
+      "p25": 10.51144827499229,
+      "p75": 24.843956024982617,
+      "p95": 30.576959124978746,
+      "min": 3.3451943999971263,
+      "max": 32.01020989997778
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "context_tokens",
+      "n": 2,
+      "mean": 1960.0,
+      "median": 1960.0,
+      "sd": 33.94112549695428,
+      "p25": 1948.0,
+      "p75": 1972.0,
+      "p95": 1981.6,
+      "min": 1936.0,
+      "max": 1984.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "prompt_tokens",
+      "n": 2,
+      "mean": 3156.0,
+      "median": 3156.0,
+      "sd": 4.242640687119285,
+      "p25": 3154.5,
+      "p75": 3157.5,
+      "p95": 3158.7,
+      "min": 3153.0,
+      "max": 3159.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "completion_tokens",
+      "n": 2,
+      "mean": 659.0,
+      "median": 659.0,
+      "sd": 313.9554108468271,
+      "p25": 548.0,
+      "p75": 770.0,
+      "p95": 858.8,
+      "min": 437.0,
+      "max": 881.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "total_tokens",
+      "n": 2,
+      "mean": 3815.0,
+      "median": 3815.0,
+      "sd": 309.7127701597078,
+      "p25": 3705.5,
+      "p75": 3924.5,
+      "p95": 4012.1,
+      "min": 3596.0,
+      "max": 4034.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "estimated_cost_usd",
+      "n": 2,
+      "mean": 0.0008688,
+      "median": 0.0008688,
+      "sd": 0.0001877368504050283,
+      "p25": 0.0008024250000000001,
+      "p75": 0.0009351749999999999,
+      "p95": 0.0009882749999999998,
+      "min": 0.00073605,
+      "max": 0.00100155
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "final_k",
+      "n": 2,
+      "mean": 9.0,
+      "median": 9.0,
+      "sd": 1.4142135623730951,
+      "p25": 8.5,
+      "p75": 9.5,
+      "p95": 9.9,
+      "min": 8.0,
+      "max": 10.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "candidates_examined",
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "sd": null,
+      "p25": null,
+      "p75": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    {
+      "dataset": "qasper",
+      "method": "traditional",
+      "metric": "retrieval_rounds",
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "sd": null,
+      "p25": null,
+      "p75": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "latency_seconds",
+      "n": 2,
+      "mean": 14.365731450001476,
+      "median": 14.365731450001476,
+      "sd": 17.361910642973495,
+      "p25": 8.227369075000752,
+      "p75": 20.5040938250022,
+      "p95": 25.414783725002778,
+      "min": 2.089006700000027,
+      "max": 26.642456200002925
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "context_tokens",
+      "n": 2,
+      "mean": 1735.5,
+      "median": 1735.5,
+      "sd": 67.17514421272202,
+      "p25": 1711.75,
+      "p75": 1759.25,
+      "p95": 1778.25,
+      "min": 1688.0,
+      "max": 1783.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "prompt_tokens",
+      "n": 2,
+      "mean": 2999.0,
+      "median": 2999.0,
+      "sd": 87.68124086713189,
+      "p25": 2968.0,
+      "p75": 3030.0,
+      "p95": 3054.8,
+      "min": 2937.0,
+      "max": 3061.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "completion_tokens",
+      "n": 2,
+      "mean": 554.0,
+      "median": 554.0,
+      "sd": 140.0071426749364,
+      "p25": 504.5,
+      "p75": 603.5,
+      "p95": 643.1,
+      "min": 455.0,
+      "max": 653.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "total_tokens",
+      "n": 2,
+      "mean": 3553.0,
+      "median": 3553.0,
+      "sd": 52.32590180780452,
+      "p25": 3534.5,
+      "p75": 3571.5,
+      "p95": 3586.3,
+      "min": 3516.0,
+      "max": 3590.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "estimated_cost_usd",
+      "n": 2,
+      "mean": 0.00078225,
+      "median": 0.00078225,
+      "sd": 7.085209947489202e-05,
+      "p25": 0.0007572,
+      "p75": 0.0008072999999999999,
+      "p95": 0.00082734,
+      "min": 0.00073215,
+      "max": 0.0008323499999999999
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "final_k",
+      "n": 2,
+      "mean": 13.0,
+      "median": 13.0,
+      "sd": 1.4142135623730951,
+      "p25": 12.5,
+      "p75": 13.5,
+      "p95": 13.9,
+      "min": 12.0,
+      "max": 14.0
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "candidates_examined",
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "sd": null,
+      "p25": null,
+      "p75": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    {
+      "dataset": "qasper",
+      "method": "proposed",
+      "metric": "retrieval_rounds",
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "sd": null,
+      "p25": null,
+      "p75": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    }
+  ],
+  "representation_states": [
+    {
+      "dataset": "qasper",
+      "state": "hierarchical+semantic",
+      "questions": 1,
+      "percentage": 50.0,
+      "representations": 2,
+      "answer_f1": 0.09375000000000001,
+      "evidence_recall": 0.0,
+      "complete_evidence": null,
+      "context_tokens": 1688.0,
+      "final_k": 12.0
+    },
+    {
+      "dataset": "qasper",
+      "state": "paragraph+semantic",
+      "questions": 1,
+      "percentage": 50.0,
+      "representations": 2,
+      "answer_f1": 0.11764705882352941,
+      "evidence_recall": 0.5,
+      "complete_evidence": null,
+      "context_tokens": 1783.0,
+      "final_k": 14.0
+    }
+  ],
+  "representation_summary": {
+    "individual_selection_counts": {
+      "hierarchical": 1,
+      "semantic": 2,
+      "paragraph": 1
+    },
+    "one_representation_percentage": 0.0,
+    "two_representation_percentage": 100.0,
+    "second_representation_marginal_gain": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "sd": null,
+      "p25": null,
+      "p75": null,
+      "p95": null,
+      "min": null,
+      "max": null
+    },
+    "routing_risk_cases_unselected_probe_has_gold_but_selected_probe_does_not": 0,
+    "second_representation_adds_unique_probe_gold_cases": 0
+  },
+  "adaptive_k": {
+    "final_k": {
+      "n": 2,
+      "mean": 13.0,
+      "median": 13.0,
+      "sd": 1.4142135623730951,
+      "p25": 12.5,
+      "p75": 13.5,
+      "p95": 13.9,
+      "min": 12.0,
+      "max": 14.0
+    },
+    "percentage_at_chunk_cap": 0.0,
+    "percentage_at_token_cap": 0.0,
+    "stop_reason_counts": {
+      "null": 2
+    },
+    "representation_pause_reason_counts": {},
+    "correlation_final_k_gold_evidence_count": {
+      "n": 0,
+      "pearson_r": null,
+      "spearman_rho": null
+    },
+    "correlation_final_k_hop_count": {
+      "n": 0,
+      "pearson_r": null,
+      "spearman_rho": null
+    }
+  },
+  "subgroups": [
+    {
+      "dimension": "dataset",
+      "group": "qasper",
+      "metric": "answer_token_f1",
+      "traditional": 0.14705882352941174,
+      "sar_rag": 0.10569852941176472,
+      "difference": -0.04136029411764703,
+      "ci_low": -0.17647058823529407,
+      "ci_high": 0.09375000000000001,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "dataset",
+      "group": "qasper",
+      "metric": "evidence_set_recall",
+      "traditional": 0.125,
+      "sar_rag": 0.25,
+      "difference": 0.125,
+      "ci_low": 0.0,
+      "ci_high": 0.25,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "dataset",
+      "group": "qasper",
+      "metric": "context_tokens",
+      "traditional": 1960.0,
+      "sar_rag": 1735.5,
+      "difference": -224.5,
+      "ci_low": -248.0,
+      "ci_high": -201.0,
+      "p_value": 0.4955044955044955,
+      "paired_n": 2
+    },
+    {
+      "dimension": "answerability",
+      "group": "ANSWERABLE",
+      "metric": "answer_token_f1",
+      "traditional": 0.14705882352941174,
+      "sar_rag": 0.10569852941176472,
+      "difference": -0.04136029411764703,
+      "ci_low": -0.17647058823529407,
+      "ci_high": 0.09375000000000001,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "answerability",
+      "group": "ANSWERABLE",
+      "metric": "evidence_set_recall",
+      "traditional": 0.125,
+      "sar_rag": 0.25,
+      "difference": 0.125,
+      "ci_low": 0.0,
+      "ci_high": 0.25,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "answerability",
+      "group": "ANSWERABLE",
+      "metric": "context_tokens",
+      "traditional": 1960.0,
+      "sar_rag": 1735.5,
+      "difference": -224.5,
+      "ci_low": -248.0,
+      "ci_high": -201.0,
+      "p_value": 0.4955044955044955,
+      "paired_n": 2
+    },
+    {
+      "dimension": "selected_representation_count",
+      "group": "2",
+      "metric": "answer_token_f1",
+      "traditional": 0.14705882352941174,
+      "sar_rag": 0.10569852941176472,
+      "difference": -0.04136029411764703,
+      "ci_low": -0.17647058823529407,
+      "ci_high": 0.09375000000000001,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "selected_representation_count",
+      "group": "2",
+      "metric": "evidence_set_recall",
+      "traditional": 0.125,
+      "sar_rag": 0.25,
+      "difference": 0.125,
+      "ci_low": 0.0,
+      "ci_high": 0.25,
+      "p_value": 1.0,
+      "paired_n": 2
+    },
+    {
+      "dimension": "selected_representation_count",
+      "group": "2",
+      "metric": "context_tokens",
+      "traditional": 1960.0,
+      "sar_rag": 1735.5,
+      "difference": -224.5,
+      "ci_low": -248.0,
+      "ci_high": -201.0,
+      "p_value": 0.4955044955044955,
+      "paired_n": 2
+    }
+  ],
+  "quality_efficiency_reductions": [
+    {
+      "dataset": "qasper",
+      "metric": "context_tokens",
+      "traditional": 1960.0,
+      "sar_rag": 1735.5,
+      "reduction_percent": 11.454081632653057
+    },
+    {
+      "dataset": "qasper",
+      "metric": "total_tokens",
+      "traditional": 3815.0,
+      "sar_rag": 3553.0,
+      "reduction_percent": 6.867627785058983
+    },
+    {
+      "dataset": "qasper",
+      "metric": "estimated_cost_usd",
+      "traditional": 0.0008688,
+      "sar_rag": 0.00078225,
+      "reduction_percent": 9.962016574585641
+    },
+    {
+      "dataset": "qasper",
+      "metric": "latency_seconds",
+      "traditional": 17.677702149987454,
+      "sar_rag": 14.365731450001476,
+      "reduction_percent": 18.735300956455635
+    }
+  ],
+  "failure_categories": [],
+  "failure_review_sample": [],
+  "ablation_registry": [
+    {
+      "condition": "full",
+      "primary": true,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "sentence_window_only",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "paragraph_only",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "semantic_only",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "hierarchical_only",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "all_representations_no_rrf",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "rrf_probe_only_no_adaptive",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "no_novelty",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "no_similarity_gap",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "no_post_retrieval_deduplication",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "select_one_representation",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "probe_depth_5",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "rrf_k0_1",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "rrf_k0_10",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "rrf_k0_60",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "baseline_fixed_k_3",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "baseline_fixed_k_5",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "baseline_fixed_k_10",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "baseline_fixed_k_20",
+      "primary": false,
+      "online_policy": "one_call"
+    },
+    {
+      "condition": "legacy_multi_call",
+      "primary": false,
+      "online_policy": "multi_call_cost_ablation"
+    }
+  ],
+  "ablation_results": [
+    {
+      "condition": "full",
+      "dataset": "qasper",
+      "n": 2,
+      "reported_method": "proposed",
+      "answer_f1": 0.10569852941176472,
+      "evidence_recall": 0.25,
+      "complete_evidence": null,
+      "context_tokens": 1735.5,
+      "total_tokens": 3553.0,
+      "api_calls": 1.0
+    }
+  ],
+  "figures": [
+    "output\\q2_analysis_pilot\\figures\\01_main_quality.png",
+    "output\\q2_analysis_pilot\\figures\\02_recall_token_pareto.png",
+    "output\\q2_analysis_pilot\\figures\\03_final_k.png",
+    "output\\q2_analysis_pilot\\figures\\04_representation_frequency.png",
+    "output\\q2_analysis_pilot\\figures\\06_efficiency.png"
+  ],
+  "interpretation_rule": "No superiority claim unless confirmatory status, corrected primary inference, practical margins, and failure review all support it."
+}

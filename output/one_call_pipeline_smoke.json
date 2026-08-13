@@ -1,0 +1,749 @@
+{
+  "aggregate": {
+    "answer_exact_match": 0.0,
+    "answer_token_f1": 0.5,
+    "answerability_accuracy": 1.0,
+    "candidates_examined": 30.0,
+    "evidence_span_recall": 1.0,
+    "final_context_words": 1175.0,
+    "final_k": 8.0,
+    "selected_representation_count": 1.0
+  },
+  "examples": [
+    {
+      "example_id": "qasper:validation:b6f15fb6279b82e34a5bf4828b7b5ddabfdf1d54",
+      "metrics": {
+        "evidence_span_recall": 1.0,
+        "final_k": 8.0,
+        "final_context_words": 1175.0,
+        "selected_representation_count": 1.0,
+        "answer_exact_match": 0.0,
+        "answer_token_f1": 0.5,
+        "answerability_accuracy": 1.0,
+        "candidates_examined": 30.0
+      },
+      "result": {
+        "query": {
+          "query_id": "b2ae02b06060c2f7498c2d04",
+          "original_query": "which multilingual approaches do they compare with?",
+          "requirements": [
+            {
+              "requirement_id": "R1",
+              "text": "which multilingual approaches do they compare with?",
+              "critical": true,
+              "entities": [],
+              "applicability_variables": []
+            }
+          ],
+          "query_facts": [],
+          "decomposition_confident": false
+        },
+        "selected_representations": [
+          "semantic"
+        ],
+        "representation_profiles": {
+          "sentence_window": {
+            "obligations": [],
+            "exclusive_obligations": [],
+            "rrf_contribution": 1.8,
+            "normalized_coverage_score": 0.84375,
+            "marginal_gain": 0.0,
+            "mean_probe_words": 82.0,
+            "selected": false,
+            "selection_reasons": []
+          },
+          "paragraph": {
+            "obligations": [],
+            "exclusive_obligations": [],
+            "rrf_contribution": 1.8,
+            "normalized_coverage_score": 0.84375,
+            "marginal_gain": 0.0,
+            "mean_probe_words": 103.33333333333333,
+            "selected": false,
+            "selection_reasons": []
+          },
+          "semantic": {
+            "obligations": [],
+            "exclusive_obligations": [],
+            "rrf_contribution": 2.1333333333333333,
+            "normalized_coverage_score": 1.0,
+            "marginal_gain": 1.0,
+            "mean_probe_words": 136.33333333333334,
+            "selected": true,
+            "selection_reasons": [
+              "highest_normalized_rrf_coverage"
+            ]
+          },
+          "hierarchical": {
+            "obligations": [],
+            "exclusive_obligations": [],
+            "rrf_contribution": 2.1333333333333333,
+            "normalized_coverage_score": 1.0,
+            "marginal_gain": 0.0,
+            "mean_probe_words": 360.0,
+            "selected": false,
+            "selection_reasons": []
+          }
+        },
+        "final_k": 8,
+        "answerability": "ANSWERABLE",
+        "unresolved_requirements": [],
+        "stop_reason": "all_selected_representations_paused",
+        "answer": "They compare their approaches with multilingual NMT (MNMT). [E5][E6]",
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "dd51d479f99d354e817a3efb",
+              "ab9d101ef586df6f8900105f",
+              "c87500ac4eef96968307040a",
+              "68d64b68f981b7d9a0c60d65",
+              "17fd4fb70935ca20a2404860"
+            ],
+            "representation": "semantic",
+            "rank": 1,
+            "retrieval_stage": "probe",
+            "text": "We use the devtest2006 as the validation set and the test2006 as the test set for Fr$\\rightarrow $Es and De$\\rightarrow $Fr.\nFor distant language pair Ro$\\rightarrow $De, we extract 1,000 overlapping sentences from newstest2016 as the test set and the 2,000 overlapping sentences split from the training set as the validation set since there is no official validation and test sets.\nFor vocabulary, we use 60K sub-word tokens based on Byte Pair Encoding (BPE) BIBREF33.\nFor MultiUN corpus, we use four languages: English (En) is set as the pivot language, which has parallel data with other three languages which do not have parallel data between each other.\nThe three languages are Arabic (Ar), Spanish (Es), and Russian (Ru), and mutual translation between themselves constitutes six zero-shot translation direction for evaluation.",
+            "obligations": [
+              "UNIT:17fd4fb70935ca20a2404860",
+              "UNIT:68d64b68f981b7d9a0c60d65",
+              "UNIT:ab9d101ef586df6f8900105f",
+              "UNIT:c87500ac4eef96968307040a",
+              "UNIT:dd51d479f99d354e817a3efb"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                1
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E2",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "42d86eceab09c54223ab207c",
+              "53d66932eb235e1972bb4f44",
+              "777a57b039fdc9dba8d89d70",
+              "1f72f73a608848a11d7601e9",
+              "44f67b030b24fe8008ea1756"
+            ],
+            "representation": "semantic",
+            "rank": 2,
+            "retrieval_stage": "probe",
+            "text": "Although Neural Machine Translation (NMT) has dominated recent research on translation tasks BIBREF0, BIBREF1, BIBREF2, NMT heavily relies on large-scale parallel data, resulting in poor performance on low-resource or zero-resource language pairs BIBREF3.\nTranslation between these low-resource languages (e.g., Arabic$\\rightarrow $Spanish) is usually accomplished with pivoting through a rich-resource language (such as English), i.e., Arabic (source) sentence is translated to English (pivot) first which is later translated to Spanish (target) BIBREF4, BIBREF5.\nHowever, the pivot-based method requires doubled decoding time and suffers from the propagation of translation errors.\nOne common alternative to avoid pivoting in NMT is transfer learning BIBREF6, BIBREF7, BIBREF8, BIBREF9 which leverages a high-resource pivot$\\rightarrow $target model (parent) to initialize a low-resource source$\\rightarrow $target model (child) that is further optimized with a small amount of available parallel data.\nAlthough this approach has achieved success in some low-resource language pairs, it still performs very poorly in extremely low-resource or zero-resource translation scenario.",
+            "obligations": [
+              "UNIT:1f72f73a608848a11d7601e9",
+              "UNIT:42d86eceab09c54223ab207c",
+              "UNIT:44f67b030b24fe8008ea1756",
+              "UNIT:53d66932eb235e1972bb4f44",
+              "UNIT:777a57b039fdc9dba8d89d70"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                2
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E3",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "4caf9fdeba0ba40cc1740a6e",
+              "c271ebef6a5c920dfa9cce72",
+              "3535318e8a74e1f783b00ae6",
+              "bcbb92ef5b24349d0dd858c1",
+              "7b27f373c05c57bb8f8103f9"
+            ],
+            "representation": "semantic",
+            "rank": 3,
+            "retrieval_stage": "probe",
+            "text": "Two existing cross-lingual pre-training methods, Masked Language Modeling (MLM) and Translation Language Modeling (TLM), have shown their effectiveness on XNLI cross-lingual classification task BIBREF11, BIBREF28, but these methods have not been well studied on cross-lingual generation tasks in zero-shot condition.\nWe attempt to take advantage of the cross-lingual ability of the two methods for zero-shot translation.\nSpecifically, MLM adopts the Cloze objective of BERT BIBREF29 and predicts the masked words that are randomly selected and replaced with [MASK] token on monolingual corpus.\nIn practice, MLM takes different language monolingual corpora as input to find features shared across different languages.\nWith this method, word pieces shared in all languages have been mapped into a shared space, which makes the sentence representations across different languages close BIBREF30.",
+            "obligations": [
+              "UNIT:3535318e8a74e1f783b00ae6",
+              "UNIT:4caf9fdeba0ba40cc1740a6e",
+              "UNIT:7b27f373c05c57bb8f8103f9",
+              "UNIT:bcbb92ef5b24349d0dd858c1",
+              "UNIT:c271ebef6a5c920dfa9cce72"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                3
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E4",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "a1f16cfcd7224b44ad125b72",
+              "4a02e40f7734191c3604eccd",
+              "0b4f3193053407618ac7708c",
+              "e2cb0734c1ae1bb2388f3e78",
+              "ceafd50dfb98be69ddbe6587",
+              "377c9aff631afcbb4e6d6343",
+              "ee0bdfcc036abb4da1ee9516"
+            ],
+            "representation": "semantic",
+            "rank": 4,
+            "retrieval_stage": "adaptive",
+            "text": "Regarding comparison between the baselines in table TABREF19, we find that pivoting is the strongest baseline that has significant advantage over other two baselines.\nCross-lingual transfer for languages without shared vocabularies BIBREF16 manifests the worst performance because of not using source$\\leftrightarrow $pivot parallel data, which is utilized as beneficial supervised signal for the other two baselines.\nOur best approach of MLM+BRLM-SA achieves the significant superior performance to all baselines in the zero-shot directions, improving by 0.9-4.8 BLEU points over the strong pivoting.\nMeanwhile, in the supervised direction of pivot$\\rightarrow $target, our approaches performs even better than the original supervised Transformer thanks to the shared encoder trained on both large-scale monolingual data and parallel data between multiple languages.\nMLM alone that does not use source$\\leftrightarrow $pivot parallel data performs much better than the cross-lingual transfer, and achieves comparable results to pivoting.\nWhen MLM is combined with TLM or the proposed BRLM, the performance is further improved.\nMLM+BRLM-SA performs the best, and is better than MLM+BRLM-HA indicating that soft alignment is helpful than hard alignment for the cross-lingual pretraining.",
+            "obligations": [
+              "UNIT:0b4f3193053407618ac7708c",
+              "UNIT:377c9aff631afcbb4e6d6343",
+              "UNIT:4a02e40f7734191c3604eccd",
+              "UNIT:a1f16cfcd7224b44ad125b72",
+              "UNIT:ceafd50dfb98be69ddbe6587",
+              "UNIT:e2cb0734c1ae1bb2388f3e78",
+              "UNIT:ee0bdfcc036abb4da1ee9516"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                4
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E5",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "e3a2ab433c07bd4c41285c24",
+              "c2f1bd167c2ba66fe43e3073",
+              "8fb750ac02fe1cf47c49cb85",
+              "be6e6da1e6221e28c6ad8046",
+              "81fd8499a480f8654959311e",
+              "145669a5e309dffc8fe4e85a"
+            ],
+            "representation": "semantic",
+            "rank": 5,
+            "retrieval_stage": "adaptive",
+            "text": "Table TABREF19 and TABREF26 report zero-shot results on Europarl and Multi-UN evaluation sets, respectively.\nWe compare our approaches with related approaches of pivoting, multilingual NMT (MNMT) BIBREF19, and cross-lingual transfer without pretraining BIBREF16.\nThe results show that our approaches consistently outperform other approaches across languages and datasets, especially surpass pivoting, which is a strong baseline in the zero-shot scenario that multilingual NMT systems often fail to beat BIBREF19, BIBREF20, BIBREF23.\nPivoting translates source to pivot then to target in two steps, causing inefficient translation process.\nOur approaches use one encoder-decoder model to translate between any zero-shot directions, which is more efficient than pivoting.\nRegarding the comparison between transfer approaches, our cross-lingual pretraining based transfer outperforms transfer method that does not use pretraining by a large margin.",
+            "obligations": [
+              "UNIT:145669a5e309dffc8fe4e85a",
+              "UNIT:81fd8499a480f8654959311e",
+              "UNIT:8fb750ac02fe1cf47c49cb85",
+              "UNIT:be6e6da1e6221e28c6ad8046",
+              "UNIT:c2f1bd167c2ba66fe43e3073",
+              "UNIT:e3a2ab433c07bd4c41285c24"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                5
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E6",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "06286748ae3845e6f460e043",
+              "e9ebd7730fcc19ee14a22c63",
+              "e73697ced3f94817f4e12ba8",
+              "cd81cbdfe92e597a4f043f65",
+              "2aa4c176eaec6446bbb11776",
+              "9b1fcd45e7022142fa214a39",
+              "f34f1cacbbb27742be29ad62"
+            ],
+            "representation": "semantic",
+            "rank": 6,
+            "retrieval_stage": "adaptive",
+            "text": "Like experimental results on Europarl, MLM+BRLM-SA performs the best among all proposed cross-lingual pretraining based transfer approaches as shown in Table TABREF26.\nWhen comparing systems consisting of one encoder-decoder model for all zero-shot translation, our approaches performs significantly better than MNMT BIBREF19.\nAlthough it is challenging for one model to translate all zero-shot directions between multiple distant language pairs of MultiUN, MLM+BRLM-SA still achieves better performances on Es $\\rightarrow $ Ar and Es $\\rightarrow $ Ru than strong pivoting$_{\\rm m}$, which uses MNMT to translate source to pivot then to target in two separate steps with each step receiving supervised signal of parallel corpora.\nOur approaches surpass pivoting$_{\\rm m}$ in all zero-shot directions by adding back translation BIBREF33 to generate pseudo parallel sentences for all zero-shot directions based on our pretrained models such as MLM+BRLM-SA, and further training our universal encoder-decoder model with these pseudo data.\nBIBREF22 gu2019improved introduces back translation into MNMT, while we adopt it in our transfer approaches.\nFinally, our best MLM+BRLM-SA with back translation outperforms pivoting$_{\\rm m}$ by 2.4 BLEU points averagely, and outperforms MNMT BIBREF22 by 4.6 BLEU points averagely.\nAgain, in supervised translation directions, MLM+BRLM-SA with back translation also achieves better performance than the original supervised Transformer.",
+            "obligations": [
+              "UNIT:06286748ae3845e6f460e043",
+              "UNIT:2aa4c176eaec6446bbb11776",
+              "UNIT:9b1fcd45e7022142fa214a39",
+              "UNIT:cd81cbdfe92e597a4f043f65",
+              "UNIT:e73697ced3f94817f4e12ba8",
+              "UNIT:e9ebd7730fcc19ee14a22c63",
+              "UNIT:f34f1cacbbb27742be29ad62"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                6
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E7",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "21402c9e55c693a9cd5bfa44",
+              "edfd7b0b58f8168b213053f7",
+              "dcf2f744c0e54b25399b4318",
+              "f1a64b5ac3ab5043a40c76ee",
+              "baacd884415c80ed66c3c5de",
+              "434aa79557044fb73394aa89"
+            ],
+            "representation": "semantic",
+            "rank": 7,
+            "retrieval_stage": "adaptive",
+            "text": "We consider the typical zero-shot translation scenario in which a high resource pivot language has parallel data with both source and target languages, while source and target languages has no parallel data between themselves.\nOur proposed cross-lingual pretraining based transfer approach for source$\\rightarrow $target zero-shot translation is mainly divided into two phrases: the pretraining phase and the transfer phase.\nIn the pretraining phase, we first pretrain MLM on monolingual corpora of both source and pivot languages, and continue to pretrain TLM or the proposed BRLM on the available parallel data between source and pivot languages, in order to build a cross-lingual encoder shared by the source and pivot languages.\nIn the transfer phase, we train pivot$\\rightarrow $target NMT model initialized by the cross-lingually pre-trained encoder, and finally transfer the trained NMT model to source$\\rightarrow $target translation thanks to the shared encoder.\nNote that during training pivot$\\rightarrow $target NMT model, we freeze several layers of the cross-lingually pre-trained encoder to avoid the degeneracy issue.\nFor the more complicated scenario that either the source side or the target side has multiple languages, the encoder and the decoder are also shared across each side languages for efficient deployment of translation between multiple languages.",
+            "obligations": [
+              "UNIT:21402c9e55c693a9cd5bfa44",
+              "UNIT:434aa79557044fb73394aa89",
+              "UNIT:baacd884415c80ed66c3c5de",
+              "UNIT:dcf2f744c0e54b25399b4318",
+              "UNIT:edfd7b0b58f8168b213053f7",
+              "UNIT:f1a64b5ac3ab5043a40c76ee"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                7
+              ]
+            ]
+          },
+          {
+            "evidence_id": "E8",
+            "document_id": "qasper:1912.01214",
+            "version_id": "29c283602abfcd87b8c77305",
+            "canonical_unit_ids": [
+              "d86eb7c3a6b95b991f31929e",
+              "041698a4129c150b2d1a4f55",
+              "7b5fbdee807a25d600824efd"
+            ],
+            "representation": "semantic",
+            "rank": 13,
+            "retrieval_stage": "adaptive",
+            "text": "The statistics of Europarl and MultiUN corpora are summarized in Table TABREF18.\nFor Europarl corpus, we evaluate on French-English-Spanish (Fr-En-Es), German-English-French (De-En-Fr) and Romanian-English-German (Ro-En-De), where English acts as the pivot language, its left side is the source language, and its right side is the target language.\nWe remove the multi-parallel sentences between different training corpora to ensure zero-shot settings.",
+            "obligations": [
+              "UNIT:041698a4129c150b2d1a4f55",
+              "UNIT:7b5fbdee807a25d600824efd",
+              "UNIT:d86eb7c3a6b95b991f31929e"
+            ],
+            "provenance": [
+              [
+                "semantic",
+                13
+              ]
+            ]
+          }
+        ],
+        "trace": [
+          {
+            "event": "query_embedded_without_llm"
+          },
+          {
+            "event": "probe_completed_without_llm",
+            "probe_depth": 3,
+            "candidate_count": 12
+          },
+          {
+            "event": "normalized_rrf_completed",
+            "rrf_k0": 3,
+            "group_weights": {
+              "9850d3bf9d70b473eaf6": 0.95,
+              "42fbc58c7628c657dcfd": 0.8500000000000001,
+              "bb69a1975d6945dfb71c": 0.3333333333333333
+            }
+          },
+          {
+            "event": "representations_selected_without_llm",
+            "selected": [
+              "semantic"
+            ],
+            "profiles": {
+              "sentence_window": {
+                "coverage": 0.84375,
+                "marginal_gain": 0.0
+              },
+              "paragraph": {
+                "coverage": 0.84375,
+                "marginal_gain": 0.0
+              },
+              "semantic": {
+                "coverage": 1.0,
+                "marginal_gain": 1.0
+              },
+              "hierarchical": {
+                "coverage": 1.0,
+                "marginal_gain": 0.0
+              }
+            }
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "4fec58a89020d5e45d04689d",
+            "representation": "semantic",
+            "rank": 1,
+            "raw_cosine": 0.4237338602542877,
+            "normalized_relevance": 0.7118669301271439,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.0,
+            "novelty": 1.0,
+            "marginal_utility": 0.7118669301271439,
+            "tokens": 197,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "8d791f527994a454e0b69f0a",
+            "representation": "semantic",
+            "rank": 2,
+            "raw_cosine": 0.38366931676864624,
+            "normalized_relevance": 0.6918346583843231,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.7673967480659485,
+            "novelty": 1.0,
+            "marginal_utility": 0.6918346583843231,
+            "tokens": 281,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "8553aa77cbc057427fd15215",
+            "representation": "semantic",
+            "rank": 3,
+            "raw_cosine": 0.3714428246021271,
+            "normalized_relevance": 0.6857214123010635,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.7964998483657837,
+            "novelty": 1.0,
+            "marginal_utility": 0.6857214123010635,
+            "tokens": 189,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "efc4d7056c1db09fa9c6628e",
+            "representation": "semantic",
+            "rank": 4,
+            "raw_cosine": 0.3544500768184662,
+            "normalized_relevance": 0.6772250384092331,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8508478403091431,
+            "novelty": 1.0,
+            "marginal_utility": 0.6772250384092331,
+            "tokens": 289,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "cade8a91fabc1e872d23270d",
+            "representation": "semantic",
+            "rank": 5,
+            "raw_cosine": 0.348800390958786,
+            "normalized_relevance": 0.674400195479393,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8998616933822632,
+            "novelty": 1.0,
+            "marginal_utility": 0.674400195479393,
+            "tokens": 220,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "0d9e41301be225dca43fba74",
+            "representation": "semantic",
+            "rank": 6,
+            "raw_cosine": 0.3455643951892853,
+            "normalized_relevance": 0.6727821975946426,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9239979386329651,
+            "novelty": 1.0,
+            "marginal_utility": 0.6727821975946426,
+            "tokens": 358,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "617acdc92f83e96ccd46046a",
+            "representation": "semantic",
+            "rank": 7,
+            "raw_cosine": 0.34531456232070923,
+            "normalized_relevance": 0.6726572811603546,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9003102779388428,
+            "novelty": 1.0,
+            "marginal_utility": 0.6726572811603546,
+            "tokens": 299,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "885a25baf0e302ad95761263",
+            "representation": "semantic",
+            "rank": 8,
+            "raw_cosine": 0.3439845144748688,
+            "normalized_relevance": 0.6719922572374344,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9064651727676392,
+            "novelty": 1.0,
+            "marginal_utility": 0.6719922572374344,
+            "tokens": 225,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "7aeffb8b01861a413b273dce",
+            "representation": "semantic",
+            "rank": 9,
+            "raw_cosine": 0.34394365549087524,
+            "normalized_relevance": 0.6719718277454376,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8630040884017944,
+            "novelty": 1.0,
+            "marginal_utility": 0.6719718277454376,
+            "tokens": 249,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "7c26a8c5615d6767dfd334d1",
+            "representation": "semantic",
+            "rank": 10,
+            "raw_cosine": 0.3417017161846161,
+            "normalized_relevance": 0.670850858092308,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9097458124160767,
+            "novelty": 1.0,
+            "marginal_utility": 0.670850858092308,
+            "tokens": 221,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "7800691b1ae7d389aace4ec8",
+            "representation": "semantic",
+            "rank": 11,
+            "raw_cosine": 0.34100306034088135,
+            "normalized_relevance": 0.6705015301704407,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.886101245880127,
+            "novelty": 1.0,
+            "marginal_utility": 0.6705015301704407,
+            "tokens": 371,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "1d938a7db235f966636d6e07",
+            "representation": "semantic",
+            "rank": 12,
+            "raw_cosine": 0.34008991718292236,
+            "normalized_relevance": 0.6700449585914612,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.828978955745697,
+            "novelty": 1.0,
+            "marginal_utility": 0.6700449585914612,
+            "tokens": 491,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "f321b6ad97cd7595ba7e3f8a",
+            "representation": "semantic",
+            "rank": 13,
+            "raw_cosine": 0.3329465389251709,
+            "normalized_relevance": 0.6664732694625854,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.860430121421814,
+            "novelty": 1.0,
+            "marginal_utility": 0.6664732694625854,
+            "tokens": 113,
+            "accepted": true,
+            "rejection_reason": null
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "1de405686eb3b027d51585b2",
+            "representation": "semantic",
+            "rank": 14,
+            "raw_cosine": 0.3284817934036255,
+            "normalized_relevance": 0.6642408967018127,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9104932546615601,
+            "novelty": 1.0,
+            "marginal_utility": 0.6642408967018127,
+            "tokens": 73,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "97e07ebcc8c39c0abab4017d",
+            "representation": "semantic",
+            "rank": 15,
+            "raw_cosine": 0.32414495944976807,
+            "normalized_relevance": 0.662072479724884,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8668918609619141,
+            "novelty": 1.0,
+            "marginal_utility": 0.662072479724884,
+            "tokens": 153,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "34d0ddcacd5ce7a28b7b5520",
+            "representation": "semantic",
+            "rank": 16,
+            "raw_cosine": 0.31944704055786133,
+            "normalized_relevance": 0.6597235202789307,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.9051189422607422,
+            "novelty": 1.0,
+            "marginal_utility": 0.6597235202789307,
+            "tokens": 170,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "04832f01480b0a63cec051f1",
+            "representation": "semantic",
+            "rank": 17,
+            "raw_cosine": 0.3084045350551605,
+            "normalized_relevance": 0.6542022675275803,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8528551459312439,
+            "novelty": 1.0,
+            "marginal_utility": 0.6542022675275803,
+            "tokens": 189,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "c7891567b9e192fc435d27e7",
+            "representation": "semantic",
+            "rank": 18,
+            "raw_cosine": 0.3049383759498596,
+            "normalized_relevance": 0.6524691879749298,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8294345140457153,
+            "novelty": 1.0,
+            "marginal_utility": 0.6524691879749298,
+            "tokens": 132,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "ee35905497734fb33c32d48b",
+            "representation": "semantic",
+            "rank": 19,
+            "raw_cosine": 0.3026960790157318,
+            "normalized_relevance": 0.6513480395078659,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8296117186546326,
+            "novelty": 1.0,
+            "marginal_utility": 0.6513480395078659,
+            "tokens": 117,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "8f50a4e7b6b0c80b0747792e",
+            "representation": "semantic",
+            "rank": 20,
+            "raw_cosine": 0.30090588331222534,
+            "normalized_relevance": 0.6504529416561127,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8352290987968445,
+            "novelty": 1.0,
+            "marginal_utility": 0.6504529416561127,
+            "tokens": 80,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "candidate_scored_without_llm",
+            "candidate_id": "a1bf67fcce030eaf945e7179",
+            "representation": "semantic",
+            "rank": 21,
+            "raw_cosine": 0.3006056547164917,
+            "normalized_relevance": 0.6503028273582458,
+            "canonical_overlap": 0.0,
+            "semantic_similarity_to_selected": 0.8837680816650391,
+            "novelty": 1.0,
+            "marginal_utility": 0.6503028273582458,
+            "tokens": 229,
+            "accepted": false,
+            "rejection_reason": "context_or_chunk_budget"
+          },
+          {
+            "event": "representation_paused",
+            "representation": "semantic",
+            "reason": "no_marginal_utility_for_patience_batches",
+            "largest_similarity_gap": 0.0022422969341278076
+          },
+          {
+            "event": "single_final_llm_call_completed",
+            "answerability": "ANSWERABLE",
+            "cited_evidence_ids": [
+              "E5",
+              "E6"
+            ]
+          },
+          {
+            "event": "run_completed",
+            "stop_reason": "all_selected_representations_paused",
+            "candidates_examined": 30,
+            "retrieved_before_deduplication": 8,
+            "final_k": 8,
+            "final_context_tokens": 1946
+          }
+        ],
+        "run_metadata": {
+          "method": "rank_only_representation_adaptive_rag_one_llm_call",
+          "embedding_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+          "embedding_source": "C:\\Users\\pavan kumar\\OneDrive\\Documents\\research_projectt\\models\\all-MiniLM-L6-v2",
+          "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "embedding_dimension": 384,
+          "groq_model": "openai/gpt-oss-120b",
+          "online_llm_call_policy": "exactly_one_final_answer_call",
+          "representations": [
+            "sentence_window",
+            "paragraph",
+            "semantic",
+            "hierarchical"
+          ],
+          "probe_depth": 3,
+          "rrf_k0": 3,
+          "max_selected_representations": 2,
+          "representation_marginal_gain_threshold": 0.1,
+          "adaptive_batch_size": 3,
+          "similarity_threshold": 0.2,
+          "similarity_gap_threshold": 0.15,
+          "novelty_threshold": 0.1,
+          "redundancy_threshold": 0.92,
+          "marginal_utility_threshold": 0.05,
+          "empty_batch_patience": 2,
+          "candidate_budget": 60,
+          "retrieval_round_budget": 8,
+          "context_token_budget": 2000,
+          "final_chunk_safety_cap": 20,
+          "threshold_status": "defaults_must_be_frozen_on_training_data_before_confirmatory_evaluation"
+        }
+      }
+    }
+  ]
+}

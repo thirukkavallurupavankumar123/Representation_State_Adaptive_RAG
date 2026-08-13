@@ -1,0 +1,3 @@
+answer_f1,complete_evidence,context_tokens,dataset,evidence_recall,final_k,percentage,questions,representations,state
+0.09375000000000001,,1688.0,qasper,0.0,12.0,50.0,1,2,hierarchical+semantic
+0.11764705882352941,,1783.0,qasper,0.5,14.0,50.0,1,2,paragraph+semantic

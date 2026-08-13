@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sar-rag"
+version = "0.1.0"
+description = "Source-aligned representation-state adaptive RAG research framework"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<2",
+  "torch>=2.0",
+  "transformers>=4.41,<6",
+  "matplotlib>=3.9,<4",
+]
+
+[project.scripts]
+sar-rag-demo = "sar_rag.cli:main"
+sar-rag-benchmark = "sar_rag.benchmark:main"
+sar-rag-prepare-dataset = "sar_rag.dataset_adapters:main"
+sar-rag-calibrate = "sar_rag.calibration:main"
+sar-rag-evaluate = "sar_rag.experiments:main"
+sar-rag-q2-analysis = "sar_rag.q2_analysis:main"
+sar-rag-leakage-audit = "sar_rag.leakage_audit:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

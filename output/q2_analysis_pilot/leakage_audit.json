@@ -1,0 +1,868 @@
+{
+  "scope": "exact normalized-question, source-ID, document-ID, and duplicate-ID audit; semantic paraphrase leakage is not ruled out",
+  "splits": {
+    "qasper_train": {
+      "examples": 2593,
+      "unique_example_ids": 2593,
+      "duplicate_example_ids": [],
+      "unique_question_hashes": 2435,
+      "unique_source_ids": 888,
+      "unique_document_ids": 888
+    },
+    "qasper_test": {
+      "examples": 1451,
+      "unique_example_ids": 1451,
+      "duplicate_example_ids": [],
+      "unique_question_hashes": 1343,
+      "unique_source_ids": 416,
+      "unique_document_ids": 416
+    },
+    "musique_train": {
+      "examples": 39876,
+      "unique_example_ids": 39876,
+      "duplicate_example_ids": [],
+      "unique_question_hashes": 19893,
+      "unique_source_ids": 19938,
+      "unique_document_ids": 398752
+    },
+    "musique_dev": {
+      "examples": 4834,
+      "unique_example_ids": 4834,
+      "duplicate_example_ids": [],
+      "unique_question_hashes": 2410,
+      "unique_source_ids": 2417,
+      "unique_document_ids": 48329
+    }
+  },
+  "within_dataset": {
+    "qasper_train_vs_test": {
+      "exact_normalized_question_overlap": 72,
+      "overlap_question_examples": [
+        {
+          "left": [
+            "qasper:train:2376c170c343e2305dac08ba5f5bda47c370357f",
+            "qasper:train:c1ce652085ef9a7f02cb5c363ce2b8757adbe213",
+            "qasper:train:0828cfcf0e9e02834cc5f279a98e277d9138ffd9"
+          ],
+          "right": [
+            "qasper:test:63cdac43a643fc1e06da44910458e89b2c7cd921"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:da544015511e535503dee2eaf4912a5e36c806cd",
+            "qasper:train:3d583a0675ad34eb7a46767ef5eba5f0ea898aa9"
+          ],
+          "right": [
+            "qasper:test:7cf44877dae8873139aede381fb9908dd0c546c4",
+            "qasper:test:e057fa254ea7a4335de22fd97a0f08814b88aea4"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:102de97c123bb1e247efec0f1d958f8a3a86e2f6",
+            "qasper:train:d3014683dff9976b7c56b72203df99f0e27e9989"
+          ],
+          "right": [
+            "qasper:test:3b8da74f5b359009d188cec02adfe4b9d46a768f",
+            "qasper:test:d2d9c7177728987d9e8b0c44549bbe03c8c00ef2",
+            "qasper:test:fa5f5f58f6277a1e433f80c9a92a5629d6d9a271"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:26b5c090f72f6d51e5d9af2e470d06b2d7fc4a98",
+            "qasper:train:42a61773aa494f7b12838f71a949034c12084de1",
+            "qasper:train:aa4b38f601cc87bf93849245d5f65124da3dc112",
+            "qasper:train:423bb905e404e88a168e7e807950e24ca166306c",
+            "qasper:train:518d0847b02b4f23a8f441faa38b935c9b892e1e",
+            "qasper:train:f513e27db363c28d19a29e01f758437d7477eb24",
+            "qasper:train:f463db61de40ae86cf5ddd445783bb34f5f8ab67",
+            "qasper:train:0aa46c132515d8830a72f263812cdf7cbd5627c6",
+            "qasper:train:cb8e2069218e30c643013c20e93ebe23525d9f55",
+            "qasper:train:a379c380ac9f67f824506951444c873713405eed"
+          ],
+          "right": [
+            "qasper:test:ebe1084a06abdabefffc66f029eeb0b69f114fd9",
+            "qasper:test:eb653a5c59851eda313ece0bcd8c589b6155d73e",
+            "qasper:test:634a071b13eb7139e77872ecfdc135a2eb2f89da",
+            "qasper:test:bfd55ae9630a08a9e287074fff3691dfbffc3258",
+            "qasper:test:8cf52ba480d372fc15024b3db704952f10fdca27",
+            "qasper:test:726c5c1b6951287f4bae22978f9a91d22d9bef61"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:310e61b9dd4d75bc1bebbcb1dae578f55807cd04",
+            "qasper:train:b556fd3a9e0cff0b33c63fa1aef3aed825f13e28",
+            "qasper:train:34fab25d9ceb9c5942daf4ebdab6c5dd4ff9d3db",
+            "qasper:train:ef04182b6ae73a83d52cb694cdf4d414c81bf1dc"
+          ],
+          "right": [
+            "qasper:test:a71fb012631e6a8854d5945b6d0ab2ab8e7b7ee6",
+            "qasper:test:e90425ac05a15dc145bbf3034e78b56e7cec36ac",
+            "qasper:test:cb7a00233502c4b7801d34bc95d6d22d79776ae8",
+            "qasper:test:a3a867f7b3557c168d05c517c468ff6c7337bff9",
+            "qasper:test:7ae95716977d39d96e871e552c35ca0753115229"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:be9cadaebfa0ff1a3c5a5ed56ff3aae76cf5e0a4"
+          ],
+          "right": [
+            "qasper:test:b948bb86855b2c0bfc8fad88ff1e29cd94bb6ada",
+            "qasper:test:643527e94e8eed1e2229915fcf8cd74d769173fc"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:53b02095ba7625d85721692fce578654f66bbdf0",
+            "qasper:train:b2b0321b0aaf58c3aa9050906ade6ef35874c5c1",
+            "qasper:train:16af38f7c4774637cf8e04d4b239d6d72f0b0a3a",
+            "qasper:train:018ef092ffc356a2c0e970ae64ad3c2cf8443288",
+            "qasper:train:252677c93feb2cb0379009b680f0b4562b064270",
+            "qasper:train:77e57d19a0d48f46de8cbf857f5e5284bca0df2b"
+          ],
+          "right": [
+            "qasper:test:a837dcbd339e27a974e28944178c790a5b0b37c0",
+            "qasper:test:f010f9aa4ba1b4360a78c00aa0747d7730a61805"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:534f69c8c90467d5aa4e38d7c25c53dbc94f4b24"
+          ],
+          "right": [
+            "qasper:test:cd82bdaa0c94330f8cccfb1c59b4e6761a5a4f4d"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:f1214a05cc0e6d870c789aed24a8d4c768e1db2f"
+          ],
+          "right": [
+            "qasper:test:4b6745982aa64fbafe09f7c88c8d54d520b3f687"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:ee31c8a94e07b3207ca28caef3fbaf9a38d94964"
+          ],
+          "right": [
+            "qasper:test:50bda708293532f07a3193aaea0519d433fcc040",
+            "qasper:test:8908d1b865137bc309dde10a93735ec76037e5f9",
+            "qasper:test:301a453abaa3bc15976817fefce7a41f3b779907",
+            "qasper:test:74a17eb3bf1d4f36e2db1459a342c529b9785f6e"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:586566de02abdf20b7bfd0d5a43ba93cb02795c3"
+          ],
+          "right": [
+            "qasper:test:141f23e87c10c2d54d559881e641c983e3ec8ef3"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:928828544e38fe26c53d81d1b9c70a9fb1cc3feb",
+            "qasper:train:4e50e9965059899d15d3c3a0c0a2d73e0c5802a0",
+            "qasper:train:e9f868f22ae70c7681c28228b6019e155013f8d6"
+          ],
+          "right": [
+            "qasper:test:5bfbc9ca7fd41be9627f6ef587bb7e21c7983be0"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:f7070b2e258beac9b09514be2bfcc5a528cc3a0e",
+            "qasper:train:e1f559da7fa501d3190073bca9ce4d4a12149e80",
+            "qasper:train:9a596bd3a1b504601d49c2bec92d1592d7635042"
+          ],
+          "right": [
+            "qasper:test:df7fb8e6e44c9c5af3f19dde762c75cbf2f8452f"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:69e627942dfa7018d2933a88cea9543641d12d0d",
+            "qasper:train:2555ca85ff6b56bd09c3919aa6b277eb7a4d4631"
+          ],
+          "right": [
+            "qasper:test:9dd8ce48a2a59a63ae6366ab8b2b8828e5ae7f35"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:03b939ad70593f6475c56e9be73ba409d33faa62"
+          ],
+          "right": [
+            "qasper:test:aa7c5386aedfb13a361a2629b67cb54277e208d2"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:846a1992d66d955fa1747bca9a139141c19908e8"
+          ],
+          "right": [
+            "qasper:test:6e80386b33fbfba8bc1ab811a597d844ae67c578"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:e2f269997f5a01949733c2ec8169f126dabd7571"
+          ],
+          "right": [
+            "qasper:test:7239c02a0dcc0c3c9d9cddb5e895bcf9cfcefee6"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:d4a6f5034345036dbc2d4e634a8504f79d42ca69"
+          ],
+          "right": [
+            "qasper:test:6d8a51e2790043497ed2637a1abc36bdffb39b71"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:785c054f6ea04701f4ab260d064af7d124260ccc",
+            "qasper:train:2df910c9806f0c379d7bb1bc2be2610438e487dc",
+            "qasper:train:baeb6785077931e842079e9d0c9c9040947ffa4e",
+            "qasper:train:62613aca3d7c7d534c9f6d8cb91ff55626bb8695",
+            "qasper:train:e015d033d4ee1c83fe6f192d3310fb820354a553",
+            "qasper:train:d71937fa5da853f7529f767730547ccfb70e5908",
+            "qasper:train:b8d5e9fa08247cb4eea835b19377262d86107a9d",
+            "qasper:train:42d66726b5bf8de5b0265e09d76f5ab00c0e851a",
+            "qasper:train:43878a6a8fc36aaae29d95815355aaa7d25c3b53"
+          ],
+          "right": [
+            "qasper:test:2ddfb40a9e73f382a2eb641c8e22bbb80cef017b",
+            "qasper:test:6656a9472499331f4eda45182ea697a4d63e943c",
+            "qasper:test:2abf916bc03222d3b2a3d66851d87921ff35c0d2",
+            "qasper:test:f0afc116809b70528226d37190e8e79e1e9cd11e"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:186ccc18c6361904bee0d58196e341a719fb31c2"
+          ],
+          "right": [
+            "qasper:test:f2b8a2ed5916d75cf568a931829a5a3cde2fc345"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:48c3e61b2ed7b3f97706e2a522172bf9b51ec467"
+          ],
+          "right": [
+            "qasper:test:ae89eed483c11ccd70a34795e9fe416af8a35da2"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:0619fc797730a3e59ac146a5a4575c81517cc618",
+            "qasper:train:9d9d84822a9c42eb0257feb7c18086d390dae3be",
+            "qasper:train:118ff1d7000ea0d12289d46430154cc15601fd8e",
+            "qasper:train:11e376f98df42f487298ec747c32d485c845b5cd",
+            "qasper:train:a7adb63db5066d39fdf2882d8a7ffefbb6b622f0",
+            "qasper:train:b8fdc600f9e930133bb3ec8fbcc9c600d60d24b0",
+            "qasper:train:762f2527f85c3ae6bbdf1f331311930ef1e1fa51",
+            "qasper:train:71fca845edd33f6e227eccde10db73b99a7e157b"
+          ],
+          "right": [
+            "qasper:test:4137a82d7752be7a6c142ceb48ce784fd475fb06",
+            "qasper:test:7fba61426737394304e307cdc7537225f6253150",
+            "qasper:test:11360385dff0a9d7b8f4b106ba2b7fe15ca90d7c",
+            "qasper:test:90829d5fde4f5f0ffc184c5e8fc64c8ac5ece521",
+            "qasper:test:f7ee48dd32c666ef83a4ae4aa06bcde85dd8ec4b",
+            "qasper:test:6bce04570d4745dcfaca5cba64075242308b65cf",
+            "qasper:test:e9a0a69eacd554141f56b60ab2d1912cc33f526a",
+            "qasper:test:ec54ae2f4811196fcaafa45e76130239e69995f9",
+            "qasper:test:2a9c7243744b42f1e9fed9ff2ab17c6f156b1ba4"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:e67d2266476abd157fc8c396b3dfb70cb343471e"
+          ],
+          "right": [
+            "qasper:test:d1a88fe6655c742421da93cf88b5c541c09866d6"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:11c5b12e675cfd8d1113724f019d8476275bd700"
+          ],
+          "right": [
+            "qasper:test:4f57ac24f3f4689a2f885715cd84b7d867fe3f12",
+            "qasper:test:ee19fd54997f2eec7c87c7d4a2169026fe208285",
+            "qasper:test:5499440674f0e4a9d6912b9ac29fa1f7b7cd5253"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:5d164651a4aed7cf24d53ba9685b4bee8c965933",
+            "qasper:train:235c156d9c2adc895c9113f53c60f2dd8df45834"
+          ],
+          "right": [
+            "qasper:test:e3bafa432cd3e1225170ff04de2fdf1ede38c6ef"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:43761478c26ad65bec4f0fd511ec3181a100681c",
+            "qasper:train:013a8525dbf7a9e1e69acc1cff18bb7b8261cbad"
+          ],
+          "right": [
+            "qasper:test:4ae0b50c88a174cfc283b90cd3c9407de13fd370"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:67d8e50ddcc870db71c94ad0ad7f8a59a6c67ca6"
+          ],
+          "right": [
+            "qasper:test:8ddf78dbdc6ac964a7102ae84df18582841f2e3c"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:3f3c09c1fd542c1d9acf197957c66b79ea1baf6e",
+            "qasper:train:4fdc707fae5747fceae68199851e3c3186ab8307"
+          ],
+          "right": [
+            "qasper:test:b857f3e3f1dad5df55f69d062978967fe023ac6f"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:69a88b6be3b34acc95c5e36acbe069c0a0bc67d6"
+          ],
+          "right": [
+            "qasper:test:2694a679a703ccd6139897e4d9ff8e053dabd0f2"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:9ae084e76095194135cd602b2cdb5fb53f2935c1",
+            "qasper:train:41bff17f7d7e899c03b051e20ef01f0ebc5c8bb1"
+          ],
+          "right": [
+            "qasper:test:6575ffec1844e6fde5a668bce2afb16b67b65c1f",
+            "qasper:test:334aa5540c207768931a0fe78aa4981a895ba37c"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:d6d29040e7fafceb188e62afba566016b119b23c"
+          ],
+          "right": [
+            "qasper:test:3f717e6eceab0a066af65ddf782c1ebc502c28c0",
+            "qasper:test:420862798054f736128a6f0c4393c7f9cc648b40",
+            "qasper:test:bc6ad5964f444cf414b661a4b942dafb7640c564",
+            "qasper:test:f3b4e52ba962a0004064132d123fd9b78d9e12e2"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:a7d72f308444616a0befc8db7ad388b3216e2143",
+            "qasper:train:9bd938859a8b063903314a79f09409af8801c973",
+            "qasper:train:40b9f502f15e955ba8615822e6fa08cb5fd29c81",
+            "qasper:train:c84590ba32df470a7c5343d8b99e541b217f10cf"
+          ],
+          "right": [
+            "qasper:test:90aba75508aa145475d7cc9a501bbe987c0e8413",
+            "qasper:test:47ffc9811b037613c9c4d1ec1e4f13c08396ed1c",
+            "qasper:test:3e23cc3c5e4d5cec51d158130d6aeae120e94fc8",
+            "qasper:test:f9ae1b31c1a60aacb9ef869e1cc6b0e70c6e5d8e"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:acd05f31e25856b9986daa1651843b8dc92c2d99",
+            "qasper:train:7cc22fd8c9d0e1ce5e86d0cbe90bf3a177f22a68",
+            "qasper:train:7b2de0109b68f78afa9e6190c82ca9ffaf62f9bd",
+            "qasper:train:95d98b2a7fbecd1990ec9a070f9d5624891a4f26",
+            "qasper:train:47822fec590e840438a3054b7f512fec09dbd1e1",
+            "qasper:train:5b1cd21936aeec85233c978ba8d7282931522a3a",
+            "qasper:train:675f28958c76623b09baa8ee3c040ff0cf277a5a",
+            "qasper:train:c5980fe1a0c53bce1502cc674c8a2ed8c311f936",
+            "qasper:train:fc3f0eb297b2308b99eb4661a510c9cdbb6ffba2",
+            "qasper:train:6ff240d985bbe96b9d5042c9b372b4e8f498f264",
+            "qasper:train:72122e0bc5da1d07c0dadb3401aab2acd748424d"
+          ],
+          "right": [
+            "qasper:test:b900122c7d6c2d6161bfca8a95eae11952d1cb58",
+            "qasper:test:35f48b8f73728fbdeb271b170804190b5448485a",
+            "qasper:test:c138a45301713c1a9f6edafeef338ba2f99220ce",
+            "qasper:test:dfdd309e56b71589b25412ba85b0a5d79a467ceb"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:9eb5b336b3dcb7ab63f673ba9ab1818573cce6c3",
+            "qasper:train:1c4cd22d6eaefffd47b93c2124f6779a06d2d9e1"
+          ],
+          "right": [
+            "qasper:test:9ef0d2365bde0d18054511fbb53cec5fa2cda5ee"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:d47c074012eae27426cd700f841fd8bf490dcc7b",
+            "qasper:train:bb4de896c0fa4bf3c8c43137255a4895f52abeef"
+          ],
+          "right": [
+            "qasper:test:95646d0ac798dcfc15b43fa97a1908df9f7b9681",
+            "qasper:test:50bcbb730aa74637503c227f022a10f57d43f1f7"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:6b6360fab2edc836901195c0aba973eae4891975",
+            "qasper:train:16f33de90b76975a99572e0684632d5aedbd957c",
+            "qasper:train:70f84c73172211186de1a27b98f5f5ae25a94e55",
+            "qasper:train:046ff04d1018447b22e00acb125125cae5a23fb7",
+            "qasper:train:b13902af1bcf0e199a3ea42bbc8fcd8e696a381a",
+            "qasper:train:08cbc9b8a8df56ec7be626f89285a621e1350f63",
+            "qasper:train:9a9338d0e74fd315af643335e733445031bd7656",
+            "qasper:train:7aae4533dbf097992f23fb2e0574ec5c891ca236"
+          ],
+          "right": [
+            "qasper:test:1ecbbb60dc44a701e9c57c22167dd412711bb0be",
+            "qasper:test:00e4c9aa87411dfc5455fc92f10e5c9266e7b95e",
+            "qasper:test:8c46a26f9b0b41c656b5b55142d491600663defa",
+            "qasper:test:a398c9b061f28543bc77c2951d0dfc5d1bee9e87",
+            "qasper:test:8de0e1fdcca81b49615a6839076f8d42226bf1fe",
+            "qasper:test:9d963d385bd495a7e193f8a498d64c1612e6c20c"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:a1c4f9e8661d4d488b8684f055e0ee0e2275f767",
+            "qasper:train:085147cd32153d46dd9901ab0f9195bfdbff6a85"
+          ],
+          "right": [
+            "qasper:test:eaed0b721cc3137b964f5265c7ecf76f565053e9",
+            "qasper:test:77bbe1698e001c5889217be3164982ea36e85752",
+            "qasper:test:fe6181ab0aecf5bc8c3def843f82e530347d918b",
+            "qasper:test:8e113fd9661bc8af97e30c75a20712f01fc4520a",
+            "qasper:test:23cbf6ab365c1eb760b565d8ba51fb3f06257d62"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:8486e06c03f82ebd48c7cfbaffaa76e8b899eea5",
+            "qasper:train:37c7c62c9216d6cf3d0858cf1deab6db4b815384"
+          ],
+          "right": [
+            "qasper:test:d038e5d2a6f85e68422caaf8b96cb046db6599fa"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:f3be1a27df2e6ad12eed886a8cd2dfe09b9e2b30",
+            "qasper:train:f42d470384ca63a8e106c7caf1cb59c7b92dbc27",
+            "qasper:train:c5171daf82107fce0f285fa18f19e91fbd1215c5",
+            "qasper:train:0fd678d24c86122b9ab27b73ef20216bbd9847d1"
+          ],
+          "right": [
+            "qasper:test:50c1bf8b928069f3ffc7f0cb00aa056a163ef336",
+            "qasper:test:64632981279c7aa16ffc1a44ffc31f4520f5559e"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:5787ac3e80840fe4cf7bfae7e8983fa6644d6220",
+            "qasper:train:06776b8dfd1fe27b5376ae44436b367a71ff9912"
+          ],
+          "right": [
+            "qasper:test:c47312f2ca834ee75fa9bfbf912ea04239064117"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:90741b227b25c42e0b81a08c279b94598a25119d"
+          ],
+          "right": [
+            "qasper:test:ed44f7e698d6124cb86791841d02fc6f8b4d862a",
+            "qasper:test:a4b77a20e067789691e0ab246bc5b11913d77ae1"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:47e6c3e6fcc9be8ca2437f41a4fef58ef4c02579",
+            "qasper:train:fd80a7162fde83077ed82ae41d521d774f74340a",
+            "qasper:train:544b68f6f729e5a62c2461189682f9e4307a05c6"
+          ],
+          "right": [
+            "qasper:test:c0355afc7871bf2e12260592873ffdb5c0c4c919",
+            "qasper:test:a1ac4463031bbc42c80893b57c0055b860f12e10",
+            "qasper:test:21c89ee0281f093b209533453196306b9699b552"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:f7789313a804e41fcbca906a4e5cf69039eeef9f",
+            "qasper:train:01d91d356568fca79e47873bd0541bd22ba66ec0",
+            "qasper:train:41d3ab045ef8e52e4bbe5418096551a22c5e9c43",
+            "qasper:train:102a0439739428aac80ac11795e73ce751b93ea1",
+            "qasper:train:964705a100e53a9181d1a5ac8150696de12ecaf0"
+          ],
+          "right": [
+            "qasper:test:8246d1eee1482555d075127ac84f2e1d0781a446",
+            "qasper:test:6b4006a90aeaaff8914052d72d28851a9c0c0146",
+            "qasper:test:76ae794ced3b5ae565f361451813f2f3bc85b214"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:6412e97373e8e9ae3aa20aa17abef8326dc05450"
+          ],
+          "right": [
+            "qasper:test:b03249984c26baffb67e7736458b320148675900",
+            "qasper:test:7f958017cbb08962c80e625c2fd7a1e2375f27a3"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:ac706631f2b3fa39bf173cd62480072601e44f66",
+            "qasper:train:58819fd80c9fbe8674f147bd84a45a25f674a093"
+          ],
+          "right": [
+            "qasper:test:713e1c7b0ab17759ba85d7cd2041e387831661df"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:2d307b43746be9cedf897adac06d524419b0720b"
+          ],
+          "right": [
+            "qasper:test:8c288120139615532838f21094bba62a77f92617"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:003f884d3893532f8c302431c9f70be6f64d9be8",
+            "qasper:train:45306b26447ea4b120655d6bb2e3636079d3d6e0",
+            "qasper:train:5d70c32137e82943526911ebdf78694899b3c28a",
+            "qasper:train:50690b72dc61748e0159739a9a0243814d37f360",
+            "qasper:train:1fdcc650c65c11908f6bde67d5052087245f3dde",
+            "qasper:train:16fa6896cf4597154363a6c9a98deb49fffef15f",
+            "qasper:train:a22b900fcd76c3d36b5679691982dc6e9a3d34bf",
+            "qasper:train:b0b1ff2d6515fb40d74a4538614a0db537e020ea",
+            "qasper:train:8de64483ae96c0a03a8e527950582f127b43dceb",
+            "qasper:train:cb370692fe0beef90cdaa9c8e43a0aab6f0e117a",
+            "qasper:train:0716b481b78d80b012bca17c897c62efbe7f3731",
+            "qasper:train:46563a1fb2c3e1b39a185e4cbb3ee1c80c8012b7",
+            "qasper:train:21f615bf19253fc27ea838012bc088f4d10cdafd",
+            "qasper:train:61b0db2b5718d409b07f83f912bad6a788bfee5a",
+            "qasper:train:09a993756d2781a89f7ec5d7992f812d60e24232"
+          ],
+          "right": [
+            "qasper:test:bc7081aaa207de2362e0bea7bc8108d338aee36f",
+            "qasper:test:693cdb9978749db04ba34d9c168e71534f00a226",
+            "qasper:test:a17fc7b96753f85aee1d2036e2627570f4b50c30",
+            "qasper:test:2f142cd11731d29d0c3fa426e26ef80d997862e0",
+            "qasper:test:ec5e84a1d1b12f7185183d165cbb5eae66d9833e",
+            "qasper:test:74cc0300e22f60232812019011a09df92bbec803",
+            "qasper:test:37b0ee4a9d0df3ae3493e3b9114c3f385746da5c",
+            "qasper:test:3df6d18d7b25d1c814e9dcc8ba78b3cdfe15edcd",
+            "qasper:test:3d662fb442d5fc332194770aac835f401c2148d9"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:fa2a384a23f5d0fe114ef6a39dced139bddac20e",
+            "qasper:train:5908d7fb6c48f975c5dfc5b19bb0765581df2b25",
+            "qasper:train:8847f2c676193189a0f9c0fe3b86b05b5657b76a",
+            "qasper:train:19cdce39e8265e7806212eeee2fd55f8ef2f3d47"
+          ],
+          "right": [
+            "qasper:test:9887ca3d25e2109f41d1da80eeea05c465053fbc",
+            "qasper:test:4e106b03cc2f54373e73d5922e97f7e5e9bf03e4"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:f5eac66c08ebec507c582a2445e99317a83e9ebe"
+          ],
+          "right": [
+            "qasper:test:82f8843b59668567bba09fc8f93963ca7d1fe107"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:ba48c095c496d01c7717eaa271470c3406bf2d7c"
+          ],
+          "right": [
+            "qasper:test:3fd8eab282569b1c18b82f20d579b335ae70e79f",
+            "qasper:test:b36a8a73b3457a94203eed43f063cb684a8366b7"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:e5ae8ac51946db7475bb20b96e0a22083b366a6d"
+          ],
+          "right": [
+            "qasper:test:2f9a31f5a2b668acf3bce8958f5daa67ab8b2c83"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:879bec20c0fdfda952444018e9435f91e34d8788",
+            "qasper:train:61fba3ab10f7b6906e27b028fb1d42ec601c3fb8"
+          ],
+          "right": [
+            "qasper:test:9536e4a2455008007067f23cc873768374c8f664"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:559c1307610a15427caeb8aff4d2c01ae5c9de20",
+            "qasper:train:9c4ed8ca59ba6d240f031393b01f634a9dc3615d"
+          ],
+          "right": [
+            "qasper:test:4d5b74499804ea5bc5520beb88d0f9816f67205a"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:4a4b7c0d3e7365440b49e9e6b67908ea5cea687d"
+          ],
+          "right": [
+            "qasper:test:e96b0d64c8d9fdd90235c499bf1ec562d2cbb8b2"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:96992460cfc5f0b8d065ee427067147293746b7a"
+          ],
+          "right": [
+            "qasper:test:17fd6deb9e10707f9d1b70165dedb045e1889aac"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:61c9f97ee1ac5a4b8654aa152f05f22e153e7e6e"
+          ],
+          "right": [
+            "qasper:test:65c9aee2051ff7c47112b2aee0d928d9b6a8c2fe",
+            "qasper:test:c7ffef8bf0100eb6148bd932d0409b21759060b1"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:830de0bd007c4135302138ffa8f4843e4915e440"
+          ],
+          "right": [
+            "qasper:test:fd8a8eb69f07c584a76633f8802c2746f7236d64"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:0bffc3d82d02910d4816c16b390125e5df55fd01"
+          ],
+          "right": [
+            "qasper:test:deed225dfa94120fafcc522d4bfd9ea57085ef8d"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:45a2ce68b4a9fd4f04738085865fbefa36dd0727"
+          ],
+          "right": [
+            "qasper:test:0ac6fbd81e2dd95b800283dc7e59ce969d45fc02",
+            "qasper:test:d36a6447bfe58204e0d29f9213d84be04d875624",
+            "qasper:test:1237b6fcc64b43901415f3ded17cc210a54ab698",
+            "qasper:test:4748a50c96acb1aa03f7efd1b43376c193b2450a",
+            "qasper:test:5fd112980d0dd7f7ce30e6273fe6e7b230b13225",
+            "qasper:test:f1f7a040545c9501215d3391e267c7874f9a6004"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:b43a8a0f4b8496b23c89730f0070172cd5dca06a"
+          ],
+          "right": [
+            "qasper:test:77bc886478925c8e9fb369b1ba5d05c42b3cd79a"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:e72a672f8008bbc52b93d8037a5fedf8956136af"
+          ],
+          "right": [
+            "qasper:test:f2b1e87f61c65aaa99bcf9825de11ae237260270"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:0a82534ec6e294ab952103f11f56fd99137adc1f",
+            "qasper:train:e4cc2e73c90e568791737c97d77acef83588185f",
+            "qasper:train:2e1660405bde64fb6c211e8753e52299e269998f"
+          ],
+          "right": [
+            "qasper:test:e801b6a6048175d3b1f3440852386adb220bcb36",
+            "qasper:test:0a736e0e3305a50d771dfc059c7d94b8bd27032e",
+            "qasper:test:576a3ed6e4faa4c3893db632e97a52ac6e864aac",
+            "qasper:test:16b816925567deb734049416c149747118e13963",
+            "qasper:test:10edfb9428b8a4652274c13962917662fdf84f8a",
+            "qasper:test:ead7704a64447dccd504951618d3be463eba86bf"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:12cfbaace49f9363fcc10989cf92a50dfe0a55ea"
+          ],
+          "right": [
+            "qasper:test:0caa3162abe588f576a568d63ab9fd0e9c46ceda"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:e6469135e0273481cf11a6c737923630bc7ccfca"
+          ],
+          "right": [
+            "qasper:test:b8a3ab219be6c1e6893fe80e1fbf14f0c0c3c97c"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:b11ee27f3de7dd4a76a1f158dc13c2331af37d9f",
+            "qasper:train:62ba1fefc1eb826fe0cbac092d37a3e2098967e9",
+            "qasper:train:1571e16063b53409f2d1bd6ec143fccc5b29ebb9",
+            "qasper:train:85e45b37408bb353c6068ba62c18e516d4f67fe9"
+          ],
+          "right": [
+            "qasper:test:71b07d08fb6ac8732aa4060ae94ec7c0657bb1db",
+            "qasper:test:c25014b7e57bb2949138d64d49f356d69838bc25"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:44a2a8e187f8adbd7d63a51cd2f9d2d324d0c98d",
+            "qasper:train:07c79edd4c29635dbc1c2c32b8df68193b7701c6",
+            "qasper:train:4e4d377b140c149338446ba69737ea191c4328d9",
+            "qasper:train:3cca26a9474d3b0d278e4dd57e24b227e7c2cd41",
+            "qasper:train:64b65687b82ddb17c3d068381aaee56eb7fc02cd"
+          ],
+          "right": [
+            "qasper:test:d6b0c71721ed24ef1d9bd31ed3a266b0c7fc9b57",
+            "qasper:test:643645e02ffe8fde45918615ec92013a035d1b92",
+            "qasper:test:83db51da819adf6faeb950fe04b4df942a887fb5"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:53712f0ce764633dbb034e550bb6604f15c0cacd",
+            "qasper:train:3460393d6888dd34113fa0813a1b3a1514c66aa6",
+            "qasper:train:4a8bceb3b6d45f14c4749115d6aa83912f0b0a6e",
+            "qasper:train:b8cee4782e05afaeb9647efdb8858554490feba5",
+            "qasper:train:a88f8cae1f59cdc4f1f645e496d6d2ac4d9fba1b",
+            "qasper:train:bcce5eef9ddc345177b3c39c469b4f8934700f80"
+          ],
+          "right": [
+            "qasper:test:000549a217ea24432c0656598279dbb85378c113",
+            "qasper:test:7f8fc3c7d59aba80a3e7c839db6892a1fc329210"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:57e783f00f594e08e43a31939aedb235c9d5a102",
+            "qasper:train:cb20aebfedad1a306e82966d6e9e979129fcd9f9"
+          ],
+          "right": [
+            "qasper:test:37ac705166fa87dc74fe86575bf04bea56cc4930",
+            "qasper:test:4e63454275380787ebd0e38aa885977332ab33af",
+            "qasper:test:8126c6b8a0cab3e22661d3d71d96aa57360da65c"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:d32b6ac003cfe6277f8c2eebc7540605a60a3904",
+            "qasper:train:225a567eeb2698a9d3f1024a8b270313a6d15f82",
+            "qasper:train:73bbe0b6457423f08d9297a0951381098bd89a2b",
+            "qasper:train:f95097cf4a0dc036fd8b80c007cd8d7a157b7816",
+            "qasper:train:ef7b62a705f887326b7ebacbd62567ee1f2129b3",
+            "qasper:train:a74886d789a5d7ebcf7f151bdfb862c79b6b8a12"
+          ],
+          "right": [
+            "qasper:test:010fd15696580d9924ac0275a4ff269005e5808d",
+            "qasper:test:9863f5765ba70f7ff336a580346ef70205abbbd8",
+            "qasper:test:fda47c68fd5f7b44bd539f83ded5882b96c36dd7",
+            "qasper:test:351f7b254e80348221e0654478663a5e53d3fe65"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:894c086a2cbfe64aa094c1edabbb1932a3d7c38a"
+          ],
+          "right": [
+            "qasper:test:fe52b093735bb456d7e699aa9a2b806d2b498ba0"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:63723c6b398100bba5dc21754451f503cb91c9b8",
+            "qasper:train:6e962f1f23061f738f651177346b38fd440ff480",
+            "qasper:train:76ce9e02d97e2d77fe28c0fa78526809e7c195c6",
+            "qasper:train:81e8d42dad08a58fe27eea838f060ec8f314465e",
+            "qasper:train:3a6559dc6eba7f5abddf3ac27376ba0b9643a908"
+          ],
+          "right": [
+            "qasper:test:2e4688205c8e344cded7a053b6014cce04ef1bd5",
+            "qasper:test:a786cceba4372f6041187c426432853eda03dca6"
+          ]
+        },
+        {
+          "left": [
+            "qasper:train:bed527bcb0dd5424e69563fba4ae7e6ea1fca26a",
+            "qasper:train:ae8354e67978b7c333094c36bf9d561ca0c2d286",
+            "qasper:train:8ea4bd4c1d8a466da386d16e4844ea932c44a412",
+            "qasper:train:1b9119813ea637974d21862a8ace83bc1acbab8e",
+            "qasper:train:9d1135303212356f3420ed010dcbe58203cc7db4"
+          ],
+          "right": [
+            "qasper:test:0fe49431db5ffaa24372919daf24d8f84117bfda",
+            "qasper:test:3c414f7fbf577dfd3363be6bbc9eba8bdd01f45f",
+            "qasper:test:9489b0ecb643c1fc95c001c65d4e9771315989aa",
+            "qasper:test:a836ab8eb5a72af4b0a0c83bf42a2a14d1b38763"
+          ]
+        }
+      ],
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    },
+    "musique_train_vs_dev": {
+      "exact_normalized_question_overlap": 0,
+      "overlap_question_examples": [],
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    }
+  },
+  "cross_dataset": {
+    "qasper_train_vs_musique_dev": {
+      "exact_normalized_question_overlap": 0,
+      "overlap_question_examples": [],
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    },
+    "musique_train_vs_qasper_test": {
+      "exact_normalized_question_overlap": 0,
+      "overlap_question_examples": [],
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    }
+  },
+  "musique_official_dev_test_singlehop_registry": {
+    "path": "datasets\\raw\\musique\\data\\dev_test_singlehop_questions_v1.0.json",
+    "sha256": "013be00ab914799891e5ae40de6cdc1baf03aaffd1f3ce4bf0de796020069613",
+    "root_type": "dict",
+    "entries": 5,
+    "purpose": "official registry retained for MuSiQue dev/test seed-question leakage controls"
+  },
+  "interpretation": "Zero exact overlap does not prove absence of semantic, pretraining, or benchmark contamination."
+}
