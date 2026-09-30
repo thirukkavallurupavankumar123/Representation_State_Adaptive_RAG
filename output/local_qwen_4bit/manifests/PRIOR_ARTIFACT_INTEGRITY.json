@@ -1,0 +1,55 @@
+{
+  "all_verified": true,
+  "explanation": "Recorded SHA-256 values were computed over CRLF files written on Windows; the git checkout stores LF. A match of the CRLF-equivalent bytes proves identical content. Git-LFS objects are byte-exact and verified separately in INPUTS_PROVENANCE.json.",
+  "file_hashes": {
+    "output/adaptive_single_view_v2/recalibration_seed20260905/FROZEN_V2_MANIFEST.json": {
+      "crlf_equivalent_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "match": "crlf_equivalent",
+      "recorded": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "verified": true,
+      "worktree_sha256": "0e7649945684c0a8c348a3aefd0fd7590244b66e1f07cdc27e24abedc9d70bfc"
+    },
+    "output/calibration/frozen_manifest.json": {
+      "crlf_equivalent_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+      "match": "crlf_equivalent",
+      "recorded": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+      "verified": true,
+      "worktree_sha256": "04e5bba639752b95fb28b1ecbed128a76c97cadb6e40c094b19c4b1d83185699"
+    },
+    "output/final_evaluation/FINAL_EVALUATION_PROTOCOL.json": {
+      "crlf_equivalent_sha256": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+      "match": "crlf_equivalent",
+      "recorded": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+      "verified": true,
+      "worktree_sha256": "7a9d5576b04c9e3a3d64a3d1edd670d5e084a47eed983f45f183bf5cf9050cb5"
+    },
+    "output/final_evaluation/SMOKE_TEST_REQUESTS.jsonl": {
+      "crlf_equivalent_sha256": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+      "match": "crlf_equivalent",
+      "recorded": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+      "verified": true,
+      "worktree_sha256": "e31cd56b085eaa6f8874807fb112d004c10f3d1c041a9312003928861fbaec0e"
+    },
+    "output/final_evaluation/generation_v1_1/checkpoint/ANSWERS.jsonl": {
+      "crlf_equivalent_sha256": "fd0a299b25dc3af6cdccb6aeb5559c1b115788dc75735c85e23912317540add5",
+      "match": "crlf_equivalent",
+      "recorded": "fd0a299b25dc3af6cdccb6aeb5559c1b115788dc75735c85e23912317540add5",
+      "verified": true,
+      "worktree_sha256": "1a0c230725becbee38dd634284e22d8d50743d56d4c20392c9c58370b03a0809"
+    },
+    "output/final_evaluation/heldout_v1_1/GENERATION_QUESTIONS.jsonl": {
+      "crlf_equivalent_sha256": "52c350243694734d68a43cfa47d8898bf86b1ad5e64a0c23b8c22fca57aaf929",
+      "match": "crlf_equivalent",
+      "recorded": "52c350243694734d68a43cfa47d8898bf86b1ad5e64a0c23b8c22fca57aaf929",
+      "verified": true,
+      "worktree_sha256": "c625ed006865b4052d3e3319e37ed78cfddf949335b531ed6200d7043bb486b1"
+    }
+  },
+  "object_fingerprints_valid": {
+    "heldout_v1_1_protocol": true,
+    "heldout_v1_1_question_system_manifest": true,
+    "heldout_v1_1_sealed_request_manifest": true,
+    "smoke_v1_1_protocol": true
+  },
+  "verified_utc": "2026-09-30T14:18:55.686975+00:00"
+}

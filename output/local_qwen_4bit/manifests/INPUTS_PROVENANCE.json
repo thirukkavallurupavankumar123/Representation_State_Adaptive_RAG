@@ -1,0 +1,25 @@
+{
+  "files": {
+    "REQUESTS.jsonl": {
+      "lfs_oid_sha256": "97ed30aed4a50b7641c68804350e690ed235864f4e335dfdd175fccbd5f3b0c3",
+      "local_cache_path": "output/local_qwen_4bit/inputs/lfs/REQUESTS.jsonl",
+      "matches_sealed_request_manifest": true,
+      "pointer_path": "output/final_evaluation/heldout_v1_1/REQUESTS.jsonl",
+      "sha256_verified": "97ed30aed4a50b7641c68804350e690ed235864f4e335dfdd175fccbd5f3b0c3",
+      "size": 103263182
+    },
+    "RETRIEVAL_AND_PACKING_AUDIT.jsonl": {
+      "lfs_oid_sha256": "0c6949af4bd68ddf6720bd34697783a08a5799021982717b4ad21b336c54d48c",
+      "local_cache_path": "output/local_qwen_4bit/inputs/lfs/RETRIEVAL_AND_PACKING_AUDIT.jsonl",
+      "matches_sealed_request_manifest": true,
+      "pointer_path": "output/final_evaluation/heldout_v1_1/RETRIEVAL_AND_PACKING_AUDIT.jsonl",
+      "sha256_verified": "0c6949af4bd68ddf6720bd34697783a08a5799021982717b4ad21b336c54d48c",
+      "size": 275947272
+    }
+  },
+  "remote": "https://github.com/thirukkavallurupavankumar123/Representation_State_Adaptive_RAG.git",
+  "repository_pointer_files_unchanged": true,
+  "sealed_request_manifest_fingerprint": "38ec0a6fe0d319982d1b90d5601b0c12c82e870c00065765f27e61ba15d8f106",
+  "source": "Git LFS objects referenced by committed pointer files",
+  "verified_utc": "2026-09-30T14:20:23.192650+00:00"
+}

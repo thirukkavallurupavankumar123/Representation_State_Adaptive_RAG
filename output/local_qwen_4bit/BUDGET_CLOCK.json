@@ -1,0 +1,5 @@
+{
+  "budget_hours": 5.0,
+  "budget_start_utc": "2026-09-30T14:19:03.094487+00:00",
+  "definition": "execution-budget clock starts at the first local-Qwen development smoke launch; earlier manual setup (download, WSL/env setup, NF4 validation) and this session's forensics/implementation are reported separately as setup"
+}

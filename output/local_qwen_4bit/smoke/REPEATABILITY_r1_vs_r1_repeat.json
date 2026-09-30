@@ -1,0 +1,277 @@
+{
+  "runs": [
+    "r1",
+    "r1_repeat"
+  ],
+  "pairs_compared": 24,
+  "identical_raw_outputs": 24,
+  "identical_output_token_ids": 24,
+  "all_fingerprints_equal": true,
+  "note": "Same hardware, software, model load path and seeds. Fixed seeds improve repeatability but do not guarantee identical outputs across hardware or library versions.",
+  "pairs": [
+    {
+      "logical_key": "musique_full|musique_full:train:2hop__838053_467995:insufficient|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:2hop__838053_467995:insufficient|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "semantic_invalid",
+        "semantic_invalid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:2hop__838053_467995:insufficient|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "semantic_invalid",
+        "semantic_invalid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__383692_434040_398678:insufficient|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__383692_434040_398678:insufficient|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__383692_434040_398678:insufficient|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__8294_15324_26427:answerable|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__8294_15324_26427:answerable|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:3hop1__8294_15324_26427:answerable|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:1db37e98768f09633dfbc78616992c9575f6dba4|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:1db37e98768f09633dfbc78616992c9575f6dba4|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:1db37e98768f09633dfbc78616992c9575f6dba4|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:4bae74eb707ed71d5f438ddb3d9c2192ac490f66|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:4bae74eb707ed71d5f438ddb3d9c2192ac490f66|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:4bae74eb707ed71d5f438ddb3d9c2192ac490f66|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:e8647f9dc0986048694c34ab9ce763b3167c3deb|adaptive_single_view_v2",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:e8647f9dc0986048694c34ab9ce763b3167c3deb|sar_rag_v1",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    },
+    {
+      "logical_key": "qasper|qasper:train:e8647f9dc0986048694c34ab9ce763b3167c3deb|traditional_k10",
+      "same_request_fingerprint": true,
+      "same_seed": true,
+      "identical_raw_output": true,
+      "identical_output_token_ids": true,
+      "validation": [
+        "valid",
+        "valid"
+      ]
+    }
+  ]
+}
