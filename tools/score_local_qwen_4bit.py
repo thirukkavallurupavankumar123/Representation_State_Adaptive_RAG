@@ -62,6 +62,8 @@ SECONDARY = ["answer_exact_match", "answerability_correct", "abstained", "correc
 
 
 def verify_seal() -> dict:
+    if not gen.SEAL_PATH.exists():
+        raise SystemExit("GATE F: predictions are not sealed; gold labels may not be accessed")
     seal = gen.read_json(gen.SEAL_PATH)
     gen.verify_fingerprint(seal, "seal_fingerprint", "prediction seal")
     for name, digest in seal["artifact_sha256"].items():
@@ -326,13 +328,138 @@ def cmd_score(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# report tables + timeline
+# ---------------------------------------------------------------------------
+
+def fmt(value, digits: int = 3) -> str:
+    if value is None or (isinstance(value, float) and math.isnan(value)):
+        return "n/a"
+    if isinstance(value, float):
+        return f"{value:.{digits}f}"
+    return str(value)
+
+
+def run_log_span(directory: Path) -> dict:
+    events = gen.load_jsonl(directory / "RUN_LOG.jsonl")
+    first = min(e["utc"] for e in events)
+    last = max(e["utc"] for e in events)
+    loads = [e for e in events if e["event"] == "model_ready"]
+    return {"start_utc": first, "end_utc": last, "seconds": gen.parse_utc(last) - gen.parse_utc(first),
+            "model_load_seconds": [e["load_seconds"] for e in loads], "warmup_seconds": [e["warmup_seconds"] for e in loads],
+            "runs": [e["run_id"] for e in events if e["event"] == "run_started"],
+            "stop_reasons": [e.get("stop_reason") for e in events if e["event"] == "run_finished"]}
+
+
+def cmd_report(args: argparse.Namespace) -> int:
+    seal = verify_seal()
+    results = gen.read_json(METRICS / "RESULTS.json")
+    protocol, manifest = gen.load_frozen()
+    gold = gen.read_json(GOLD_PROVENANCE)
+    clock = gen.read_json(gen.BUDGET_CLOCK_PATH)
+    budget_start = gen.parse_utc(clock["budget_start_utc"])
+    smoke = {label: run_log_span(OUT / "smoke" / label) for label in ("r1", "r1_repeat")}
+    generation = run_log_span(gen.PREDICTIONS_DIR)
+    now = time.time()
+    timeline = {
+        "manual_setup_before_session": {
+            "first_recorded_artifact_utc": "2026-09-30T10:12:45Z (environment/gpu_report.txt)",
+            "qwen_weights_downloaded_by_utc": "2026-09-30T10:20:42Z (qwen3_8b_weight_hashes.csv)",
+            "wsl_environment_created_utc": "2026-09-30T12:14:40Z (sar_rag_qwen_env/pyvenv.cfg)",
+            "nf4_validation_completed_utc": "2026-09-30T12:17:43Z (qwen_wsl_gpu_validation.json)",
+            "recoverable_span_seconds": 2 * 3600 + 4 * 60 + 58,
+            "caveat": "lower bound of the recorded-artifact span only; work before 10:12:45Z and idle time are not recoverable",
+        },
+        "session_engineering_before_budget_clock": {
+            "first_recorded_session_timestamp_utc": "2026-09-30T14:09:06Z",
+            "budget_clock_start_utc": clock["budget_start_utc"],
+            "note": "repository forensics, weight-hash verification, LFS input recovery and implementation; reported as setup",
+        },
+        "smoke": smoke,
+        "freeze_utc": protocol["frozen_utc"],
+        "generation": generation,
+        "seal_utc": seal["sealed_utc"],
+        "gold_fetch": {"start_utc": gold["gold_access_started_utc"], "end_utc": gold["gold_access_finished_utc"], "seconds": gold["seconds"]},
+        "scoring_seconds": results["scoring_seconds"], "scored_utc": results["scored_utc"],
+        "report_tables_utc": lq.utc_now(),
+        "budget_elapsed_seconds_at_report_tables": now - budget_start,
+        "budget_seconds": gen.BUDGET_HOURS * 3600,
+    }
+    records = gen.load_jsonl(gen.PREDICTIONS_DIR / "PREDICTIONS.jsonl")
+    per_pair = gen.load_jsonl(METRICS / "PER_PAIR_METRICS.jsonl")
+    efficiency = {
+        "pairs": len(records),
+        "input_tokens": gen.describe([r["input_tokens"] for r in records]),
+        "output_tokens": gen.describe([r["output_tokens"] for r in records]),
+        "total_tokens": gen.describe([r["total_tokens"] for r in records]),
+        "qwen_supplied_evidence_tokens": gen.describe([r["qwen_supplied_evidence_tokens"] for r in records]),
+        "qwen_supplied_evidence_tokens_over_1600": sum(r["qwen_supplied_evidence_tokens"] > 1600 for r in records),
+        "supplied_context_tokens_minilm": gen.describe([r["supplied_context_tokens_minilm"] for r in records]),
+        "latency_end_to_end_seconds": gen.describe([p["latency_end_to_end_seconds"] for p in per_pair]),
+        "latency_generation_seconds": gen.describe([r["latency_generation_seconds"] for r in records]),
+        "prefill_seconds": gen.describe([r["timing"]["prefill_seconds"] for r in records]),
+        "output_tokens_per_second": gen.describe([r["throughput_output_tokens_per_second"] for r in records]),
+        "decode_tokens_per_second": gen.describe([r["timing"]["decode_tokens_per_second"] for r in records]),
+        "peak_allocated_vram_gib": gen.describe([r["peak_allocated_vram_gib"] for r in records]),
+        "peak_reserved_vram_gib": gen.describe([r["peak_reserved_vram_gib"] for r in records]),
+        "max_prompt_plus_allowance_tokens": max(r["prompt_plus_allowance_tokens"] for r in records),
+        "truncations_at_max_new_tokens": sum(r["output_truncated_at_max_new_tokens"] for r in records),
+        "thinking_marker_incidents": sum(r["thinking_markers_present"] for r in records),
+        "validation_status_counts": dict(Counter(r["validation_status"] for r in records)),
+        "validation_status_by_system": {s: dict(Counter(r["validation_status"] for r in records if r["system"] == s)) for s in lq.SYSTEMS},
+        "invalid_error_kinds": dict(Counter((r["semantic_error"] or (r["schema_errors"] or [""])[0] or r["parse_error"] or "")[:80] for r in records if r["validation_status"] != "valid")),
+    }
+    lines = ["# Result tables (generated)", "",
+             f"Protocol `{protocol['protocol_fingerprint']}`; seal `{seal['seal_fingerprint']}`.", ""]
+    headers = ["system", "n", "valid", "F1", "EM", "ans-acc", "abstain", "supplied recall", "retrieved recall",
+               "complete ev. (ans)", "residual (insuf)", "final k", "supplied tok (MiniLM)", "Qwen ev. tok", "input tok", "output tok", "e2e s"]
+    for dataset in ("qasper", "musique_full"):
+        lines += [f"## {dataset}: per-system estimates (complete three-system questions)", "",
+                  "| " + " | ".join(headers) + " |", "|" + "---|" * len(headers)]
+        for system in lq.SYSTEMS:
+            a = results["aggregates"][f"{dataset}|{system}"]
+            lines.append("| " + " | ".join([system, str(a["n_pairs"]), fmt(a["valid_generation"]), fmt(a["answer_token_f1"]),
+                                            fmt(a["answer_exact_match"]), fmt(a["answerability_correct"]), fmt(a["abstained"]),
+                                            fmt(a["supplied_evidence_recall"]), fmt(a["native_evidence_recall"]),
+                                            fmt(a["answerable_complete_evidence"]), fmt(a["insufficient_residual_support_recovery"]),
+                                            fmt(a["final_k"], 1), fmt(a["supplied_context_tokens"], 0), fmt(a["qwen_supplied_evidence_tokens"], 0),
+                                            fmt(a["input_tokens"], 0), fmt(a["output_tokens"], 0), fmt(a["latency_end_to_end_seconds"], 2)]) + " |")
+        a0 = results["aggregates"][f"{dataset}|traditional_k10"]
+        lines += ["", f"Gold answerability counts per system: {a0['gold_answerability_counts']}; defined-metric counts (traditional): "
+                      f"F1 {a0['n_defined']['answer_token_f1']}, supplied recall {a0['n_defined']['supplied_evidence_recall']}, "
+                      f"complete evidence {a0['n_defined']['answerable_complete_evidence']}, residual {a0['n_defined']['insufficient_residual_support_recovery']}.", ""]
+        for role in ("primary", "secondary"):
+            lines += [f"### {dataset}: paired differences ({role})", "",
+                      "| metric | comparison | paired n | clusters | mean diff | 95% CI | raw p | Holm p |", "|---|---|---|---|---|---|---|---|"]
+            for result in results["paired_inference"].values():
+                if result["dataset"] == dataset and result["role"] == role:
+                    ci = result["ci95"] or [None, None]
+                    lines.append(f"| {result['metric']} | {result['comparison']} | {result['paired_n']} | {result['cluster_n']} | "
+                                 f"{fmt(result['mean_difference'], 4)} | [{fmt(ci[0], 4)}, {fmt(ci[1], 4)}] | {fmt(result['raw_p'], 4)} | "
+                                 f"{fmt(result.get('holm_adjusted_p'), 4)} |")
+            lines.append("")
+        lines += [f"### {dataset}: sensitivity (descriptive; questions where all three generations were valid)", "",
+                  "| system | n | F1 | EM | ans-acc | supplied recall |", "|---|---|---|---|---|---|"]
+        for system in lq.SYSTEMS:
+            s = results["sensitivity_all_three_valid_descriptive"][f"{dataset}|{system}"]
+            lines.append(f"| {system} | {s['n']} | {fmt(s['answer_token_f1'])} | {fmt(s['answer_exact_match'])} | {fmt(s['answerability_correct'])} | {fmt(s['supplied_evidence_recall'])} |")
+        lines.append("")
+    (OUT / "reports").mkdir(parents=True, exist_ok=True)
+    (OUT / "reports" / "RESULT_TABLES.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    lq.write_json_atomic(OUT / "reports" / "TIMELINE.json", timeline)
+    lq.write_json_atomic(OUT / "reports" / "EFFICIENCY_SUMMARY.json", efficiency)
+    print(json.dumps({"timeline": timeline, "efficiency": efficiency}, indent=2))
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("fetch-gold")
     sub.add_parser("score")
+    sub.add_parser("report")
     args = parser.parse_args()
-    return {"fetch-gold": cmd_fetch_gold, "score": cmd_score}[args.command](args)
+    return {"fetch-gold": cmd_fetch_gold, "score": cmd_score, "report": cmd_report}[args.command](args)
 
 
 if __name__ == "__main__":

@@ -100,5 +100,45 @@ class CheckpointTests(unittest.TestCase):
                 lq.LocalQwenRunner(directory, {"a": 2})
 
 
+class ScorePairTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("score_local", ROOT / "tools" / "score_local_qwen_4bit.py")
+        cls.score = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.score)
+
+    def record(self, status, response, evidence_text="Water freezes at 0 degrees Celsius at sea level pressure."):
+        evidence = [{"evidence_id": "E1", "text": evidence_text}]
+        return {"logical_key": "qasper|q|sar_rag_v1", "dataset": "qasper", "question_id": "q", "system": "sar_rag_v1",
+                "source_group_id": "g", "validation_status": status, "validated_response": response,
+                "retrieved_evidence": [{"text": evidence_text}, {"text": "unrelated"}], "supplied_evidence": evidence,
+                "supplied_context_tokens_minilm": 20, "native_context_tokens_minilm": 25, "qwen_supplied_evidence_tokens": 18,
+                "final_k": 2, "input_tokens": 100, "output_tokens": 10, "total_tokens": 110,
+                "latency_end_to_end_before_save_seconds": 1.0, "latency_generation_seconds": 0.9,
+                "throughput_output_tokens_per_second": 11.0, "peak_allocated_vram_gib": 6.0, "peak_reserved_vram_gib": 6.4,
+                "output_truncated_at_max_new_tokens": False}
+
+    def test_valid_answerable(self):
+        response = {"answerability": "ANSWERABLE", "claims": [{"text": "0 degrees Celsius", "evidence_ids": ["E1"]}]}
+        label = {"gold_answerability": "ANSWERABLE", "gold_answers": ["0 degrees Celsius"], "gold_evidence_spans": ["freezes at 0 degrees Celsius"]}
+        row = self.score.score_pair(self.record("valid", response), label, None)
+        self.assertEqual((row["answer_token_f1"], row["answer_exact_match"], row["answerability_correct"]), (1.0, 1.0, 1.0))
+        self.assertEqual((row["supplied_evidence_recall"], row["answerable_complete_evidence"]), (1.0, 1.0))
+
+    def test_invalid_generation_is_failure_not_abstention(self):
+        label = {"gold_answerability": "INSUFFICIENT", "gold_answers": [], "gold_evidence_spans": []}
+        row = self.score.score_pair(self.record("semantic_invalid", None), label, None)
+        self.assertEqual((row["answer_token_f1"], row["answer_exact_match"], row["abstained"], row["correct_abstention"]), (0.0, 0.0, 0.0, 0.0))
+        self.assertEqual(row["predicted_answerability"], "GENERATION_FAILURE")
+
+    def test_undefined_gold_answerability_is_nan(self):
+        label = {"gold_answerability": None, "gold_answers": [], "gold_evidence_spans": ["freezes at 0 degrees Celsius"]}
+        response = {"answerability": "INSUFFICIENT", "claims": []}
+        row = self.score.score_pair(self.record("valid", response), label, None)
+        self.assertNotEqual(row["answer_token_f1"], row["answer_token_f1"])  # NaN
+        self.assertEqual(row["supplied_evidence_recall"], 1.0)
+
+
 if __name__ == "__main__":
     unittest.main()

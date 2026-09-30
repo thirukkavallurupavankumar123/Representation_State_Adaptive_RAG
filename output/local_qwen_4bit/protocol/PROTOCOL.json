@@ -1,0 +1,415 @@
+{
+  "attempt_and_failure_policy": {
+    "attempts_per_pair": 1,
+    "content_based_retries": false,
+    "infrastructure_failures": "exceptions (CUDA/OOM/process kill/disk) are logged in INFRASTRUCTURE_FAILURES.jsonl, never recorded as model outputs; the run stops and the identical command resumes with unchanged seeds; completed pairs are skipped only when their fingerprint matches",
+    "invalid_generation": "parse/schema/semantic failures are retained in the denominator and scored with the frozen persistent-failure rule: answer F1 = EM = 0, answerability = GENERATION_FAILURE (incorrect, never abstention); retrieval metrics scored from the sealed logs",
+    "repair": "prohibited: no field insertion, type coercion, enum rewriting, evidence-ID insertion or JSON correction",
+    "time_expiry": "the runner stops before starting a dependency-group unit that cannot finish before the hard deadline; the planned manifest is not redefined; missing pairs are reported as missing"
+  },
+  "code_sha256_bound_at_freeze": {
+    "src/sar_rag/final_evaluation.py": "ceca767f3a2eb7843d4f1f10a98ccaae5b0d1da1cc8c354adbccba4f38860560",
+    "src/sar_rag/generation_v1_1.py": "6c9ca6ce54dbb25aa2d7446fe668ca2d3917ad74fb2bfdc9e3d981191f8e8a7a",
+    "src/sar_rag/local_qwen_4bit.py": "ca3e38911219398638bc8fc98ff139958093f51ab7579e3294de7acd77648d9d",
+    "tools/local_qwen_4bit.py": "893e0404c0643eddc5b0cb667b6c9727d1f51bed84f32189174e01ca525e7a2c"
+  },
+  "compute_dtype": "bfloat16",
+  "context_policy": {
+    "capacity_check": "rendered prompt tokens + 1,600 output allowance must be <= model max_position_embeddings (40,960); otherwise hard stop, never truncate",
+    "qwen_token_logging": "Qwen-token counts of supplied evidence and of the full rendered prompt are logged per pair",
+    "repacking_for_qwen": false,
+    "repacking_rationale": "the frozen cap is defined in retrieval-tokenizer units, independent of the answer model; supplied evidence is therefore byte-identical to the sealed v1.1 requests for all three systems",
+    "silent_truncation": false,
+    "supplied_evidence_cap": "1,600 tokens counted with the frozen MiniLM retrieval tokenizer by the frozen v1.1 post-retrieval packer (complete chunks only, native order, never truncated)"
+  },
+  "development_smoke": {
+    "accepted_run": "output/local_qwen_4bit/smoke/r1",
+    "answerability_counts_valid": {
+      "INSUFFICIENT": 3,
+      "PARTIALLY_ANSWERABLE": 19
+    },
+    "configuration_changes_after_smoke": [],
+    "observations": [
+      "invalid smoke outputs were uncited 'missing information' claims rejected by the frozen validator (model behavior, not transport)",
+      "Qwen labelled no valid smoke output ANSWERABLE (mostly PARTIALLY_ANSWERABLE); scientific instructions deliberately NOT changed",
+      "no parse, schema-type, thinking-marker, truncation, offload or infrastructure problems"
+    ],
+    "pairs": 24,
+    "repeatability": {
+      "REPEATABILITY_r1_vs_r1_repeat.json": "8b28ebbded472052bdcf3e88e2cd291edadcad5c8c8a9c3dc4f50d06bc1c2abb"
+    },
+    "summary_sha256": "45023456ff54315b5569236df52a5fffa401485273adc865f401605724ae5693",
+    "validation_status_counts": {
+      "semantic_invalid": 2,
+      "valid": 22
+    }
+  },
+  "frozen_utc": "2026-09-30T14:27:24.808656+00:00",
+  "generation": {
+    "batch_size": 1,
+    "do_sample": true,
+    "enable_thinking": false,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "max_new_tokens": 1600,
+    "min_p": 0.0,
+    "num_beams": 1,
+    "pad_token_id": 151643,
+    "repetition_penalty": 1.0,
+    "source": "Qwen/Qwen3-8B README (pinned revision) non-thinking recommendation: Temperature=0.7, TopP=0.8, TopK=20, MinP=0",
+    "temperature": 0.7,
+    "top_k": 20,
+    "top_p": 0.8
+  },
+  "generation_config_record": {
+    "attempts_per_pair": 1,
+    "backend_version": "sar-rag-local-qwen-4bit-backend-1.0.0",
+    "experiment_version": "local_qwen_4bit_reduced_v1",
+    "generation": {
+      "batch_size": 1,
+      "do_sample": true,
+      "enable_thinking": false,
+      "eos_token_id": [
+        151645,
+        151643
+      ],
+      "max_new_tokens": 1600,
+      "min_p": 0.0,
+      "num_beams": 1,
+      "pad_token_id": 151643,
+      "repetition_penalty": 1.0,
+      "source": "Qwen/Qwen3-8B README (pinned revision) non-thinking recommendation: Temperature=0.7, TopP=0.8, TopK=20, MinP=0",
+      "temperature": 0.7,
+      "top_k": 20,
+      "top_p": 0.8
+    },
+    "master_seed": 20260930,
+    "model_repo": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "quantization": {
+      "backend": "bitsandbytes",
+      "bnb_4bit_compute_dtype": "bfloat16 if torch.cuda.is_bf16_supported() else float16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "cpu_offload_allowed": false,
+      "device_map": {
+        "": 0
+      },
+      "load_in_4bit": true
+    },
+    "seed_rule": "question_seed = int.from_bytes(SHA-256(UTF-8('{master_seed}|{dataset}|{question_id}'))[:4], 'big'); random.seed(question_seed) and torch.manual_seed(question_seed) immediately before every system's generate() call for that question",
+    "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "transport_version": "qwen-chat-template-schema-in-system-v1"
+  },
+  "hardware": {
+    "compute_capability": "12.0",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "vram_total_gib": 15.89398193359375
+  },
+  "interpretation_limits": [
+    "reduced sample under a five-hour budget; not the full held-out evaluation",
+    "single generator family (Qwen3-8B), 8B capacity, 4-bit NF4 quantization",
+    "stochastic decoding; one sample per pair",
+    "hardware/software specific; fixed seeds do not guarantee cross-platform identity",
+    "invalid generations counted as failures in the denominator",
+    "valid evidence IDs do not establish claim faithfulness",
+    "MuSiQue is development-split evidence; QASPER test supports dataset-specific test claims only",
+    "public-benchmark pretraining exposure of Qwen3 is unknown"
+  ],
+  "model": {
+    "local_path": "/mnt/f/research/models/Qwen3-8B",
+    "repo": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "weights_verified": true
+  },
+  "placement": {
+    "cpu_or_disk_offload": false,
+    "hf_device_map": {},
+    "linear4bit_modules": 252,
+    "parameter_and_buffer_devices": [
+      "cuda:0"
+    ],
+    "quantization_config": {
+      "_load_in_4bit": true,
+      "_load_in_8bit": false,
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_storage": "uint8",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "llm_int8_enable_fp32_cpu_offload": false,
+      "llm_int8_has_fp16_weight": false,
+      "llm_int8_skip_modules": null,
+      "llm_int8_threshold": 6.0,
+      "load_in_4bit": true,
+      "load_in_8bit": false,
+      "quant_method": "bitsandbytes"
+    }
+  },
+  "prompt": {
+    "chat_template": "tokenizer.apply_chat_template(..., add_generation_prompt=True, enable_thinking=False)",
+    "constrained_decoding": false,
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "answerability": {
+          "enum": [
+            "ANSWERABLE",
+            "INSUFFICIENT",
+            "PARTIALLY_ANSWERABLE"
+          ],
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_ids": {
+                "items": {
+                  "pattern": "^E[1-9][0-9]*$",
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "evidence_ids"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "missing_information": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "answerability",
+        "claims",
+        "missing_information"
+      ],
+      "type": "object"
+    },
+    "schema_transport": "system message = v1.1 system prompt + blank line + fixed instruction + compact schema JSON; user message byte-identical to v1.1",
+    "strict_schema_enforcement_claimed": false,
+    "transport_version": "qwen-chat-template-schema-in-system-v1",
+    "v1_1_prompt_hash": "dff1c8ddb74e09a3f59545c6de20abef1e19ae7b206f03fc59cee6c4f19a6f19",
+    "v1_1_prompt_version": "final-evaluation-answer-v1.1"
+  },
+  "protocol_fingerprint": "bd16ae13de756dd3cfe95350f4253765746fcef18de410b3ae964fcf889c5084",
+  "protocol_version": "local_qwen_4bit_reduced_v1",
+  "quantization": {
+    "backend": "bitsandbytes",
+    "bnb_4bit_compute_dtype": "bfloat16 if torch.cuda.is_bf16_supported() else float16",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "cpu_offload_allowed": false,
+    "device_map": {
+      "": 0
+    },
+    "load_in_4bit": true
+  },
+  "relationship_to_prior_protocols": {
+    "changed_relative_to_heldout_v1_1": [
+      "answer generator: local Qwen/Qwen3-8B 4-bit NF4 instead of Groq openai/gpt-oss-120b",
+      "decoding: Qwen non-thinking sampling (T=0.7, top_p=0.8, top_k=20, min_p=0) with per-question seeds instead of T=0",
+      "transport: frozen schema rendered as text in the system message (no provider strict-JSON enforcement)",
+      "attempts: one attempt per pair; no content-based retries (held-out v1.1 allowed up to three)",
+      "sample: reduced label-blind random sample of the same eligible pool",
+      "no monetary cost; efficiency reported as local tokens/latency/VRAM"
+    ],
+    "heldout_v1_1_modified": false,
+    "heldout_v1_1_protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+    "heldout_v1_1_protocol_path": "output/final_evaluation/heldout_v1_1/FINAL_EVALUATION_PROTOCOL_AMENDMENT_V1_1.json",
+    "unchanged": [
+      "eligible exposure-audited pool",
+      "frozen retrieval outputs and packing",
+      "v1.1 user prompt text and system prompt",
+      "answer schema",
+      "semantic validator",
+      "failure scoring",
+      "metrics",
+      "cluster definitions",
+      "bootstrap/randomization design",
+      "Holm families"
+    ]
+  },
+  "retrieval": {
+    "dynamic_final_k_preserved": true,
+    "frozen_manifests_sha256": {
+      "adaptive_single_view_v2": "0e7649945684c0a8c348a3aefd0fd7590244b66e1f07cdc27e24abedc9d70bfc",
+      "sar_rag_v1": "04e5bba639752b95fb28b1ecbed128a76c97cadb6e40c094b19c4b1d83185699"
+    },
+    "inputs_provenance": {
+      "files": {
+        "REQUESTS.jsonl": {
+          "lfs_oid_sha256": "97ed30aed4a50b7641c68804350e690ed235864f4e335dfdd175fccbd5f3b0c3",
+          "local_cache_path": "output/local_qwen_4bit/inputs/lfs/REQUESTS.jsonl",
+          "matches_sealed_request_manifest": true,
+          "pointer_path": "output/final_evaluation/heldout_v1_1/REQUESTS.jsonl",
+          "sha256_verified": "97ed30aed4a50b7641c68804350e690ed235864f4e335dfdd175fccbd5f3b0c3",
+          "size": 103263182
+        },
+        "RETRIEVAL_AND_PACKING_AUDIT.jsonl": {
+          "lfs_oid_sha256": "0c6949af4bd68ddf6720bd34697783a08a5799021982717b4ad21b336c54d48c",
+          "local_cache_path": "output/local_qwen_4bit/inputs/lfs/RETRIEVAL_AND_PACKING_AUDIT.jsonl",
+          "matches_sealed_request_manifest": true,
+          "pointer_path": "output/final_evaluation/heldout_v1_1/RETRIEVAL_AND_PACKING_AUDIT.jsonl",
+          "sha256_verified": "0c6949af4bd68ddf6720bd34697783a08a5799021982717b4ad21b336c54d48c",
+          "size": 275947272
+        }
+      },
+      "remote": "https://github.com/thirukkavallurupavankumar123/Representation_State_Adaptive_RAG.git",
+      "repository_pointer_files_unchanged": true,
+      "sealed_request_manifest_fingerprint": "38ec0a6fe0d319982d1b90d5601b0c12c82e870c00065765f27e61ba15d8f106",
+      "source": "Git LFS objects referenced by committed pointer files",
+      "verified_utc": "2026-09-30T14:20:23.192650+00:00"
+    },
+    "per_request_integrity": "every sampled request must reproduce its sealed heldout_request_fingerprint_v1_1",
+    "recalibration": false,
+    "requests_sha256": "97ed30aed4a50b7641c68804350e690ed235864f4e335dfdd175fccbd5f3b0c3",
+    "retrieval_audit_sha256": "0c6949af4bd68ddf6720bd34697783a08a5799021982717b4ad21b336c54d48c",
+    "sealed_request_manifest_fingerprint": "38ec0a6fe0d319982d1b90d5601b0c12c82e870c00065765f27e61ba15d8f106",
+    "source": "sealed held-out v1.1 REQUESTS.jsonl + RETRIEVAL_AND_PACKING_AUDIT.jsonl produced by the frozen retrieval code; recovered from Git LFS and SHA-256 verified",
+    "systems": {
+      "adaptive_single_view_v2": "AdaptiveSingleViewV2System with FROZEN_V2_MANIFEST.json (dynamic final k)",
+      "sar_rag_v1": "SarRagSystem with output/calibration/frozen_manifest.json (dynamic final k)",
+      "traditional_k10": "sentence_window exact dense index, static top-k=10 (FINAL_EVALUATION_PROTOCOL.json)"
+    }
+  },
+  "runtime_estimate": {
+    "budget_end_utc": "2026-09-30T19:19:03.094487+00:00",
+    "budget_start_utc": "2026-09-30T14:19:03.094487+00:00",
+    "checkpoint_failure_overhead_fraction": 0.05,
+    "execution_buffer_fraction": 0.2,
+    "freeze_time_utc": "2026-09-30T14:27:24.768971+00:00",
+    "frozen_n_answers": 444,
+    "frozen_n_questions": 148,
+    "generation_hard_deadline_utc": "2026-09-30T18:49:03.094487+00:00",
+    "model_load_and_warmup_seconds": 87.33260132899977,
+    "provisional_target": 150,
+    "raw_feasible_questions": 941,
+    "remaining_budget_seconds": 17498.32551574707,
+    "rule": "N = min(150, floor(0.8 * 0.95 * (budget_end - now - 1800s - load/warmup) / (3 * smoke mean e2e seconds per pair))), rounded down to a multiple of 4",
+    "scoring_reporting_reserve_seconds": 1800,
+    "seconds_per_complete_three_system_question": 12.602640250750056,
+    "smoke_mean_end_to_end_seconds_per_pair": 4.200880083583352,
+    "smoke_p90_end_to_end_seconds_per_pair": 5.325331926299963,
+    "usable_generation_seconds": 11864.354614957734
+  },
+  "sampling": {
+    "eligible_pool": "output/final_evaluation/heldout_v1_1/GENERATION_QUESTIONS.jsonl",
+    "eligible_pool_sha256": "c625ed006865b4052d3e3319e37ed78cfddf949335b531ed6200d7043bb486b1",
+    "execution_order": "dependency-group units ordered by SHA-256('20260930|group-order|dependency_group'); questions by question_id within a unit; system order per question by SHA-256('20260930|system-order|dataset|question_id|system')",
+    "labels_used": false,
+    "metadata_used": [
+      "dataset",
+      "question_id",
+      "dependency_group"
+    ],
+    "musique_full": "equal-probability sample of dependency groups (both answerable and insufficient variants kept together): lowest SHA-256('20260930|sample|musique_full|dependency_group')",
+    "n_pairs": 444,
+    "n_questions": 148,
+    "pool_counts": {
+      "musique_full": 4832,
+      "qasper": 1408
+    },
+    "qasper": "equal-probability sample of questions without replacement: lowest SHA-256('20260930|sample|qasper|question_id')",
+    "split": {
+      "musique_full": 74,
+      "qasper": 74
+    },
+    "stratification": "by dataset only (fixed 50/50); no stratification on answerability, evidence or outcomes"
+  },
+  "scope_statement": "A REDUCED LOCAL STUDY under a five-hour execution-budget design. It is NOT the original full held-out evaluation (6,240 questions / 18,720 pairs), which remains preserved and unexecuted.",
+  "scoring": {
+    "answer": [
+      "answer token F1",
+      "Exact Match"
+    ],
+    "behavior": [
+      "answerability accuracy",
+      "correct abstention",
+      "incorrect abstention",
+      "false answer on insufficient",
+      "abstention rate",
+      "parse validity",
+      "schema validity",
+      "semantic validity",
+      "invalid generation rate"
+    ],
+    "efficiency": [
+      "rendered prompt tokens",
+      "output tokens",
+      "Qwen supplied-evidence tokens",
+      "MiniLM supplied-context tokens",
+      "end-to-end latency",
+      "generate latency",
+      "output tokens/s",
+      "peak VRAM"
+    ],
+    "evidence": [
+      "supplied-evidence unique gold-span recall (primary)",
+      "native retrieved-evidence recall (secondary, labeled as retrieved)",
+      "answerable-only complete-evidence recovery (supplied)",
+      "insufficient-question residual-support recovery (supplied)"
+    ],
+    "gold_access": "only after PREDICTION_SEAL.json exists and verifies; gold normalized files must reproduce the SHA-256 recorded in the eligible pool",
+    "gold_file_identity": "regenerated normalized gold files must match eligible-pool source_file_sha256 exactly or as CRLF-equivalent bytes",
+    "implementation": "tools/score_local_qwen_4bit.py reusing token_f1 (final_evaluation.py) and normalize/covered/exact_match/paired_cluster_inference/holm (tools/score_final_heldout_v1_1.py) unchanged",
+    "missing_pairs": "pairs never attempted (time expiry or unresolved infrastructure stop) are reported as missing, not scored as model failures; paired comparisons use questions with all three systems attempted; attempted-but-invalid generations stay in the denominator as failures",
+    "prediction_text": "space-joined claim texts (heldout v1.1 scorer rule); INSUFFICIENT gold scores F1 = EM = 1 only for a valid INSUFFICIENT prediction",
+    "undefined_gold_answerability": "normalized QASPER records without gold_answerability (no usable reference answer and not unanimously unanswerable) get NaN answer/answerability/abstention metrics and are counted; evidence metrics still apply when gold spans exist (the unexecuted heldout v1.1 scorer would raise KeyError on such rows; no other scorer rule changes)"
+  },
+  "seeds": {
+    "execution_order_independent": true,
+    "master_seed": 20260930,
+    "note": "Fixed seeds improve repeatability but do not guarantee identical outputs across hardware or library versions.",
+    "rule": "question_seed = int.from_bytes(SHA-256(UTF-8('{master_seed}|{dataset}|{question_id}'))[:4], 'big'); random.seed(question_seed) and torch.manual_seed(question_seed) immediately before every system's generate() call for that question",
+    "same_seed_for_all_three_systems_of_a_question": true,
+    "sampling_seed": 20260930
+  },
+  "software": {
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "tokenizers": "0.23.2",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "transformers": "5.17.0"
+  },
+  "statistics": {
+    "clusters": {
+      "musique_full": "source group (musique-group:*)",
+      "qasper": "paper (qasper-paper:*)"
+    },
+    "comparisons": [
+      "adaptive_single_view_v2 - sar_rag_v1",
+      "sar_rag_v1 - traditional_k10",
+      "adaptive_single_view_v2 - traditional_k10"
+    ],
+    "confidence_intervals": "10,000-replicate paired cluster bootstrap, 95% percentile, seed 20260926 (heldout v1.1 implementation)",
+    "datasets_reported_separately": true,
+    "interpretation": "p > 0.05 or a CI crossing zero is reported as 'not statistically distinguishable in this study', never as equivalence; no equivalence test is declared",
+    "multiplicity": "Holm across the three comparisons within each dataset x primary-metric family",
+    "no_cross_dataset_average": true,
+    "primary_metrics": [
+      "answer_token_f1",
+      "supplied_evidence_recall",
+      "answerable_complete_evidence",
+      "supplied_context_tokens"
+    ],
+    "secondary_metrics": "Exact Match, answerability/abstention, validity and efficiency metrics get the same CI/test machinery but no multiplicity claim; reported as secondary",
+    "sensitivity": "descriptive only: metrics restricted to questions where all three systems produced valid generations",
+    "tests": "paired cluster sign-randomization, 10,000 draws (heldout v1.1 implementation)"
+  },
+  "status": "FROZEN_BEFORE_REDUCED_LOCAL_GENERATION",
+  "title": "Reduced local-Qwen paired evaluation of Traditional RAG k=10, SAR-RAG v1 and adaptive single-view v2"
+}

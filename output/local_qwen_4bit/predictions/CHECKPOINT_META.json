@@ -1,0 +1,46 @@
+{
+  "generation_config": {
+    "attempts_per_pair": 1,
+    "backend_version": "sar-rag-local-qwen-4bit-backend-1.0.0",
+    "experiment_version": "local_qwen_4bit_reduced_v1",
+    "generation": {
+      "batch_size": 1,
+      "do_sample": true,
+      "enable_thinking": false,
+      "eos_token_id": [
+        151645,
+        151643
+      ],
+      "max_new_tokens": 1600,
+      "min_p": 0.0,
+      "num_beams": 1,
+      "pad_token_id": 151643,
+      "repetition_penalty": 1.0,
+      "source": "Qwen/Qwen3-8B README (pinned revision) non-thinking recommendation: Temperature=0.7, TopP=0.8, TopK=20, MinP=0",
+      "temperature": 0.7,
+      "top_k": 20,
+      "top_p": 0.8
+    },
+    "master_seed": 20260930,
+    "model_repo": "Qwen/Qwen3-8B",
+    "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "quantization": {
+      "backend": "bitsandbytes",
+      "bnb_4bit_compute_dtype": "bfloat16 if torch.cuda.is_bf16_supported() else float16",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "cpu_offload_allowed": false,
+      "device_map": {
+        "": 0
+      },
+      "load_in_4bit": true
+    },
+    "seed_rule": "question_seed = int.from_bytes(SHA-256(UTF-8('{master_seed}|{dataset}|{question_id}'))[:4], 'big'); random.seed(question_seed) and torch.manual_seed(question_seed) immediately before every system's generate() call for that question",
+    "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "transport_version": "qwen-chat-template-schema-in-system-v1"
+  },
+  "planned_pairs": 444,
+  "protocol_fingerprint": "bd16ae13de756dd3cfe95350f4253765746fcef18de410b3ae964fcf889c5084",
+  "sample_manifest_fingerprint": "284425b395171f0e0cf45c15be6ce7027fa24419f600601636284cb49a8dc541",
+  "stage": "reduced_evaluation"
+}

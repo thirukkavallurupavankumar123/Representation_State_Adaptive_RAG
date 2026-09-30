@@ -1,0 +1,12 @@
+{
+  "accepted_smoke": "output/local_qwen_4bit/smoke/r1",
+  "accepted_smoke_summary_sha256": "45023456ff54315b5569236df52a5fffa401485273adc865f401605724ae5693",
+  "frozen_utc": "2026-09-30T14:27:24.937923+00:00",
+  "gold_labels_accessed": false,
+  "protocol_file_sha256": "68b9d2c621a98b091bf8b2fa61852c487060a97a4156b9360913ca7e7d49c785",
+  "protocol_fingerprint": "bd16ae13de756dd3cfe95350f4253765746fcef18de410b3ae964fcf889c5084",
+  "protocol_path": "output/local_qwen_4bit/protocol/PROTOCOL.json",
+  "sample_manifest_file_sha256": "dd7bb6a3c5ba5f27734bcedbfcf09f2a6d5e77cb4e9c8fabbbe96be15ccfa58f",
+  "sample_manifest_fingerprint": "284425b395171f0e0cf45c15be6ce7027fa24419f600601636284cb49a8dc541",
+  "sample_manifest_path": "output/local_qwen_4bit/manifests/SAMPLE_MANIFEST.json"
+}

@@ -1,0 +1,1 @@
+{"completed_pairs_at_pause": 194, "note": "operator-requested pause; in-flight pair (if any) was not recorded and resumes with the same seed; not a model output", "signal": "SIGINT", "torn_lines": [], "type": "manual_pause_user_requested", "utc": "2026-09-30T14:48:30.534905+00:00"}

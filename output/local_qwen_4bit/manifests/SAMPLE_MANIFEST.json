@@ -1,0 +1,2865 @@
+{
+  "counts": {
+    "by_dataset": {
+      "musique_full": 74,
+      "qasper": 74
+    },
+    "clusters_by_dataset": {
+      "musique_full": 37,
+      "qasper": 70
+    },
+    "dependency_groups": 107,
+    "pairs": 444,
+    "questions": 148
+  },
+  "eligible_pool": "output/final_evaluation/heldout_v1_1/GENERATION_QUESTIONS.jsonl",
+  "eligible_pool_sha256": "c625ed006865b4052d3e3319e37ed78cfddf949335b531ed6200d7043bb486b1",
+  "exclusion_rules": "none beyond the frozen heldout_v1_1 exposure audit",
+  "inclusion_rules": {
+    "eligible_pool": "output/final_evaluation/heldout_v1_1/GENERATION_QUESTIONS.jsonl",
+    "eligible_pool_sha256": "c625ed006865b4052d3e3319e37ed78cfddf949335b531ed6200d7043bb486b1",
+    "execution_order": "dependency-group units ordered by SHA-256('20260930|group-order|dependency_group'); questions by question_id within a unit; system order per question by SHA-256('20260930|system-order|dataset|question_id|system')",
+    "labels_used": false,
+    "metadata_used": [
+      "dataset",
+      "question_id",
+      "dependency_group"
+    ],
+    "musique_full": "equal-probability sample of dependency groups (both answerable and insufficient variants kept together): lowest SHA-256('20260930|sample|musique_full|dependency_group')",
+    "n_pairs": 444,
+    "n_questions": 148,
+    "pool_counts": {
+      "musique_full": 4832,
+      "qasper": 1408
+    },
+    "qasper": "equal-probability sample of questions without replacement: lowest SHA-256('20260930|sample|qasper|question_id')",
+    "split": {
+      "musique_full": 74,
+      "qasper": 74
+    },
+    "stratification": "by dataset only (fixed 50/50); no stratification on answerability, evidence or outcomes"
+  },
+  "manifest_fingerprint": "284425b395171f0e0cf45c15be6ce7027fa24419f600601636284cb49a8dc541",
+  "manifest_version": "local_qwen_4bit_reduced_v1-sample-1",
+  "protocol_fingerprint": "bd16ae13de756dd3cfe95350f4253765746fcef18de410b3ae964fcf889c5084",
+  "questions": [
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1812.00382",
+      "document_key": "qasper-paper:1812.00382",
+      "query_sha256": "93a2409074cbd91b4ba6d66352b8580fa767288a2513b5755b5398f7b4d60333",
+      "question_id": "qasper:test:6822ca5f7a19866ffc3c985b790a4aadcecf2d1c",
+      "question_seed": 4200112800,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "143d3f7bfde4e2ace409dfacac81343c4e6f1249646b1ad2a8660aa36cab598f",
+        "sar_rag_v1": "f91c5649bf5c1cc33a66c3e6f70c8d9fdcc5eda69d356e96effb7cacedb0687d",
+        "traditional_k10": "9d048605be2bc0c8d47e1d19ae74563175fc780531b30c7248f8b835f108f515"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 0
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1802.08969",
+      "document_key": "qasper-paper:1802.08969",
+      "query_sha256": "27a344bc93a5a8bc6bdfd18fb9c4a3a49dd36ea85ca350740bcbfec9aeead361",
+      "question_id": "qasper:test:788f70a39c87abf534f4a9ee519f6e5dbf2543c2",
+      "question_seed": 802903678,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "460fed52cd94e5dc98539f6f719076f3c196adc6553507ffdc71dc283c8725b7",
+        "sar_rag_v1": "4890f7e66f350a76c8b1bfa50cb8c677d4725e36fe405475a76c3499a13a8212",
+        "traditional_k10": "b1d475310c40490d763c5de5660fb92d0734bd11154efbe0cf4c4b8462eee7c6"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 1
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.07620",
+      "document_key": "qasper-paper:1911.07620",
+      "query_sha256": "c31454d5c0b43174f5e0c49873f43356b386a142a5afd5909a95ae9f6f73ed16",
+      "question_id": "qasper:test:10edfb9428b8a4652274c13962917662fdf84f8a",
+      "question_seed": 1570674167,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "88508b194a49102e459fd5d19bfbc48921438100f5047e58bdf9ddb9e58004e9",
+        "sar_rag_v1": "cca1e2d330bf8791f0dd2db69a73a54c01c1f315a4a56df9954c83302947b8a0",
+        "traditional_k10": "1a6c042c6ca0ae8df76ed882714b9dab6e68646592b515546c3c9c4c864f70bf"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 2
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1808.07231",
+      "document_key": "qasper-paper:1808.07231",
+      "query_sha256": "c3c8018b985fcdd77f76ce406d604a0511dcf84415ea95690df72eb1d30e6593",
+      "question_id": "qasper:test:4ddc53afffaf1622d97695347dd1b3190d156dee",
+      "question_seed": 48090260,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "bc9f4536be131fc7639c865913146fb6134c3aa62e2632f64a33d06423ab9ddb",
+        "sar_rag_v1": "07b6ca91120732681f00ee66fd8555cabfcfbe459cbcf95e5dfb1cd5a20d40aa",
+        "traditional_k10": "9cc89c81d99812ad0588b8fa52305d13e016fdb6092a99d608f9b9d36426fac2"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 3
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__222497_737465_93723",
+      "document_key": "musique-example:musique_full:validation:3hop1__222497_737465_93723:answerable",
+      "query_sha256": "5a2599ebd27d413a8a2384749cf9b718aae89a864b7d9e0f8872558a5dcead00",
+      "question_id": "musique_full:validation:3hop1__222497_737465_93723:answerable",
+      "question_seed": 3000432976,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "6e5440101cf9da4e7ceaf674c52247f1c52174f4ae37057f8dd122ede451affa",
+        "sar_rag_v1": "4c2d6aa52ee3ccf740772aceae098c579b338404ffa6b646df66f7968b95a77a",
+        "traditional_k10": "bb1e715329dc75c57a682467239bdfc2cda9d66ecc7ba907609e56af8966a29b"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 4
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__222497_737465_93723",
+      "document_key": "musique-example:musique_full:validation:3hop1__222497_737465_93723:insufficient",
+      "query_sha256": "5a2599ebd27d413a8a2384749cf9b718aae89a864b7d9e0f8872558a5dcead00",
+      "question_id": "musique_full:validation:3hop1__222497_737465_93723:insufficient",
+      "question_seed": 3882549445,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b854a55f4b44f35fc9928ff34a2ad3db8176f12ca3e7374a740ce2cf062c06b4",
+        "sar_rag_v1": "0bb436e7a48f4b862c110b799ac78b31c59051dfb8936e89f5bd97eb05080792",
+        "traditional_k10": "53c315a2b2ebfe16d59ff41ee1f0d24d789c5b702c0858d6c40375b954ce3b5e"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 4
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1901.05389",
+      "document_key": "qasper-paper:1901.05389",
+      "query_sha256": "54d9f111676419e2f45cf2bc10f850b2b68441eb2959f26793819713ed763688",
+      "question_id": "qasper:test:9595fdf7b51251679cd39bc4f6befc81f09c853c",
+      "question_seed": 3431141751,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "06dd0b803b690291d466a24df7d1969b9b015d393b1a314ad12d909ac730b6a7",
+        "sar_rag_v1": "57e8e339ce75b98237bf2909715a53362c9d7c3b1fbf4e6f00490fd41b0bd876",
+        "traditional_k10": "d867c64d4f87d76b8813f5c4662e249c9452276aeb1bfc8563ddecb612748213"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 5
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__269766_43945",
+      "document_key": "musique-example:musique_full:validation:2hop__269766_43945:answerable",
+      "query_sha256": "e0d4e2f28e378d7933c1bf5d26a4de90496ef14febc140315565b24419318628",
+      "question_id": "musique_full:validation:2hop__269766_43945:answerable",
+      "question_seed": 18870604,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "68d5eb7f0d5c3201aa1cbb810d4daa80bb62e1abb21d9ce55a93862ddb01b718",
+        "sar_rag_v1": "003530c1a24f39a90ae0977372b257ad2f86c1a5bc75ff1c1f97cc14ec3120f5",
+        "traditional_k10": "43b898aacb030219c2780ea217415b25c3d291d43f147c3c71c72d0f444a5d27"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 6
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__269766_43945",
+      "document_key": "musique-example:musique_full:validation:2hop__269766_43945:insufficient",
+      "query_sha256": "e0d4e2f28e378d7933c1bf5d26a4de90496ef14febc140315565b24419318628",
+      "question_id": "musique_full:validation:2hop__269766_43945:insufficient",
+      "question_seed": 1484899628,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "30373875b7069532178fbeed3c3af8a8bd31aca9602fa4757fced110b7e7f949",
+        "sar_rag_v1": "c276caa1af19814587613b4c29c0c6d1dc30cd124ed90375ece324e36b6e9ab5",
+        "traditional_k10": "1fb4bc1dbff86bc95861c6286b7702de4fa03a8530a83be0ccc84c097a8b4048"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 6
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1907.08540",
+      "document_key": "qasper-paper:1907.08540",
+      "query_sha256": "d5632676bb28656e6d9a908cde7843e67c86d9ff86fad0062fae58f17ef4585b",
+      "question_id": "qasper:test:1cc394bdfdfd187fc0af28500ad47a0a764d5645",
+      "question_seed": 1407407107,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c498b875d653eac995e60718477924b16abd478a51b562a338ef0a58fa41a854",
+        "sar_rag_v1": "5b374f3a071f75768e835b17beb214eaecdaa8a5c6c14f3c8ff10254541518cd",
+        "traditional_k10": "4a7e61bd3a24cead38081193ad0afb8e50fee3c27d13ff0ae2e7246deefa1cc8"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 7
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1905.01347",
+      "document_key": "qasper-paper:1905.01347",
+      "query_sha256": "04c81fd3f1917738cf20bc8520812a50392e95086f1c6831333f3ff0ddc46ee1",
+      "question_id": "qasper:test:c27b885b1e38542244f52056abf288b2389b9fc6",
+      "question_seed": 1613215055,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b6391c8e780088e74897d7394226c7a39778c8c8ad82c019cbf58553bd69dbdf",
+        "sar_rag_v1": "e4866ff50d82ee49743649a99c920f2e8ec55d9ca40795acad1b07172929e8e6",
+        "traditional_k10": "5dc19c8812f67e50135ec33882db4ba5ec225149c76770f2b75d1f859ccfe7ce"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 8
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__92991_27069_76291",
+      "document_key": "musique-example:musique_full:validation:3hop2__92991_27069_76291:answerable",
+      "query_sha256": "ede4aad2b542313af6be8322f2a262be47c230aa3430c1c031f93aaaf6efd687",
+      "question_id": "musique_full:validation:3hop2__92991_27069_76291:answerable",
+      "question_seed": 4004836626,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "91884941a066d1b5f9cb5722e3b7df8948db1d32d50817af611bc5f6985a0570",
+        "sar_rag_v1": "0f5efc6873f37159f46b246c54ae7f11552fce2cec74a8b42211a87ba8520327",
+        "traditional_k10": "f3181a0ce1e752927cc842d2f5ef1a92d18fea5d09e66b1710312134a6cfc26c"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 9
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__92991_27069_76291",
+      "document_key": "musique-example:musique_full:validation:3hop2__92991_27069_76291:insufficient",
+      "query_sha256": "ede4aad2b542313af6be8322f2a262be47c230aa3430c1c031f93aaaf6efd687",
+      "question_id": "musique_full:validation:3hop2__92991_27069_76291:insufficient",
+      "question_seed": 1326779588,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "ead1f7e2117ff6cbf4003d0927758a2eb143c9e987f635e0f810078da9f4e315",
+        "sar_rag_v1": "cb5ea3815a280b47e2182fa5ddea3c3f786f39a2c53345a18b447a15d7c6cce9",
+        "traditional_k10": "0d38c183ba78199f30b6eeb913bad97ad995862dbede6321afe0b6ce5798ddf2"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 9
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2003.11531",
+      "document_key": "qasper-paper:2003.11531",
+      "query_sha256": "00868749100a5718191657f417d947a9e9baafe8ef6c9ce62891bab4c894ec8e",
+      "question_id": "qasper:test:9b6339e24f58b576143d2adf599cfc4a31fd3b0c",
+      "question_seed": 3540995427,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "e5d0b69700d057dc5c6f19dff9a5daf432f776421eb877c2bd56d2f85955773a",
+        "sar_rag_v1": "d1896dbd446ba2435e6bcd2eb35c910da0af1cfc888fc27909e5db12ed369f8a",
+        "traditional_k10": "c0a7a0246608645f6d5164857d54d1256c23f6efd281e47683c4c89e59b6df12"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 10
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1910.09916",
+      "document_key": "qasper-paper:1910.09916",
+      "query_sha256": "f0c4d906399df2c68b6a06d1f9e8121a33c9ced5467695d9b3cb4be46f63997a",
+      "question_id": "qasper:test:9240ee584d4354349601aeca333f1bc92de2165e",
+      "question_seed": 3795823663,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "ef219bb43b3c1c241fc8a27d5bf3958bbf8290f61b1852f4fa801630424d7c8f",
+        "sar_rag_v1": "d4c142ead6443359c727d08a68762d3d50c998ea1dab585cbaef15e68d09ceee",
+        "traditional_k10": "ea61fb59cdb5d5920131d54e6524ccec5b4f4ab6fa1e7e3f8415e745c7ad2df7"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 11
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__14121_15463",
+      "document_key": "musique-example:musique_full:validation:2hop__14121_15463:answerable",
+      "query_sha256": "60b201e0e565bf23d2e3248726d32696f65331e2e05a89dfb3b4f8a39e3dcd08",
+      "question_id": "musique_full:validation:2hop__14121_15463:answerable",
+      "question_seed": 3968593413,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "ed6cf8121b441db7032bf8e92c3f466cf5ee5fc7328bfaef9212d964eba0ac97",
+        "sar_rag_v1": "0f79b4163bb0bb07cb3bc9219f119a5ef05575b192f15e0450883e2b9cd938a6",
+        "traditional_k10": "9bde3f612031ae0d523a4d0cd8ecd36b39c9956656294ed9cd5276194bef66ff"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 12
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__14121_15463",
+      "document_key": "musique-example:musique_full:validation:2hop__14121_15463:insufficient",
+      "query_sha256": "60b201e0e565bf23d2e3248726d32696f65331e2e05a89dfb3b4f8a39e3dcd08",
+      "question_id": "musique_full:validation:2hop__14121_15463:insufficient",
+      "question_seed": 1727565103,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "459b7aac5d238cac17d836b866a8d2de129c769358147032b69ee1485b7ec414",
+        "sar_rag_v1": "1e7f0f39a05c6b4efdf6c5d4663af43df3d2db496942b96cc309652ab370cbe6",
+        "traditional_k10": "95e6108dc677d03d8ec21c9a827918bf9f78e83a90dec3574939163308cb75a7"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 12
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1707.05589",
+      "document_key": "qasper-paper:1707.05589",
+      "query_sha256": "acf6f5551415c2255b3bc0a938ede7aabeedb61da4cf9701ec045863fa6b0a97",
+      "question_id": "qasper:test:4f8b078b9f60be30520fd32a3d8601ab3babb5c0",
+      "question_seed": 1588413742,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "2b124ed04e161a9a38f900e5415200a457e7b0af3875d97aad7f0f42f879b850",
+        "sar_rag_v1": "ee208219169f7d2401e5d127dc3f547d6932aabc62be1bca99bee8d118fc4765",
+        "traditional_k10": "9ccd30dca296152cc0f4cd9b13b853f254c1573d9b73b3ee1d2120ebe389c858"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 13
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1707.05589",
+      "document_key": "qasper-paper:1707.05589",
+      "query_sha256": "8784481e17de50c5500346ced016a1ab8fecd92c92bb75465c16909a6caae558",
+      "question_id": "qasper:test:b6e97d1b1565732b1b3f1d74e6d2800dd21be37a",
+      "question_seed": 508067231,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "77c8e93ab0b0739a2b4ae4278e858f2e3b1e1430b8c59cdeae444dfa43dd4836",
+        "sar_rag_v1": "b6ef2c34621c513011b3a9518dc2c49afb70b9230ec43a54d5079f3bb9e8960e",
+        "traditional_k10": "4c52912255424ea9bc800f4492eb7cb220a73c1af439c9c4310f754988080bee"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 13
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__391873_88622",
+      "document_key": "musique-example:musique_full:validation:2hop__391873_88622:answerable",
+      "query_sha256": "5210f671ad01d9a3fe76de367e76022a01ef5e47839ef25a2fd1155d2b0cf67a",
+      "question_id": "musique_full:validation:2hop__391873_88622:answerable",
+      "question_seed": 458515909,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d3b3f3c36fbf02b7045f3472f9d53a356428d66d89b1403ac53846a5c7173a37",
+        "sar_rag_v1": "a90da3514826a9611cda2961d84a03131395bcebc6fd3386678cfcc6dc247bc1",
+        "traditional_k10": "11eadbf0d5ee5929f44158484f53e0b606690cbc9077d592a2feb9a089a8c77a"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 14
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__391873_88622",
+      "document_key": "musique-example:musique_full:validation:2hop__391873_88622:insufficient",
+      "query_sha256": "5210f671ad01d9a3fe76de367e76022a01ef5e47839ef25a2fd1155d2b0cf67a",
+      "question_id": "musique_full:validation:2hop__391873_88622:insufficient",
+      "question_seed": 139354191,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "df0fb0f8c260b340142e0eec3078fb34308b5a6e2a2bcf50968936da0dfb99d2",
+        "sar_rag_v1": "3acdb877027dca1a329fd4bd55dda319fa03d7baf946bcc9690be196d089a01c",
+        "traditional_k10": "4bce69c0d09150892c6831fa98388de284f5e9edfdb14dd080528e2c3af58f0c"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 14
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1605.05156",
+      "document_key": "qasper-paper:1605.05156",
+      "query_sha256": "67988470e19cada61de9a89af063f1484667ba8ac03286d31464cfedba4490ff",
+      "question_id": "qasper:test:76ae794ced3b5ae565f361451813f2f3bc85b214",
+      "question_seed": 3279317693,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b74ebdf436ef38849b1dff62b34df215e8f9ba7bbb8a07afb0b882b05f123203",
+        "sar_rag_v1": "b35545bb38a21bf3777781b990011cef34cc35bef48a8a01819940728f655a88",
+        "traditional_k10": "3029d2b016301344e2557a26e334cdee34e4fc09cc40a616994291be08851426"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 15
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__469478_15840_36002",
+      "document_key": "musique-example:musique_full:validation:3hop1__469478_15840_36002:answerable",
+      "query_sha256": "36e55ba7e7b83906dfb629b957f6957882f611816214d2b77da45fb4070a73f6",
+      "question_id": "musique_full:validation:3hop1__469478_15840_36002:answerable",
+      "question_seed": 3112386004,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "0eaa309ebc515b418253515cc33cbbe0a6be8b062251cc912f75987dae97b7ef",
+        "sar_rag_v1": "326a6a6a84336dcb09a97744c4fa250f20b8dadb20e806972d65f229737e2e18",
+        "traditional_k10": "a2c2d1793daa323349a0aa9f3c2aabb56e720a3c9d5c7021b83d09f6005e1088"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 16
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__469478_15840_36002",
+      "document_key": "musique-example:musique_full:validation:3hop1__469478_15840_36002:insufficient",
+      "query_sha256": "36e55ba7e7b83906dfb629b957f6957882f611816214d2b77da45fb4070a73f6",
+      "question_id": "musique_full:validation:3hop1__469478_15840_36002:insufficient",
+      "question_seed": 1548358272,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c28422eda75e7f712606503580f4ea50e8302d6ff9a30d66a8e8ea2abab94b98",
+        "sar_rag_v1": "893d8b07ee68768d7755679e3f82cfbf6ac683a7102c17ce4ed2d56df155cd4b",
+        "traditional_k10": "6e795fea094d01495c03b29c60e8adf17c6d7060e067031da2b247287b43235b"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 16
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.06919",
+      "document_key": "qasper-paper:1911.06919",
+      "query_sha256": "078827fd46f16e2bd6a4778289d9e3c89156d028a3b0cf30a4ee9d65d29fcae7",
+      "question_id": "qasper:test:3098793595252039f363ee1150d4ea956f2504b8",
+      "question_seed": 2839620174,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "198440092a9eadd76ce1262d07d66681e41d0420fbe8cecb99f1fb6c58b1df18",
+        "sar_rag_v1": "d62de1db3d6a02fc39f625c9415fb2c15a43cbafb1d1a45a42810fb204116b28",
+        "traditional_k10": "aee4f5197aec92112b7b6184557c573e8df29aeed732f1731b61f34d73df998d"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 17
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1701.03578",
+      "document_key": "qasper-paper:1701.03578",
+      "query_sha256": "0d6f1553bf8f71c6acde7331adadcd8eaae349622db68fde9261c4fade56940d",
+      "question_id": "qasper:test:e2a507749a4a3201edd6413c77ad0d4c23e9c6ce",
+      "question_seed": 3937892733,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c2fbe86951fe65fb4e4b0f98240d533016b6bb7def073e3aed37d7ced042f0ff",
+        "sar_rag_v1": "7aa9b50ee352b5d077ee7a899f2d553232f742c41947e64f882961a43d9d3762",
+        "traditional_k10": "58a26041c1ee61642734394d77ddd14a241de12fbc981dc6565a2634f0847779"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 18
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1606.07043",
+      "document_key": "qasper-paper:1606.07043",
+      "query_sha256": "7a5e10bcb6a07dde3e5799025761d92dce38f5c31057d436ee0794620c8ab343",
+      "question_id": "qasper:test:ec8f39d32084996ab825debd7113c71daac38b06",
+      "question_seed": 1320100147,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "06217279d24859bed2cbc63c0a308814a5dc6d331021e22295e6ec2e144e1c92",
+        "sar_rag_v1": "fa833b9d08f0982ebf6cb646aca6195e52b37ab499f681fb619ef3c0012681d0",
+        "traditional_k10": "2cacbddb84e722f5026c88b4fac6fc5d7f3161b654ebeb094f94105f07c5c1c2"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 19
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1707.09816",
+      "document_key": "qasper-paper:1707.09816",
+      "query_sha256": "c05454e3ceb34028a3e4fa0610a1f981a17710cdeeeaa338229f71378425e473",
+      "question_id": "qasper:test:3ed8ac1ba4df6609fa7de5077d83e820641edc5e",
+      "question_seed": 1805047045,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "6a96aeb5d82efe906749795d65a5a30c6d1c06f80e7837cac2f9b32d892ac6c3",
+        "sar_rag_v1": "5a2cb279ffa447e51d7928ba6a39640a823b59b2749276bd0fefc3c410f75779",
+        "traditional_k10": "5ed16b4ca3969aea86f377ff3bb374569e55acc9e0d5bfd8289356c47ced57f6"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 20
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2003.08769",
+      "document_key": "qasper-paper:2003.08769",
+      "query_sha256": "f16b5027edaeef9e0679ae0e1b7118b75fb88f6b675fbc4f475c9a39da4cddc3",
+      "question_id": "qasper:test:f94cea545f745994800c1fb4654d64d1384f2c26",
+      "question_seed": 119791026,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "469b1489fec733cd12caa269a26445139d9b6ce4cb24cfb40c589391e3da4f5a",
+        "sar_rag_v1": "57c095e3790314b799e5c2c3b415276de25f40bb1ea75ab8e101159dc30334bd",
+        "traditional_k10": "238bc3cf14d893b6a01e45dbd456ccf2f751671aff50cfbf9312343659feee1b"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 21
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1906.05506",
+      "document_key": "qasper-paper:1906.05506",
+      "query_sha256": "d1aaece72523e28a5c8e139efce84ac149cfc8df7d108663baddc50e12e8db87",
+      "question_id": "qasper:test:3dad6b792044018bb968ac0d0fd4628653f9e4b7",
+      "question_seed": 2364598159,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "51b9911eeea543cb91f06a54d234b3f004c75665c8b833505c44445d1539e99c",
+        "sar_rag_v1": "e9cdd758584f5db8299a97dfc3785114f37f58f6f0441521d9cc0c402c799b05",
+        "traditional_k10": "b752f32cdcff06556b7ba3967bceb5e152f29e233ab7d8de77ae84a49554f9b4"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 22
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2004.02363",
+      "document_key": "qasper-paper:2004.02363",
+      "query_sha256": "29ee0238dfc990ac56c37bffd68078d0c1ce4dd49cf8da2591bfda20db7b9d48",
+      "question_id": "qasper:test:90aba75508aa145475d7cc9a501bbe987c0e8413",
+      "question_seed": 1181609856,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "72f1382e3744142fb120d76ed601491495a0eedd733343f8dce8df35f30cc353",
+        "sar_rag_v1": "05b52261fa8dd2339837bd331068a1b85830915cf83000ebb45ed62f5dfe19a8",
+        "traditional_k10": "899466839a3c1d3d27ba45a35a63bb5816bdfc813505f14e5923810b47ee2306"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 23
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1909.01720",
+      "document_key": "qasper-paper:1909.01720",
+      "query_sha256": "bdfa51c79967f51c03e017399de838b38992c4f0e00a64dcbd1fb3417c293e24",
+      "question_id": "qasper:test:ce23849e9e9a22626965f1ca8ca948a5c87280e9",
+      "question_seed": 3693310256,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c833f44d023f33bc545d398fcee038183474eb6763afadc7be2173c9d1f90545",
+        "sar_rag_v1": "a3cf7ec071d5c22fe23c23dc4a98afe61ff5632115e896a952d4f7bcb23bde99",
+        "traditional_k10": "933ce8b93eff1d57504a4981e9221bde4f860f7e78bc2cacc0af10008daef21e"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 24
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__95687_2684",
+      "document_key": "musique-example:musique_full:validation:2hop__95687_2684:answerable",
+      "query_sha256": "dce8a64bfde0059ae694059a9de8507dbf1b5dbe0f5108ec0c4cddd5a607f786",
+      "question_id": "musique_full:validation:2hop__95687_2684:answerable",
+      "question_seed": 3628325851,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "6ccaed4f83eb6dffa4f208b4e84dd7d9f34652f63297c227771efdceca6e2eaf",
+        "sar_rag_v1": "bffdc0f0de58ad84a94985b005d420737fe47dd2712108834f4cc5cd7bbb5900",
+        "traditional_k10": "9a2d6aa0f639039d34c40666e3cd2d78cb90ea515dfd100a8fb4d5e205b1a969"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 25
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__95687_2684",
+      "document_key": "musique-example:musique_full:validation:2hop__95687_2684:insufficient",
+      "query_sha256": "dce8a64bfde0059ae694059a9de8507dbf1b5dbe0f5108ec0c4cddd5a607f786",
+      "question_id": "musique_full:validation:2hop__95687_2684:insufficient",
+      "question_seed": 3852937086,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c4747c60c9d30096581f9455ad950717c1beb5696edc330100dd153c313d706b",
+        "sar_rag_v1": "ced3108e7e4e64336b71fda25b8cb0e49db192fba88f4b31f4ddc6442d121bdf",
+        "traditional_k10": "f24e80e865c28af400d4a58cc24fd3d936f56331234d0764ddf84c1b8b7cd49c"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 25
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__562740_49925_13759_736921",
+      "document_key": "musique-example:musique_full:validation:4hop1__562740_49925_13759_736921:answerable",
+      "query_sha256": "8c5a2cf4a9b344e6ade234184d4efffc3742ef7ea7ae413488bb1136661543ec",
+      "question_id": "musique_full:validation:4hop1__562740_49925_13759_736921:answerable",
+      "question_seed": 852697162,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "0eec0d33ec8460c823ed8c1c43ea6da308806fb9f6a1372c6ea2ff04e9c8cade",
+        "sar_rag_v1": "695158d2aa3d3e5b17f0de14c55d0ae2693cbf8b90ff83ecfe7c91e39360bf98",
+        "traditional_k10": "b44050ebb2276adf681a747fabe40538fec57b8f468e9ffb59ce56f0d0e85c7f"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 26
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__562740_49925_13759_736921",
+      "document_key": "musique-example:musique_full:validation:4hop1__562740_49925_13759_736921:insufficient",
+      "query_sha256": "8c5a2cf4a9b344e6ade234184d4efffc3742ef7ea7ae413488bb1136661543ec",
+      "question_id": "musique_full:validation:4hop1__562740_49925_13759_736921:insufficient",
+      "question_seed": 979167135,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "58af8a08009fb022455199bed29efd053ac1f5ed00a09dceac67c6d0d78fef45",
+        "sar_rag_v1": "45f26d31dcf2276be8acd9dfcdf7c58dd10e57a65527d8acc6aa60a7b27f4266",
+        "traditional_k10": "1e69d8b1f666cd04ba74d75d2b9dafe2774223ab69f615b1b522ded2d91575f3"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 26
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__783711_503371_21711",
+      "document_key": "musique-example:musique_full:validation:3hop1__783711_503371_21711:answerable",
+      "query_sha256": "25eca8c38d0fde04159e1f0eea741d7a0f571cb58569e0e8469485a25c2ab4de",
+      "question_id": "musique_full:validation:3hop1__783711_503371_21711:answerable",
+      "question_seed": 1751576548,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "26b94ad2114d86f2be3b9135b09d398666c2e0b84ff2acce2e5b68c1bad05855",
+        "sar_rag_v1": "a1f56df240aa49738424969a8a6e63740c376231ddacfec4d5234d4a5db2f0ef",
+        "traditional_k10": "a6ff9df259dcda023f353a07c99aa657d5a66d7d6b2f4798be09d5716aaf0aeb"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 27
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__783711_503371_21711",
+      "document_key": "musique-example:musique_full:validation:3hop1__783711_503371_21711:insufficient",
+      "query_sha256": "25eca8c38d0fde04159e1f0eea741d7a0f571cb58569e0e8469485a25c2ab4de",
+      "question_id": "musique_full:validation:3hop1__783711_503371_21711:insufficient",
+      "question_seed": 603994055,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f7db9deb5f563295fbfcee96ef950656234376a3f584c637e5dde5b5cae88145",
+        "sar_rag_v1": "41e0a1997561d16fbf916322f4491241727146ec59f8506cc4b28a866886c0c2",
+        "traditional_k10": "e4ba2a161593cbca295c451d7342b9cc31e13889059b3eb9a514b510b074aaaa"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 27
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1709.06365",
+      "document_key": "qasper-paper:1709.06365",
+      "query_sha256": "aaf19056d17035ce47d68b53068df1c1794b19308262569f9cd45276d5b7ad1b",
+      "question_id": "qasper:test:0fee37ebe0a010cf8bd665fa566306d8e7d12631",
+      "question_seed": 1137406018,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "fad35915f760f0171950d3744a35575d027f59ff762e40b55bb5f7e5dee1cd2f",
+        "sar_rag_v1": "2131216976351145b4eab1153fa662561cd4b39946b84cf71e4af0cb731df495",
+        "traditional_k10": "fbc73d4741b8c29f1c34fbf8df2144a3b03aecd53efcdcfc351f17d8de5ac0b8"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 28
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__9_59409",
+      "document_key": "musique-example:musique_full:validation:2hop__9_59409:answerable",
+      "query_sha256": "59b583cefac061c85c1eb551358ade48f8d68ec85751e71790c1d43be5b4ee46",
+      "question_id": "musique_full:validation:2hop__9_59409:answerable",
+      "question_seed": 2959101124,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "fdaf14a6d8997fe68c8ac972f0cbf639f4f7b72ad67a2b15c5786f2e289aedf8",
+        "sar_rag_v1": "4a3071f29d8757b68e4782ec40a9c620ebfea7bb2405321060c7c025fcfc4a65",
+        "traditional_k10": "0c65e0aaf1615dd41608a29b1ca583aacebd49d30f3c24cba70ef2940921f16b"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 29
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__9_59409",
+      "document_key": "musique-example:musique_full:validation:2hop__9_59409:insufficient",
+      "query_sha256": "59b583cefac061c85c1eb551358ade48f8d68ec85751e71790c1d43be5b4ee46",
+      "question_id": "musique_full:validation:2hop__9_59409:insufficient",
+      "question_seed": 616463,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d4a82d0fb8ec90a1655bc51af004afbe23373c6cacbe9b2567fc7e711559ccfa",
+        "sar_rag_v1": "25a8a50ba6fc9e7b49585a3bc5f453b6188268aa2f93cac377750a3c69571179",
+        "traditional_k10": "724acd357e35cbe2f9a99e8f5a08c101d57d57b31de2116f462bd06b678d37f1"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 29
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1910.13793",
+      "document_key": "qasper-paper:1910.13793",
+      "query_sha256": "4e39f9d69cc33fe8771c3e6a9d02caf476110f4356b10e68364a4e1d9f2956db",
+      "question_id": "qasper:test:647f6e6b168ec38fcdb737d3b276f78402282f9d",
+      "question_seed": 2932326187,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c2256a0791619adec3ebed31126134fa139470aef606039a7dba3943a10b5d17",
+        "sar_rag_v1": "6212745bf6c8393ddb26f0de842bc2aea4fe0d342ec93ad69778ba46db13c95d",
+        "traditional_k10": "1e687cc331f7408c46645134647ba52f7eac07e688e3269137a83f5b0d61feff"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 30
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1902.06734",
+      "document_key": "qasper-paper:1902.06734",
+      "query_sha256": "ed643bf2b8a6b8bad2c0d819eb20e6c31226d0e50f47dbc03299c07cd6bfb3e7",
+      "question_id": "qasper:test:11679d1feba747c64bbbc62939a20fbb69ada0f3",
+      "question_seed": 4016304731,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "322df243a0826dabe73111d136aafca5125788bfa967255c16c4c4ce2fb5e22b",
+        "sar_rag_v1": "a8e6c34579f2cfad7433cc904de3684e6dc5c217508cd85588576d8130373f44",
+        "traditional_k10": "5c9ba97d6aa9655700e957ee16c529b219454042ab1b13b29094b19e7d8c00c2"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 31
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__105773_457883_650651_7262",
+      "document_key": "musique-example:musique_full:validation:4hop1__105773_457883_650651_7262:answerable",
+      "query_sha256": "48e071ae6f2ac981ee177c74b8ce5fbd257738cd885e47899cf06c6746173701",
+      "question_id": "musique_full:validation:4hop1__105773_457883_650651_7262:answerable",
+      "question_seed": 220155644,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b9c42634852e60cb0a19899ca0f62f674ef0fdb27cb310985ab540f4118a96bc",
+        "sar_rag_v1": "10f2758a591b80f34024252409e71df64fda51c6b7b68adaf78dc652d75c77bf",
+        "traditional_k10": "8d2081b383da60bccff959511826cbdd2b09ad37320b28e69f686a8dd3a2b7d5"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 32
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__105773_457883_650651_7262",
+      "document_key": "musique-example:musique_full:validation:4hop1__105773_457883_650651_7262:insufficient",
+      "query_sha256": "48e071ae6f2ac981ee177c74b8ce5fbd257738cd885e47899cf06c6746173701",
+      "question_id": "musique_full:validation:4hop1__105773_457883_650651_7262:insufficient",
+      "question_seed": 1346018622,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "901dcf43e0cb2d1634d404d64af32c100ad5349ed8d099ce31ba6287caffa7f8",
+        "sar_rag_v1": "fa924e8539f0d70d36774d1cb91c7c38bd337058fe245cfed51eae664639a56c",
+        "traditional_k10": "ccfe9d84050a9fc559bf140f131ddba98d719657db06c1437476cba17f741a27"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 32
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1703.10152",
+      "document_key": "qasper-paper:1703.10152",
+      "query_sha256": "61df36c6d09451646fb9111fa307deb7da31621030404852a9e510a84746ea1e",
+      "question_id": "qasper:test:6e134d51a795c385d72f38f36bca4259522bcf51",
+      "question_seed": 1063084262,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "1dc4c11e5685b8e8876ec0a30494709f2092edf323f488a73c40b9efa6058d47",
+        "sar_rag_v1": "0bb7ee4a333c5807595a7e0cb5a09ba735c342ad9a223187d63a75563551ac68",
+        "traditional_k10": "6a113183ebee27d57f65d33658a82841039c1acbfdef98186fa19142701ba8b5"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 33
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__143915_68489",
+      "document_key": "musique-example:musique_full:validation:2hop__143915_68489:answerable",
+      "query_sha256": "51289c3d20e7b3ea5bcb2f0871ff168ae28aa607986003d0fc8a5ac0346f39c3",
+      "question_id": "musique_full:validation:2hop__143915_68489:answerable",
+      "question_seed": 1924942371,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "2726498f6debfdcffd9e5cc898b10579ae256ca5268a875300fa59f331465eb4",
+        "sar_rag_v1": "cc894fab1f028b726e7352caaa65e93732bdd97141573630ce8e5889628034c2",
+        "traditional_k10": "961741801dc1b2201fc4caf0f468b03b2b49f6c39033a9eea5eaaff4a864937e"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 34
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__143915_68489",
+      "document_key": "musique-example:musique_full:validation:2hop__143915_68489:insufficient",
+      "query_sha256": "51289c3d20e7b3ea5bcb2f0871ff168ae28aa607986003d0fc8a5ac0346f39c3",
+      "question_id": "musique_full:validation:2hop__143915_68489:insufficient",
+      "question_seed": 3495478042,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f6f9092355f0e04dc4c8a62e16839a75235a084310a08fca27982653cde00e68",
+        "sar_rag_v1": "df00a16de31f6c28a09a0d1bfe66a19a03cdd787f6ad7fc8d79e415c543ff005",
+        "traditional_k10": "1e9ae625720abbe41559f49f34d5002f6021025f1a815b3aafd84f7b7656dd32"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 34
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1803.06745",
+      "document_key": "qasper-paper:1803.06745",
+      "query_sha256": "e636bc990cbdc1bcf580f9e4a5965bb20853ee628f751db9b0f4e53db211d727",
+      "question_id": "qasper:test:2abf916bc03222d3b2a3d66851d87921ff35c0d2",
+      "question_seed": 2545886349,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f9858192c7e07cb648584c1c04d579475d78630e84d6e1e1f58d01996a33579d",
+        "sar_rag_v1": "ffde1684f751fb9b8f042938c00398979bcce62413d95ebfe2dd25bc00020b3a",
+        "traditional_k10": "7429462449175599e7adbd7f44fa45e90fb24a5e008f35bf3e67609020e31240"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 35
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2004.02214",
+      "document_key": "qasper-paper:2004.02214",
+      "query_sha256": "ee7e100999b75d1a92e87079f78d207ccc7f1da237ff709ff00bff6abb89b28f",
+      "question_id": "qasper:test:fcb0ac1934e2fd9f58f4b459e6853999a27844f9",
+      "question_seed": 2163270366,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "acdc09fbf164c4f80f767766a37aa3230241aba3b58a1988d88b16171e01a99a",
+        "sar_rag_v1": "8698806110e5f88657c3f6da9d17ed5378c6a69b8266e9c995e11de2de46a041",
+        "traditional_k10": "48811b6fa0522ed63a18490db9e3b0f0d523c233c3c1fcda6189e5fb7ef7e706"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 36
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1705.10272",
+      "document_key": "qasper-paper:1705.10272",
+      "query_sha256": "db9dc7d018093be4adbc0b9c52d74ce1c21b5be84e7eb77d7550906b2167203b",
+      "question_id": "qasper:test:9d6b2672b11d49c37a6bfb06172d39742d48aef4",
+      "question_seed": 2917218406,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "7275eebded51bb8fdee032a8c8aa09c1362bad39f54ef3719d005762acf73c56",
+        "sar_rag_v1": "1b9ebe4e814456698512e60613a2e99eb8f25f27de72706ada00f230fb5cc927",
+        "traditional_k10": "2e4a6aa76095f6605c1edff11b0af46029308176b6e7285d360d618527a85b82"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 37
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1705.10272",
+      "document_key": "qasper-paper:1705.10272",
+      "query_sha256": "8e99d8321374995577f51ae421580c2adb00133c45b4ef749beb449ad2170a92",
+      "question_id": "qasper:test:c59d67930edd3d369bd51a619849facdd0770644",
+      "question_seed": 1010024896,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "6410db73a217eee9523b4d26cf84591e42ef4464eb18c7779cd2f4220ad27b56",
+        "sar_rag_v1": "f476c07c576b65186616cd2dd9c3f4d647c147b3cd2faf8eb88ebc3ea250927e",
+        "traditional_k10": "3a3f55232d19ad5947fd03975ff40789c8783aeee5eaacf1080bf1901d68fd41"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 37
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__304722_297619_63959",
+      "document_key": "musique-example:musique_full:validation:3hop2__304722_297619_63959:answerable",
+      "query_sha256": "50e2b745938a317feb762ca4787cb8689baccf74bea3d3f20f1957560a9b991c",
+      "question_id": "musique_full:validation:3hop2__304722_297619_63959:answerable",
+      "question_seed": 3377836069,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "a12705950da0208a16552ab91bc5ff735efd5684712427391f60b7481c867997",
+        "sar_rag_v1": "76489cbfad632d6025bfcf04bc3ab883818decf674f03116a16fc1e3efc7a4c9",
+        "traditional_k10": "a8670ef366f1c5daef3278c188f57ba1200f31ba55c58f7a7c4ddf9fb27b473f"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 38
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__304722_297619_63959",
+      "document_key": "musique-example:musique_full:validation:3hop2__304722_297619_63959:insufficient",
+      "query_sha256": "50e2b745938a317feb762ca4787cb8689baccf74bea3d3f20f1957560a9b991c",
+      "question_id": "musique_full:validation:3hop2__304722_297619_63959:insufficient",
+      "question_seed": 801621412,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "9a00cb335a1310b1dfa6fcd87efb7196c86c7d345158d289789434c27fdc190f",
+        "sar_rag_v1": "e0031e3766212196834a50f289ae4774c8f89ff1bfc7770e03c377e3cc9cd996",
+        "traditional_k10": "3d8508ff73408760a389a156ffb0f19c612c898dbb69432fb64015f37fcc678d"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 38
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1804.09692",
+      "document_key": "qasper-paper:1804.09692",
+      "query_sha256": "658d5e72d4ecb06d4ce0779594d4006575a86fb6253fc08e554dbda824c82bac",
+      "question_id": "qasper:test:389ff1927ba9fc8bac50959fc09f30c2143cc14e",
+      "question_seed": 2548152198,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "5ef59bf5d902a69607ec84071e12437fb5011bfb1ded8c0e34233125ddbf5dc3",
+        "sar_rag_v1": "a60818f8b27c2372bda6c4aa3179566a464f80339dad92259aec6ae65499d98c",
+        "traditional_k10": "cd5c6be3f8b6bfd15d0b44e636d1e4ccdc0ca01861cee387fb028ef2c7fb1cef"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 39
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__119402_102039_158266",
+      "document_key": "musique-example:musique_full:validation:3hop1__119402_102039_158266:answerable",
+      "query_sha256": "a2789fe46021a0c8bea7ffef07b29fd8d23c362094a693cc31e508424bea905f",
+      "question_id": "musique_full:validation:3hop1__119402_102039_158266:answerable",
+      "question_seed": 4258913031,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "a682cd520624a7f399e740d8e6a3aa13c1c1a640aca606ceaf5f59a2897b7f24",
+        "sar_rag_v1": "2ecc59d70a13a39b386c761de1695d89eec5eb28d1458afaf612fe98009d13ef",
+        "traditional_k10": "40b029b930f391b1f7fe7c19e09c0fa30e22600ac4a6b39aaf862e1fed20eea1"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 40
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__119402_102039_158266",
+      "document_key": "musique-example:musique_full:validation:3hop1__119402_102039_158266:insufficient",
+      "query_sha256": "a2789fe46021a0c8bea7ffef07b29fd8d23c362094a693cc31e508424bea905f",
+      "question_id": "musique_full:validation:3hop1__119402_102039_158266:insufficient",
+      "question_seed": 2306798688,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b02df92867c100cf3dd24d1fec47dcc218c92fd18880498491cd37f8fde861a6",
+        "sar_rag_v1": "8174ba4dd22c575886dc9a56bd3643a9cb5af9cc21a2284577fbfd7882417879",
+        "traditional_k10": "70c026f115d8dfb96e9360538473e56c67993d44bb81f1dd91c5cf114a90774a"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 40
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__731584_700117",
+      "document_key": "musique-example:musique_full:validation:2hop__731584_700117:answerable",
+      "query_sha256": "bd19e29c6d463fc9f53469ad5fbc7247eea6d4bfaf110f919e47f33490e7305c",
+      "question_id": "musique_full:validation:2hop__731584_700117:answerable",
+      "question_seed": 122081602,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "ebc017126a78857507170e02c812a37848ece61a4810add0d225d53b9ffbba02",
+        "sar_rag_v1": "ad45c1a3efb27b425ce28a4a27c82116fd8792d7c5cad2db3b7ce1a06539ec84",
+        "traditional_k10": "6419e2e0f6dd226d2e2a280cf60d45807f21225fb1d213d10a6cdbdc30d944dc"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 41
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__731584_700117",
+      "document_key": "musique-example:musique_full:validation:2hop__731584_700117:insufficient",
+      "query_sha256": "bd19e29c6d463fc9f53469ad5fbc7247eea6d4bfaf110f919e47f33490e7305c",
+      "question_id": "musique_full:validation:2hop__731584_700117:insufficient",
+      "question_seed": 412623932,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c97e6f581cb616a07e4571cf949785138873a59648e372d0a8df292269be7ec9",
+        "sar_rag_v1": "37a3944f9fcf2e4d385720d615aefd49fd2bc984fa9530256ae7d96a2d34cf03",
+        "traditional_k10": "23076b784bb112ae039221b88eed7ca16d5caae3b0c6bb13354ee80a1539dda3"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 41
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__857_846_7701",
+      "document_key": "musique-example:musique_full:validation:3hop1__857_846_7701:answerable",
+      "query_sha256": "a398968671e26b204bd5d145915f4ad8b48c49250920882bfc95a99cf2780a08",
+      "question_id": "musique_full:validation:3hop1__857_846_7701:answerable",
+      "question_seed": 907787979,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "962b10c3bb2484ed52fc378ed9d2f528c12aea92e7c34c588aff81a01cfa576d",
+        "sar_rag_v1": "f4cfbdcd7c295992d6fa606761ad593504b23646268ec363ecb069a45d1a6164",
+        "traditional_k10": "2f6812daa366658d9215e32e2a53a5c9813b95ac586df3ecb36b1c3a7d094361"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 42
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__857_846_7701",
+      "document_key": "musique-example:musique_full:validation:3hop1__857_846_7701:insufficient",
+      "query_sha256": "a398968671e26b204bd5d145915f4ad8b48c49250920882bfc95a99cf2780a08",
+      "question_id": "musique_full:validation:3hop1__857_846_7701:insufficient",
+      "question_seed": 4219442823,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "3b54e249ef05ff7611f48406d3249559bf002e49699d647eb4d2f790b682a6b8",
+        "sar_rag_v1": "1a8397b1b972fccebcee93671dcc1683b50fac3381076bc23a84a4ad7b495b30",
+        "traditional_k10": "a69d5e79d5838177ec187cd3e95e2faadf163b1ad3de3610277c6457a58215e3"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 42
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1809.05807",
+      "document_key": "qasper-paper:1809.05807",
+      "query_sha256": "1fd163e421bc6be54b6465684f7a1c45303ef2925294daa7675036e2b389c231",
+      "question_id": "qasper:test:a51c680a63ee393792d885f66de75484dc6bc9bc",
+      "question_seed": 964555695,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "a91d5ca8018bd2bf28747257798900caa567bfd2d7575ed81fd9b7e6443ff9f1",
+        "sar_rag_v1": "9282c5f5357151e867ebc8471e7e0a9ebe6667a7c80a35395e17651dee553df5",
+        "traditional_k10": "5ad2dad14aac6b0857b23bc3020056bed50be95ac97ba388d071e13718c692a6"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 43
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__398232_326948_10972",
+      "document_key": "musique-example:musique_full:validation:3hop1__398232_326948_10972:answerable",
+      "query_sha256": "a59ea42a2cafb23cc1243b9d21d2305258a323700046bc2f8735197d69f0fba6",
+      "question_id": "musique_full:validation:3hop1__398232_326948_10972:answerable",
+      "question_seed": 2785129657,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "cf6ca81c022f4611116e09226dffa6b3a2504ecaee80e6149404967ad3c2ef5d",
+        "sar_rag_v1": "74c58996b259d0755a900d1851c30ef284f887dc2f6e082e08d463f8f86bbfcf",
+        "traditional_k10": "534e6b3e723e1a1a29761bc678239e413bb30fe0e41f095e91c93ddf1956348a"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 44
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__398232_326948_10972",
+      "document_key": "musique-example:musique_full:validation:3hop1__398232_326948_10972:insufficient",
+      "query_sha256": "a59ea42a2cafb23cc1243b9d21d2305258a323700046bc2f8735197d69f0fba6",
+      "question_id": "musique_full:validation:3hop1__398232_326948_10972:insufficient",
+      "question_seed": 1806148166,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d21d10a71ae954287669e51cf2bead4b2d9a6230121134ab5c949fa9e56568b3",
+        "sar_rag_v1": "923b571a0a8e508720394118aa12fd1ebb46c8b8fa1b7bc11ba5209fc5516f1b",
+        "traditional_k10": "e94e0327583891d89d7ab8c19bc504d68295a2d91276062daaaedaca0d7272ef"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 44
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1610.06510",
+      "document_key": "qasper-paper:1610.06510",
+      "query_sha256": "4f5125ff85b3ac857f22fbdf99119d705e0e48eb6073241f0ba99ae217d4c92d",
+      "question_id": "qasper:test:11ef46187a5bf15e89d63220fdeaecbeb92d818e",
+      "question_seed": 2608311864,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "68e27efbaeb5708280bc70a1a6ea7e28c4e75a69e22feb76dc0f70bf659d2e9f",
+        "sar_rag_v1": "e81f848eb3d796f737682a1db4930b9e191a442d6d999ae25d3166c072e11de1",
+        "traditional_k10": "6c15ffca3a33e5191129b5487dde1080639bc1068587ab71f0b837c073b9d976"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 45
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1804.00982",
+      "document_key": "qasper-paper:1804.00982",
+      "query_sha256": "2c844f219e03680a55305bc68ee9ddae910f3423877286080e3d0e461c233dc1",
+      "question_id": "qasper:test:5da9e2eef741bd7efccec8e441b8e52e906b2d2d",
+      "question_seed": 1702355186,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "341bcb4d0eb8dd4c1404de3f0ee4a4cb79dea340dcd774c1a65b82f9c244bb2b",
+        "sar_rag_v1": "80c187cc503016509bfdea52e57e360b9da323a57ceb908a74656ab7f638453f",
+        "traditional_k10": "a4a54b5a3743504a83eaf0f0edb84fc02df3565c9ac28fce56c43cdcb2b20a53"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 46
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__153532_72380",
+      "document_key": "musique-example:musique_full:validation:2hop__153532_72380:answerable",
+      "query_sha256": "db17871ce5b6f9a7d81233b44b9be966d1f4994eb38db0b36a44f4b08108d5df",
+      "question_id": "musique_full:validation:2hop__153532_72380:answerable",
+      "question_seed": 608350750,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c11adfc83abf4ddc1b656838cf613f6af264c9f89e1d656eeba9861091400505",
+        "sar_rag_v1": "0f5b3c940c05d4024a31326088cc543fd49e619392d5374aa75de394e929510e",
+        "traditional_k10": "3c9baaac6fdf7a2067874dbb281eccbedd16b0d7313e5da7703d84b128ee1f28"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 47
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__153532_72380",
+      "document_key": "musique-example:musique_full:validation:2hop__153532_72380:insufficient",
+      "query_sha256": "db17871ce5b6f9a7d81233b44b9be966d1f4994eb38db0b36a44f4b08108d5df",
+      "question_id": "musique_full:validation:2hop__153532_72380:insufficient",
+      "question_seed": 530272647,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "867a4fe9dd244c9faaec7fbf8706d80389a96fb22aa33c7f806fa843701fba5d",
+        "sar_rag_v1": "5c6104d96db8ca148c7b5dbd14d214d5d0423eeed6b2c90951af820e52bf52c9",
+        "traditional_k10": "f2311087b0cc4e5f42b2eee3afb125bb97c86f0d9c4ca62bb8d71bffb1934855"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 47
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1705.00571",
+      "document_key": "qasper-paper:1705.00571",
+      "query_sha256": "3f9d1d9c573f7f4cfa01dfc357539ed3f57fc50a7b0dfcedf5e007a4515ade32",
+      "question_id": "qasper:test:9c529bd3f7565b2178a79aae01c98c90f9d372ad",
+      "question_seed": 2698892056,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b1bb9c4423516c078d7ba1c6720e882db7d25c0c1424952ad39587e17418b5c9",
+        "sar_rag_v1": "95e0d7bb476d8ea9de7c2652e2c345c78d30dcac15834ae0cb9fd9a32fcff510",
+        "traditional_k10": "39f0908b7d946ca686293fead38d140f40b8e954b2e7f9ebb964b504de825302"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 48
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__140554_2053_5289",
+      "document_key": "musique-example:musique_full:validation:3hop1__140554_2053_5289:answerable",
+      "query_sha256": "4c9ba6e4ba78ba4eff9da8fe6f986052e93259798f76b01bc3ee284afc28fe48",
+      "question_id": "musique_full:validation:3hop1__140554_2053_5289:answerable",
+      "question_seed": 3572037680,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "51698f359ff3f5567c542c98fa4edb440938b52ab05140c73b7623edba5685d1",
+        "sar_rag_v1": "d2983993af23a0baedff4a2f3edb6084675b3bfbbd305579c8c2478faa934fec",
+        "traditional_k10": "07d8f7a63b92d0e6ea9c772db2da800b6cefb06adae530d07244a3ba06d554ed"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 49
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__140554_2053_5289",
+      "document_key": "musique-example:musique_full:validation:3hop1__140554_2053_5289:insufficient",
+      "query_sha256": "4c9ba6e4ba78ba4eff9da8fe6f986052e93259798f76b01bc3ee284afc28fe48",
+      "question_id": "musique_full:validation:3hop1__140554_2053_5289:insufficient",
+      "question_seed": 3735860533,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "e5a4bad9841195f32447d08e9145108eba132a481de666f7c00144ebfbf709d1",
+        "sar_rag_v1": "f4ffd587dfe507f580d0f9952a0b60d68a74246861795d86c05c1d0d4d4631a4",
+        "traditional_k10": "a64827aef5091022b3256d08075262cd61f1f09a015446d7218dd8c016f06d41"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 49
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1808.09716",
+      "document_key": "qasper-paper:1808.09716",
+      "query_sha256": "f784108e9f718092c504a1aa93619b9f6e8acafef18398a214f6d862d33b708c",
+      "question_id": "qasper:test:24897f57e3b0550be1212c0d9ebfcf83bad4164e",
+      "question_seed": 1555082868,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "b837b780c69bd1706e1d552fdf5b8fd24da76e29e52cb90fae383090ff86ced0",
+        "sar_rag_v1": "4bc169d6cd411e1098ed264981be64696f7e2d801f63ffa4d7afd6742e9f197d",
+        "traditional_k10": "fd3da6890a6fc4edfca2a2da00dc4039dca1f91b7369e2dc56ca3b58a069bfcc"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 50
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__232315_831637_91775",
+      "document_key": "musique-example:musique_full:validation:3hop1__232315_831637_91775:answerable",
+      "query_sha256": "ce9f9c39f3b9c4c4b0f9fbc994e8b2c67ecb2de11b7a2fda41f8668920dc7a72",
+      "question_id": "musique_full:validation:3hop1__232315_831637_91775:answerable",
+      "question_seed": 1239138041,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "077c5b02d2461905948ec27eaa2bcc969e0537e34a3725bf5e80459843f37fd9",
+        "sar_rag_v1": "7e1fa5e614f2989132c4b07dcfdb24e9c793d30d6193aaa6020844894ead40ea",
+        "traditional_k10": "636f6f14f64449d66eab9bcfdd20b6714a0774491a253e044d14eabcb7d01426"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 51
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__232315_831637_91775",
+      "document_key": "musique-example:musique_full:validation:3hop1__232315_831637_91775:insufficient",
+      "query_sha256": "ce9f9c39f3b9c4c4b0f9fbc994e8b2c67ecb2de11b7a2fda41f8668920dc7a72",
+      "question_id": "musique_full:validation:3hop1__232315_831637_91775:insufficient",
+      "question_seed": 2203647961,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "1230dcd79fb26613f10d44242426e198e2941d08a71e8cc55259a03e5e4c4ede",
+        "sar_rag_v1": "f3fe7cb1cae0b8226a796ca4e96951a636ed4fc3f03c67dbe6a734c90703a18a",
+        "traditional_k10": "411e97970b5d0558019d6638336c5588eac567465fef5488117be5c165dc6e88"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 51
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__711773_508773_85832_745702",
+      "document_key": "musique-example:musique_full:validation:4hop1__711773_508773_85832_745702:answerable",
+      "query_sha256": "3d16c3d6debed412b0c4802f2be05a901d6b331ee99b721158e7208f1c95619b",
+      "question_id": "musique_full:validation:4hop1__711773_508773_85832_745702:answerable",
+      "question_seed": 3640630052,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d0f218671662cf2a5c392208193e6f7743ca18d8bc73f7f1ab4a0a344f959ae5",
+        "sar_rag_v1": "a513887e1c315a8d00a1d79a147a8065a78f54e402b5ec1cb4b9e94c65e11910",
+        "traditional_k10": "b6d23781797aa9e32b048350686f78832cdcfe48b077f881e41a81b567c2cd3d"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 52
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__711773_508773_85832_745702",
+      "document_key": "musique-example:musique_full:validation:4hop1__711773_508773_85832_745702:insufficient",
+      "query_sha256": "3d16c3d6debed412b0c4802f2be05a901d6b331ee99b721158e7208f1c95619b",
+      "question_id": "musique_full:validation:4hop1__711773_508773_85832_745702:insufficient",
+      "question_seed": 2744858500,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "4cdc7ffd2ccb04cd87bb0915add8a696c01eb7c7a0ca8a7ed9e440bb8f743d51",
+        "sar_rag_v1": "624b0957a2a6cf96becfe308658d230f11b03d69ed4d8bd4f8f370d5335e2639",
+        "traditional_k10": "3aee4246a63a22a8edd469aa82d3a6669f725d1bc64380834e2f4980f3ace79e"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 52
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1910.01160",
+      "document_key": "qasper-paper:1910.01160",
+      "query_sha256": "ab361af5da2d6c029d5e4434124d3039974243c96a7610314896e8780c2fd46a",
+      "question_id": "qasper:test:0a70af6ba334dfd3574991b1dd06f54fc6a700f2",
+      "question_seed": 1708846196,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "af219dbbadcf6d8f4a89be25c4278ef198ff5e6abdf1ba32cecc36b67fe0b789",
+        "sar_rag_v1": "c61200594b7ae2224655cd2a26af4ab75357a6445602bed26ac21956637d7c16",
+        "traditional_k10": "ea7442b4ac8a0e9568c0c33ee36d067ef6bd25818156d4351a0672434bf87636"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 53
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__527372_339990_54675",
+      "document_key": "musique-example:musique_full:validation:3hop1__527372_339990_54675:answerable",
+      "query_sha256": "c2a84076ee7569fb17ba2c5d33f678272bef157c9abfbba05613552b6e9cff94",
+      "question_id": "musique_full:validation:3hop1__527372_339990_54675:answerable",
+      "question_seed": 1442001069,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "6622d9676996f629491590877240cd3054be3d0fa31945d9070c25bf2c7252e1",
+        "sar_rag_v1": "99846ecc548ceed7860ad3fb385e90674f3a2d4edca1204d657c881363d4a6c0",
+        "traditional_k10": "cbf98fff69aba53ff46950560b960996a03b861eb941ebaa90bebaf877fbd916"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 54
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__527372_339990_54675",
+      "document_key": "musique-example:musique_full:validation:3hop1__527372_339990_54675:insufficient",
+      "query_sha256": "c2a84076ee7569fb17ba2c5d33f678272bef157c9abfbba05613552b6e9cff94",
+      "question_id": "musique_full:validation:3hop1__527372_339990_54675:insufficient",
+      "question_seed": 3630547256,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "59417e8f3751fbcbd19aec5c114d9d59cc44d489a44ee8b22c27fc5bcb2bee5d",
+        "sar_rag_v1": "76dd5f6de394ef3f291074cdadac33ee996ff861d1a5143d5cea98d2ac6e57c9",
+        "traditional_k10": "45236c3c905ab09ea9d5a0e1d60a88ebf6175b20eefd5c8ed87a79808d4d41ab"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 54
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1706.02222",
+      "document_key": "qasper-paper:1706.02222",
+      "query_sha256": "84138fdbdc58100f02a064920104165c0db694e7aa1e75fd51c341917c9cbf14",
+      "question_id": "qasper:test:77a331d4d909d92fab9552b429adde5379b2ae69",
+      "question_seed": 2817412435,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c4a19f2a123ef9954fcf3eedc3ac1739e8a799dbfb0ed74408adf899ef8eee70",
+        "sar_rag_v1": "5103b95a79d02ef92fcbf72a7dc49f5b9ec9402d03d0f371db4df1345b851e7c",
+        "traditional_k10": "d3b6cf9ff718d024b7742603f29a8db6459074e080242e13a0d8a9cd83c743ed"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 55
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1612.07486",
+      "document_key": "qasper-paper:1612.07486",
+      "query_sha256": "5d7f5ad98d2d90f7c200d0385b8b7f106e3371fb7a852a42585459eb7c4a58c8",
+      "question_id": "qasper:test:f37b01e0c366507308fca44c20d3f69621b94a6e",
+      "question_seed": 2927470992,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "bdc84bae993de581600fea84a0f9eea52847a6b0dd4a910551c873d3110e24c4",
+        "sar_rag_v1": "b73f0a25a6df8edc3edb3c786ae4227bbd75430ef52694687a7866ba3c275205",
+        "traditional_k10": "c45286f11a4057c5dd49424ff7f44e643b91d53eff3134cec191d718a9078988"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 56
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__161433_33952_34099",
+      "document_key": "musique-example:musique_full:validation:3hop1__161433_33952_34099:answerable",
+      "query_sha256": "caabeccd875b0b66fe06908a324bfef596a3ed9bbf4ba279bd0335f9562a3f84",
+      "question_id": "musique_full:validation:3hop1__161433_33952_34099:answerable",
+      "question_seed": 46119188,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "95263a0348bd73f77e9be94c401d9dea69650a98147510026aec2edc4324e9b3",
+        "sar_rag_v1": "5e3974d548bd6a90501ba05aaf0510450bab2d1a0da830f84809bcd0da537c59",
+        "traditional_k10": "35a2d385f103bd85a2cf2f8b3155f9afe0cbe3dde60b6515b56234aecac3a4b0"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 57
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__161433_33952_34099",
+      "document_key": "musique-example:musique_full:validation:3hop1__161433_33952_34099:insufficient",
+      "query_sha256": "caabeccd875b0b66fe06908a324bfef596a3ed9bbf4ba279bd0335f9562a3f84",
+      "question_id": "musique_full:validation:3hop1__161433_33952_34099:insufficient",
+      "question_seed": 2314044924,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "674457230bc4a5cb0873448913756b26f94872271d932f69a124b7d74412cf5f",
+        "sar_rag_v1": "44b3f8ba8ad8d8fca7975d9453d319f83e6f01e9134840d971aa5a94bc4b731e",
+        "traditional_k10": "b403f622af481c677a4b0b975d30292b819553d4a9aabfed81b4c90c15eac777"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 57
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1806.03369",
+      "document_key": "qasper-paper:1806.03369",
+      "query_sha256": "d81fdbccd00a9c5d42ee70cf453c43c5e99650332981350b9fa9075e5964588f",
+      "question_id": "qasper:test:8a7a9d205014c42cb0e24a0f3f38de2176fe74c0",
+      "question_seed": 3485600309,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d662bcf3ad6c29a006bdda78ff42b8193adbefed0c11fef42f16e6793f895d03",
+        "sar_rag_v1": "272f88ae88cb8f51cc5f0238c63616015e7d70a6c3cfbca9deccda27f5caf00e",
+        "traditional_k10": "c0e4e0f6478a26601f9915ee8f222a0c82c465d295fa2afbb5c4fb6189d4a167"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 58
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.12722",
+      "document_key": "qasper-paper:1911.12722",
+      "query_sha256": "e0b79ebdef3b7fdd333a28c31bb17d7813661eba7b058c40bb7cff6719589eed",
+      "question_id": "qasper:test:9887ca3d25e2109f41d1da80eeea05c465053fbc",
+      "question_seed": 3393886890,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "98c6ba94da7499f163fa8dce8d3a6606bc7c30670800722adadad8d90ab2c9ed",
+        "sar_rag_v1": "f4c3244eed3d3081e26882210042f29a9c38ea582f3858ff4842e33036379221",
+        "traditional_k10": "77f9a88f738fbbc08d8bd7ff918915c1d7144e60cbe9be4d8346d674ad1b0436"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 59
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__831456_223623_162182",
+      "document_key": "musique-example:musique_full:validation:3hop2__831456_223623_162182:answerable",
+      "query_sha256": "31b396c05e0c39d1d1e4410d5cc1a61b08809047059e5cca3dc9027436bd083a",
+      "question_id": "musique_full:validation:3hop2__831456_223623_162182:answerable",
+      "question_seed": 3334655609,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "95552e6de69da2aadba1dd36fc632121978fa93ee74e0a4399bdcdec9661535d",
+        "sar_rag_v1": "bd783d99a7b69070dc30bacbe58d661a544913ed252a696626206084706e8df5",
+        "traditional_k10": "4e27ded47650c49c803966b9e2b545a1915a002b51211f4ffe46940af771e03f"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 60
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop2__831456_223623_162182",
+      "document_key": "musique-example:musique_full:validation:3hop2__831456_223623_162182:insufficient",
+      "query_sha256": "31b396c05e0c39d1d1e4410d5cc1a61b08809047059e5cca3dc9027436bd083a",
+      "question_id": "musique_full:validation:3hop2__831456_223623_162182:insufficient",
+      "question_seed": 3338110486,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "cc834666e6628670051e65a005a7a1f674fa34a3604632520f34eb3631c3fd95",
+        "sar_rag_v1": "e65fe722df8a51a4425b0d4c6e60c8b4ca7c3a87fc5e3899b59e81494c914ee8",
+        "traditional_k10": "b67070c0180e21ffcf005aa7d68c32cdc644f44e940d2d6e55ac29365efdcbea"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 60
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1803.05160",
+      "document_key": "qasper-paper:1803.05160",
+      "query_sha256": "a92184ccc12547c0ad58c7dab0837cdf8f492571c810bded0b917659ab96bf28",
+      "question_id": "qasper:test:2a120f358f50c377b5b63fb32633223fa4ee2149",
+      "question_seed": 4150163026,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f32c0c1d1391017ec260dc5336dea0de73457da45ff68439f2ac9ad13972e6bc",
+        "sar_rag_v1": "ccde716a1aee82d1827b7bb908d19d30a878093a1d06febf71ea5161388258b3",
+        "traditional_k10": "7ef3447270087fdc1c1900358a42d849e63189a0a7de1814fa1499edd7fc8f33"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 61
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1803.05160",
+      "document_key": "qasper-paper:1803.05160",
+      "query_sha256": "bc32709413d83807a27f9bf34a7fe22f496ce4cdbee2cf446c03489364abd70a",
+      "question_id": "qasper:test:9133a85730c4090fe8b8d08eb3d9146efe7d7037",
+      "question_seed": 2636939751,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "86dc0f03394375d54760c7d19b7d18304c2142c515f3858fb62d7d62653f1137",
+        "sar_rag_v1": "e532cd57c0245ee138280ac5449af422e0a53069603aaac6f24505710705fbeb",
+        "traditional_k10": "23febc25f9cd911b215e10a749f32de3ec365dbd2a120690e896794c9254196f"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 61
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__95172_152907",
+      "document_key": "musique-example:musique_full:validation:2hop__95172_152907:answerable",
+      "query_sha256": "94c04a6d3a3df881b1981ab425a99acec923e471dfb99d21a70e72f193d62f78",
+      "question_id": "musique_full:validation:2hop__95172_152907:answerable",
+      "question_seed": 3186982919,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "fb476e3e061a48f6dd8147e3f111d6317b71a89a360694ecf75599804ee32434",
+        "sar_rag_v1": "9882a6cf1f832317a862ca97a851cffa901157d157c7b7adf05393ce36dd2c0f",
+        "traditional_k10": "7a292edba1fd1d0861563742d0f590c8aaa007b4638caf25b39a91a545d080cf"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 62
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__95172_152907",
+      "document_key": "musique-example:musique_full:validation:2hop__95172_152907:insufficient",
+      "query_sha256": "94c04a6d3a3df881b1981ab425a99acec923e471dfb99d21a70e72f193d62f78",
+      "question_id": "musique_full:validation:2hop__95172_152907:insufficient",
+      "question_seed": 3578976304,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "5f8c35cbb6f88601ffcc73cd8a6f4a03443fb901b597cf2c6f2b5c52c8b11319",
+        "sar_rag_v1": "5928d94d2f4e3f334f3713004b36631ae3781ea93a3baf71c00d938ec875f147",
+        "traditional_k10": "1595e18cd3d19c7912b757898b77200747505682d67d0eafd8d38993de1e7dbb"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 62
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1910.14589",
+      "document_key": "qasper-paper:1910.14589",
+      "query_sha256": "640eef9bb5822f39181895d18d4f2f76cafabb498139746e6ebdfa5f35d8c578",
+      "question_id": "qasper:test:eaae11ffd4ff955de2cd6389b888f5fd2c660a32",
+      "question_seed": 4013075885,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "bfc4b1104d03b4ffad855d6bb43d604921c333d6d252ebfbb48ca44de25bae28",
+        "sar_rag_v1": "e4e285289ff451ee9ce70638ea7ae6aa0224257abf91c26810f177ff7b6a9188",
+        "traditional_k10": "690d7cb4186f1c75bb51225f2a36ec7f606cb5171a9dedc0d342f23c253e3186"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 63
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1909.08357",
+      "document_key": "qasper-paper:1909.08357",
+      "query_sha256": "fa150f77db479c8b11a3e33ffc2fe20cff8addd03727424faec070ad8d40e779",
+      "question_id": "qasper:test:4beb50ba020f624446ff1ef5bf4adca5ed318b98",
+      "question_seed": 1598895748,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c9f750b100115cdef98958082a797493f702a88ba769bfc7671dd563c765e258",
+        "sar_rag_v1": "79119e66dbf63b766f659ea4e08ed06d4b2b2db0908c548035efa4dd1c85d682",
+        "traditional_k10": "6b0ee5956c6725bc4f1fc41c4cce169872f2a730771e68778ea0f17afff6ebe0"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 64
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1912.02866",
+      "document_key": "qasper-paper:1912.02866",
+      "query_sha256": "4fc530f5ce402b7bcb3fb5aa1bb3e2ceedb662e96c55be1f82e3c4f0aa005a4e",
+      "question_id": "qasper:test:fff1ed2435ba622d884ecde377ff2de127167638",
+      "question_seed": 122672142,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "06e142363a35efa7620348e182742d29b75bde4c9bea23799fecfa98dab26a5f",
+        "sar_rag_v1": "cc4a78d132d401818e87e44be2c7b37ac861c80f4220f4668c2ed72dfae4dde8",
+        "traditional_k10": "54efa974b6a5254d1c01068a9f46c7e2be88dbe046bb241141e71f6a3cd648e7"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 65
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1909.13184",
+      "document_key": "qasper-paper:1909.13184",
+      "query_sha256": "718a5661fdc14142aede8b118892e9b73cce2b7ac8fc29eb58ea6776b94abe2a",
+      "question_id": "qasper:test:0abc2499195185c94837e0340d00cd3b83ee795e",
+      "question_seed": 3972999973,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f2cd040778a8d0d88b0262c0d465e74163d59cfa2ba6ef1f6f1e04aab3f2f0c0",
+        "sar_rag_v1": "193d26c6f095f4cf691f9fcad31b3102286b79cdccb6234b4406d84ac3c7c97f",
+        "traditional_k10": "6c7de57d127ee61739a3e02742049541889aad3b6332474fb4c6f814a8e352a7"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 66
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__438364_443779_52195",
+      "document_key": "musique-example:musique_full:validation:3hop1__438364_443779_52195:answerable",
+      "query_sha256": "50d8968b75231dfcceae055973c48ab35043ac6c011cefcbf0f4c70d6025f094",
+      "question_id": "musique_full:validation:3hop1__438364_443779_52195:answerable",
+      "question_seed": 3714593972,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "eb455466f21ea0209164c6a678cde5a536af6cd8c32100feeda5bd704b745b7b",
+        "sar_rag_v1": "0643d5e0789207eb4833ee44812124ea5ad7e9bac20621cdeb7ae6fe2e5ddf90",
+        "traditional_k10": "de569f48334936090a2833b6c26b6d8b6e5b2506fd642a6b8daafe051b55c812"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 67
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__438364_443779_52195",
+      "document_key": "musique-example:musique_full:validation:3hop1__438364_443779_52195:insufficient",
+      "query_sha256": "50d8968b75231dfcceae055973c48ab35043ac6c011cefcbf0f4c70d6025f094",
+      "question_id": "musique_full:validation:3hop1__438364_443779_52195:insufficient",
+      "question_seed": 2318659007,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d71f549a8f30e3d7004fbdc8567a016d3e370cd90c82ab39443aa18f53fed60d",
+        "sar_rag_v1": "74abd28e15cabf5c32cd1ea4e1cf824808a4b8af7adb3030958989fe671525c6",
+        "traditional_k10": "6e6ae035912baf7380cbfff05228ec81a9dbdbe5ee22e060a540360cfa0bf67d"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 67
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1702.02367",
+      "document_key": "qasper-paper:1702.02367",
+      "query_sha256": "4a7eedb4dad17394154498ea8bb38f2fec8eeb124a109c76ce98e60be9059844",
+      "question_id": "qasper:test:97ff88c31dac9a3e8041a77fa7e34ce54eef5a76",
+      "question_seed": 2732008464,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "dd212a228ff6b8a940294df000c05ffbb4d0f117936dd25f36f96c82f1ea7cfc",
+        "sar_rag_v1": "56f0ffcb6232e608c5ebe5ab0920af3767c67a6e0700062a218e7b1c52676400",
+        "traditional_k10": "a6136da9a4796433da274e317c778b2e93542718cf8f0e94045ea5579ea5322b"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 68
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2003.13016",
+      "document_key": "qasper-paper:2003.13016",
+      "query_sha256": "12a7b3f1ae58cea89244d3b07f6bea34335fce227bd71a5f8d387286532d9482",
+      "question_id": "qasper:test:c19e9fd2f1c969e023fb99b74e78eb1f3db8e162",
+      "question_seed": 698723722,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c33cec5dcac0a288f0e7dbce4aa33c55cd7db9ceb38da0dad5725f59c0551bd9",
+        "sar_rag_v1": "e72c032bf40bb7fdae7f4f1ff9ebfa2611e72b9300a3252c0a23e8ff0ce72f64",
+        "traditional_k10": "06adc921042e1153356f9b220b9839f32dc8b1a8b44c269b43be0beeb6027b36"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 69
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1912.08084",
+      "document_key": "qasper-paper:1912.08084",
+      "query_sha256": "e263e7b5df6688eb950a104dbe9e2249aaba9fb6f1d930a8ccb013dfe4478184",
+      "question_id": "qasper:test:56d788af4694c1cd1eebee0b83c585836d1f5f99",
+      "question_seed": 1434582389,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "517cae26c66d6425d6927d67e0d12bcc33054982471c03e69b4a8370f3478057",
+        "sar_rag_v1": "ac632934dd820922a3b5306ef57ab51efbd282e622fed19b8c9465ca7f4507b5",
+        "traditional_k10": "9fe2cfbb058962255af5566229a7514d6c37909df67e5612c1aa90424023dfc5"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 70
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.01770",
+      "document_key": "qasper-paper:1911.01770",
+      "query_sha256": "1a0bf33e3a700b34e3efb85e363402ddfda2b5b8fdb8be4dd513901c50fcfad0",
+      "question_id": "qasper:test:1ef6471cc3e1eb10d2e92656c77020ca1612f08e",
+      "question_seed": 913981254,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c61e887ecd3acca1cba5524e0c52591571edada4d8a807d3dc168a77b00296dd",
+        "sar_rag_v1": "3632a65dd8475eee49f45cebf1164a8e6b16ceacd9995c1a05df21bcab1e01d5",
+        "traditional_k10": "63e9f00d0976653bcdec5f51504b127ab5051a7112a02f0f7790b57e2fe0423a"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 71
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1709.09749",
+      "document_key": "qasper-paper:1709.09749",
+      "query_sha256": "44c9d50c6ad403697e90ad60b519cfe1d6c75499f5503ddcb701dc825ca4837f",
+      "question_id": "qasper:test:181027f398a6b79b1ba44d8d41cc1aba0d6f5212",
+      "question_seed": 1174980402,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c2814e1449ec16ae0b3489721c8e5a20be5ae21581679bf3ce9ccbea9f745649",
+        "sar_rag_v1": "2fdf370666fbbd330683e41988056c6c3dda5c2b49c3a91efe22cf83c850eb11",
+        "traditional_k10": "e46db7e0add83e1aa9a29a3c91641fa4d197b1c11814bc03dd0eec1893bbbacc"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 72
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__598467_68489",
+      "document_key": "musique-example:musique_full:validation:2hop__598467_68489:answerable",
+      "query_sha256": "68913be4a8bdb3df558d9394e5aff0e7e40851fe445bb763858bdc67f689c0db",
+      "question_id": "musique_full:validation:2hop__598467_68489:answerable",
+      "question_seed": 3359872227,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "92053e76b8b4440987d4a4ec2d61fa35b91dd3930712fb5b3625d8e4adcb4e5e",
+        "sar_rag_v1": "3c777652e880c0c02227e3654c0876f87f5706d3136bc7b55d13d529e76a4dcf",
+        "traditional_k10": "adee1ed69fb113d13a4b4468d6b8f33f3e177da43511814a7a379a40176579db"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 73
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__598467_68489",
+      "document_key": "musique-example:musique_full:validation:2hop__598467_68489:insufficient",
+      "query_sha256": "68913be4a8bdb3df558d9394e5aff0e7e40851fe445bb763858bdc67f689c0db",
+      "question_id": "musique_full:validation:2hop__598467_68489:insufficient",
+      "question_seed": 2299718988,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "2c0101522fdbd1e2770973a2108808df2dceaffa1162c5372db6aa2541487a32",
+        "sar_rag_v1": "836fdf56a89713ccf302b8beb3c245af1a62e41eb896e8a0c725590512fc3eed",
+        "traditional_k10": "4e05a98ce3ea50a32853fb74653dfa566efa7e660a8bb716c54b4eb9884d1b90"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 73
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__488811_30078",
+      "document_key": "musique-example:musique_full:validation:2hop__488811_30078:answerable",
+      "query_sha256": "25e2efe08f3d34d7f860a934e032be2b3476f8a72700e7b1d2f98cf5aec7854b",
+      "question_id": "musique_full:validation:2hop__488811_30078:answerable",
+      "question_seed": 2135897102,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "e3c4ce3abafab2666e84679d7732afaf544085ab3b0c9aab029533f30f0b6ca6",
+        "sar_rag_v1": "83c5430ec6dfbaf7eaed1dc1cd8fe018c5881890718d8b5a64b507dd754d55b5",
+        "traditional_k10": "f662677db06048b9ab894afa9f7d9fa1c510275391e0fb44d8481d1c50f3f5a0"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 74
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__488811_30078",
+      "document_key": "musique-example:musique_full:validation:2hop__488811_30078:insufficient",
+      "query_sha256": "25e2efe08f3d34d7f860a934e032be2b3476f8a72700e7b1d2f98cf5aec7854b",
+      "question_id": "musique_full:validation:2hop__488811_30078:insufficient",
+      "question_seed": 1280079626,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "e7173de7a5d00957045b7a2246a7772bdedb299e580f70cef435becd0e14e5e5",
+        "sar_rag_v1": "9aa9cebd1b859ef5a376c461ed6d2f3315bc64aeef4ce8e6d9959134eb32ae57",
+        "traditional_k10": "1335329f5b241f6be7231e9fef72f8ec07221ff386f8a774e7aab5cde9c2db29"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 74
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__840174_78851",
+      "document_key": "musique-example:musique_full:validation:2hop__840174_78851:answerable",
+      "query_sha256": "5bd911353079ac0e440dc23ebf7663d8694c8999af271a6627aa16725aa7f022",
+      "question_id": "musique_full:validation:2hop__840174_78851:answerable",
+      "question_seed": 3280898351,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "251213fbc50035cb5f5535b2bc469f759e2d03ab453b3973c284589a9e6e7e16",
+        "sar_rag_v1": "e5796a6a809ecd2cb032b009766e80fb7323358214f9cef01c1fd7991df21ec7",
+        "traditional_k10": "408935e3d0a3d6aef58fc676bd60cd0261b5141fdbc00161cff51a68a588e751"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 75
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__840174_78851",
+      "document_key": "musique-example:musique_full:validation:2hop__840174_78851:insufficient",
+      "query_sha256": "5bd911353079ac0e440dc23ebf7663d8694c8999af271a6627aa16725aa7f022",
+      "question_id": "musique_full:validation:2hop__840174_78851:insufficient",
+      "question_seed": 2720047228,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "3eb8193b2d40d672819a442c8b5e65f9a729a14e009234082a116156a25c8f05",
+        "sar_rag_v1": "944100a086143df19aa1d9fbc11176dc128cd9ae0f70bc5f3e14614f49e1b920",
+        "traditional_k10": "edc655551b2bd4d2507a906df67464f6acfcd96b2dee9d71df6fbdf2003c66cb"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 75
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1708.07690",
+      "document_key": "qasper-paper:1708.07690",
+      "query_sha256": "0ff7160d6d4e1e35eb01733c1de0e6d93bb4589ca3e836c2415fb5cb0afa8154",
+      "question_id": "qasper:test:157de5175259d6f25db703efb299f948dae597b7",
+      "question_seed": 4207774616,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "8487d47b8dd7bc966d190332adc05facd6fa086225bf24f544e23417f2c74f7e",
+        "sar_rag_v1": "98f864dbba5a60f7cc87d13b693e087340467994acb1fd956a9bd7816b4e410c",
+        "traditional_k10": "d91cbb775b2457ce18a560087fe77c1af987e04142bc2eacdb4dac118543396d"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 76
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1605.05195",
+      "document_key": "qasper-paper:1605.05195",
+      "query_sha256": "d6488cc5850be5d6b73399943330f1631c318ab234bd4dd51f4138d570807d68",
+      "question_id": "qasper:test:242c626e89bca648b65af135caaa7ceae74e9720",
+      "question_seed": 975209530,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "73d9338931244cae74980dd00a5a01ea06741dbc2447da33259cbdcfc4c770ef",
+        "sar_rag_v1": "4324aeb659df9002bbbd687af411bec7bdc385ac57c8c5e8c3c499b358a00177",
+        "traditional_k10": "1d760e1a1eec9d82b417f671781d1269b9fe93e3d40729064f02e2f5c1dcc898"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 77
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1605.05195",
+      "document_key": "qasper-paper:1605.05195",
+      "query_sha256": "d2214fe39c3aeac537b562c8791dcdfdfeb3cba386d4f60de5257af1798a740d",
+      "question_id": "qasper:test:bba677d1a1fe38a41f61274648b386bdb44f1851",
+      "question_seed": 1314891888,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "071441ce1597790795cca3a0949dc444c82284b77de75ad1c1768ae896652b84",
+        "sar_rag_v1": "792328c13f54c799fe3dd9dd0c1910b11fee7ebccbb7cf47c80a82244b7c1d81",
+        "traditional_k10": "92ce389bd466b5349642e228529d1e7e6cc1dc490683e80b935bed377dc80474"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 77
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1909.09070",
+      "document_key": "qasper-paper:1909.09070",
+      "query_sha256": "cb4a5802c9e9d238705221f25e621cc429bca5ca1085202a3da185dbdec6ae07",
+      "question_id": "qasper:test:91336f12ab94a844b66b607f8621eb8bbd209f32",
+      "question_seed": 3797634985,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f03415dc5a75da2cc72734a8ec0998062f547d80447a1b8dec60e3519a7274bf",
+        "sar_rag_v1": "0bdf599d966cd26c0d5dbe515485a890e499f79247434af052e8be5cf6d108ec",
+        "traditional_k10": "7143e89ba892ef1809fd5df17bf8235d969962ec5750c3d99b36e08b6c85ebe6"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 78
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1610.09722",
+      "document_key": "qasper-paper:1610.09722",
+      "query_sha256": "b52fc63c0f1142eed30fa44943354bec1b8d33af01f62121fb3d195b5fde032c",
+      "question_id": "qasper:test:742d5e182b57bfa5f589fde645717ed0ac3f49c2",
+      "question_seed": 4006404927,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d651e7c51e78ec5995f5a088ae4621bf6cbb31ed6324e39ceb0c42926d060d81",
+        "sar_rag_v1": "cb414cd6a78420cb5db485581cea9312e7e976dd1198446cb0b0ea284fbffc19",
+        "traditional_k10": "f1d5e44e05b32f9cf21c5a338beaf33da6eb3e53b67224b293fa0d602ef7969a"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 79
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1711.11118",
+      "document_key": "qasper-paper:1711.11118",
+      "query_sha256": "6d8f7ecfa9613232ea4e658d4408457fa22504cb4ce7311cc32b7f11038eb63f",
+      "question_id": "qasper:test:d5d4504f419862275a532b8e53d0ece16e0ae8d1",
+      "question_seed": 32211693,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "79f79846504200c30a6c9f28a484dcf3af47a6f6db17670f568b6257362dbf9c",
+        "sar_rag_v1": "0dd2916efb4d0c643297bcfed48b6f96b3cc7053002546f416cc89bac7ebefa5",
+        "traditional_k10": "0f43986c8edd4847821cbc3c02719d844b5538e69b7c7b0a08fb0d10abc69d24"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 80
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1811.01183",
+      "document_key": "qasper-paper:1811.01183",
+      "query_sha256": "9f60120670d176ed1fe6bf858e600852a2d0a43c28d29051e41e9a64365205fb",
+      "question_id": "qasper:test:47b7bc232af7bf93338bd3926345e23e9e80c0c1",
+      "question_seed": 16835215,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "3d61191777d619000a00431536487618c272b00f6f491f9d0ffe1731f61803f9",
+        "sar_rag_v1": "39f6bd86f36493a5f956b7f7aa6fa2bdd552228040d88f56934437549733fee7",
+        "traditional_k10": "b59a38b30b3589f572e461b43245d184a4083446bf1a6a9de7ea9ea4bb0c0ea3"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 81
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop3__323121_88460_30152_20999",
+      "document_key": "musique-example:musique_full:validation:4hop3__323121_88460_30152_20999:answerable",
+      "query_sha256": "4cee139995d178a5b6acce3934b28dba4f76b1673bb9bcefbdf93de4ea57781c",
+      "question_id": "musique_full:validation:4hop3__323121_88460_30152_20999:answerable",
+      "question_seed": 3354923513,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "374cede29ceb99ba05d4e02400bfa5474f6500a9f653c61efab4901590558759",
+        "sar_rag_v1": "14ecaa068065ecd28f8ac9a1e254b22b4ff6dfd9395959b275778f387e7ace71",
+        "traditional_k10": "457d0116b0e869b50a78a4fb085601f6be01c408d5717f189c0129808f7c7bb4"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 82
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop3__323121_88460_30152_20999",
+      "document_key": "musique-example:musique_full:validation:4hop3__323121_88460_30152_20999:insufficient",
+      "query_sha256": "4cee139995d178a5b6acce3934b28dba4f76b1673bb9bcefbdf93de4ea57781c",
+      "question_id": "musique_full:validation:4hop3__323121_88460_30152_20999:insufficient",
+      "question_seed": 1029747075,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "255c2ea8ecc5b5afcf647badae3292f5a20eac4389cf910983c824798388a932",
+        "sar_rag_v1": "5a60a13bde244c8b3dc847f6d26ff1e2efd4f525ac5eb10d3e6694b02af732fc",
+        "traditional_k10": "e9ec377dd3813638d28aad216c09b21a65cd28fa0114b3e314b184096e25d564"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 82
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__156700_73244",
+      "document_key": "musique-example:musique_full:validation:2hop__156700_73244:answerable",
+      "query_sha256": "1f1c60338e68517441bc01f6b1f630dd52c6faa30981f01a3cd81629fe91d54c",
+      "question_id": "musique_full:validation:2hop__156700_73244:answerable",
+      "question_seed": 1211661233,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f6b835cc95e14a611fcd4237b7d80481ba5c50f696be2921da7b9208703d80ea",
+        "sar_rag_v1": "483ebe382a10051f9f765517eedbea44b4f38cef6a5865b15c313db6cb26f8e2",
+        "traditional_k10": "4ac6e12a70f47e4b31ecb9d65f0faa1aa52260f4b9e33635fc8cc2770b2ed5bc"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 83
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__156700_73244",
+      "document_key": "musique-example:musique_full:validation:2hop__156700_73244:insufficient",
+      "query_sha256": "1f1c60338e68517441bc01f6b1f630dd52c6faa30981f01a3cd81629fe91d54c",
+      "question_id": "musique_full:validation:2hop__156700_73244:insufficient",
+      "question_seed": 732521793,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "a863344738701dda765e945fa15d8ec120a3376f46884860d7982ad24adbb590",
+        "sar_rag_v1": "4cdd8b29545739a72a45b791aa3048d21291596150a32af1a6b74d2a7fc1f513",
+        "traditional_k10": "08c1d8fb81ed55e1f41b42e5bbeb21b5af7d04d86096fb16ac6715b3f094c1b0"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 83
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__567737_141375_458768_33677",
+      "document_key": "musique-example:musique_full:validation:4hop1__567737_141375_458768_33677:answerable",
+      "query_sha256": "3f5cb63eb6853a5fa47bd5bc1bc3b82d47000e993c9ec9020b32003792c5b6f5",
+      "question_id": "musique_full:validation:4hop1__567737_141375_458768_33677:answerable",
+      "question_seed": 323118009,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "9b03aefcc1a9131e66aad7c079de6f4e45642f8d0e8fccc08853ebd957e33c4a",
+        "sar_rag_v1": "8e9b9e548cdd67fa97d061a4858aab8ab02555af71e4ea0f0d8ae1e9aa0f75db",
+        "traditional_k10": "442a7d66431ba46b9f2965685c526b33723229b2f3ca68885a4c54647f2511cf"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 84
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__567737_141375_458768_33677",
+      "document_key": "musique-example:musique_full:validation:4hop1__567737_141375_458768_33677:insufficient",
+      "query_sha256": "3f5cb63eb6853a5fa47bd5bc1bc3b82d47000e993c9ec9020b32003792c5b6f5",
+      "question_id": "musique_full:validation:4hop1__567737_141375_458768_33677:insufficient",
+      "question_seed": 3044441732,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "28441cf15ace0f37f03228233855188c52583306409bb6caa408cc220fa080bf",
+        "sar_rag_v1": "fbc9aaaf68a356164c61e615931b88a2977232c8a79988e1c4d48b13b9ea2ae2",
+        "traditional_k10": "d988fd52d29cd8b121dae661c52ed59a2cade0b1a6d6fbec2f0ad97937dd586f"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 84
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1711.04964",
+      "document_key": "qasper-paper:1711.04964",
+      "query_sha256": "748973dc0f622dc12249f8544f19a9bbc8366c0b8e791876697df763af35579e",
+      "question_id": "qasper:test:8d3f79620592d040f9f055b4fce0f73cc45aab63",
+      "question_seed": 512416050,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "50dac6e64c41fb2058279387c5fab4cc472f4643454758a340e012953f8f62d4",
+        "sar_rag_v1": "8a37340410fa097e7d007d286092ce468456652844df06d595aa0bd013a3b35b",
+        "traditional_k10": "d426d357361dfa68eb545615e7cfe2dfd86104e4a7392b8fc0466fa7fe831174"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 85
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1603.09405",
+      "document_key": "qasper-paper:1603.09405",
+      "query_sha256": "164889020b4486d8c3aa5f1298f7af725931a80a9f8ec6f4dd1af229bd0d2f23",
+      "question_id": "qasper:test:420862798054f736128a6f0c4393c7f9cc648b40",
+      "question_seed": 2830058798,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "75838d4b02543495e73aab89c0b32f3f1b66e39d610255c054fe026cd5b11bc4",
+        "sar_rag_v1": "084d315a30cc4a960013357d2381555bcafc4cdbe24b934935b9bd70e47810d2",
+        "traditional_k10": "1a42ff984111d6bffac2eed04f1ec896040f49ba1e52d82fe9d424a4537ea44a"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 86
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1912.07940",
+      "document_key": "qasper-paper:1912.07940",
+      "query_sha256": "047db0ddcbf3390df1a48e67ffaf663a241c2540522cf2909573202bd62464c7",
+      "question_id": "qasper:test:8faec509406d33444bd620afc829adc9eae97644",
+      "question_seed": 2150898675,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "a3620b5adbba4220a1426d28ffd8683c08ea53a8f56239f785047fd61156107d",
+        "sar_rag_v1": "18c5f1942df40b2a306ddee7b09d0423d3692d8d9d3cd2f3bbbe9a0897240867",
+        "traditional_k10": "b388f1490fa0dd7950cb6acf80efc68d7fe3b0754885d8b4047d9ccf678bf325"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 87
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1909.13466",
+      "document_key": "qasper-paper:1909.13466",
+      "query_sha256": "9735dbe1de0afeb843bdfaecbcca14977ed20daf960d6842592d81b9c8dc74e5",
+      "question_id": "qasper:test:e5be900e70ea86c019efb06438ba200e11773a7c",
+      "question_seed": 3464620055,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "bcbdf8fad88dc84d8495ee2eafcff60e57219fda73e3723645bd4220f275eb61",
+        "sar_rag_v1": "63a236f38f2ab77465286caa93b00bc14679851e00118e95df3758b0b90403e9",
+        "traditional_k10": "7a52908c0c72cc5182e4eb9a89610c50e9e8773c3be673e6cf85a626bc8ffcc7"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 88
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.12559",
+      "document_key": "qasper-paper:1911.12559",
+      "query_sha256": "37670ed24bb44eba114087ba9d5d5961456315bce8186c5cb7fa9e4a8056d277",
+      "question_id": "qasper:test:eaacee4246f003d29a108fe857b5dd317287ecf1",
+      "question_seed": 1243381481,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "31d539d32c14e3722c77f60624a85be306a92d96338b88645217743c22f02603",
+        "sar_rag_v1": "2151d5fe48f0dd98127ed36dbbce8b8df942d89ef5aaa8c301325c4b867841e2",
+        "traditional_k10": "861ad7169a09fe199a671c12e36b52e91bfe93ce2c58310be98379dacd309771"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 89
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1804.01155",
+      "document_key": "qasper-paper:1804.01155",
+      "query_sha256": "98dab0b9b3966d20e7e351ab4325edc7d73482cfd35d6351f99016e8a09f2703",
+      "question_id": "qasper:test:90756bdcd812b7ecc1c5df2298aa7561fd2eb02c",
+      "question_seed": 994927783,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "4fcf14da66fe7cd34fbcc7a5fe8813c60bfe90c0d53397f537e1eaa61c6f774c",
+        "sar_rag_v1": "a26d68575c70c2be07b9ccf06e3b3f65571f689dfc227f3b55287ecf30f49d0b",
+        "traditional_k10": "0e3518d3ce76e0abc3526b7a575b8eda06424a0c725aa60031e102ee6e49e083"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 90
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1704.04451",
+      "document_key": "qasper-paper:1704.04451",
+      "query_sha256": "28f1b53f0f0a413924610f6e2de4d40f085d7d10449701de07d29449af230297",
+      "question_id": "qasper:test:179bc57b7b5231ea6ad3e93993a6935dda679fa2",
+      "question_seed": 1780896163,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "20452d7dc2c1c1434f016b896924ceb1b8ceb49552aa7e21edfae3c4784e383d",
+        "sar_rag_v1": "2e210b942d41ab13fb7007cb8457830a0d8663fb1feb4b7980e3a1f8413d4cc1",
+        "traditional_k10": "fe05db83c37e9f6853cfafd7a33183317663e25c053cc3e40e39539849a6c098"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 91
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__742464_15840_36002",
+      "document_key": "musique-example:musique_full:validation:3hop1__742464_15840_36002:answerable",
+      "query_sha256": "879d55c43aeb96f149a14a01c8b879e8e5351eee06bd79813dd9f378d7f9e64d",
+      "question_id": "musique_full:validation:3hop1__742464_15840_36002:answerable",
+      "question_seed": 3831396451,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c51e68265a016d012989f513703329bfd32ac435077267604c9aff6c5fe86586",
+        "sar_rag_v1": "016324eb7bdca9f62322fc5d6ada619cb25c3e1bd5a141919ea7dfcdfd9f5500",
+        "traditional_k10": "09c35dc3261c61eca5de82f720507d0b6f78515d5a26db1421f1e13b0585bc4e"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 92
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:3hop1__742464_15840_36002",
+      "document_key": "musique-example:musique_full:validation:3hop1__742464_15840_36002:insufficient",
+      "query_sha256": "879d55c43aeb96f149a14a01c8b879e8e5351eee06bd79813dd9f378d7f9e64d",
+      "question_id": "musique_full:validation:3hop1__742464_15840_36002:insufficient",
+      "question_seed": 1048009865,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "c5c9b74f10ef56ee688ca181e1985ffe7bbdf78854b77f00608d75c8b776bf0e",
+        "sar_rag_v1": "75f7f1921268b4bf9ed5217c2b4cf3fd50ed95b480dba9d3a2fa35f5356d567e",
+        "traditional_k10": "35b66a012dcc806f246b6a9e569d2ed148d1d4785da6f87bae15bc9a23c0923a"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 92
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop3__719125_132409_371500_35031",
+      "document_key": "musique-example:musique_full:validation:4hop3__719125_132409_371500_35031:answerable",
+      "query_sha256": "2db64e7ffadbb4697fb8a6968fa9e475afd5661143ac4ea971072b039de057a5",
+      "question_id": "musique_full:validation:4hop3__719125_132409_371500_35031:answerable",
+      "question_seed": 1865131496,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "43f7e188e7e76d68af589cd5706f147038297aa58530f36c763c847dd4545caa",
+        "sar_rag_v1": "970c18b41b634509e6e6377b6b25bef1cbe920d37cdae81f47ae05c64b040dc7",
+        "traditional_k10": "7cc48c7e349c9d11ed72a20d43f7caf01f74a948f00a6e0a9794cae47d3d79af"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 93
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop3__719125_132409_371500_35031",
+      "document_key": "musique-example:musique_full:validation:4hop3__719125_132409_371500_35031:insufficient",
+      "query_sha256": "2db64e7ffadbb4697fb8a6968fa9e475afd5661143ac4ea971072b039de057a5",
+      "question_id": "musique_full:validation:4hop3__719125_132409_371500_35031:insufficient",
+      "question_seed": 2292924902,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "0fb41082376cd4eb4150600ce1f50b54c0f29d088b239bb3db37115233b1fd90",
+        "sar_rag_v1": "7d0895eaadb3b6eeb002ae291181013635f1d438b398dd5beed52378bfade24f",
+        "traditional_k10": "4b996a6049140147c1f38a92618ee17e0c372c56e93a49656ee5d9525b45aed0"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 93
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1805.11850",
+      "document_key": "qasper-paper:1805.11850",
+      "query_sha256": "815dbf4f96b84a801e479aa9edab152e2fd00396aa7c3b13a232c3ee04a9f1fd",
+      "question_id": "qasper:test:df4895c6ae426006e75c511a304d56d37c42a1c7",
+      "question_seed": 3137129296,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "20530b64694a00311b469e7e9477bc984ed9a7da03835fa226d3be842d38226d",
+        "sar_rag_v1": "10aa6b8d621bf0cab79f6b6b1403989b6dc61bbf848bdcc1fdb0ce5c4eb2df09",
+        "traditional_k10": "04cea538cb79e2c1be7e396e15332d76c32c80631a216456f3dfb1314f4ae988"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 94
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1704.06851",
+      "document_key": "qasper-paper:1704.06851",
+      "query_sha256": "3416c929be840e56819464c540e31bb0769ffd8fe8be0a9db78cf670d739ddd8",
+      "question_id": "qasper:test:b78bb6fe817c2d4bc69236df998f546e94c3ee21",
+      "question_seed": 3996832606,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d3b4e77b05136c445f52ca38fe2c1651abf1b720fc496106bb89c80798bdb993",
+        "sar_rag_v1": "44c3a1420d1d524cb8f09d1acb14c9ce6256cbacecbdf9e90c7cb5a66d56a121",
+        "traditional_k10": "aec2cd5e948d94b99a8b0467119be5e7ce3e28cbc3aa5dd4567dd59aa79eb727"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 95
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1911.10401",
+      "document_key": "qasper-paper:1911.10401",
+      "query_sha256": "9acd3ac1cddd370d956afdafbd04d02a61cdffc251906b35171d516ceb0c523e",
+      "question_id": "qasper:test:ee8a77cddbe492c686f5af3923ad09d401a741b5",
+      "question_seed": 1482056560,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "94735d8edfe75436e94246d6709a2bdbc931e11674cf7026c919cdce342f5bb1",
+        "sar_rag_v1": "fb0538d00b5706b3abf43eb2492ba9484f53e9738fe97ae8ba4ec2b2fb184425",
+        "traditional_k10": "f0bcb480017daa676ddc7b49d1f13c9376fe2ad6900104344a630e9427d32036"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 96
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1803.09000",
+      "document_key": "qasper-paper:1803.09000",
+      "query_sha256": "663f3fb7c883031029d6e88ae023b0bf96ba48e3d002bbe910b5f37319cd6608",
+      "question_id": "qasper:test:e90425ac05a15dc145bbf3034e78b56e7cec36ac",
+      "question_seed": 2868771532,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "41a7ade9739306bb1837e618e770701167975a144bd92bbf11819f1ef2e2c464",
+        "sar_rag_v1": "427bd83decd5f00e5a3b6d30575f3e278f886e8591a5b439139d7aa49575acad",
+        "traditional_k10": "0c312f27a2b13ce90ea85ae2401a16b4d8ed141b741607cb5f6f6b83b0ef81fb"
+      },
+      "system_order": [
+        "traditional_k10",
+        "adaptive_single_view_v2",
+        "sar_rag_v1"
+      ],
+      "unit_index": 97
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1811.04791",
+      "document_key": "qasper-paper:1811.04791",
+      "query_sha256": "594300ff77a1e2740691bebc4a763b2bceb271fceffa1f1b231001ff327a66a2",
+      "question_id": "qasper:test:e5f8d2fc1332e982a54ee4b4c1f7f55e900d0b86",
+      "question_seed": 333183600,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "7fc24190e76f9444727310b705b801a728a290728267a3f15408bbf40d6e4db4",
+        "sar_rag_v1": "6d89192692b1c33eefffe5657d0e515dc3df1ac5090ba9c4b3a1940a9769a47c",
+        "traditional_k10": "0b35c8ada698a27b42bacae526b2a53c34f7edbf6c299b12f0dcfb843b96ed43"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 98
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1602.03483",
+      "document_key": "qasper-paper:1602.03483",
+      "query_sha256": "32d861cdde7f872bd796528147e3ba7a45d719603198c2a865484deca7b9b77b",
+      "question_id": "qasper:test:31236a876277c6e1c80891a3293c105a1b1be008",
+      "question_seed": 287919659,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "4227dd9714b8f62bf8da928aaba0da33f18870a35f7eacff0e5128c104875b5b",
+        "sar_rag_v1": "687f7c5f4d41e89dfb50cd1f8a4d2ab1c500a894ba422d829b3ab0967562de33",
+        "traditional_k10": "b566985ec33437c6fcc3348c844adafd7adb639c2bdc1616444ccc2ff1bb14fd"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 99
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1907.00937",
+      "document_key": "qasper-paper:1907.00937",
+      "query_sha256": "02c178f947e0c3368cd33eb0da8bdfb7b30e0e7a29ca70d6ac1b4861705627e0",
+      "question_id": "qasper:test:c47312f2ca834ee75fa9bfbf912ea04239064117",
+      "question_seed": 729704216,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "ef42f794e5074aecdf3f3dc534654bdab2925727c9bcea83ad71df4a6982f38b",
+        "sar_rag_v1": "22a7bb3afddc07870cffc0064a0559c5c16fb8b1c6bf375ab378d603319bee09",
+        "traditional_k10": "bda8dc49bc0bd53f4db380ce883844e59412c5f9244780fd77e9d31a32f8b6fb"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 100
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1908.06493",
+      "document_key": "qasper-paper:1908.06493",
+      "query_sha256": "d7c1cf23ec677e0d538269880770b0135124aca36cb86f9dfa8fa0514fcf4869",
+      "question_id": "qasper:test:2b32cf05c5e736f764ceecc08477e20ab9f2f5d7",
+      "question_seed": 861557797,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "95fb9adb066acfeccd6d21413464ab3f0ebe96d92c37c3aba63cc10301cf776d",
+        "sar_rag_v1": "8f1bad8f65ba0dc646219356cb71ab34eaa4e572aae1163e6a69436c0815caa8",
+        "traditional_k10": "9e5e6a2a22b6a2ad0783f7707656cc189f2dd39616e3025f8d6931dd96b92df8"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "sar_rag_v1",
+        "traditional_k10"
+      ],
+      "unit_index": 101
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__215124_83837",
+      "document_key": "musique-example:musique_full:validation:2hop__215124_83837:answerable",
+      "query_sha256": "0d85342ac44a38133e00691e647871110ff0675a4e959644887eab0e32c2c1fb",
+      "question_id": "musique_full:validation:2hop__215124_83837:answerable",
+      "question_seed": 4019448136,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "bd002f57ad263b7c2787ff214b05bfcb16b0cc9e78da52d2a9fc5de0a2439f1c",
+        "sar_rag_v1": "1337bb355942dd5bcf07f00bccd8da5e3b39f13feca0a463fa9dfcbfc32996d0",
+        "traditional_k10": "ea5dea38426af3622d2c686ba47279eac5414e7341d88f2c83f54c58d61ea920"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 102
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__215124_83837",
+      "document_key": "musique-example:musique_full:validation:2hop__215124_83837:insufficient",
+      "query_sha256": "0d85342ac44a38133e00691e647871110ff0675a4e959644887eab0e32c2c1fb",
+      "question_id": "musique_full:validation:2hop__215124_83837:insufficient",
+      "question_seed": 3255923215,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "82ddd870512901f2f2b0a3f56a7d457fa9c28f376b9cc79684bd3f6c9b85d49d",
+        "sar_rag_v1": "009e29b6e3e80acd6773b5885e9251e235b5e0b7f875e02bb60f804163333bed",
+        "traditional_k10": "4147dfff5840ad1104fa9506a18efb7241ab28bbd8ad80377a618c9e6aa65ad5"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 102
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:2004.04498",
+      "document_key": "qasper-paper:2004.04498",
+      "query_sha256": "392531bcdcd5a2184a99ba6fdff894aafa5aa70b2c73f4cbf06a07eb6f38cd32",
+      "question_id": "qasper:test:919681faa9731057b3fae5052b7da598abd3e04b",
+      "question_seed": 2820388863,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "d5fcf6a265ffd13ed783c26f7090a37c3cada18021448728df8a1a48086c9402",
+        "sar_rag_v1": "eedfc60e6b29f327f84918569ed8d806bc470662cd79838ab4cebdeda6beed7e",
+        "traditional_k10": "558a67cddf3f4123cb32f9be84580d7976eb7e224e1dd43c9eb0f46b4a1d0e32"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 103
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__105002_17130_70784_61381",
+      "document_key": "musique-example:musique_full:validation:4hop1__105002_17130_70784_61381:answerable",
+      "query_sha256": "7e7948ddb0e979005275a45d6a5d9be358d009537e6e5b96d1020b831fe21d27",
+      "question_id": "musique_full:validation:4hop1__105002_17130_70784_61381:answerable",
+      "question_seed": 3514698201,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "2b4d900d66a15768f594f421c84f62d993e6a8c3077c413c5176455f48b86145",
+        "sar_rag_v1": "2b8284ea2145428e118861c88d34b5fc9d959eaf93252fb57a5425fbef4deb60",
+        "traditional_k10": "0d1a4cbdb00a70ade769d384c63cc667c237feac7a59507c8b708e894d77084e"
+      },
+      "system_order": [
+        "adaptive_single_view_v2",
+        "traditional_k10",
+        "sar_rag_v1"
+      ],
+      "unit_index": 104
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:4hop1__105002_17130_70784_61381",
+      "document_key": "musique-example:musique_full:validation:4hop1__105002_17130_70784_61381:insufficient",
+      "query_sha256": "7e7948ddb0e979005275a45d6a5d9be358d009537e6e5b96d1020b831fe21d27",
+      "question_id": "musique_full:validation:4hop1__105002_17130_70784_61381:insufficient",
+      "question_seed": 3461802401,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "f0a63adb54069f03b1ee110135a3ec751306bb4f949f6819ff07822a0c2ee130",
+        "sar_rag_v1": "fa588f00f2e7242a4623bf49cb268604021178d0d4ed463b4a97c0a41561c5b9",
+        "traditional_k10": "139491ecb3a7e0ef8bb5ddc507736e74aded301e0934890f58679231a15f6c61"
+      },
+      "system_order": [
+        "traditional_k10",
+        "sar_rag_v1",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 104
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__77601_814677",
+      "document_key": "musique-example:musique_full:validation:2hop__77601_814677:answerable",
+      "query_sha256": "0f942b0722bc4587147b116145a3734e548d755027b56c3b0ac6b9d139bcf28e",
+      "question_id": "musique_full:validation:2hop__77601_814677:answerable",
+      "question_seed": 2636623253,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "aebb8b1327b0e41cc85490d0220cae15224379144461334714b2ffffdde5877f",
+        "sar_rag_v1": "09c528b698e1b684054566400e2ce755e552cf333b9dc860b838d0b23673e991",
+        "traditional_k10": "6f20ebf0b66408fc49d42b739b95c1ff1bfc631d649926d682b80266afcc7c5a"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 105
+    },
+    {
+      "dataset": "musique_full",
+      "dependency_group": "musique-group:2hop__77601_814677",
+      "document_key": "musique-example:musique_full:validation:2hop__77601_814677:insufficient",
+      "query_sha256": "0f942b0722bc4587147b116145a3734e548d755027b56c3b0ac6b9d139bcf28e",
+      "question_id": "musique_full:validation:2hop__77601_814677:insufficient",
+      "question_seed": 1303383171,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "fdafe0a7d4a863fa8af42a43fae81c4a0014b2ede68342260e30422489832ddc",
+        "sar_rag_v1": "a2996a782fe4b8e353f15a4d2e5d159b5acd6dca27b750b2746308e2a5f0b8bc",
+        "traditional_k10": "1900e9744151c99063a3bc51635fcdb4077d78e67380a99eafe95a03e405cd91"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "adaptive_single_view_v2",
+        "traditional_k10"
+      ],
+      "unit_index": 105
+    },
+    {
+      "dataset": "qasper",
+      "dependency_group": "qasper-paper:1709.06136",
+      "document_key": "qasper-paper:1709.06136",
+      "query_sha256": "dea082432c14c22de7e1fed4c7f8e590030d47813a5533babb00eebeb429b32a",
+      "question_id": "qasper:test:5522a9eeb06221722052e3c38f9b0d0dbe7c13e6",
+      "question_seed": 1673617127,
+      "sealed_request_fingerprints_v1_1": {
+        "adaptive_single_view_v2": "4605688fae65804ca0ae5c8e0072ab8c6444d22f8afd2978bfeac1b5ba6876aa",
+        "sar_rag_v1": "73efad74079d8d40934e3bf6ff083fc6005fde89681b2ad11c240b126ff1dba6",
+        "traditional_k10": "a830da705b0e70374671a39f6520bc079e33698fd879a3b511f773dc8d34d2ff"
+      },
+      "system_order": [
+        "sar_rag_v1",
+        "traditional_k10",
+        "adaptive_single_view_v2"
+      ],
+      "unit_index": 106
+    }
+  ],
+  "sampling_seed": 20260930,
+  "systems": [
+    "traditional_k10",
+    "sar_rag_v1",
+    "adaptive_single_view_v2"
+  ]
+}
