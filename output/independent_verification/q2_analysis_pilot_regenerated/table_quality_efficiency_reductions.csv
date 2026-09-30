@@ -1,0 +1,5 @@
+dataset,metric,reduction_percent,sar_rag,traditional
+qasper,context_tokens,11.454081632653057,1735.5,1960.0
+qasper,total_tokens,6.867627785058983,3553.0,3815.0
+qasper,estimated_cost_usd,9.962016574585641,0.00078225,0.0008688
+qasper,latency_seconds,18.735300956455635,14.365731450001476,17.677702149987454

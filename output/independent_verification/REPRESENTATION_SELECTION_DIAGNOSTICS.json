@@ -1,0 +1,66 @@
+{
+  "scope": "training-only retrieval screening; no Groq calls; no evaluation split touched",
+  "sample": {
+    "n": 60,
+    "seed": 20260804,
+    "per_stratum": 5,
+    "strata": 12,
+    "note": "seed differs from the calibration seed so screening does not reuse threshold-selection examples"
+  },
+  "granularity_control": {
+    "sliding_window": {
+      "mean_chunk_words": 98.35,
+      "median_chunk_words": 67.0,
+      "chunks": 2964
+    },
+    "sliding_window_matched": {
+      "mean_chunk_words": 67.82,
+      "median_chunk_words": 77.0,
+      "chunks": 4472
+    }
+  },
+  "representation_selection": {
+    "one_view_percent": 83.33333333333333,
+    "two_view_percent": 16.666666666666668,
+    "state_counts": {
+      "paragraph": 27,
+      "semantic": 14,
+      "sentence_window": 7,
+      "paragraph+semantic": 6,
+      "hierarchical": 2,
+      "semantic+sentence_window": 2,
+      "paragraph+sentence_window": 1,
+      "hierarchical+semantic": 1
+    },
+    "first_view_counts": {
+      "paragraph": 34,
+      "semantic": 16,
+      "sentence_window": 7,
+      "hierarchical": 3
+    },
+    "second_view_added_unique_gold_percent_of_two_view": 20.0,
+    "unselected_view_holds_unique_gold_percent": 6.976744186046512,
+    "n_two_view": 10,
+    "n_scored": 43
+  },
+  "conditions_screened": [
+    "full",
+    "sentence_window_only",
+    "paragraph_only",
+    "semantic_only",
+    "hierarchical_only",
+    "all_representations_no_rrf",
+    "rrf_probe_only_no_adaptive",
+    "no_novelty",
+    "no_similarity_gap",
+    "no_post_retrieval_deduplication",
+    "select_one_representation",
+    "probe_depth_5",
+    "rrf_k0_1",
+    "rrf_k0_10",
+    "rrf_k0_60"
+  ],
+  "conditions_requiring_paid_evaluation": [
+    "legacy_multi_call"
+  ]
+}

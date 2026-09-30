@@ -1,0 +1,167 @@
+{
+  "answerability_counts": {
+    "ANSWERABLE": 8,
+    "INSUFFICIENT": 8
+  },
+  "cross_system_call_reuse": false,
+  "dataset_counts": {
+    "musique_full": 8,
+    "qasper": 8
+  },
+  "examples": [
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:2hop__320326_44959:answerable",
+      "selection_hash": "032f865eb444f435c07c15a219b91426b41f02c0558dbb9e500e8e245a1bd6b1",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|ANSWERABLE|2hop"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:2hop__512525_835542:answerable",
+      "selection_hash": "13d7572b73100efcf37f3edb4ad9cc90f66f2f66bdefc8d3ef0cda9fa0c9ecb2",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|ANSWERABLE|2hop"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:3hop1__8294_15324_26427:answerable",
+      "selection_hash": "08dd2b86178bf827bc6730fd981da3ebc6d8c7729d971c20847fe1e95cf97bc7",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|ANSWERABLE|3hop"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:4hop1__38130_8966_31714_41245:answerable",
+      "selection_hash": "029e6cb7875d252c48bdb1febe1ffc007580883596f856c3c468ec106a06066f",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|ANSWERABLE|4hop"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:2hop__838053_467995:insufficient",
+      "selection_hash": "0eaa675f0fca214cdf2eacb70e44c54c26872d3cc65395e56cea5b7bc54e79dc",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|INSUFFICIENT|2hop"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:2hop__442687_471321:insufficient",
+      "selection_hash": "219af9c2ad483b0c30d9a056ccb19026595445cb82d40bab67713e6e686762b0",
+      "source_design_partition": "tuning",
+      "stratum": "musique_full|INSUFFICIENT|2hop"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:3hop1__383692_434040_398678:insufficient",
+      "selection_hash": "00ef8e093e9418782d12398710779b4a1878fbb5c3ff715ac0415b29fcd777c1",
+      "source_design_partition": "selection",
+      "stratum": "musique_full|INSUFFICIENT|3hop"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "musique_full",
+      "example_id": "musique_full:train:4hop1__493923_300471_136629_85446:insufficient",
+      "selection_hash": "01949eb9855a0f5e93a9f4e6a4d1704a4f2aec033fc9b3f0163377d28425519a",
+      "source_design_partition": "selection",
+      "stratum": "musique_full|INSUFFICIENT|4hop"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "qasper",
+      "example_id": "qasper:train:b24767fe7e6620369063e646fd3048dc645a8348",
+      "selection_hash": "0288a570672b8c1eb390e6302e8eed80e6175bbc5460e42b49facca4b8eb94f5",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|ANSWERABLE|long"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "qasper",
+      "example_id": "qasper:train:e8647f9dc0986048694c34ab9ce763b3167c3deb",
+      "selection_hash": "192fb8a49710b9703622ad55be6b2f855d6965bccaa50f25b3ecb5491d6b597c",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|ANSWERABLE|long"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "qasper",
+      "example_id": "qasper:train:4bae74eb707ed71d5f438ddb3d9c2192ac490f66",
+      "selection_hash": "019860e2aae441b4a49baf33b594f01899d04e5cfd0a9b34a58aeb34e0f6d4fd",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|ANSWERABLE|medium"
+    },
+    {
+      "answerability": "ANSWERABLE",
+      "dataset": "qasper",
+      "example_id": "qasper:train:df79d04cc10a01d433bb558d5f8a51bfad29f46b",
+      "selection_hash": "0d56abc1b6894a7a299bc328145f5d7eebae45a4ce45684a9b975524a0c5bd89",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|ANSWERABLE|short"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "qasper",
+      "example_id": "qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf",
+      "selection_hash": "132f9693e9f6c4f2f350979aa86ae367e30fdad839fb62568fdf3d08b7294ce2",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|INSUFFICIENT|long"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "qasper",
+      "example_id": "qasper:train:1db37e98768f09633dfbc78616992c9575f6dba4",
+      "selection_hash": "177f02ebe3ad436fe78cf9142d731a16585bb3f63c84332fd3a64ae0e8bc0ebe",
+      "source_design_partition": "selection",
+      "stratum": "qasper|INSUFFICIENT|long"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "qasper",
+      "example_id": "qasper:train:bbeb74731b9ac7f61e2d74a7d9ea74caa85e62ef",
+      "selection_hash": "0adbc69a2ee66698929f1caca775eb5a9a8a898fa3462e7bed70503d18000966",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|INSUFFICIENT|medium"
+    },
+    {
+      "answerability": "INSUFFICIENT",
+      "dataset": "qasper",
+      "example_id": "qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8",
+      "selection_hash": "0a66a985b0341895222a17b4673b721a0dea936bc1589eec4bc4ed89cee20ce9",
+      "source_design_partition": "tuning",
+      "stratum": "qasper|INSUFFICIENT|short"
+    }
+  ],
+  "manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "maximum_calls": 48,
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "question_count": 16,
+  "seed": 20260905,
+  "source_sha256": "64e9e5dc752f1b72cc882ba97c123b786ae6faedf496410e62d790b84678a18f",
+  "status": "FROZEN_BEFORE_PAID_SMOKE",
+  "stratum_counts": {
+    "musique_full|ANSWERABLE|2hop": 2,
+    "musique_full|ANSWERABLE|3hop": 1,
+    "musique_full|ANSWERABLE|4hop": 1,
+    "musique_full|INSUFFICIENT|2hop": 2,
+    "musique_full|INSUFFICIENT|3hop": 1,
+    "musique_full|INSUFFICIENT|4hop": 1,
+    "qasper|ANSWERABLE|long": 2,
+    "qasper|ANSWERABLE|medium": 1,
+    "qasper|ANSWERABLE|short": 1,
+    "qasper|INSUFFICIENT|long": 2,
+    "qasper|INSUFFICIENT|medium": 1,
+    "qasper|INSUFFICIENT|short": 1
+  },
+  "systems": [
+    "traditional_k10",
+    "sar_rag_v1",
+    "adaptive_single_view_v2"
+  ]
+}

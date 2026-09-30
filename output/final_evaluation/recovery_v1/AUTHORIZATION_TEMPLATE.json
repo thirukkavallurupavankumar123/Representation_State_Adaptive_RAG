@@ -1,0 +1,9 @@
+{
+  "authorized_stage": "paid_smoke_recovery_v1_only",
+  "maximum_cost_usd": 0.01704555,
+  "maximum_retries_per_pair": 2,
+  "maximum_total_api_attempts_including_retries": 24,
+  "recovery_manifest_fingerprint": "2c48dcf61dc6e862c0cbe6a554618eda9ef3ce873707556d18a3ca0efb79e214",
+  "status": "AWAITING_EXPLICIT_USER_AUTHORIZATION",
+  "user_authorized": false
+}

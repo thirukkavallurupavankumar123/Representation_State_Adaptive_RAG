@@ -1,0 +1,18 @@
+{
+  "api_key_available_but_not_recorded": true,
+  "authorization_matches": true,
+  "eligible_pair_count": 8,
+  "generation_configuration_unchanged": true,
+  "held_out_checkpoint_exists": false,
+  "held_out_evaluation_prohibited": true,
+  "manifest_fingerprint": "2c48dcf61dc6e862c0cbe6a554618eda9ef3ce873707556d18a3ca0efb79e214",
+  "manifest_sha256": "d2b402fef200e7e67b0d158012fa6cf93f9893a9fc141f9613741f0cbb3b4422",
+  "maximum_cost_usd": 0.01704555,
+  "maximum_total_api_attempts_including_retries": 24,
+  "original_hashes_match": true,
+  "prior_recovery_attempts": 0,
+  "remaining_attempt_allowance": 24,
+  "remaining_cost_allowance_usd": 0.01704555,
+  "reserved_worst_case_cost_usd": 0,
+  "status": "VERIFIED_READY_FOR_AUTHORIZED_PAID_RECOVERY"
+}

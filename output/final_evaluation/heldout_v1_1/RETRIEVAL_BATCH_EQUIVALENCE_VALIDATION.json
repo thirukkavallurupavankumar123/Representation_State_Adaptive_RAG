@@ -1,0 +1,9 @@
+{
+  "api_calls": 0,
+  "exact_record_equality": true,
+  "gold_labels_accessed": false,
+  "groups_checked": 12,
+  "mismatched_document_keys": [],
+  "records_checked": 36,
+  "status": "PASS"
+}

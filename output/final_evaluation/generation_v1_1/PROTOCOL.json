@@ -1,0 +1,177 @@
+{
+  "changes_from_v1": [
+    "prompt explicitly requires all three top-level fields and states empty-field behavior",
+    "max_completion_tokens increased from 800 to 1600"
+  ],
+  "cost": {
+    "conservative_billed_input_tokens_one_complete_round": 78633,
+    "conservative_maximum_cost_usd": 0.17362485,
+    "conservative_provider_overhead_tokens_per_attempt": 128,
+    "guard": "check remaining attempt and conservative remaining cost allowance before every call",
+    "maximum_attempts": 144,
+    "maximum_output_tokens_per_attempt": 1600,
+    "observed_recovery_prompt_token_delta": 67,
+    "preflight_input_tokens_one_complete_round": 72489,
+    "pricing": {
+      "cached_input_per_million": 0.075,
+      "currency": "USD",
+      "input_per_million": 0.15,
+      "output_per_million": 0.6,
+      "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+      "verified_date": "2026-09-26"
+    }
+  },
+  "generation": {
+    "decoding": {
+      "max_output_tokens": 1600,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "model": "openai/gpt-oss-120b",
+    "prompt_version": "final-evaluation-answer-v1.1",
+    "schema_name": "frozen_final_answer_v1_1",
+    "strict": true
+  },
+  "official_documentation_review": {
+    "all_object_fields_required": true,
+    "all_objects_closed_with_additionalProperties_false": true,
+    "finding": "request satisfies documented mandatory strict-schema requirements; observed strict-mode 400s remain a provider/model operational issue",
+    "max_completion_tokens_parameter_current": true,
+    "reasoning_effort_supported": true,
+    "reasoning_format_omitted_because_gpt_oss_does_not_support_it": true,
+    "sources": [
+      "https://console.groq.com/docs/structured-outputs",
+      "https://console.groq.com/docs/reasoning",
+      "https://console.groq.com/docs/api-reference"
+    ],
+    "strict_model_supported": true
+  },
+  "pair_count": 48,
+  "preserved_artifact_sha256": {
+    "FINAL_EVALUATION_PROTOCOL.json": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+    "SMOKE_TEST_MANIFEST.json": "d43d0f65befd192f89d0647548760f76066473d5e93e0d8b3dbababfa3f73675",
+    "SMOKE_TEST_REQUESTS.jsonl": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+    "SMOKE_TEST_REQUESTS_MANIFEST.json": "052945e1db3c0e30332cde4b917a0f39bc55231ee67d115730690f9cf5e1b617",
+    "paid_smoke_checkpoint/ANSWERS.jsonl": "e44ad14bf932976f26b7f03c1f76610169b55480f74bdb1d2b21a9ee7de275dd",
+    "paid_smoke_checkpoint/API_ATTEMPTS.jsonl": "c68ff3f07bcc57365855894747c68967d7e13fd9659127080006123c28d5b6c5",
+    "paid_smoke_checkpoint/CHECKPOINT_META.json": "fb471cf1af02120ca4bf862994e806b82597dd7a17c544d75ddc7320744c63d4",
+    "paid_smoke_checkpoint/FAILURES.jsonl": "44eae81a31adc899f7507dbf4d84305d6f5797745863172a3254823edc936ea3",
+    "recovery_v1/RECOVERY_MANIFEST.json": "d2b402fef200e7e67b0d158012fa6cf93f9893a9fc141f9613741f0cbb3b4422",
+    "recovery_v1/RECOVERY_VALIDATION.json": "6ff0908e4a656eb2cd6e68a8b3c8dbf2f2da98b4eb34878a000b3c777d64f02e",
+    "recovery_v1/checkpoint/ANSWERS.jsonl": "4bfff381946423ec5e077920fb1f02886e04d6aca209ee77c9f3f693bdd3e026",
+    "recovery_v1/checkpoint/API_ATTEMPTS.jsonl": "9d9407d47476bebfd1ac584901243e0a56071824fe2d8c2f7a36158442ecfa92",
+    "recovery_v1/checkpoint/CHECKPOINT_META.json": "9baac13452837cc3f04e9e099271ac657f1bb9b359939841c21f9e633543c547",
+    "recovery_v1/checkpoint/FAILURES.jsonl": "b976400a407c2e255458e2945ed09dfdfa6a2a8e638d74ca798dbcec836e9e56"
+  },
+  "prohibitions": [
+    "no paid call without a separately matching v1.1 authorization file",
+    "no held-out evaluation",
+    "no smoke-based research superiority claim",
+    "no modification of original or recovery artifacts"
+  ],
+  "protocol_fingerprint": "c915bed876a3e1394e09d160caa4bffac6c5df60763da0d5186674421c326a79",
+  "protocol_version": "sar-rag-smoke-generation-1.1.0",
+  "purpose": "fresh operational smoke rerun only; not research evidence",
+  "rate_limit_policy": {
+    "every_429_counts_as_an_attempt": true,
+    "honor_retry_after": true,
+    "minimum_seconds_between_attempt_starts": 30,
+    "retry_after_safety_margin_seconds": 0.25
+  },
+  "rationale": {
+    "confirmed": [
+      "one unresolved saved generation omitted required missing_information",
+      "one separate saved recovery failure explicitly reported max completion tokens reached",
+      "saved valid responses reached 796 of the former 800-token limit"
+    ],
+    "not_confirmed": [
+      "token exhaustion was not established for either unresolved pair",
+      "the provider did not return failed_generation for five of six unresolved-pair 400s"
+    ]
+  },
+  "retry_policy": {
+    "abort_entire_run_without_retry": [
+      "HTTP 401/403 authentication or authorization error",
+      "request/configuration rejection not classified as generated-output validation",
+      "configuration, manifest, fingerprint, attempt, or cost guard mismatch"
+    ],
+    "maximum_attempts_per_pair_including_first": 3,
+    "maximum_retries_per_pair": 2,
+    "maximum_total_attempts_including_retries": 144,
+    "persistent_failure": "retain every attempt; leave pair missing after three attempts; never impute, repair, or reuse another system answer",
+    "retryable": [
+      "HTTP 429",
+      "HTTP 5xx",
+      "timeout/network error",
+      "json_validate_failed/JSON parse failure",
+      "local semantic validation failure"
+    ],
+    "round_robin": "complete attempt round N for every unresolved pair before round N+1",
+    "validity_reporting": [
+      "first_attempt_validity per pair",
+      "eventual_validity within three attempts per pair",
+      "attempt number of first valid response"
+    ]
+  },
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "answerability": {
+        "enum": [
+          "ANSWERABLE",
+          "INSUFFICIENT",
+          "PARTIALLY_ANSWERABLE"
+        ],
+        "type": "string"
+      },
+      "claims": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "evidence_ids": {
+              "items": {
+                "pattern": "^E[1-9][0-9]*$",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text",
+            "evidence_ids"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "missing_information": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "answerability",
+      "claims",
+      "missing_information"
+    ],
+    "type": "object"
+  },
+  "source_request_set": "output/final_evaluation/SMOKE_TEST_REQUESTS.jsonl",
+  "source_request_sha256": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+  "status": "FROZEN_AWAITING_EXPLICIT_PAID_AUTHORIZATION",
+  "unchanged_from_v1": [
+    "model",
+    "temperature",
+    "top_p",
+    "reasoning_effort",
+    "strict mode",
+    "JSON schema",
+    "semantic response validator",
+    "questions",
+    "evidence"
+  ]
+}

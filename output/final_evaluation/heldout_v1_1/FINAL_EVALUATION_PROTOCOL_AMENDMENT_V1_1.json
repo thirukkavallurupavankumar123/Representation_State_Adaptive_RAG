@@ -1,0 +1,320 @@
+{
+  "amends_protocol": {
+    "path": "output/final_evaluation/FINAL_EVALUATION_PROTOCOL.json",
+    "preserved": true,
+    "sha256": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+    "version": "sar-rag-final-answer-evaluation-1.0.0"
+  },
+  "baseline_fairness": {
+    "actual_consumption": "provider input/output/total billed tokens, supplied evidence tokens, latency, and estimated cost are reported per pair and aggregate",
+    "additional_baseline_calls": 0,
+    "additional_generation_baselines": [],
+    "analysis": "report paired quality differences alongside native retrieved and actually supplied context tokens; report quality-versus-token scatter/paired deltas and Pareto dominance without selecting a post-hoc baseline",
+    "predefined_baseline": "traditional_k10"
+  },
+  "cost_and_attempt_plan": {
+    "actual_invoice_note": "Actual invoiced charges are unavailable before execution and may differ from estimates; verify provider billing after execution.",
+    "conservative_initial_round_cost_usd": 25.8336,
+    "conservative_maximum_cost_usd": 77.5008,
+    "conservative_per_attempt": {
+      "cost_usd": 0.00138,
+      "input_tokens": 2800,
+      "output_tokens": 1600
+    },
+    "estimated_initial_cost_usd": 10.0952865,
+    "expected_tokens_based_on_v1_1_smoke_means": {
+      "basis": "48-pair successful v1.1 smoke; planning estimate, not a guarantee",
+      "input": 29599830,
+      "output": 9425520,
+      "total": 39025350
+    },
+    "initial_api_attempts": 18720,
+    "maximum_api_attempts_including_retries": 56160,
+    "maximum_attempts_per_pair_including_first": 3,
+    "pricing": {
+      "cached_input_per_million": 0.075,
+      "currency": "USD",
+      "input_per_million": 0.15,
+      "output_per_million": 0.6,
+      "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+      "verified_date": "2026-09-26"
+    },
+    "runtime": {
+      "base_free_plan_rpd_scenario_days_initial": 18.72,
+      "base_free_plan_rpd_scenario_days_maximum": 56.16,
+      "initial_round_serial_hours_at_frozen_pacing": 156.0,
+      "maximum_serial_hours_at_frozen_pacing": 468.0,
+      "minimum_seconds_between_attempt_starts": 30,
+      "note": "Exact organization limits must be checked in Groq settings before authorization. The 30-second pacing policy is more conservative than the documented RPM limits but a 1,000-RPD account limit would dominate elapsed time."
+    }
+  },
+  "failure_policy": {
+    "fatal_run_errors": [
+      "authentication/authorization error",
+      "non-output request rejection",
+      "protocol/manifest/request fingerprint drift",
+      "attempt or cost guard mismatch"
+    ],
+    "maximum_attempts_per_pair_including_first": 3,
+    "maximum_retries_per_pair": 2,
+    "maximum_total_attempts_including_retries": 56160,
+    "persistent_generation_failure_scoring": {
+      "answer_token_f1": 0,
+      "answerability": "incorrect special GENERATION_FAILURE outcome; never counted as abstention",
+      "exact_match": 0,
+      "operational_metrics": "include all failed-attempt token usage, estimated cost, and wall/attempt latency",
+      "retained_in_denominator": true,
+      "retrieval_metrics": "score from the sealed native/supplied retrieval logs because retrieval completed before generation"
+    },
+    "prohibited": [
+      "silent exclusion",
+      "answer repair",
+      "configuration change",
+      "selective rerun",
+      "answer reuse across systems"
+    ],
+    "rate_limit": {
+      "honor_retry_after": true,
+      "minimum_seconds_between_attempt_starts": 30,
+      "retry_after_safety_margin_seconds": 0.25
+    },
+    "retryable": [
+      "HTTP 429",
+      "HTTP 5xx",
+      "timeout/network error",
+      "json_validate_failed",
+      "JSON parse failure",
+      "local semantic validation failure"
+    ],
+    "round_robin": "finish attempt round N for all unresolved pairs before round N+1",
+    "validity_reporting": [
+      "first-attempt validity",
+      "eventual validity",
+      "attempt of first valid response"
+    ]
+  },
+  "generation": {
+    "decoding": {
+      "max_output_tokens": 1600,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "maximum_completion_tokens": 1600,
+    "model": "openai/gpt-oss-120b",
+    "outgoing_fields": [
+      "model",
+      "messages",
+      "temperature",
+      "top_p",
+      "max_completion_tokens",
+      "reasoning_effort",
+      "response_format"
+    ],
+    "prompt": "final-evaluation-answer-v1.1",
+    "prompt_version": "final-evaluation-answer-v1.1",
+    "same_for_every_system": true,
+    "schema": "frozen_final_answer_v1_1",
+    "schema_name": "frozen_final_answer_v1_1",
+    "settings": {
+      "model": "openai/gpt-oss-120b",
+      "reasoning_effort": "medium",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "strict": true
+  },
+  "interpretation_limits": [
+    "MuSiQue development results are development-split evidence, not hidden-test evidence",
+    "QASPER test results support dataset-specific test claims only",
+    "public-model benchmark pretraining exposure is unknown",
+    "smoke success is operational evidence only and supports no superiority claim"
+  ],
+  "metrics": {
+    "answer": [
+      "normalized token F1",
+      "Exact Match"
+    ],
+    "answerability_and_abstention": [
+      "accuracy",
+      "macro precision/recall/F1",
+      "correct abstention",
+      "incorrect abstention",
+      "false-answer rate on insufficient"
+    ],
+    "efficiency": [
+      "native context tokens",
+      "supplied context tokens",
+      "provider input/output/total billed tokens",
+      "latency",
+      "estimated cost",
+      "dynamic final-k distribution"
+    ],
+    "evidence": [
+      "unique gold-evidence recall for native retrieved evidence",
+      "unique gold-evidence recall for actually supplied evidence",
+      "answerable-only complete-evidence recovery",
+      "residual-support recovery reported separately for insufficient questions"
+    ],
+    "faithfulness_separate": {
+      "automatic_diagnostics": [
+        "citation ID validity",
+        "claim citation coverage",
+        "cited-evidence lexical support"
+      ],
+      "human_assessment": "separate blinded, preregistered assessment if later authorized; never merged with retrieval/answer correctness metrics",
+      "interpretation": "diagnostics are not semantic faithfulness proof",
+      "judge_model_calls": 0,
+      "llm_judge_authorized": false
+    }
+  },
+  "pricing_verification": {
+    "account_specific_limits_unverified_without_provider_settings_access": true,
+    "model_page": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "observed_official_rates": {
+      "cached_input_per_million": 0.075,
+      "currency": "USD",
+      "input_per_million": 0.15,
+      "output_per_million": 0.6,
+      "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+      "verified_date": "2026-09-26"
+    },
+    "rate_limits_page": "https://console.groq.com/docs/rate-limits"
+  },
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "protocol_version": "sar-rag-final-answer-evaluation-1.1.0",
+  "retrieval_freeze": {
+    "common_generation_evidence_cap_tokens": 1600,
+    "guard": "packing is post-retrieval and may reduce supplied evidence only to enforce the common cap; native retrieval outputs and final k remain the estimand and must not be overwritten",
+    "no_retrieval_parameter_changes": true,
+    "packing_policy": "deterministically traverse native ranked evidence; include a complete chunk only if it fits; never truncate a chunk or refill by changing retrieval",
+    "required_separate_logs": [
+      "native retrieved evidence IDs/order/text hashes",
+      "native retrieval context tokens and dynamic final k",
+      "actually supplied evidence IDs/order/text hashes",
+      "actually supplied evidence tokens and packing exclusions"
+    ],
+    "v1_selected_configuration": {
+      "empty_batch_patience": 3,
+      "marginal_utility_threshold": 0.1289,
+      "novelty_threshold": 0.2292,
+      "redundancy_threshold": 0.9547,
+      "representation_marginal_gain_threshold": 0.2437,
+      "rrf_k0": 3,
+      "similarity_gap_threshold": 1.9052,
+      "similarity_threshold": 0.5289
+    },
+    "v2_selected_configuration": {
+      "adaptive_batch_size": 3,
+      "adaptive_retrieval_enabled": true,
+      "deduplicate_after_retrieval": true,
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "empty_batch_patience": 1,
+      "local_embedding_path": "models/all-MiniLM-L6-v2",
+      "max_candidates_examined": 30,
+      "max_context_tokens": 1600,
+      "max_final_chunks": 20,
+      "max_retrieval_rounds": 6,
+      "probe_depth": 3,
+      "relevance_percentile_threshold": 0.45,
+      "representation": "paragraph",
+      "seed": 20260905
+    }
+  },
+  "scope": "held-out retrieval and generation followed by separately gated scoring; no tuning or selective reruns",
+  "separation_and_scoring_gate": {
+    "generation_inputs_contain_gold": false,
+    "gold_information_allowed_in_prompt_or_retrieval": false,
+    "gold_stage": "open gold answer/evidence labels only after predictions and retrieval logs are complete and cryptographically sealed, under separate scoring authorization",
+    "heldout_generation_authorized": false,
+    "heldout_scoring_authorized": false
+  },
+  "smoke_prerequisite": {
+    "answers_sha256": "fd0a299b25dc3af6cdccb6aeb5559c1b115788dc75735c85e23912317540add5",
+    "attempt_ledger_sha256": "c973a0ab9717bd876af5d29a12a0c3fe6add76f2e85c950e6e4200fb308ec178",
+    "checks": {
+      "all_answers_first_attempt": true,
+      "all_attempts_valid": true,
+      "answer_records_48": true,
+      "attempt_records_48": true,
+      "manifest_fingerprint_valid": true,
+      "protocol_fingerprint_valid": true,
+      "protocol_manifest_link_valid": true,
+      "reported_first_attempt_valid_48": true,
+      "validation_artifact_hashes_valid": true,
+      "validation_status_passed": true
+    },
+    "manifest_fingerprint": "75a0047c16fa631e2e50ebbe76644867d9d147f94e56d77d3b4fd613b8c11a80",
+    "protocol_fingerprint": "c915bed876a3e1394e09d160caa4bffac6c5df60763da0d5186674421c326a79",
+    "status": "VERIFIED_48_OF_48_FIRST_ATTEMPT_VALID"
+  },
+  "statistics": {
+    "clusters": {
+      "musique_full": "source_id",
+      "qasper": "paper_id"
+    },
+    "comparisons": [
+      "adaptive_single_view_v2 - sar_rag_v1",
+      "sar_rag_v1 - traditional_k10",
+      "adaptive_single_view_v2 - traditional_k10"
+    ],
+    "confidence_intervals": "10,000-replicate paired cluster bootstrap, 95%, seed 20260926",
+    "multiplicity": "Holm correction across the three system comparisons separately within each dataset-by-declared-primary-metric family",
+    "no_cross_dataset_overall_quality_average": true,
+    "practical_effect_margins": {
+      "answer_F1_gain": 0.02,
+      "answer_F1_noninferiority": -0.02,
+      "answerable_CER_noninferiority": -0.03,
+      "evidence_recall_noninferiority": -0.02,
+      "meaningful_token_latency_or_cost_reduction_percent": 10
+    },
+    "required_reporting": [
+      "dataset-specific results",
+      "effect size",
+      "95% CI",
+      "raw p",
+      "Holm-adjusted p",
+      "valid sample count",
+      "cluster count",
+      "answerable/insufficient subgroup counts"
+    ],
+    "tests": {
+      "binary": "exact McNemar when independent pairs apply; cluster randomization for QASPER papers and MuSiQue source groups",
+      "continuous": "paired cluster sign-randomization, 10,000 permutations"
+    }
+  },
+  "status": "FROZEN_AWAITING_SEPARATE_HELDOUT_AUTHORIZATION",
+  "systems": {
+    "adaptive_single_view_v2": {
+      "dynamic_final_k_preserved": true,
+      "manifest": "output/adaptive_single_view_v2/recalibration_seed20260905/FROZEN_V2_MANIFEST.json",
+      "manifest_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "manifest_sha256_reverified": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "max_context_tokens": 1600,
+      "patience": 1,
+      "recalibration": false,
+      "relevance_percentile": 0.45,
+      "representation": "paragraph"
+    },
+    "sar_rag_v1": {
+      "dynamic_final_k_preserved": true,
+      "manifest": "output/calibration/frozen_manifest.json",
+      "manifest_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+      "manifest_sha256_reverified": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+      "recalibration": false
+    },
+    "traditional_k10": {
+      "embedding": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "fixed_k": 10,
+      "fixed_k_operating_points_predeclared": [
+        10,
+        20
+      ],
+      "reason": "k=10 is the development token-comparable baseline; k=20 remains retrieval-only Pareto context and receives no answer call",
+      "representation": "sentence_window",
+      "role": "primary traditional baseline"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "checkpoint_created": true,
+  "expected_calls": 48,
+  "fake_answerer_calls": 48,
+  "fingerprint_mismatch_rejected": true,
+  "first_run": {
+    "cache_hits": 0,
+    "checkpoint_records": 48,
+    "new_calls": 48,
+    "requested": 48
+  },
+  "groq_client_imported_or_invoked": false,
+  "metrics_ingestion": {
+    "answerability_field_computed": true,
+    "note": "Fake-answer metrics validate ingestion only and are not research results.",
+    "records_ingested": 48,
+    "token_f1_field_computed": true
+  },
+  "paid_calls": 0,
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "question_count": 16,
+  "request_manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+  "resume_run": {
+    "cache_hits": 48,
+    "checkpoint_records": 48,
+    "new_calls": 0,
+    "requested": 48
+  },
+  "resume_zero_duplicate_calls": true,
+  "schema_and_answerability_parsing": true,
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "status": "PASSED_DETERMINISTIC_FAKE_ANSWERER_DRY_RUN",
+  "system_count": 3,
+  "usage_latency_retry_cost_fields": true
+}

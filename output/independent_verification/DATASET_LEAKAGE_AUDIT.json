@@ -1,0 +1,564 @@
+{
+  "scope": "Exact normalized-question, source-ID, document-ID and example-ID overlap. Semantic paraphrase, benchmark contamination and language-model pretraining exposure are NOT ruled out by exact matching.",
+  "reproduced_from_shipped_audit": {
+    "qasper_train_vs_test": {
+      "exact_normalized_question_overlap": 72,
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    },
+    "musique_train_vs_dev": {
+      "exact_normalized_question_overlap": 0,
+      "source_id_overlap": 0,
+      "document_id_overlap": 0
+    },
+    "note": "These reproduce the shipped output/q2_analysis_pilot/leakage_audit.json exactly."
+  },
+  "qasper_overlap_characterization": {
+    "distinct_overlapping_questions": 72,
+    "test_examples_affected": 163,
+    "test_examples_affected_percent": 11.23,
+    "overlapping_questions_that_share_a_paper_id": 0,
+    "finding": "All overlapping strings are generic NLP-paper question templates and NONE shares a paper with its training counterpart. The answer to \"What was the baseline?\" is determined entirely by the paper, and no paper is shared. This is question-template repetition, not answer or source leakage. It must still be disclosed and must NOT be described as zero leakage.",
+    "all_overlapping_questions": [
+      {
+        "question": "What was the baseline?",
+        "test_examples": 9,
+        "train_papers": 8,
+        "test_papers": 9,
+        "shares_paper": false
+      },
+      {
+        "question": "Do they report results only on English data?",
+        "test_examples": 9,
+        "train_papers": 15,
+        "test_papers": 9,
+        "shares_paper": false
+      },
+      {
+        "question": "what are the baselines?",
+        "test_examples": 6,
+        "train_papers": 10,
+        "test_papers": 6,
+        "shares_paper": false
+      },
+      {
+        "question": "Which dataset do they use?",
+        "test_examples": 6,
+        "train_papers": 8,
+        "test_papers": 6,
+        "shares_paper": false
+      },
+      {
+        "question": "what dataset was used?",
+        "test_examples": 6,
+        "train_papers": 1,
+        "test_papers": 6,
+        "shares_paper": false
+      },
+      {
+        "question": "How long is the dataset?",
+        "test_examples": 6,
+        "train_papers": 3,
+        "test_papers": 6,
+        "shares_paper": false
+      },
+      {
+        "question": "What dataset did they use?",
+        "test_examples": 5,
+        "train_papers": 4,
+        "test_papers": 5,
+        "shares_paper": false
+      },
+      {
+        "question": "What are the baseline models?",
+        "test_examples": 5,
+        "train_papers": 2,
+        "test_papers": 5,
+        "shares_paper": false
+      },
+      {
+        "question": "What were the evaluation metrics?",
+        "test_examples": 4,
+        "train_papers": 1,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "What datasets did they use?",
+        "test_examples": 4,
+        "train_papers": 9,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "Which datasets do they evaluate on?",
+        "test_examples": 4,
+        "train_papers": 1,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "What datasets are used?",
+        "test_examples": 4,
+        "train_papers": 4,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the size of the dataset?",
+        "test_examples": 4,
+        "train_papers": 11,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "what were the baselines?",
+        "test_examples": 4,
+        "train_papers": 6,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "What dataset do they use?",
+        "test_examples": 4,
+        "train_papers": 5,
+        "test_papers": 4,
+        "shares_paper": false
+      },
+      {
+        "question": "What evaluation metrics did they use?",
+        "test_examples": 3,
+        "train_papers": 2,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "Do they compare to previous work?",
+        "test_examples": 3,
+        "train_papers": 1,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "What is their baseline?",
+        "test_examples": 3,
+        "train_papers": 3,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "what datasets were used?",
+        "test_examples": 3,
+        "train_papers": 5,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "What dataset is used?",
+        "test_examples": 3,
+        "train_papers": 4,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "What evaluation metrics were used?",
+        "test_examples": 3,
+        "train_papers": 2,
+        "test_papers": 3,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the architecture of the model?",
+        "test_examples": 2,
+        "train_papers": 2,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What are the evaluation metrics used?",
+        "test_examples": 2,
+        "train_papers": 1,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "How large is the dataset?",
+        "test_examples": 2,
+        "train_papers": 6,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What metrics are used for evaluation?",
+        "test_examples": 2,
+        "train_papers": 2,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the baseline model?",
+        "test_examples": 2,
+        "train_papers": 2,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What evaluation metrics are used?",
+        "test_examples": 2,
+        "train_papers": 4,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What is their definition of hate speech?",
+        "test_examples": 2,
+        "train_papers": 1,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What baseline model is used?",
+        "test_examples": 2,
+        "train_papers": 1,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "How big is the dataset?",
+        "test_examples": 2,
+        "train_papers": 4,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What languages do they experiment with?",
+        "test_examples": 2,
+        "train_papers": 1,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "Which datasets do they use?",
+        "test_examples": 2,
+        "train_papers": 1,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the baseline?",
+        "test_examples": 2,
+        "train_papers": 4,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "Do they evaluate only on English datasets?",
+        "test_examples": 2,
+        "train_papers": 6,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the state of the art?",
+        "test_examples": 2,
+        "train_papers": 5,
+        "test_papers": 2,
+        "shares_paper": false
+      },
+      {
+        "question": "How was the dataset collected?",
+        "test_examples": 1,
+        "train_papers": 3,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What crowdsourcing platform did they use?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "what language pairs are explored?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What was the baseline model?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the size of this dataset?",
+        "test_examples": 1,
+        "train_papers": 3,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the performance of their model?",
+        "test_examples": 1,
+        "train_papers": 3,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Which datasets are used for evaluation?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What models do they compare to?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Which datasets did they use?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Which data sources do they use?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What datasets are used for experiments?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What features are used?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What was the inter-annotator agreement?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What languages did they experiment with?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What languages are explored in this paper?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Do they use pretrained word embeddings?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "How many annotators were there?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "How many annotators participated?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the size of the corpus?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "How big is their dataset?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "How was annotation done?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What dataset is used for training?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Did they experiment on this dataset?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "How long are the datasets?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "what is the size of the introduced dataset?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Do they evaluate only on English data?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Did they use a crowdsourcing platform?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What baseline do they compare to?",
+        "test_examples": 1,
+        "train_papers": 2,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What are their baseline models?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "what are their evaluation metrics?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Do the authors report only on English?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "Do the authors mention any possible confounds in this study?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What is the architecture of their model?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What are state-of-the-art baselines?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "what results do they achieve?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What datasets are used in this paper?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      },
+      {
+        "question": "What are the state-of-the-art systems?",
+        "test_examples": 1,
+        "train_papers": 1,
+        "test_papers": 1,
+        "shares_paper": false
+      }
+    ]
+  },
+  "calibration_isolation_audit": {
+    "rationale": "The shipped audit compares train vs test wholesale, but only the 60 calibration examples were ever fitted. This is the operative contamination channel and was not previously measured.",
+    "calibration_sample_size": 60,
+    "per_evaluation_split": {
+      "qasper_test": {
+        "evaluation_examples": 1451,
+        "unique_example_ids": 1451,
+        "calibration_example_id_overlap": 0,
+        "calibration_question_hash_overlap_distinct": 1,
+        "evaluation_examples_touched": 2,
+        "evaluation_examples_touched_percent": 0.138,
+        "calibration_source_id_overlap": 0,
+        "calibration_document_id_overlap": 0
+      },
+      "musique_full_validation": {
+        "evaluation_examples": 4834,
+        "unique_example_ids": 4834,
+        "calibration_example_id_overlap": 0,
+        "calibration_question_hash_overlap_distinct": 0,
+        "evaluation_examples_touched": 0,
+        "evaluation_examples_touched_percent": 0.0,
+        "calibration_source_id_overlap": 0,
+        "calibration_document_id_overlap": 0
+      }
+    },
+    "finding": "The calibration sample shares zero example IDs, zero source IDs and zero document IDs with either evaluation split. It shares one generic question template with QASPER test, touching 2 of 1451 examples (0.14%), and nothing with MuSiQue development."
+  },
+  "fitted_quantity": "Calibration fits 8 scalar thresholds plus one baseline k on 60 training examples using gold evidence spans and answerability strata only. No answer text and no Groq call are used, so the exploitable channel from template repetition is very small.",
+  "residual_risks": [
+    "Exact matching cannot detect semantic paraphrases of training questions.",
+    "Neither dataset can be cleared of prior public benchmark contamination.",
+    "openai/gpt-oss-120b may have seen QASPER or MuSiQue during pretraining; this is unmeasurable here and applies EQUALLY to both arms, so it does not bias the paired comparison, only absolute scores.",
+    "QASPER train contains 158 internally duplicated question strings and test 108, so template repetition is intrinsic to the benchmark."
+  ],
+  "verdict": "No evidence of source, document or example-level leakage between calibration and evaluation. Question-template repetition exists at the corpus level and is disclosed. The paired comparison is not invalidated."
+}

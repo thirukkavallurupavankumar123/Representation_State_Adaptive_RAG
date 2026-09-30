@@ -1,0 +1,12 @@
+{
+  "authorized_stage": "heldout_generation_v1_1_only",
+  "maximum_attempts_per_pair_including_first": 3,
+  "maximum_cost_usd": 77.5008,
+  "maximum_total_api_attempts_including_retries": 56160,
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "request_manifest_fingerprint": "MUST_BE_FILLED_AFTER_OFFLINE_RETRIEVAL_REQUEST_FREEZE",
+  "run_manifest_fingerprint": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85",
+  "scope_note": "Does not authorize scoring, judge calls, configuration changes, or calls beyond the exact frozen pair manifest.",
+  "status": "DISABLED_PROPOSAL_NOT_AUTHORIZATION",
+  "user_authorized": false
+}

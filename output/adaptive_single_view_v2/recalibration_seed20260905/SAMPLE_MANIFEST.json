@@ -1,0 +1,939 @@
+{
+  "seed": 20260905,
+  "sample_count": 225,
+  "stratum_counts": {
+    "musique_full|ANSWERABLE|2hop": 25,
+    "musique_full|ANSWERABLE|3hop": 25,
+    "musique_full|ANSWERABLE|4hop": 25,
+    "musique_full|INSUFFICIENT|2hop": 25,
+    "musique_full|INSUFFICIENT|3hop": 25,
+    "musique_full|INSUFFICIENT|4hop": 25,
+    "qasper|ANSWERABLE|long": 25,
+    "qasper|ANSWERABLE|medium": 25,
+    "qasper|ANSWERABLE|short": 25
+  },
+  "partition_counts": {
+    "selection": 63,
+    "tuning": 162
+  },
+  "population_after_exclusion": {
+    "musique_full|ANSWERABLE|2hop": 14335,
+    "musique_full|ANSWERABLE|3hop": 4346,
+    "musique_full|ANSWERABLE|4hop": 1134,
+    "musique_full|INSUFFICIENT|2hop": 8198,
+    "musique_full|INSUFFICIENT|3hop": 4199,
+    "musique_full|INSUFFICIENT|4hop": 1128,
+    "qasper|ANSWERABLE|long": 165,
+    "qasper|ANSWERABLE|medium": 1780,
+    "qasper|ANSWERABLE|short": 181
+  },
+  "design_exposed_registry_sha256": "dd263a56ad4ad826f9de53ac5a73ec391b5f1f11a8911c58c6a9ac64e421aab6",
+  "design_exposed_overlap": 0,
+  "heldout_id_registry_sha256": "e126c7cc41b59ef58a9a909cf31718925601147753cf8f19ba7297392f3ca808",
+  "heldout_id_overlap": 0,
+  "all_ids_are_training": true,
+  "qasper_test_overlap_structural": 0,
+  "sample_ids": [
+    {
+      "example_id": "musique_full:train:2hop__396811_11179:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__814145_7643:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__22215_22229:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__222967_3994:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__80845_3004:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__145364_160300:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__807787_433799:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__130036_90450:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__35466_46468:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__441183_4192:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__732813_3429:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__365613_92585:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__10300_701819:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__697916_191233:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__588618_44191:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__157490_4697:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__661591_13728:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__484484_70625:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__339715_123897:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__663183_14948:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__311457_89563:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__103707_58946:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__374248_47939:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__684778_34197:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__624711_36090:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__11290_86983_516763:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__678937_786384_80004:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__473969_23998_21435:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__103837_18911_89217:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__756618_632690_39849:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__145250_51280_242202:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__128489_51280_242202:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__685813_739335_86976:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__656459_848839_275064:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__623372_803028_485952:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__21987_60155_831253:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__56041_153005_80209:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__400851_797479_81829:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__36656_63595_53125:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__632012_585703_369147:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__835094_770122_725834:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__713895_823374_26254:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__686928_340288_158229:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__365912_719002_45994:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__1266_41881_22389:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__11799_706297_41384:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__159886_1286_19228:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__482318_729377_238895:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__145839_832324_795274:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__255983_69760_609883:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__16401_4520_37620_55609:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__90366_83359_48661_15069:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__603090_818753_783943_26110:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__129142_31258_43153_32993:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__11290_74386_444296_179769:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__129548_85073_830682_68600:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__322597_452185_53858_33265:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__661054_783943_43666_426514:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__828190_475952_41885_856982:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__708978_84360_334118_41330:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__137037_31258_43153_32993:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop2__33840_53235_57802_311656:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__771620_317689_1286_19154:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__771620_317689_1286_19216:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__511550_166077_548045_159613:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__446791_100761_1955_417709:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__175074_362455_28338_160498:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__756618_691163_306302_65370:answerable",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__621442_544708_764770_54023:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__9664_38788_25582_21116:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop2__339729_22831_51791_820357:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__100331_46089_61674_1952:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__841580_221169_833580_61459:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__16401_4520_37620_47790:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__293974_423084_449353_82365:answerable",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__781033_85098:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__686908_33802:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__144563_646483:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__612739_533073:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__247148_838537:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__21514_9449:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__329680_80884:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__710186_3001:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__90687_77346:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__455955_69489:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__529364_77980:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__63829_607800:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__82744_23199:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__479193_21326:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__37476_34638:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__692875_377891:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__854515_93486:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__102069_58946:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__167567_92217:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__773535_86840:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__740481_46077:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__189276_776926:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:2hop__92441_90450:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__102728_511430:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:2hop__550480_86395:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__827059_369694_30651:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__701129_146907_90774:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__9194_79683_159363:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__16275_71250_135051:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__698_669_90553:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__703943_339649_41917:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__41221_53576_34644:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__505738_833580_61459:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__207212_707133_90453:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__802552_523255_92189:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__680_669_84004:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__857597_84360_334118:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__440445_490280_41375:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__742469_763924_573834:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__641303_226789_844905:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__760007_715233_59314:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__359617_861630_87032:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__32903_103178_48441:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__131745_517267_451901:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__51280_6975_58531:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__382240_434040_59381:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__337255_107233_83343:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__29467_132108_73594:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:3hop1__541476_178503_576905:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:3hop2__30796_638197_24137:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__147221_362455_28338_160498:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__35504_77886_88620_69951:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__710649_38788_25582_21116:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__133590_631695_74047_257745:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__385156_9522_41885_126049:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__783955_415728_50519_820681:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__786436_280480_160165_606586:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__703974_789671_773286_24137:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__102699_10079_503957_720028:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__507663_146811_31258_43153:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__703974_789671_190988_24137:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__31283_31258_43153_32993:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__358018_75897_8509_19700:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__672043_858588_68869_274317:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__257026_301282_65293_48285:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__783955_415728_50519_65104:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__159715_157955_162189_73761:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__698_669_158722_74346:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__101950_38788_25582_21116:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__579907_415728_50519_81553:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop3__463724_100414_35260_54090:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__771620_317689_1286_19309:insufficient",
+      "partition": "selection"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__93724_52584_71250_135051:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop2__47209_53235_57802_311656:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "musique_full:train:4hop1__524030_829000_51791_16315:insufficient",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:ffa4d4bfb226382ca4ecde65ecdc44a3d9e0ce81",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:cdf65116a7c50edddcb115e9afd86b2b6accb8ad",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:eacd7e540cc34cb45770fcba463f4bf968681d59",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:1d72770d075b22411ec86d8bdee532f8c643740b",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:d5ff8fc4d3996db2c96cb8af5a6d215484991e62",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:f463db61de40ae86cf5ddd445783bb34f5f8ab67",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:5b6aec1b88c9832075cd343f59158078a91f3597",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:330f2cdeab689670b68583fc4125f5c0b26615a8",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:dbdf13cb4faa1785bdee90734f6c16380459520b",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:6389d5a152151fb05aae00b53b521c117d7b5e54",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:eac042734f76e787cb98ba3d0c13a916a49bdfb3",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:5c95808cd3ee9585f05ef573b0d4a52e86d04c60",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:03895bc75e4d01c359cd269a9eb3b6ea57039817",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:f809fd0d3acfaccbe6c8abb4a9d951a83eec9a32",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:65ba7304838eb960e3b3de7c8a367d2c2cd64c54",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:b217d9730ba469f48426280945dbb77542b39183",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:d71937fa5da853f7529f767730547ccfb70e5908",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:ead5dc1f3994b2031a1852ecc4f97ac5760ea977",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:616c205142c7f37b3f4e81c0d1c52c79f926bcdc",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:863d5c6305e5bb4b14882b85b6216fa11bcbf053",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:d9c6493e1c3d8d429d4ca608f5acf29e4e7c4c9b",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:e96adf8466e67bd19f345578d5a6dc68fd0279a1",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:53807f435d33fe5ce65f5e7bda7f77712194f6ab",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:6d54bad91b6ccd1108d1ddbff1d217c6806e0842",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:fe6bb55b28f14ed8ac82c122681905397e31279d",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:b13902af1bcf0e199a3ea42bbc8fcd8e696a381a",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:56836afc57cae60210fa1e5294c88e40bb10cc0e",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:753990d0b621d390ed58f20c4d9e4f065f0dc672",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:212977344f4bf2ae8f060bdac0317db2d1801724",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:7065e6140dbaffadebe62c9c9d3863ca0f829d52",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:b69897deb5fb80bf2adb44f9cbf6280d747271b3",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:6608f171b3e0dcdcd51b3e0c697d6e5003ab5f02",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:36a9230fadf997d3b0c5fc8af8d89bd48bf04f12",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:bb71a638668a21c2d446b44cbf51676c839658f7",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:602396d1f5a3c172e60a10c7022bcfa08fa6cbc9",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:81cee2fc6edd9b7bc65bbf6b4aa35782339e6cff",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:480e10e5a1b9c0ae9f7763b7611eeae9e925096b",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:2122bd05c03dde098aa17e36773e1ac7b6011969",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:43878a6a8fc36aaae29d95815355aaa7d25c3b53",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:a4e66e842be1438e5cd8d7cb2a2c589f494aee27",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:e2f269997f5a01949733c2ec8169f126dabd7571",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:9d336c4c725e390b6eba8bb8fe148997135ee981",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:9174aded45bc36915f2e2adb6f352f3c7d9ada8b",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:9714cb7203c18a0c53805f6c889f2e20b4cab5dd",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:51de39c8bad62d3cbfbec1deb74bd8a3ac5e69a8",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:4519afe91b1042876d7c021487d98e2d72a09861",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:a93d4aa89ac3abbd08d725f3765c4f1bed35c889",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:2ed02be0c183fca7031ccb8be3fd7bc109f3694b",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:2965c86467d12b79abc16e1457d848cb6ca88973",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:100cf8b72d46da39fedfe77ec939fb44f25de77f",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:50f09a044f0c0795cc636c3e25a4f7c3231fb08d",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:95c7b27d192ab0edcdf203a74ce24f4a9a814e6c",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:aa1f605619b2487cc914fc2594c8efe2598d8555",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:694dd76a37ad9e8083c546e9bd083c5c3b65695c",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:74091e10f596428135b0ab06008608e09c051565",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:ed522090941f61e97ec3a39f52d7599b573492dd",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:99760276cfd699e55b827ceeb653b31b043b9ceb",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:6412e97373e8e9ae3aa20aa17abef8326dc05450",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:989271972b3176d0a5dabd1cc0e4bdb671269c96",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:d7d41a1b8bbb1baece89b28962d23ee4457b9c3a",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:1192e9a265956aa08177caea7d3c38d501707809",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:de015276dcde4e7d1d648c6e31100ec80f61960f",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:13149342ccbb7a6df9b4b1bed890cfbdc1331c1f",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:40e3639b79e2051bf6bce300d06548e7793daee0",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:ce6201435cc1196ad72b742db92abd709e0f9e8d",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:562a2feeba9580f5435a94396f2a8751f79a4d5c",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:3f3c09c1fd542c1d9acf197957c66b79ea1baf6e",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:d0c79f4a5d5c45fe673d9fcb3cd0b7dd65df7636",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:a379c380ac9f67f824506951444c873713405eed",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:edc43e1b75c0970b7003deeabfe3ad247cb1ed83",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:b72264a73eea36c828e7de778a8b4599a5d02b39",
+      "partition": "selection"
+    },
+    {
+      "example_id": "qasper:train:c2553166463b7b5ae4d9786f0446eb06a90af458",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:9d9f6cc0f026f7168fcea461baff4b8a925a185f",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:99cf494714c67723692ad1279132212db29295f3",
+      "partition": "tuning"
+    },
+    {
+      "example_id": "qasper:train:8c35caf3772637e6297009ceab38f7f5be38ea9d",
+      "partition": "tuning"
+    }
+  ],
+  "sample_file_sha256": "db74d090948fbe28d8d6e11362fd1e74e5ffaaf53ff5f5ca68d946a27bacf791"
+}

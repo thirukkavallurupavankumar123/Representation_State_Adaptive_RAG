@@ -1,0 +1,48 @@
+{
+  "account_plan": "free",
+  "account_plan_source": "user declaration",
+  "api_calls": 0,
+  "billing_policy": {
+    "enable_billing": false,
+    "free_quota_only": true,
+    "maximum_billed_cost_usd": 0.0,
+    "purchase_credits": false,
+    "upgrade_plan": false
+  },
+  "conservative_initial_quota_days": 300,
+  "conservative_initial_tokens": 59807407,
+  "conservative_maximum_quota_days": 898,
+  "enforcement": {
+    "daily_window_seconds": 86400,
+    "http_429": "record once, checkpoint, pause immediately, honor Retry-After when supplied; never retry in the same invocation",
+    "minute_window_seconds": 60,
+    "post_call_accounting": "record actual provider usage when present; retain conservative reservation when usage is absent",
+    "pre_call_reservation": "sealed conservative input tokens plus 1,600 maximum output tokens",
+    "quota_exhaustion": "checkpoint and exit with resume_not_before_utc",
+    "resume": "rerun the exact command after resume_not_before_utc; answer/request fingerprints prevent duplicate validated calls",
+    "window_model": "local rolling windows; conservative when provider reset boundary is unavailable"
+  },
+  "expected_initial_quota_days": 185,
+  "expected_initial_tokens": 36884767,
+  "expected_maximum_quota_days": 554,
+  "generation_enabled": false,
+  "initial_attempts": 18720,
+  "limits": {
+    "rpd": 1000,
+    "rpm": 30,
+    "tpd": 200000,
+    "tpm": 8000
+  },
+  "maximum_attempts_including_retries": 56160,
+  "model": "openai/gpt-oss-120b",
+  "organization_override_note": "The Groq console was signed out; published free-plan limits are enforced conservatively. Response headers are captured once execution is separately authorized.",
+  "organization_override_verified": false,
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "published_limit_source": "https://console.groq.com/docs/rate-limits",
+  "published_limits_verified_date": "2026-09-27",
+  "quota_plan_fingerprint": "6917525a61217bbd1e5ad093faf981627c46858c237eaf37adfdb2ff8e5ad92e",
+  "request_manifest_fingerprint": "38ec0a6fe0d319982d1b90d5601b0c12c82e870c00065765f27e61ba15d8f106",
+  "run_manifest_fingerprint": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85",
+  "status": "FROZEN_DISABLED_AWAITING_EXPLICIT_FREE_QUOTA_AUTHORIZATION",
+  "version": "heldout-v1.1-free-quota-1.0.0"
+}

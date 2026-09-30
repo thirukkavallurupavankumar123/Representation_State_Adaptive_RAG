@@ -1,0 +1,82 @@
+{
+  "authorization_and_cost": {
+    "actual_attempt_mix_preflight_input_tokens": 68139,
+    "actual_attempt_mix_worst_case_cost_usd": 0.03326085,
+    "attempt_ceiling": 48,
+    "attempts_used_including_failures": 48,
+    "authorized_cost_ceiling_usd": 0.0432,
+    "automatic_retries": 0,
+    "billing_note": "Failed-request billing is not exposed in the checkpoint; consult Groq billing for invoiced cost.",
+    "planned_distinct_pair_preflight_worst_case_cost_usd": 0.03333735,
+    "successful_response_estimated_cost_usd": 0.0186837
+  },
+  "coverage": {
+    "expected_pairs": 48,
+    "never_attempted_logical_keys": [
+      "qasper|qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8|adaptive_single_view_v2"
+    ],
+    "never_attempted_pairs": 1,
+    "previously_failed_pairs_later_completed": 1,
+    "responses_by_dataset": {
+      "musique_full": 19,
+      "qasper": 21
+    },
+    "responses_by_system": {
+      "adaptive_single_view_v2": 13,
+      "sar_rag_v1": 14,
+      "traditional_k10": 13
+    },
+    "unanswered_failed_pairs": 7,
+    "unique_pairs_attempted": 47,
+    "validated_responses": 40
+  },
+  "failures": {
+    "attempt_statuses": {
+      "http_error|400": 5,
+      "http_error|429": 1,
+      "success|None": 42
+    },
+    "categories": {
+      "http_400_json_validate_failed": 5,
+      "http_429_rate_limit": 1,
+      "local_response_validation": 2
+    },
+    "failure_records": 8
+  },
+  "frozen_configuration": {
+    "decoding": {
+      "max_output_tokens": 800,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "model": "openai/gpt-oss-120b",
+    "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+    "request_fingerprints_valid": true,
+    "request_manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+    "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2"
+  },
+  "integrity": {
+    "all_saved_responses_schema_valid": true,
+    "attempt_ceiling_respected": true,
+    "checkpoint_secret_pattern_absent": true,
+    "no_saved_response_reports_retries": true
+  },
+  "interpretation": "Operational smoke evidence only; incomplete and not valid for system-effect conclusions.",
+  "scope": {
+    "held_out_checkpoint_created": false,
+    "held_out_evaluation_executed": false,
+    "paid_smoke_executed": true,
+    "research_outcome_scoring_performed": false
+  },
+  "status": "PAID_SMOKE_INCOMPLETE_ATTEMPT_CEILING_REACHED",
+  "usage_for_validated_responses": {
+    "input_tokens": 59050,
+    "maximum_latency_ms": 2601.84,
+    "median_latency_ms": 1449.22,
+    "output_tokens": 16377,
+    "p95_latency_ms": 2562.06,
+    "total_tokens": 75427
+  }
+}

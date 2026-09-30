@@ -1,0 +1,110 @@
+{
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "purpose": "Training-only retrieval design decision; not confirmatory test evidence and not an answer-quality experiment.",
+  "api_policy": "zero Groq or other LLM calls; RetrievalOnlyAnswerer only",
+  "datasets": [
+    "QASPER official train",
+    "MuSiQue-Full official train"
+  ],
+  "evaluation_splits_forbidden": [
+    "QASPER test",
+    "MuSiQue development/validation"
+  ],
+  "sample": {
+    "seed": 20260807,
+    "per_stratum": 25,
+    "expected_strata": 12,
+    "expected_n": 300,
+    "sampling": "deterministic streaming bottom-hash within dataset-answerability-length/hop strata",
+    "exclude_frozen_calibration_ids": true,
+    "exclude_prior_diagnostic_files": [
+      "output/independent_verification/REPRESENTATION_ROUTING_PER_EXAMPLE.csv",
+      "output/independent_verification/SCREENING_V2_PER_EXAMPLE.csv",
+      "output/independent_verification/screening_v3_smoke/SCREENING_V2_PER_EXAMPLE.csv"
+    ],
+    "partition": {
+      "method": "deterministic within-stratum hash partition",
+      "tuning_per_stratum": 17,
+      "selection_per_stratum": 8,
+      "selection_fraction_argument": 0.32,
+      "design_decisions_use": "selection partition; tuning and all-sample results remain descriptive"
+    }
+  },
+  "frozen_embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimension": 384,
+    "local_path": "models/all-MiniLM-L6-v2"
+  },
+  "systems": {
+    "legacy_primary": "Frozen four-view SAR-RAG using hierarchical v1",
+    "candidate_primary": "Same frozen controls with hierarchical v1 replaced by hierarchical_v2",
+    "hierarchical_v2_parent_weight": 0.5,
+    "hierarchical_v2_child_weight": 0.5,
+    "weight_status": "predeclared neutral candidate, not claimed optimal",
+    "single_views_legacy": [
+      "sentence_window",
+      "paragraph",
+      "semantic",
+      "hierarchical"
+    ],
+    "single_views_candidate": [
+      "sentence_window",
+      "paragraph",
+      "semantic",
+      "hierarchical_v2"
+    ],
+    "forced_pairs": "all six pairs in each four-view system under the same shared final context/chunk/candidate budgets",
+    "traditional_controls": [
+      "sliding_window k=3",
+      "sliding_window k=5",
+      "sliding_window k=10",
+      "sliding_window k=20",
+      "matched-granularity sliding_window k=3/5/10/20"
+    ]
+  },
+  "primary_retrieval_outcomes": [
+    "unique gold-span evidence recall",
+    "complete-evidence recovery",
+    "final context tokens"
+  ],
+  "secondary_outcomes": [
+    "evidence precision",
+    "final k",
+    "candidates examined",
+    "retrieval rounds",
+    "stop reason",
+    "offline index vector bytes and indexing time"
+  ],
+  "diagnostics": {
+    "oracle1": "per-question maximum across the four single-view systems",
+    "oracle2": "per-question maximum across the same singles and all six forced pairs",
+    "oracles_are": "label-only diagnostics, unavailable at inference and not generalization estimates",
+    "tie_policy": "retain the full set of maximizers; never declaration-order argmax",
+    "gate_instrumentation": "reached, would-reject, binding and downstream-output effect"
+  },
+  "inference": {
+    "paired_bootstrap_resamples": 20000,
+    "paired_randomization_resamples": 20000,
+    "binary_test": "exact McNemar",
+    "multiplicity": "Holm correction separately by metric and scope for all conditions, plus transparent four-single-view families",
+    "effect_size": "paired dz",
+    "report": "mean paired difference, 95% CI, raw p, Holm p, effect size and valid paired n"
+  },
+  "predeclared_practical_margins": {
+    "evidence_recall_noninferiority": -0.02,
+    "complete_evidence_noninferiority": -0.02,
+    "meaningful_recall_gain": 0.02,
+    "meaningful_context_reduction_percent": 10,
+    "meaningful_oracle2_gain_over_best_constant": 0.05
+  },
+  "decision_rules": {
+    "hierarchy_candidate_retained": "On the untouched selection partition, hierarchical_v2 must improve recall over hierarchical v1 and the candidate four-view primary must be no worse than legacy primary by the -0.02 recall margin. Retention additionally requires either >=0.02 candidate-primary recall gain, >=10% context reduction under recall noninferiority, or >=0.02 Oracle@2 gain over the legacy representation set.",
+    "routing_claim_retained": "On selection, candidate primary must be noninferior to the best constant single view within -0.02 recall and either gain >=0.02 recall or reduce context >=10%. Oracle@2 must exceed the best constant single view by >=0.05 to support a materially useful routing ceiling.",
+    "gate_retained_as_claimed_component": "Removing the gate must change at least one final retrieval output and its paired effect must not reduce recall or complete evidence beyond -0.02. Merely being reached or binding is insufficient.",
+    "pivot_rule": "If routing_claim_retained fails, stop presenting representation routing as the central contribution and pivot to the strongest adaptive single-view or budget-matched retrieval method."
+  },
+  "execution": {
+    "output_directory": "output/independent_verification/screening_v3_n300",
+    "command": ".venv/Scripts/python.exe tools/screening_v2.py --per-stratum 25 --seed 20260807 --resamples 20000 --exclude-csv output/independent_verification/REPRESENTATION_ROUTING_PER_EXAMPLE.csv --exclude-csv output/independent_verification/SCREENING_V2_PER_EXAMPLE.csv --exclude-csv output/independent_verification/screening_v3_smoke/SCREENING_V2_PER_EXAMPLE.csv --output-dir output/independent_verification/screening_v3_n300"
+  }
+}

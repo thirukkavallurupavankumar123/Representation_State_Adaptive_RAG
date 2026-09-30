@@ -1,0 +1,125 @@
+{
+  "purpose": "Independent reproduction of the frozen training-only calibration, before and after defect remediation.",
+  "artifacts": {
+    "v0_original_frozen": {
+      "path": "output/calibration/frozen_manifest.json",
+      "sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05"
+    },
+    "v1_reproduction_unmodified_code": {
+      "path": "output/independent_verification/calibration_v1_reproduction.json",
+      "sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05"
+    },
+    "v2_after_defect_fixes": {
+      "path": "output/independent_verification/calibration_v2_manifest.json",
+      "sha256": "6639bd3b10032c8f8d342fa283984e2a50983e8ef8e20fe06ec41e05376358b0"
+    }
+  },
+  "preservation": "output/calibration/frozen_manifest.json was never modified; it remains the version-1 historical artifact.",
+  "comparison_fields": [
+    "status",
+    "seed",
+    "sample_size",
+    "sample_ids",
+    "sample_partitions",
+    "population_strata",
+    "embedding",
+    "frozen_configuration",
+    "selected_proposed_parameters",
+    "selected_baseline_parameters",
+    "chosen_proposed_tuning_metrics",
+    "chosen_proposed_selection_metrics",
+    "chosen_baseline_tuning_metrics",
+    "chosen_baseline_selection_metrics",
+    "all_proposed_trials",
+    "all_baseline_trials",
+    "proposed_search_space"
+  ],
+  "v0_vs_v1": {
+    "differing_fields": [],
+    "identical": true,
+    "interpretation": "The frozen calibration reproduces bit-for-bit from the unmodified code. Sampling, partitioning, all 32 proposed trials and all 6 baseline trials are deterministic."
+  },
+  "v1_vs_v2": {
+    "differing_fields": [],
+    "identical": true,
+    "new_keys_in_v2": [
+      "corpus_cache_policy"
+    ],
+    "interpretation": "Defect remediation changed no calibration result. The corpus-cache refactor reorders iteration only; every (example, configuration) evaluation is independent given the corpus."
+  },
+  "frozen_configuration": {
+    "v0": {
+      "proposed": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.2437,
+        "similarity_threshold": 0.5289,
+        "similarity_gap_threshold": 1.9052,
+        "novelty_threshold": 0.2292,
+        "redundancy_threshold": 0.9547,
+        "marginal_utility_threshold": 0.1289,
+        "empty_batch_patience": 3
+      },
+      "baseline": {
+        "static_k": 20
+      }
+    },
+    "v1": {
+      "proposed": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.2437,
+        "similarity_threshold": 0.5289,
+        "similarity_gap_threshold": 1.9052,
+        "novelty_threshold": 0.2292,
+        "redundancy_threshold": 0.9547,
+        "marginal_utility_threshold": 0.1289,
+        "empty_batch_patience": 3
+      },
+      "baseline": {
+        "static_k": 20
+      }
+    },
+    "v2": {
+      "proposed": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.2437,
+        "similarity_threshold": 0.5289,
+        "similarity_gap_threshold": 1.9052,
+        "novelty_threshold": 0.2292,
+        "redundancy_threshold": 0.9547,
+        "marginal_utility_threshold": 0.1289,
+        "empty_batch_patience": 3
+      },
+      "baseline": {
+        "static_k": 20
+      }
+    },
+    "thresholds_changed": []
+  },
+  "memory_policy_change": {
+    "v1": "every sampled corpus retained for the whole search (both index families)",
+    "v2": {
+      "policy": "one active corpus; resident indexes do not grow with sample size",
+      "corpora_built": 60,
+      "note": "a corpus repeated non-adjacently in sample order is rebuilt; results are unaffected because each (example, configuration) evaluation is independent given the corpus"
+    },
+    "corpora_built_v2": 60,
+    "unique_corpora_v1": 58,
+    "note": "60 builds vs 58 unique corpora: two corpora recur non-adjacently in sample order and are rebuilt. Results unaffected."
+  },
+  "realized_partition": {
+    "tuning": 36,
+    "selection": 24,
+    "documented_as": "70/30",
+    "actually_is": "60/40",
+    "cause": "round(5 * 0.30) = 2 under banker rounding, so each 5-example stratum yields 3 tuning and 2 selection."
+  },
+  "selection_rule": {
+    "documented": "Shortlist configurations within 0.01 of best TUNING gold-evidence recall, then on the held-back selection partition maximize complete-evidence recovery, then evidence precision, then minimize context tokens, then candidates examined, then serialized parameter order.",
+    "implemented": "Identical, except that choose_configuration re-filters the shortlist to configurations within 0.01 of the best SELECTION-partition recall before applying the lexicographic order.",
+    "location": "src/sar_rag/calibration.py choose_configuration lines 176-178",
+    "effect_on_v1": "None observed: the selected configuration is unchanged under either reading of the rule for this sample.",
+    "recommendation": "Adopt the IMPLEMENTED rule as the version-2 documented rule and state it explicitly.",
+    "justification": "The extra filter is strictly more recall-protective. Removing it would let a configuration with materially lower held-back recall win on complete-evidence ties, which contradicts the stated priority that evidence coverage outranks efficiency. Changing code after results exist is also the more dangerous edit; correcting prose is not."
+  },
+  "status": "Version 1 calibration is reproducible and remains valid. No re-freeze is required."
+}

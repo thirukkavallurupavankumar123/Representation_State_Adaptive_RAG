@@ -1,0 +1,1700 @@
+{
+  "status": "training_only_calibration_frozen",
+  "seed": 20260803,
+  "selection_rule": {
+    "description": "shortlist configurations within 0.01 of best tuning evidence recall; choose on held-back training selection partition by complete-evidence rate, precision, context tokens, then candidates",
+    "recall_tolerance": 0.01,
+    "selection_fraction": 0.3,
+    "answer_generation_used": false
+  },
+  "dataset_sources": {
+    "qasper_train": {
+      "path": "datasets\\raw\\qasper\\data\\qasper-train-v0.3.json",
+      "sha256": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4"
+    },
+    "musique_train": {
+      "path": "datasets\\raw\\musique\\data\\musique_full_v1.0_train.jsonl",
+      "sha256": "b1cd998f7e0e2838d6fda024e4ad1eb0e7fc3edefdadb0bd9b5b10b0907f2034"
+    }
+  },
+  "population_strata": {
+    "musique_full|ANSWERABLE|2hop": 14376,
+    "musique_full|ANSWERABLE|3hop": 4387,
+    "musique_full|ANSWERABLE|4hop": 1175,
+    "musique_full|INSUFFICIENT|2hop": 14376,
+    "musique_full|INSUFFICIENT|3hop": 4387,
+    "musique_full|INSUFFICIENT|4hop": 1175,
+    "qasper|ANSWERABLE|long": 214,
+    "qasper|ANSWERABLE|medium": 1870,
+    "qasper|ANSWERABLE|short": 238,
+    "qasper|INSUFFICIENT|long": 25,
+    "qasper|INSUFFICIENT|medium": 203,
+    "qasper|INSUFFICIENT|short": 43
+  },
+  "sample_size": 60,
+  "corpus_cache_policy": {
+    "policy": "one active corpus; resident indexes do not grow with sample size",
+    "corpora_built": 60,
+    "note": "a corpus repeated non-adjacently in sample order is rebuilt; results are unaffected because each (example, configuration) evaluation is independent given the corpus"
+  },
+  "sample_ids": [
+    "musique_full:train:2hop__536041_20093:answerable",
+    "musique_full:train:2hop__26988_5400:answerable",
+    "musique_full:train:2hop__407284_68172:answerable",
+    "musique_full:train:2hop__667017_1136:answerable",
+    "musique_full:train:2hop__129529_68900:answerable",
+    "musique_full:train:3hop1__862690_164954_56516:answerable",
+    "musique_full:train:3hop1__18305_84421_85446:answerable",
+    "musique_full:train:3hop1__207167_144910_26427:answerable",
+    "musique_full:train:3hop1__107023_84298_53741:answerable",
+    "musique_full:train:3hop1__104600_10384_59072:answerable",
+    "musique_full:train:4hop1__667316_145054_65293_48285:answerable",
+    "musique_full:train:4hop2__136826_61674_1952_78767:answerable",
+    "musique_full:train:4hop1__160380_10079_503957_720028:answerable",
+    "musique_full:train:4hop1__152871_84360_334118_41330:answerable",
+    "musique_full:train:4hop1__66475_83359_48661_15069:answerable",
+    "musique_full:train:2hop__135820_89563:insufficient",
+    "musique_full:train:2hop__150371_15822:insufficient",
+    "musique_full:train:2hop__152926_79233:insufficient",
+    "musique_full:train:2hop__445895_71859:insufficient",
+    "musique_full:train:2hop__146567_29454:insufficient",
+    "musique_full:train:3hop1__310233_534205_21115:insufficient",
+    "musique_full:train:3hop1__32498_4658_58575:insufficient",
+    "musique_full:train:3hop1__103777_81195_59314:insufficient",
+    "musique_full:train:3hop1__56768_354329_5303:insufficient",
+    "musique_full:train:3hop1__296007_60390_542832:insufficient",
+    "musique_full:train:4hop1__405751_4520_65397_74538:insufficient",
+    "musique_full:train:4hop2__724536_444580_75897_25092:insufficient",
+    "musique_full:train:4hop1__156462_100761_1955_90328:insufficient",
+    "musique_full:train:4hop3__312602_629330_70123_63115:insufficient",
+    "musique_full:train:4hop1__29341_30907_482320_707201:insufficient",
+    "qasper:train:a85c2510f25c7152940b5ac4333a80e0f91ade6e",
+    "qasper:train:41fd359b8c1402b31b6f5efd660143d1414783a0",
+    "qasper:train:e020677261d739c35c6f075cde6937d0098ace7f",
+    "qasper:train:1124804c3702499b78cf0678bab5867e81284b6c",
+    "qasper:train:8c0846879771c8f3915cc2e0718bee448f5cb007",
+    "qasper:train:4670e1be9d6a260140d055c7685bce365781d82b",
+    "qasper:train:2caa8726222237af482e170c51c88099cefef6fc",
+    "qasper:train:f748cb05becc60e7d47d34f4c5f94189bc184d33",
+    "qasper:train:9a5d02062fa7eec7097f1dc1c38b5e6d5c82acdf",
+    "qasper:train:3b391cd58cf6a61fe8c8eff2095e33794e80f0e3",
+    "qasper:train:fb1c2ff0872084241b9725b4f07750bd3e1df793",
+    "qasper:train:b8b588ca1e876b3094ae561a875dd949c8965b2e",
+    "qasper:train:bfa3776c30cb30e0088e185a5908e5172df79236",
+    "qasper:train:a4ff1b91643e0c8a0d4cc1502d25ca85995cf428",
+    "qasper:train:4266aacb575b4be7dbcdb8616766324f8790763c",
+    "qasper:train:f63519bb5e116671cebd65cc78880c5cb573c570",
+    "qasper:train:a939a53cabb4893b2fd82996f3dbe8688fdb7bbb",
+    "qasper:train:bf00808353eec22b4801c922cce7b1ec0ff3b777",
+    "qasper:train:3a6559dc6eba7f5abddf3ac27376ba0b9643a908",
+    "qasper:train:18dab362ae4587408a291a55299f347f8870e9f1",
+    "qasper:train:212495af630c16745d0fcb614119d75327952271",
+    "qasper:train:e40df8c685a28b98006c47808f506def68f30e26",
+    "qasper:train:51d03f0741b72ae242c380266acd2321baf43444",
+    "qasper:train:8720c096c8b990c7b19f956ee4930d5f2c019e2b",
+    "qasper:train:6c4cd8da5b4b298f29af3123b58d9a5d4b02180b",
+    "qasper:train:0428e06f0550e1063a64d181210795053a8e6436",
+    "qasper:train:f37128d3533dabb58aadf2e8f9aa30f5bda81cd9",
+    "qasper:train:be6971827707afcd13af3085d0a775a0bd61c5dd",
+    "qasper:train:a45a86b6a02a98d3ab11f1d04acd3446e95f5a16",
+    "qasper:train:ab3737fbf17b7a0e790e1315fffe46f615ebde64"
+  ],
+  "sample_partitions": {
+    "musique_full:train:2hop__129529_68900:answerable": "selection",
+    "musique_full:train:2hop__407284_68172:answerable": "selection",
+    "musique_full:train:2hop__667017_1136:answerable": "tuning",
+    "musique_full:train:2hop__536041_20093:answerable": "tuning",
+    "musique_full:train:2hop__26988_5400:answerable": "tuning",
+    "musique_full:train:3hop1__207167_144910_26427:answerable": "selection",
+    "musique_full:train:3hop1__18305_84421_85446:answerable": "selection",
+    "musique_full:train:3hop1__862690_164954_56516:answerable": "tuning",
+    "musique_full:train:3hop1__104600_10384_59072:answerable": "tuning",
+    "musique_full:train:3hop1__107023_84298_53741:answerable": "tuning",
+    "musique_full:train:4hop1__152871_84360_334118_41330:answerable": "selection",
+    "musique_full:train:4hop2__136826_61674_1952_78767:answerable": "selection",
+    "musique_full:train:4hop1__66475_83359_48661_15069:answerable": "tuning",
+    "musique_full:train:4hop1__160380_10079_503957_720028:answerable": "tuning",
+    "musique_full:train:4hop1__667316_145054_65293_48285:answerable": "tuning",
+    "musique_full:train:2hop__152926_79233:insufficient": "selection",
+    "musique_full:train:2hop__150371_15822:insufficient": "selection",
+    "musique_full:train:2hop__135820_89563:insufficient": "tuning",
+    "musique_full:train:2hop__146567_29454:insufficient": "tuning",
+    "musique_full:train:2hop__445895_71859:insufficient": "tuning",
+    "musique_full:train:3hop1__56768_354329_5303:insufficient": "selection",
+    "musique_full:train:3hop1__296007_60390_542832:insufficient": "selection",
+    "musique_full:train:3hop1__32498_4658_58575:insufficient": "tuning",
+    "musique_full:train:3hop1__103777_81195_59314:insufficient": "tuning",
+    "musique_full:train:3hop1__310233_534205_21115:insufficient": "tuning",
+    "musique_full:train:4hop3__312602_629330_70123_63115:insufficient": "selection",
+    "musique_full:train:4hop2__724536_444580_75897_25092:insufficient": "selection",
+    "musique_full:train:4hop1__156462_100761_1955_90328:insufficient": "tuning",
+    "musique_full:train:4hop1__405751_4520_65397_74538:insufficient": "tuning",
+    "musique_full:train:4hop1__29341_30907_482320_707201:insufficient": "tuning",
+    "qasper:train:a85c2510f25c7152940b5ac4333a80e0f91ade6e": "selection",
+    "qasper:train:8c0846879771c8f3915cc2e0718bee448f5cb007": "selection",
+    "qasper:train:1124804c3702499b78cf0678bab5867e81284b6c": "tuning",
+    "qasper:train:e020677261d739c35c6f075cde6937d0098ace7f": "tuning",
+    "qasper:train:41fd359b8c1402b31b6f5efd660143d1414783a0": "tuning",
+    "qasper:train:f748cb05becc60e7d47d34f4c5f94189bc184d33": "selection",
+    "qasper:train:4670e1be9d6a260140d055c7685bce365781d82b": "selection",
+    "qasper:train:2caa8726222237af482e170c51c88099cefef6fc": "tuning",
+    "qasper:train:9a5d02062fa7eec7097f1dc1c38b5e6d5c82acdf": "tuning",
+    "qasper:train:3b391cd58cf6a61fe8c8eff2095e33794e80f0e3": "tuning",
+    "qasper:train:bfa3776c30cb30e0088e185a5908e5172df79236": "selection",
+    "qasper:train:fb1c2ff0872084241b9725b4f07750bd3e1df793": "selection",
+    "qasper:train:a4ff1b91643e0c8a0d4cc1502d25ca85995cf428": "tuning",
+    "qasper:train:4266aacb575b4be7dbcdb8616766324f8790763c": "tuning",
+    "qasper:train:b8b588ca1e876b3094ae561a875dd949c8965b2e": "tuning",
+    "qasper:train:bf00808353eec22b4801c922cce7b1ec0ff3b777": "selection",
+    "qasper:train:3a6559dc6eba7f5abddf3ac27376ba0b9643a908": "selection",
+    "qasper:train:18dab362ae4587408a291a55299f347f8870e9f1": "tuning",
+    "qasper:train:a939a53cabb4893b2fd82996f3dbe8688fdb7bbb": "tuning",
+    "qasper:train:f63519bb5e116671cebd65cc78880c5cb573c570": "tuning",
+    "qasper:train:6c4cd8da5b4b298f29af3123b58d9a5d4b02180b": "selection",
+    "qasper:train:212495af630c16745d0fcb614119d75327952271": "selection",
+    "qasper:train:e40df8c685a28b98006c47808f506def68f30e26": "tuning",
+    "qasper:train:8720c096c8b990c7b19f956ee4930d5f2c019e2b": "tuning",
+    "qasper:train:51d03f0741b72ae242c380266acd2321baf43444": "tuning",
+    "qasper:train:ab3737fbf17b7a0e790e1315fffe46f615ebde64": "selection",
+    "qasper:train:0428e06f0550e1063a64d181210795053a8e6436": "selection",
+    "qasper:train:a45a86b6a02a98d3ab11f1d04acd3446e95f5a16": "tuning",
+    "qasper:train:be6971827707afcd13af3085d0a775a0bd61c5dd": "tuning",
+    "qasper:train:f37128d3533dabb58aadf2e8f9aa30f5bda81cd9": "tuning"
+  },
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "proposed_search_space": {
+    "method": "seeded random search plus registered anchor",
+    "trials": 32,
+    "bounds": {
+      "rrf_k0": [
+        1,
+        3,
+        10,
+        60
+      ],
+      "representation_marginal_gain_threshold": [
+        0.03,
+        0.25
+      ],
+      "similarity_threshold": [
+        0.5,
+        0.95
+      ],
+      "similarity_gap_threshold": [
+        0.25,
+        2.5
+      ],
+      "novelty_threshold": [
+        0.03,
+        0.3
+      ],
+      "redundancy_threshold": [
+        0.85,
+        0.98
+      ],
+      "marginal_utility_threshold": [
+        0.02,
+        0.2
+      ],
+      "empty_batch_patience": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "selected_proposed_parameters": {
+    "rrf_k0": 3,
+    "representation_marginal_gain_threshold": 0.2437,
+    "similarity_threshold": 0.5289,
+    "similarity_gap_threshold": 1.9052,
+    "novelty_threshold": 0.2292,
+    "redundancy_threshold": 0.9547,
+    "marginal_utility_threshold": 0.1289,
+    "empty_batch_patience": 3
+  },
+  "selected_baseline_parameters": {
+    "static_k": 20
+  },
+  "frozen_configuration": {
+    "proposed": {
+      "rrf_k0": 3,
+      "representation_marginal_gain_threshold": 0.2437,
+      "similarity_threshold": 0.5289,
+      "similarity_gap_threshold": 1.9052,
+      "novelty_threshold": 0.2292,
+      "redundancy_threshold": 0.9547,
+      "marginal_utility_threshold": 0.1289,
+      "empty_batch_patience": 3
+    },
+    "baseline": {
+      "static_k": 20
+    }
+  },
+  "chosen_proposed_tuning_metrics": {
+    "answerable": 0.5,
+    "final_k": 15.805555555555555,
+    "context_tokens": 1333.9166666666667,
+    "candidates_examined": 33.30555555555556,
+    "selected_representations": 1.2222222222222223,
+    "evidence_recall": 0.8183333333333334,
+    "evidence_precision": 0.16926526535040468,
+    "complete_evidence": 0.68,
+    "answerable_context_tokens": 1420.0555555555557,
+    "insufficient_context_tokens": 1247.7777777777778,
+    "insufficient_candidates_examined": 32.94444444444444
+  },
+  "chosen_proposed_selection_metrics": {
+    "answerable": 0.5,
+    "final_k": 14.666666666666666,
+    "context_tokens": 1265.375,
+    "candidates_examined": 31.958333333333332,
+    "selected_representations": 1.125,
+    "evidence_recall": 0.7916666666666666,
+    "evidence_precision": 0.17190225522026992,
+    "complete_evidence": 0.6875,
+    "answerable_context_tokens": 1248.4166666666667,
+    "insufficient_context_tokens": 1282.3333333333333,
+    "insufficient_candidates_examined": 31.5
+  },
+  "chosen_baseline_tuning_metrics": {
+    "answerable": 0.5,
+    "evidence_recall": 0.8166666666666667,
+    "evidence_precision": 0.10724134053081422,
+    "complete_evidence": 0.72,
+    "final_k": 16.166666666666668,
+    "context_tokens": 1888.6666666666667,
+    "candidates_examined": 20.0,
+    "selected_representations": 1.0,
+    "answerable_context_tokens": 1901.3333333333333,
+    "insufficient_context_tokens": 1876.0,
+    "insufficient_candidates_examined": 20.0
+  },
+  "chosen_baseline_selection_metrics": {
+    "answerable": 0.5,
+    "evidence_recall": 0.8958333333333334,
+    "evidence_precision": 0.11269669201412622,
+    "complete_evidence": 0.875,
+    "final_k": 17.333333333333332,
+    "context_tokens": 1833.25,
+    "candidates_examined": 20.0,
+    "selected_representations": 1.0,
+    "answerable_context_tokens": 1850.5,
+    "insufficient_context_tokens": 1816.0,
+    "insufficient_candidates_examined": 20.0
+  },
+  "all_proposed_trials": [
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.2076,
+        "similarity_threshold": 0.876,
+        "similarity_gap_threshold": 1.0805,
+        "novelty_threshold": 0.2694,
+        "redundancy_threshold": 0.8827,
+        "marginal_utility_threshold": 0.0294,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.388888888888889,
+        "context_tokens": 630.8611111111111,
+        "candidates_examined": 21.583333333333332,
+        "selected_representations": 1.3055555555555556,
+        "evidence_recall": 0.5383333333333333,
+        "evidence_precision": 0.29312566844919785,
+        "complete_evidence": 0.28,
+        "answerable_context_tokens": 638.5555555555555,
+        "insufficient_context_tokens": 623.1666666666666,
+        "insufficient_candidates_examined": 21.666666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 6.583333333333333,
+        "context_tokens": 608.0416666666666,
+        "candidates_examined": 19.75,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.5416666666666666,
+        "evidence_precision": 0.27763480392156864,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 572.0833333333334,
+        "insufficient_context_tokens": 644.0,
+        "insufficient_candidates_examined": 20.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1783,
+        "similarity_threshold": 0.9253,
+        "similarity_gap_threshold": 1.6129,
+        "novelty_threshold": 0.0362,
+        "redundancy_threshold": 0.91,
+        "marginal_utility_threshold": 0.0582,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.777777777777778,
+        "context_tokens": 490.75,
+        "candidates_examined": 19.583333333333332,
+        "selected_representations": 1.3611111111111112,
+        "evidence_recall": 0.535,
+        "evidence_precision": 0.3620952380952381,
+        "complete_evidence": 0.32,
+        "answerable_context_tokens": 512.7777777777778,
+        "insufficient_context_tokens": 468.72222222222223,
+        "insufficient_candidates_examined": 18.833333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.208333333333333,
+        "context_tokens": 493.0,
+        "candidates_examined": 19.0,
+        "selected_representations": 1.2083333333333333,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.3698784722222222,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 479.0833333333333,
+        "insufficient_context_tokens": 506.9166666666667,
+        "insufficient_candidates_examined": 18.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 1,
+        "representation_marginal_gain_threshold": 0.0706,
+        "similarity_threshold": 0.7082,
+        "similarity_gap_threshold": 2.1325,
+        "novelty_threshold": 0.2021,
+        "redundancy_threshold": 0.9324,
+        "marginal_utility_threshold": 0.0726,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.527777777777779,
+        "context_tokens": 1098.0,
+        "candidates_examined": 29.583333333333332,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.7316666666666667,
+        "evidence_precision": 0.17699301678713444,
+        "complete_evidence": 0.56,
+        "answerable_context_tokens": 1149.8333333333333,
+        "insufficient_context_tokens": 1046.1666666666667,
+        "insufficient_candidates_examined": 27.833333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.583333333333334,
+        "context_tokens": 1027.875,
+        "candidates_examined": 26.375,
+        "selected_representations": 1.5,
+        "evidence_recall": 0.609375,
+        "evidence_precision": 0.18529232715813598,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1007.5833333333334,
+        "insufficient_context_tokens": 1048.1666666666667,
+        "insufficient_candidates_examined": 26.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.2087,
+        "similarity_threshold": 0.6861,
+        "similarity_gap_threshold": 1.5406,
+        "novelty_threshold": 0.0773,
+        "redundancy_threshold": 0.9793,
+        "marginal_utility_threshold": 0.0893,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.694444444444445,
+        "context_tokens": 1106.6944444444443,
+        "candidates_examined": 26.416666666666668,
+        "selected_representations": 1.3055555555555556,
+        "evidence_recall": 0.7116666666666667,
+        "evidence_precision": 0.1941793925029219,
+        "complete_evidence": 0.52,
+        "answerable_context_tokens": 1164.1666666666667,
+        "insufficient_context_tokens": 1049.2222222222222,
+        "insufficient_candidates_examined": 26.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.75,
+        "context_tokens": 1044.5416666666667,
+        "candidates_examined": 24.875,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.6354166666666666,
+        "evidence_precision": 0.1862150257830405,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1018.0,
+        "insufficient_context_tokens": 1071.0833333333333,
+        "insufficient_candidates_examined": 24.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1108,
+        "similarity_threshold": 0.8016,
+        "similarity_gap_threshold": 1.3185,
+        "novelty_threshold": 0.2548,
+        "redundancy_threshold": 0.9413,
+        "marginal_utility_threshold": 0.1211,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.083333333333334,
+        "context_tokens": 871.25,
+        "candidates_examined": 25.583333333333332,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.6883333333333334,
+        "evidence_precision": 0.2369443987385164,
+        "complete_evidence": 0.44,
+        "answerable_context_tokens": 893.2777777777778,
+        "insufficient_context_tokens": 849.2222222222222,
+        "insufficient_candidates_examined": 24.666666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.416666666666666,
+        "context_tokens": 857.125,
+        "candidates_examined": 23.5,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.5572916666666666,
+        "evidence_precision": 0.23951987044817927,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 824.5833333333334,
+        "insufficient_context_tokens": 889.6666666666666,
+        "insufficient_candidates_examined": 23.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1602,
+        "similarity_threshold": 0.6357,
+        "similarity_gap_threshold": 2.3254,
+        "novelty_threshold": 0.0555,
+        "redundancy_threshold": 0.8688,
+        "marginal_utility_threshold": 0.126,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.333333333333334,
+        "context_tokens": 1147.861111111111,
+        "candidates_examined": 29.166666666666668,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.1826779429720606,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1179.0,
+        "insufficient_context_tokens": 1116.7222222222222,
+        "insufficient_candidates_examined": 28.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.375,
+        "context_tokens": 1087.6666666666667,
+        "candidates_examined": 26.25,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.640625,
+        "evidence_precision": 0.17135955853786736,
+        "complete_evidence": 0.4375,
+        "answerable_context_tokens": 1056.75,
+        "insufficient_context_tokens": 1118.5833333333333,
+        "insufficient_candidates_examined": 26.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.1127,
+        "similarity_threshold": 0.9267,
+        "similarity_gap_threshold": 2.2454,
+        "novelty_threshold": 0.2789,
+        "redundancy_threshold": 0.9437,
+        "marginal_utility_threshold": 0.1537,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 6.25,
+        "context_tokens": 535.5,
+        "candidates_examined": 20.916666666666668,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.54,
+        "evidence_precision": 0.36566946778711484,
+        "complete_evidence": 0.32,
+        "answerable_context_tokens": 553.6666666666666,
+        "insufficient_context_tokens": 517.3333333333334,
+        "insufficient_candidates_examined": 20.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.666666666666667,
+        "context_tokens": 531.3333333333334,
+        "candidates_examined": 19.75,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.3670189950980392,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 533.6666666666666,
+        "insufficient_context_tokens": 529.0,
+        "insufficient_candidates_examined": 19.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1234,
+        "similarity_threshold": 0.8852,
+        "similarity_gap_threshold": 0.3636,
+        "novelty_threshold": 0.1853,
+        "redundancy_threshold": 0.8614,
+        "marginal_utility_threshold": 0.1698,
+        "empty_batch_patience": 1
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.722222222222222,
+        "context_tokens": 660.9444444444445,
+        "candidates_examined": 23.0,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.5983333333333334,
+        "evidence_precision": 0.3031862745098039,
+        "complete_evidence": 0.36,
+        "answerable_context_tokens": 688.2222222222222,
+        "insufficient_context_tokens": 633.6666666666666,
+        "insufficient_candidates_examined": 21.833333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.291666666666667,
+        "context_tokens": 672.0416666666666,
+        "candidates_examined": 21.0,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.27809873949579833,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 657.5833333333334,
+        "insufficient_context_tokens": 686.5,
+        "insufficient_candidates_examined": 21.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.152,
+        "similarity_threshold": 0.7726,
+        "similarity_gap_threshold": 1.1523,
+        "novelty_threshold": 0.2043,
+        "redundancy_threshold": 0.9412,
+        "marginal_utility_threshold": 0.0218,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.88888888888889,
+        "context_tokens": 943.7222222222222,
+        "candidates_examined": 30.416666666666668,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.6883333333333334,
+        "evidence_precision": 0.21831469510881274,
+        "complete_evidence": 0.44,
+        "answerable_context_tokens": 972.3888888888889,
+        "insufficient_context_tokens": 915.0555555555555,
+        "insufficient_candidates_examined": 29.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.125,
+        "context_tokens": 914.5,
+        "candidates_examined": 26.25,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.578125,
+        "evidence_precision": 0.21690082282913165,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 869.4166666666666,
+        "insufficient_context_tokens": 959.5833333333334,
+        "insufficient_candidates_examined": 26.25
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1279,
+        "similarity_threshold": 0.6436,
+        "similarity_gap_threshold": 1.2311,
+        "novelty_threshold": 0.2299,
+        "redundancy_threshold": 0.9537,
+        "marginal_utility_threshold": 0.03,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.222222222222221,
+        "context_tokens": 1142.1666666666667,
+        "candidates_examined": 32.083333333333336,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.18568493597905364,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1174.6666666666667,
+        "insufficient_context_tokens": 1109.6666666666667,
+        "insufficient_candidates_examined": 31.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.208333333333334,
+        "context_tokens": 1072.9166666666667,
+        "candidates_examined": 28.0,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.609375,
+        "evidence_precision": 0.17180026366607248,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1034.8333333333333,
+        "insufficient_context_tokens": 1111.0,
+        "insufficient_candidates_examined": 27.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1786,
+        "similarity_threshold": 0.8027,
+        "similarity_gap_threshold": 2.0004,
+        "novelty_threshold": 0.0501,
+        "redundancy_threshold": 0.8688,
+        "marginal_utility_threshold": 0.0345,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.055555555555555,
+        "context_tokens": 865.8333333333334,
+        "candidates_examined": 28.416666666666668,
+        "selected_representations": 1.4722222222222223,
+        "evidence_recall": 0.6683333333333333,
+        "evidence_precision": 0.23573227752639517,
+        "complete_evidence": 0.4,
+        "answerable_context_tokens": 869.4444444444445,
+        "insufficient_context_tokens": 862.2222222222222,
+        "insufficient_candidates_examined": 28.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.333333333333334,
+        "context_tokens": 849.9166666666666,
+        "candidates_examined": 25.125,
+        "selected_representations": 1.2083333333333333,
+        "evidence_recall": 0.5989583333333334,
+        "evidence_precision": 0.2503654586834734,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 853.4166666666666,
+        "insufficient_context_tokens": 846.4166666666666,
+        "insufficient_candidates_examined": 24.25
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.0681,
+        "similarity_threshold": 0.6019,
+        "similarity_gap_threshold": 1.085,
+        "novelty_threshold": 0.1782,
+        "redundancy_threshold": 0.9343,
+        "marginal_utility_threshold": 0.0386,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.88888888888889,
+        "context_tokens": 1216.1944444444443,
+        "candidates_examined": 33.666666666666664,
+        "selected_representations": 1.7777777777777777,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.15652684896802543,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1269.6666666666667,
+        "insufficient_context_tokens": 1162.7222222222222,
+        "insufficient_candidates_examined": 33.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.25,
+        "context_tokens": 1170.6666666666667,
+        "candidates_examined": 34.625,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.65625,
+        "evidence_precision": 0.15021889364720248,
+        "complete_evidence": 0.5,
+        "answerable_context_tokens": 1131.6666666666667,
+        "insufficient_context_tokens": 1209.6666666666667,
+        "insufficient_candidates_examined": 33.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.1437,
+        "similarity_threshold": 0.6523,
+        "similarity_gap_threshold": 1.9419,
+        "novelty_threshold": 0.0525,
+        "redundancy_threshold": 0.8918,
+        "marginal_utility_threshold": 0.0481,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.166666666666666,
+        "context_tokens": 1135.9166666666667,
+        "candidates_examined": 32.0,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.18662083341495106,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1168.2222222222222,
+        "insufficient_context_tokens": 1103.611111111111,
+        "insufficient_candidates_examined": 30.833333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.083333333333334,
+        "context_tokens": 1061.5833333333333,
+        "candidates_examined": 27.875,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.609375,
+        "evidence_precision": 0.17456225861556743,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1029.8333333333333,
+        "insufficient_context_tokens": 1093.3333333333333,
+        "insufficient_candidates_examined": 27.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1,
+        "similarity_threshold": 0.7,
+        "similarity_gap_threshold": 0.75,
+        "novelty_threshold": 0.1,
+        "redundancy_threshold": 0.92,
+        "marginal_utility_threshold": 0.05,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.63888888888889,
+        "context_tokens": 1101.9166666666667,
+        "candidates_examined": 31.583333333333332,
+        "selected_representations": 1.6111111111111112,
+        "evidence_recall": 0.7716666666666666,
+        "evidence_precision": 0.19860917840329606,
+        "complete_evidence": 0.6,
+        "answerable_context_tokens": 1151.8333333333333,
+        "insufficient_context_tokens": 1052.0,
+        "insufficient_candidates_examined": 30.5
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.5,
+        "context_tokens": 1029.2083333333333,
+        "candidates_examined": 28.0,
+        "selected_representations": 1.375,
+        "evidence_recall": 0.59375,
+        "evidence_precision": 0.18291883259714142,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 968.4166666666666,
+        "insufficient_context_tokens": 1090.0,
+        "insufficient_candidates_examined": 28.25
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1004,
+        "similarity_threshold": 0.8352,
+        "similarity_gap_threshold": 0.3927,
+        "novelty_threshold": 0.0995,
+        "redundancy_threshold": 0.9148,
+        "marginal_utility_threshold": 0.0576,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.333333333333334,
+        "context_tokens": 806.8888888888889,
+        "candidates_examined": 28.0,
+        "selected_representations": 1.6111111111111112,
+        "evidence_recall": 0.675,
+        "evidence_precision": 0.2591368729309906,
+        "complete_evidence": 0.44,
+        "answerable_context_tokens": 828.0555555555555,
+        "insufficient_context_tokens": 785.7222222222222,
+        "insufficient_candidates_examined": 27.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 8.75,
+        "context_tokens": 789.25,
+        "candidates_examined": 26.0,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.5364583333333334,
+        "evidence_precision": 0.266640406162465,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 764.6666666666666,
+        "insufficient_context_tokens": 813.8333333333334,
+        "insufficient_candidates_examined": 26.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.2237,
+        "similarity_threshold": 0.889,
+        "similarity_gap_threshold": 0.6468,
+        "novelty_threshold": 0.2815,
+        "redundancy_threshold": 0.9639,
+        "marginal_utility_threshold": 0.0588,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 7.0,
+        "context_tokens": 605.7222222222222,
+        "candidates_examined": 24.5,
+        "selected_representations": 1.3055555555555556,
+        "evidence_recall": 0.5383333333333333,
+        "evidence_precision": 0.30388795518207284,
+        "complete_evidence": 0.28,
+        "answerable_context_tokens": 634.1666666666666,
+        "insufficient_context_tokens": 577.2777777777778,
+        "insufficient_candidates_examined": 24.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 6.166666666666667,
+        "context_tokens": 563.4166666666666,
+        "candidates_examined": 22.0,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.2833239064856712,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 509.5833333333333,
+        "insufficient_context_tokens": 617.25,
+        "insufficient_candidates_examined": 22.25
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 1,
+        "representation_marginal_gain_threshold": 0.1042,
+        "similarity_threshold": 0.7947,
+        "similarity_gap_threshold": 1.0843,
+        "novelty_threshold": 0.0945,
+        "redundancy_threshold": 0.9127,
+        "marginal_utility_threshold": 0.083,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.61111111111111,
+        "context_tokens": 917.8611111111111,
+        "candidates_examined": 29.916666666666668,
+        "selected_representations": 1.6111111111111112,
+        "evidence_recall": 0.7283333333333333,
+        "evidence_precision": 0.23849906629318393,
+        "complete_evidence": 0.48,
+        "answerable_context_tokens": 973.1666666666666,
+        "insufficient_context_tokens": 862.5555555555555,
+        "insufficient_candidates_examined": 28.666666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.833333333333334,
+        "context_tokens": 877.625,
+        "candidates_examined": 26.75,
+        "selected_representations": 1.375,
+        "evidence_recall": 0.5572916666666666,
+        "evidence_precision": 0.22806153711484595,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 839.3333333333334,
+        "insufficient_context_tokens": 915.9166666666666,
+        "insufficient_candidates_examined": 27.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 1,
+        "representation_marginal_gain_threshold": 0.1147,
+        "similarity_threshold": 0.7892,
+        "similarity_gap_threshold": 1.1591,
+        "novelty_threshold": 0.0413,
+        "redundancy_threshold": 0.8833,
+        "marginal_utility_threshold": 0.0874,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.777777777777779,
+        "context_tokens": 931.3611111111111,
+        "candidates_examined": 30.25,
+        "selected_representations": 1.6111111111111112,
+        "evidence_recall": 0.7283333333333333,
+        "evidence_precision": 0.2353879551820728,
+        "complete_evidence": 0.48,
+        "answerable_context_tokens": 981.9444444444445,
+        "insufficient_context_tokens": 880.7777777777778,
+        "insufficient_candidates_examined": 29.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.0,
+        "context_tokens": 891.7916666666666,
+        "candidates_examined": 26.875,
+        "selected_representations": 1.375,
+        "evidence_recall": 0.5572916666666666,
+        "evidence_precision": 0.2215139180672269,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 853.8333333333334,
+        "insufficient_context_tokens": 929.75,
+        "insufficient_candidates_examined": 27.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.1431,
+        "similarity_threshold": 0.9462,
+        "similarity_gap_threshold": 1.0351,
+        "novelty_threshold": 0.146,
+        "redundancy_threshold": 0.8712,
+        "marginal_utility_threshold": 0.1021,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.0,
+        "context_tokens": 430.6666666666667,
+        "candidates_examined": 24.416666666666668,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.44,
+        "evidence_precision": 0.37824242424242427,
+        "complete_evidence": 0.24,
+        "answerable_context_tokens": 441.8333333333333,
+        "insufficient_context_tokens": 419.5,
+        "insufficient_candidates_examined": 23.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 4.791666666666667,
+        "context_tokens": 450.9166666666667,
+        "candidates_examined": 22.375,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.421875,
+        "evidence_precision": 0.3763888888888889,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 433.6666666666667,
+        "insufficient_context_tokens": 468.1666666666667,
+        "insufficient_candidates_examined": 21.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1237,
+        "similarity_threshold": 0.8609,
+        "similarity_gap_threshold": 0.4035,
+        "novelty_threshold": 0.2975,
+        "redundancy_threshold": 0.8867,
+        "marginal_utility_threshold": 0.1194,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 8.61111111111111,
+        "context_tokens": 742.6111111111111,
+        "candidates_examined": 27.833333333333332,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.6616666666666666,
+        "evidence_precision": 0.2838356676003735,
+        "complete_evidence": 0.4,
+        "answerable_context_tokens": 776.6111111111111,
+        "insufficient_context_tokens": 708.6111111111111,
+        "insufficient_candidates_examined": 27.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 8.291666666666666,
+        "context_tokens": 758.9583333333334,
+        "candidates_examined": 25.75,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.5364583333333334,
+        "evidence_precision": 0.26262254901960785,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 738.5,
+        "insufficient_context_tokens": 779.4166666666666,
+        "insufficient_candidates_examined": 26.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.0653,
+        "similarity_threshold": 0.7136,
+        "similarity_gap_threshold": 1.6293,
+        "novelty_threshold": 0.0439,
+        "redundancy_threshold": 0.8728,
+        "marginal_utility_threshold": 0.1516,
+        "empty_batch_patience": 2
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.36111111111111,
+        "context_tokens": 1092.9444444444443,
+        "candidates_examined": 33.083333333333336,
+        "selected_representations": 1.7777777777777777,
+        "evidence_recall": 0.7316666666666667,
+        "evidence_precision": 0.17648508027919793,
+        "complete_evidence": 0.56,
+        "answerable_context_tokens": 1150.6666666666667,
+        "insufficient_context_tokens": 1035.2222222222222,
+        "insufficient_candidates_examined": 31.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.791666666666666,
+        "context_tokens": 1063.7083333333333,
+        "candidates_examined": 32.75,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.609375,
+        "evidence_precision": 0.17340629652210535,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1014.0833333333334,
+        "insufficient_context_tokens": 1113.3333333333333,
+        "insufficient_candidates_examined": 32.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1256,
+        "similarity_threshold": 0.7246,
+        "similarity_gap_threshold": 1.7318,
+        "novelty_threshold": 0.2289,
+        "redundancy_threshold": 0.9751,
+        "marginal_utility_threshold": 0.0278,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.083333333333334,
+        "context_tokens": 1053.3333333333333,
+        "candidates_examined": 33.916666666666664,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.7316666666666667,
+        "evidence_precision": 0.1984416792357969,
+        "complete_evidence": 0.56,
+        "answerable_context_tokens": 1088.388888888889,
+        "insufficient_context_tokens": 1018.2777777777778,
+        "insufficient_candidates_examined": 32.833333333333336
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.958333333333334,
+        "context_tokens": 977.6666666666666,
+        "candidates_examined": 29.5,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.578125,
+        "evidence_precision": 0.18882542600373484,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 931.4166666666666,
+        "insufficient_context_tokens": 1023.9166666666666,
+        "insufficient_candidates_examined": 28.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1041,
+        "similarity_threshold": 0.8238,
+        "similarity_gap_threshold": 0.676,
+        "novelty_threshold": 0.1438,
+        "redundancy_threshold": 0.9598,
+        "marginal_utility_threshold": 0.06,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.61111111111111,
+        "context_tokens": 832.6666666666666,
+        "candidates_examined": 32.5,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.675,
+        "evidence_precision": 0.24021046600458365,
+        "complete_evidence": 0.44,
+        "answerable_context_tokens": 869.2777777777778,
+        "insufficient_context_tokens": 796.0555555555555,
+        "insufficient_candidates_examined": 31.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 9.375,
+        "context_tokens": 853.1666666666666,
+        "candidates_examined": 29.25,
+        "selected_representations": 1.375,
+        "evidence_recall": 0.5364583333333334,
+        "evidence_precision": 0.2449412719633308,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 791.9166666666666,
+        "insufficient_context_tokens": 914.4166666666666,
+        "insufficient_candidates_examined": 30.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.1221,
+        "similarity_threshold": 0.6245,
+        "similarity_gap_threshold": 2.3984,
+        "novelty_threshold": 0.2901,
+        "redundancy_threshold": 0.8945,
+        "marginal_utility_threshold": 0.1053,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.86111111111111,
+        "context_tokens": 1196.5277777777778,
+        "candidates_examined": 34.666666666666664,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.1753160369042722,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1229.388888888889,
+        "insufficient_context_tokens": 1163.6666666666667,
+        "insufficient_candidates_examined": 34.166666666666664
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.833333333333334,
+        "context_tokens": 1122.9166666666667,
+        "candidates_examined": 31.958333333333332,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.640625,
+        "evidence_precision": 0.16950229100964395,
+        "complete_evidence": 0.4375,
+        "answerable_context_tokens": 1078.0,
+        "insufficient_context_tokens": 1167.8333333333333,
+        "insufficient_candidates_examined": 31.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 1,
+        "representation_marginal_gain_threshold": 0.2402,
+        "similarity_threshold": 0.9164,
+        "similarity_gap_threshold": 0.4609,
+        "novelty_threshold": 0.0406,
+        "redundancy_threshold": 0.9554,
+        "marginal_utility_threshold": 0.1157,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 6.0,
+        "context_tokens": 513.3333333333334,
+        "candidates_examined": 25.5,
+        "selected_representations": 1.1944444444444444,
+        "evidence_recall": 0.5383333333333333,
+        "evidence_precision": 0.3445751633986928,
+        "complete_evidence": 0.28,
+        "answerable_context_tokens": 541.1666666666666,
+        "insufficient_context_tokens": 485.5,
+        "insufficient_candidates_examined": 25.333333333333332
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.291666666666667,
+        "context_tokens": 480.4166666666667,
+        "candidates_examined": 23.375,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.5,
+        "evidence_precision": 0.3307598039215686,
+        "complete_evidence": 0.25,
+        "answerable_context_tokens": 435.5833333333333,
+        "insufficient_context_tokens": 525.25,
+        "insufficient_candidates_examined": 24.25
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.2437,
+        "similarity_threshold": 0.5289,
+        "similarity_gap_threshold": 1.9052,
+        "novelty_threshold": 0.2292,
+        "redundancy_threshold": 0.9547,
+        "marginal_utility_threshold": 0.1289,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 15.805555555555555,
+        "context_tokens": 1333.9166666666667,
+        "candidates_examined": 33.30555555555556,
+        "selected_representations": 1.2222222222222223,
+        "evidence_recall": 0.8183333333333334,
+        "evidence_precision": 0.16926526535040468,
+        "complete_evidence": 0.68,
+        "answerable_context_tokens": 1420.0555555555557,
+        "insufficient_context_tokens": 1247.7777777777778,
+        "insufficient_candidates_examined": 32.94444444444444
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 14.666666666666666,
+        "context_tokens": 1265.375,
+        "candidates_examined": 31.958333333333332,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.7916666666666666,
+        "evidence_precision": 0.17190225522026992,
+        "complete_evidence": 0.6875,
+        "answerable_context_tokens": 1248.4166666666667,
+        "insufficient_context_tokens": 1282.3333333333333,
+        "insufficient_candidates_examined": 31.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.0814,
+        "similarity_threshold": 0.7794,
+        "similarity_gap_threshold": 1.2323,
+        "novelty_threshold": 0.1067,
+        "redundancy_threshold": 0.8928,
+        "marginal_utility_threshold": 0.1468,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.166666666666666,
+        "context_tokens": 979.1388888888889,
+        "candidates_examined": 36.083333333333336,
+        "selected_representations": 1.7777777777777777,
+        "evidence_recall": 0.7116666666666667,
+        "evidence_precision": 0.19769808949220713,
+        "complete_evidence": 0.52,
+        "answerable_context_tokens": 1053.1666666666667,
+        "insufficient_context_tokens": 905.1111111111111,
+        "insufficient_candidates_examined": 33.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.041666666666666,
+        "context_tokens": 1000.375,
+        "candidates_examined": 35.75,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.5416666666666666,
+        "evidence_precision": 0.1823731976765065,
+        "complete_evidence": 0.1875,
+        "answerable_context_tokens": 920.5,
+        "insufficient_context_tokens": 1080.25,
+        "insufficient_candidates_examined": 36.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 10,
+        "representation_marginal_gain_threshold": 0.0386,
+        "similarity_threshold": 0.7274,
+        "similarity_gap_threshold": 0.704,
+        "novelty_threshold": 0.14,
+        "redundancy_threshold": 0.8947,
+        "marginal_utility_threshold": 0.1521,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.11111111111111,
+        "context_tokens": 1072.3055555555557,
+        "candidates_examined": 36.333333333333336,
+        "selected_representations": 1.7777777777777777,
+        "evidence_recall": 0.7316666666666667,
+        "evidence_precision": 0.17968698948110712,
+        "complete_evidence": 0.56,
+        "answerable_context_tokens": 1134.4444444444443,
+        "insufficient_context_tokens": 1010.1666666666666,
+        "insufficient_candidates_examined": 34.666666666666664
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.583333333333334,
+        "context_tokens": 1042.4583333333333,
+        "candidates_examined": 36.25,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.59375,
+        "evidence_precision": 0.17599918973999856,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 983.1666666666666,
+        "insufficient_context_tokens": 1101.75,
+        "insufficient_candidates_examined": 37.0
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1888,
+        "similarity_threshold": 0.6632,
+        "similarity_gap_threshold": 1.5895,
+        "novelty_threshold": 0.0811,
+        "redundancy_threshold": 0.8549,
+        "marginal_utility_threshold": 0.1554,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.13888888888889,
+        "context_tokens": 1144.4444444444443,
+        "candidates_examined": 31.97222222222222,
+        "selected_representations": 1.3055555555555556,
+        "evidence_recall": 0.7116666666666667,
+        "evidence_precision": 0.18322945355298298,
+        "complete_evidence": 0.52,
+        "answerable_context_tokens": 1214.6666666666667,
+        "insufficient_context_tokens": 1074.2222222222222,
+        "insufficient_candidates_examined": 31.444444444444443
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 12.333333333333334,
+        "context_tokens": 1082.4583333333333,
+        "candidates_examined": 30.125,
+        "selected_representations": 1.125,
+        "evidence_recall": 0.6354166666666666,
+        "evidence_precision": 0.17395647653000595,
+        "complete_evidence": 0.375,
+        "answerable_context_tokens": 1065.9166666666667,
+        "insufficient_context_tokens": 1099.0,
+        "insufficient_candidates_examined": 29.5
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 1,
+        "representation_marginal_gain_threshold": 0.0626,
+        "similarity_threshold": 0.5818,
+        "similarity_gap_threshold": 1.2612,
+        "novelty_threshold": 0.0574,
+        "redundancy_threshold": 0.8798,
+        "marginal_utility_threshold": 0.1667,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 14.333333333333334,
+        "context_tokens": 1249.111111111111,
+        "candidates_examined": 35.583333333333336,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.755,
+        "evidence_precision": 0.15154516398634046,
+        "complete_evidence": 0.64,
+        "answerable_context_tokens": 1312.3333333333333,
+        "insufficient_context_tokens": 1185.888888888889,
+        "insufficient_candidates_examined": 36.166666666666664
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 13.458333333333334,
+        "context_tokens": 1173.0833333333333,
+        "candidates_examined": 33.083333333333336,
+        "selected_representations": 1.5416666666666667,
+        "evidence_recall": 0.6875,
+        "evidence_precision": 0.1624560488531077,
+        "complete_evidence": 0.5625,
+        "answerable_context_tokens": 1162.5833333333333,
+        "insufficient_context_tokens": 1183.5833333333333,
+        "insufficient_candidates_examined": 31.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 60,
+        "representation_marginal_gain_threshold": 0.1197,
+        "similarity_threshold": 0.7533,
+        "similarity_gap_threshold": 0.4128,
+        "novelty_threshold": 0.1433,
+        "redundancy_threshold": 0.9531,
+        "marginal_utility_threshold": 0.1671,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 11.305555555555555,
+        "context_tokens": 982.4444444444445,
+        "candidates_examined": 33.166666666666664,
+        "selected_representations": 1.5833333333333333,
+        "evidence_recall": 0.6983333333333334,
+        "evidence_precision": 0.2019669317610494,
+        "complete_evidence": 0.48,
+        "answerable_context_tokens": 1019.5555555555555,
+        "insufficient_context_tokens": 945.3333333333334,
+        "insufficient_candidates_examined": 32.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 10.458333333333334,
+        "context_tokens": 944.875,
+        "candidates_examined": 28.125,
+        "selected_representations": 1.3333333333333333,
+        "evidence_recall": 0.578125,
+        "evidence_precision": 0.20338395774976656,
+        "complete_evidence": 0.3125,
+        "answerable_context_tokens": 909.1666666666666,
+        "insufficient_context_tokens": 980.5833333333334,
+        "insufficient_candidates_examined": 27.75
+      }
+    },
+    {
+      "parameters": {
+        "rrf_k0": 3,
+        "representation_marginal_gain_threshold": 0.0376,
+        "similarity_threshold": 0.9419,
+        "similarity_gap_threshold": 1.049,
+        "novelty_threshold": 0.057,
+        "redundancy_threshold": 0.8726,
+        "marginal_utility_threshold": 0.1793,
+        "empty_batch_patience": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.416666666666667,
+        "context_tokens": 475.47222222222223,
+        "candidates_examined": 31.0,
+        "selected_representations": 1.7777777777777777,
+        "evidence_recall": 0.47833333333333333,
+        "evidence_precision": 0.31957575757575757,
+        "complete_evidence": 0.28,
+        "answerable_context_tokens": 508.3888888888889,
+        "insufficient_context_tokens": 442.55555555555554,
+        "insufficient_candidates_examined": 29.166666666666668
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "final_k": 5.5,
+        "context_tokens": 517.2916666666666,
+        "candidates_examined": 30.75,
+        "selected_representations": 1.75,
+        "evidence_recall": 0.4375,
+        "evidence_precision": 0.35654761904761906,
+        "complete_evidence": 0.1875,
+        "answerable_context_tokens": 485.5833333333333,
+        "insufficient_context_tokens": 549.0,
+        "insufficient_candidates_examined": 29.75
+      }
+    }
+  ],
+  "all_baseline_trials": [
+    {
+      "parameters": {
+        "static_k": 3
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5166666666666666,
+        "evidence_precision": 0.3466666666666667,
+        "complete_evidence": 0.32,
+        "final_k": 3.0,
+        "context_tokens": 409.6111111111111,
+        "candidates_examined": 3.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 370.1666666666667,
+        "insufficient_context_tokens": 449.05555555555554,
+        "insufficient_candidates_examined": 3.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.4947916666666667,
+        "evidence_precision": 0.3125,
+        "complete_evidence": 0.3125,
+        "final_k": 3.0,
+        "context_tokens": 400.3333333333333,
+        "candidates_examined": 3.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 431.4166666666667,
+        "insufficient_context_tokens": 369.25,
+        "insufficient_candidates_examined": 3.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 5
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.58,
+        "evidence_precision": 0.248,
+        "complete_evidence": 0.32,
+        "final_k": 5.0,
+        "context_tokens": 721.0277777777778,
+        "candidates_examined": 5.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 727.1666666666666,
+        "insufficient_context_tokens": 714.8888888888889,
+        "insufficient_candidates_examined": 5.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.5677083333333334,
+        "evidence_precision": 0.225,
+        "complete_evidence": 0.3125,
+        "final_k": 5.0,
+        "context_tokens": 631.2083333333334,
+        "candidates_examined": 5.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 671.6666666666666,
+        "insufficient_context_tokens": 590.75,
+        "insufficient_candidates_examined": 5.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 8
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.6833333333333333,
+        "evidence_precision": 0.19,
+        "complete_evidence": 0.48,
+        "final_k": 7.916666666666667,
+        "context_tokens": 1091.1944444444443,
+        "candidates_examined": 8.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1084.8333333333333,
+        "insufficient_context_tokens": 1097.5555555555557,
+        "insufficient_candidates_examined": 8.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.6822916666666666,
+        "evidence_precision": 0.1875,
+        "complete_evidence": 0.5,
+        "final_k": 8.0,
+        "context_tokens": 981.25,
+        "candidates_examined": 8.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1015.0,
+        "insufficient_context_tokens": 947.5,
+        "insufficient_candidates_examined": 8.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 10
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.7666666666666667,
+        "evidence_precision": 0.168,
+        "complete_evidence": 0.64,
+        "final_k": 9.694444444444445,
+        "context_tokens": 1288.5555555555557,
+        "candidates_examined": 10.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1318.3333333333333,
+        "insufficient_context_tokens": 1258.7777777777778,
+        "insufficient_candidates_examined": 10.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.8125,
+        "evidence_precision": 0.1763888888888889,
+        "complete_evidence": 0.75,
+        "final_k": 9.875,
+        "context_tokens": 1192.2083333333333,
+        "candidates_examined": 10.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1243.75,
+        "insufficient_context_tokens": 1140.6666666666667,
+        "insufficient_candidates_examined": 10.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 15
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.8166666666666667,
+        "evidence_precision": 0.1221978021978022,
+        "complete_evidence": 0.72,
+        "final_k": 13.63888888888889,
+        "context_tokens": 1675.6944444444443,
+        "candidates_examined": 15.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1706.111111111111,
+        "insufficient_context_tokens": 1645.2777777777778,
+        "insufficient_candidates_examined": 15.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.875,
+        "evidence_precision": 0.1321886446886447,
+        "complete_evidence": 0.8125,
+        "final_k": 14.083333333333334,
+        "context_tokens": 1559.875,
+        "candidates_examined": 15.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1615.5,
+        "insufficient_context_tokens": 1504.25,
+        "insufficient_candidates_examined": 15.0
+      }
+    },
+    {
+      "parameters": {
+        "static_k": 20
+      },
+      "tuning_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.8166666666666667,
+        "evidence_precision": 0.10724134053081422,
+        "complete_evidence": 0.72,
+        "final_k": 16.166666666666668,
+        "context_tokens": 1888.6666666666667,
+        "candidates_examined": 20.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1901.3333333333333,
+        "insufficient_context_tokens": 1876.0,
+        "insufficient_candidates_examined": 20.0
+      },
+      "selection_metrics": {
+        "answerable": 0.5,
+        "evidence_recall": 0.8958333333333334,
+        "evidence_precision": 0.11269669201412622,
+        "complete_evidence": 0.875,
+        "final_k": 17.333333333333332,
+        "context_tokens": 1833.25,
+        "candidates_examined": 20.0,
+        "selected_representations": 1.0,
+        "answerable_context_tokens": 1850.5,
+        "insufficient_context_tokens": 1816.0,
+        "insufficient_candidates_examined": 20.0
+      }
+    }
+  ],
+  "limitations": [
+    "Calibration optimizes retrieval only; it makes no API calls and does not use gold answer text.",
+    "Gold-span containment is imperfect for paraphrased evidence.",
+    "The confirmatory study must not alter this manifest after validation/test inspection."
+  ]
+}

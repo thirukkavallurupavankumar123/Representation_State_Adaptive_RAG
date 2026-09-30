@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+import math
 import re
 import string
 
@@ -47,9 +48,15 @@ def token_prf(prediction: str, gold_answers: tuple[str, ...]) -> tuple[float, fl
 
 
 def evidence_span_recall(result: PipelineResult, gold_spans: tuple[str, ...]) -> float:
-    """Exact normalized substring recall; avoids invented dataset-specific unit mappings."""
+    """Exact normalized substring recall; avoids invented dataset-specific unit mappings.
+
+    Recall is undefined without a gold-evidence denominator.  Returning 1.0 for
+    examples the benchmark declares to have no relevant evidence would award a
+    perfect retrieval score for retrieving nothing relevant and would inflate any
+    aggregate that mixes answerable and unanswerable questions.
+    """
     if not gold_spans:
-        return 1.0
+        return float("nan")
     evidence = normalize_answer("\n".join(item.chunk.evidence_text for item in result.final_evidence))
     found = sum(normalize_answer(span) in evidence for span in gold_spans)
     return found / len(gold_spans)
@@ -76,8 +83,18 @@ def evaluate_result(result: PipelineResult, gold_answers: tuple[str, ...],
 
 
 def macro_average(rows: list[dict[str, float]]) -> dict[str, float]:
+    """Macro-average over defined values only.
+
+    Metrics that are undefined for an example (for example retrieval recall on a
+    question with no gold evidence) are recorded as NaN and must be excluded from
+    the denominator rather than propagated into the aggregate.
+    """
     keys = sorted(set().union(*(row.keys() for row in rows))) if rows else []
-    return {
-        key: sum(row[key] for row in rows if key in row) / sum(key in row for row in rows)
-        for key in keys
-    }
+    output = {}
+    for key in keys:
+        defined = [
+            float(row[key]) for row in rows
+            if key in row and not math.isnan(float(row[key]))
+        ]
+        output[key] = sum(defined) / len(defined) if defined else float("nan")
+    return output

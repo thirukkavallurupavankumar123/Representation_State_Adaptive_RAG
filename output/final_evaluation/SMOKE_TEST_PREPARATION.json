@@ -1,0 +1,18 @@
+{
+  "common_answer_evidence_cap_tokens": 1600,
+  "gold_file_sha256": "551dec1d07500b8caeacf2a2b32c2bcba19baefff346d23bfb16ad2d5b70f097",
+  "groq_client_invocations": 0,
+  "preparation_fingerprint": "15b745337fb2dd408f88184891508ab8ac5265a425e5a5c440eb0f4ddd73c2c0",
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "questions": 16,
+  "request_file_sha256": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+  "requests": 48,
+  "retrieval_audit_sha256": "bbde16c29f4f46d963d9fb8dc2978607e66881694bfeff8b76480d3cbc29c1d5",
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "status": "PREPARED_RETRIEVAL_ONLY_ZERO_LLM_CALLS",
+  "systems": [
+    "traditional_k10",
+    "sar_rag_v1",
+    "adaptive_single_view_v2"
+  ]
+}

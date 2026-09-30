@@ -1,0 +1,85 @@
+{
+  "artifact_sha256": {
+    "AUTHORIZATION_GATE.md": "f9095fc223a17a7c0de8a33872910641060b142ccec00a0c64818d1d885927ce",
+    "DRY_RUN_VALIDATION.json": "171914c16918867868ca258cd6ff3e2df6a335d5e41f77fdb0da756458d5cb7d",
+    "EXPECTED_CALLS_AND_COST.md": "eacbdb60f844470303bb4dde687be665ee555673748dfb4fc41dc5f17cde39db",
+    "FINAL_EVALUATION_PROTOCOL.json": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+    "FINAL_EVALUATION_PROTOCOL.md": "bddc1fb4eac73357a8e1043c9a757b4d172ca14fd6aa5a98080394cbecc04bfb",
+    "PHASE_E_RESULT_AUDIT.json": "06156d0fc465061b96f15b6532e43117887995ce425fb37a938dc9d5109300ef",
+    "REPRODUCTION_COMMANDS.md": "08453b74e0aea6501c270bb6d97dab5d4f9d8539009b8cf8e51a89c2d9c02645",
+    "SMOKE_TEST_MANIFEST.json": "d43d0f65befd192f89d0647548760f76066473d5e93e0d8b3dbababfa3f73675",
+    "SMOKE_TEST_REQUESTS.jsonl": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+    "SMOKE_TEST_REQUESTS_MANIFEST.json": "052945e1db3c0e30332cde4b917a0f39bc55231ee67d115730690f9cf5e1b617",
+    "SMOKE_TEST_REQUESTS_RECOMPUTATION_VALIDATION.json": "2d14caa591f3f150bf556fe389bd82627e4352deca1c2c76fa1575b6c7991a41"
+  },
+  "dry_run": {
+    "checkpoint_records": 48,
+    "failure_records": 0,
+    "fake_calls": 48,
+    "fingerprint_mismatch_rejected": true,
+    "resume_new_calls": 0,
+    "retries": 0,
+    "status": "PASSED_DETERMINISTIC_FAKE_ANSWERER_DRY_RUN"
+  },
+  "integrity": {
+    "env_contents_printed": false,
+    "env_tracked": false,
+    "frozen_v1_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "frozen_v2_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+    "protected_tracked_differences": []
+  },
+  "paid_execution": {
+    "authorization_file_exists": false,
+    "groq_calls": 0,
+    "heldout_executed": false,
+    "llm_judge_executed": false,
+    "paid_checkpoint_exists": false,
+    "paid_smoke_executed": false
+  },
+  "phase_e_recomputed": {
+    "frozen_v1_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "frozen_v2_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+    "mean_paired_v2_minus_v1_recall": -0.007936507936507936,
+    "mean_paired_v2_minus_v1_tokens": 51.58730158730159,
+    "paired_n": 63,
+    "source_sha256": "d3120575c454dabbac987e31305ca1f787c79877baf4448d426899d2ea8649ba",
+    "status": "RECOMPUTED_FROM_SAVED_PER_EXAMPLE_ROWS",
+    "v1_evidence_recall": 0.746031746031746,
+    "v1_mean_actual_context_tokens": 1147.6190476190477,
+    "v2_evidence_recall": 0.7380952380952381,
+    "v2_mean_actual_context_tokens": 1199.2063492063492,
+    "v2_point_dominated_by_v1": true
+  },
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "request_manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+  "runtime": {
+    "packages": {
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "pytest": "9.1.1",
+      "torch": "2.7.1",
+      "transformers": "4.53.3"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "smoke": {
+    "fresh_retrieval_recomputation_identical": true,
+    "maximum_observed_packed_context_tokens": 1597,
+    "maximum_paid_calls": 48,
+    "prepared_requests": 48,
+    "questions": 16,
+    "systems": 3
+  },
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "status": "VERIFIED_FROZEN_PROTOCOL_READY_FOR_EXPLICIT_SMOKE_AUTHORIZATION",
+  "tests": {
+    "duration_seconds": 68.69,
+    "failed": 0,
+    "passed": 113,
+    "warnings": 14
+  },
+  "validated_date": "2026-09-08",
+  "worktree_entry_count": 177,
+  "worktree_inventory": "output/final_evaluation/WORKTREE_FILE_INVENTORY.txt"
+}

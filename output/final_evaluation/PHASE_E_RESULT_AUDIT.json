@@ -1,0 +1,14 @@
+{
+  "frozen_v1_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+  "frozen_v2_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+  "mean_paired_v2_minus_v1_recall": -0.007936507936507936,
+  "mean_paired_v2_minus_v1_tokens": 51.58730158730159,
+  "paired_n": 63,
+  "source_sha256": "d3120575c454dabbac987e31305ca1f787c79877baf4448d426899d2ea8649ba",
+  "status": "RECOMPUTED_FROM_SAVED_PER_EXAMPLE_ROWS",
+  "v1_evidence_recall": 0.746031746031746,
+  "v1_mean_actual_context_tokens": 1147.6190476190477,
+  "v2_evidence_recall": 0.7380952380952381,
+  "v2_mean_actual_context_tokens": 1199.2063492063492,
+  "v2_point_dominated_by_v1": true
+}

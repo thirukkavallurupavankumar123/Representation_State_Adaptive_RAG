@@ -1,0 +1,13 @@
+example_id,dataset,stratum,design_partition,gold_spans,answerable,candidates_scored,relevance_would_reject,novelty_would_reject,utility_would_reject,novelty_reached,relevance_binding,novelty_binding,utility_binding,redundancy_binding,budget_binding,accepted,batches,gap_eligible,gap_would_fire,gap_preempted_by_patience,max_standardized_gap,max_gap_on_empty_batch,max_canonical_overlap,max_overlap_times_similarity
+musique_full:train:2hop__78490_51957:answerable,musique_full,musique_full|ANSWERABLE|2hop,selection,2,1,27,9,0,0,18,9,0,0,0,0,18,8,3,0,0,0.22116595370937578,0.17548456038548466,0.0,0.0
+musique_full:train:3hop1__106998_62641_126090:answerable,musique_full,musique_full|ANSWERABLE|3hop,selection,3,1,21,11,0,2,10,11,0,0,0,0,10,6,3,0,0,1.0597739779148354,1.0597739779148354,0.0,0.0
+musique_full:train:4hop3__493923_300471_374971_62462:answerable,musique_full,musique_full|ANSWERABLE|4hop,selection,4,1,21,1,0,0,20,1,0,0,0,0,20,6,0,0,0,0.45735549698377315,nan,0.0,0.0
+musique_full:train:2hop__737023_58946:insufficient,musique_full,musique_full|INSUFFICIENT|2hop,selection,1,0,21,9,0,0,12,9,0,0,0,0,12,6,3,0,0,0.5060633882630372,0.22580771472954142,0.0,0.0
+musique_full:train:3hop1__278358_823374_26316:insufficient,musique_full,musique_full|INSUFFICIENT|3hop,selection,1,0,24,10,0,0,14,10,0,0,0,0,14,7,3,0,0,0.41719151472993465,0.41719151472993465,0.0,0.0
+musique_full:train:4hop1__60538_74386_444296_179769:insufficient,musique_full,musique_full|INSUFFICIENT|4hop,selection,2,0,24,11,0,1,13,11,0,0,0,0,13,7,3,0,0,0.3378646047244128,0.21318076180156348,0.0,0.0
+qasper:train:0427ca83d6bf4ec113bc6fec484b2578714ae8ec,qasper,qasper|ANSWERABLE|long,selection,1,1,21,0,0,0,21,0,0,0,0,1,20,6,0,0,0,0.20901038602189526,nan,0.0,0.0
+qasper:train:126e8112e26ebf8c19ca7ff3dd06691732118e90,qasper,qasper|ANSWERABLE|medium,selection,2,1,21,0,0,0,21,0,0,0,0,1,20,6,0,0,0,0.6113021897635709,nan,0.0,0.0
+qasper:train:504a069ccda21580ccbf18c34f5eefc0088fa105,qasper,qasper|ANSWERABLE|short,selection,1,1,30,6,3,3,24,6,3,0,0,1,20,8,2,0,0,0.5679486716301175,0.4367446755713199,1.0,1.0000001192092896
+qasper:train:8b11bc3a23932afe7d52c19deffd9dec4830f2e9,qasper,qasper|INSUFFICIENT|long,selection,0,0,21,0,0,0,21,0,0,0,0,1,20,6,0,0,0,0.5793283345284824,nan,0.0,0.0
+qasper:train:99ef97336c0112d9f60df108f58c8b04b519a854,qasper,qasper|INSUFFICIENT|medium,selection,0,0,27,0,0,0,27,0,0,0,0,8,19,8,2,0,0,0.45193914756922327,0.04082152806907112,0.0,0.0
+qasper:train:b3ec918827cd22b16212265fcdd5b3eadee654ae,qasper,qasper|INSUFFICIENT|short,selection,0,0,24,11,0,0,13,11,0,0,0,0,13,7,3,0,0,0.9844437390330232,0.09945783939721065,0.0,0.0

@@ -1,0 +1,97 @@
+﻿SAR-RAG INDEPENDENT VERIFICATION - TEST REPORT
+==============================================
+Interpreter : .venv\Scripts\python.exe (Python 3.12.7)
+pytest      : 9.1.1 (installed into the project venv during this audit; it was absent)
+PYTHONPATH  : src
+Baseline commit: 5cb4cd7dc85f9c4bd87f22cfa840494d98b6a9d5
+
+NOTE: before this audit the documented command ran the suite under
+C:\ProgramData\anaconda3\python.exe, a DIFFERENT environment carrying scipy,
+pandas, torchvision and pytest 7.4.4 that .venv does not have. The suite
+therefore never validated the environment that runs the research. It now does.
+
+Pre-audit suite : 23 tests (all under the Anaconda interpreter)
+Post-audit suite: 73 tests (all under the project .venv)
+
+============================= test session starts =============================
+platform win32 -- Python 3.12.7, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\pavan kumar\OneDrive\Documents\research_projectt\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\pavan kumar\OneDrive\Documents\research_projectt
+configfile: pyproject.toml
+collecting ... collected 73 items
+
+tests/test_defect_regressions.py::UnansweredRetrievalScoringTests::test_macro_average_excludes_undefined_values_from_the_denominator PASSED [  1%]
+tests/test_defect_regressions.py::UnansweredRetrievalScoringTests::test_macro_average_reports_nan_when_nothing_is_defined PASSED [  2%]
+tests/test_defect_regressions.py::UnansweredRetrievalScoringTests::test_recall_is_still_computed_when_gold_evidence_exists PASSED [  4%]
+tests/test_defect_regressions.py::UnansweredRetrievalScoringTests::test_recall_is_undefined_without_gold_evidence PASSED [  5%]
+tests/test_defect_regressions.py::TraditionalCandidateAccountingTests::test_baseline_trace_separates_examined_candidates_from_final_k PASSED [  6%]
+tests/test_defect_regressions.py::ProcessMemoryMeasurementTests::test_peak_working_set_is_reported_on_windows PASSED [  8%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_confirmatory_mode_rejects_limit_and_baseline_k_override PASSED [  9%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_confirmatory_mode_requires_manifest_and_cost_rates PASSED [ 10%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_confirmatory_run_writes_fingerprint_checkpoints_and_systems_fields PASSED [ 12%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_exactly_one_answer_call_per_system_and_one_evaluator_call PASSED [ 13%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_per_record_traces_and_provisional_evidence_are_persisted PASSED [ 15%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_registered_condition_is_recorded_in_the_fingerprint PASSED [ 16%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_rerun_without_resume_is_refused PASSED [ 17%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_resume_requires_an_exact_fingerprint_match PASSED [ 19%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_resume_reuses_checkpoints_and_makes_no_further_calls PASSED [ 20%]
+tests/test_experiment_contracts.py::ExperimentHarnessTests::test_resume_without_a_prior_run_is_refused PASSED [ 21%]
+tests/test_primary_pipeline_contracts.py::FrozenControlTests::test_frozen_manifest_is_actually_applied_to_the_config PASSED [ 23%]
+tests/test_primary_pipeline_contracts.py::FrozenControlTests::test_frozen_manifest_values_are_the_ones_under_test PASSED [ 24%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_all_four_representations_are_probed PASSED [ 26%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_at_most_two_representations_are_selected PASSED [ 27%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_normalized_rrf_matches_the_implemented_formula PASSED [ 28%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_probe_depth_is_not_final_k PASSED [ 30%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_second_representation_requires_the_frozen_marginal_gain PASSED [ 31%]
+tests/test_primary_pipeline_contracts.py::ProbeAndSelectionTests::test_select_one_representation_ablation_is_respected PASSED [ 32%]
+tests/test_primary_pipeline_contracts.py::IndexScoringTests::test_relevance_is_an_empirical_percentile_within_the_index PASSED [ 34%]
+tests/test_primary_pipeline_contracts.py::IndexScoringTests::test_score_scale_never_divides_by_zero PASSED [ 35%]
+tests/test_primary_pipeline_contracts.py::IndexScoringTests::test_similarity_gap_is_standardized_by_index_score_deviation PASSED [ 36%]
+tests/test_primary_pipeline_contracts.py::AdaptiveRetrievalTests::test_every_rejection_records_a_reason PASSED [ 38%]
+tests/test_primary_pipeline_contracts.py::AdaptiveRetrievalTests::test_final_k_is_emergent_and_not_a_configured_constant PASSED [ 39%]
+tests/test_primary_pipeline_contracts.py::AdaptiveRetrievalTests::test_novelty_and_marginal_utility_follow_the_declared_formulas PASSED [ 41%]
+tests/test_primary_pipeline_contracts.py::AdaptiveRetrievalTests::test_retrieval_only_examines_selected_representations PASSED [ 42%]
+tests/test_primary_pipeline_contracts.py::AdaptiveRetrievalTests::test_stop_reason_and_round_counts_are_recorded PASSED [ 43%]
+tests/test_primary_pipeline_contracts.py::SafetyCapTests::test_candidate_and_round_caps_bound_the_search PASSED [ 45%]
+tests/test_primary_pipeline_contracts.py::SafetyCapTests::test_caps_are_limits_not_targets PASSED [ 46%]
+tests/test_primary_pipeline_contracts.py::SafetyCapTests::test_context_token_cap_is_never_exceeded PASSED [ 47%]
+tests/test_primary_pipeline_contracts.py::SafetyCapTests::test_final_chunk_cap_is_never_exceeded PASSED [ 49%]
+tests/test_primary_pipeline_contracts.py::DeduplicationTests::test_contained_chunk_is_removed_only_when_superset_is_retained PASSED [ 50%]
+tests/test_primary_pipeline_contracts.py::DeduplicationTests::test_deduplication_can_be_disabled_and_retains_provenance PASSED [ 52%]
+tests/test_primary_pipeline_contracts.py::DeduplicationTests::test_deduplication_happens_after_retrieval_not_during_probe PASSED [ 53%]
+tests/test_primary_pipeline_contracts.py::OneCallPolicyTests::test_both_systems_produce_identical_answers_from_one_shared_answerer PASSED [ 54%]
+tests/test_primary_pipeline_contracts.py::OneCallPolicyTests::test_exactly_one_final_llm_answer_call PASSED [ 56%]
+tests/test_primary_pipeline_contracts.py::OneCallPolicyTests::test_no_llm_event_precedes_the_single_answer_call PASSED [ 57%]
+tests/test_primary_pipeline_contracts.py::OneCallPolicyTests::test_traditional_and_sar_share_the_identical_answer_generator PASSED [ 58%]
+tests/test_primary_pipeline_contracts.py::OneCallPolicyTests::test_traditional_reports_the_candidates_it_actually_examined PASSED [ 60%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_corpus_records_truncation_metadata_for_every_chunk PASSED [ 61%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_embeddings_are_384d_and_l2_normalized PASSED [ 63%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_encoding_is_deterministic PASSED [ 64%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_local_snapshot_matches_recorded_provenance PASSED [ 65%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_overlength_text_is_bounded_and_truncation_is_recorded PASSED [ 67%]
+tests/test_primary_pipeline_contracts.py::RealEmbeddingIntegrationTests::test_primary_pipeline_runs_end_to_end_on_the_real_encoder PASSED [ 68%]
+tests/test_research_pipeline.py::SelectionTests::test_rank_only_selector_adds_only_complementary_second_view PASSED [ 69%]
+tests/test_research_pipeline.py::SelectionTests::test_rrf_uses_one_best_rank_per_representation PASSED [ 71%]
+tests/test_research_pipeline.py::EvidenceTests::test_post_retrieval_exact_dedup_preserves_provenance PASSED [ 72%]
+tests/test_research_pipeline.py::EvidenceTests::test_requested_applicability_must_have_a_value PASSED [ 73%]
+tests/test_research_pipeline.py::PipelineTests::test_context_budget_is_never_silently_exceeded PASSED [ 75%]
+tests/test_research_pipeline.py::PipelineTests::test_missing_applicability_prevents_complete_answer PASSED [ 76%]
+tests/test_research_pipeline.py::PipelineTests::test_probe_depth_is_not_final_k_and_dedup_is_after_retrieval PASSED [ 78%]
+tests/test_research_pipeline.py::OneCallPipelineTests::test_long_sections_are_partitioned_before_hierarchical_indexing PASSED [ 79%]
+tests/test_research_pipeline.py::OneCallPipelineTests::test_primary_pipeline_uses_one_answer_call_and_at_most_two_views PASSED [ 80%]
+tests/test_research_pipeline.py::GroqContractTests::test_answer_generator_rejects_invented_evidence_number PASSED [ 82%]
+tests/test_research_pipeline.py::GroqContractTests::test_judge_rejects_non_cited_supported_finding PASSED [ 83%]
+tests/test_research_pipeline.py::GroqContractTests::test_one_call_generator_derives_valid_inline_citations PASSED [ 84%]
+tests/test_research_pipeline.py::GroqContractTests::test_requirement_extractor_accepts_only_structured_output PASSED [ 86%]
+tests/test_research_pipeline.py::EvaluationTests::test_answer_metrics_ignore_evidence_citation_markers PASSED [ 87%]
+tests/test_research_pipeline.py::EvaluationTests::test_complete_evidence_requires_all_unique_gold_spans PASSED [ 89%]
+tests/test_research_pipeline.py::EvaluationTests::test_descriptive_statistics_include_tail_latency PASSED [ 90%]
+tests/test_research_pipeline.py::EvaluationTests::test_exact_mcnemar_and_holm_are_deterministic PASSED [ 91%]
+tests/test_research_pipeline.py::EvaluationTests::test_registered_ablation_changes_only_declared_control PASSED [ 93%]
+tests/test_research_pipeline.py::EvaluationTests::test_retrieval_metrics_are_undefined_without_gold_evidence PASSED [ 94%]
+tests/test_research_pipeline.py::EvaluationTests::test_token_prf_uses_gold_with_best_f1 PASSED [ 95%]
+tests/test_research_pipeline.py::CalibrationTests::test_calibration_prefers_efficiency_only_within_recall_tolerance PASSED [ 97%]
+tests/test_research_pipeline.py::CalibrationTests::test_smoke_sample_spans_dataset_before_repeating PASSED [ 98%]
+tests/test_research_pipeline.py::CalibrationTests::test_stratified_sample_is_order_independent PASSED [100%]
+
+======================== 73 passed in 94.43s (0:01:34) ========================

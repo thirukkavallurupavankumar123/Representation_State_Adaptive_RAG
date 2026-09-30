@@ -1,0 +1,45 @@
+{
+  "status": "FROZEN_BEFORE_PAID_SMOKE_EXECUTION",
+  "amendment": "001",
+  "date": "2026-09-08",
+  "reason": "The user authorized at most 48 total API attempts including retries. Because the frozen smoke design contains exactly 48 system-question pairs, automatic retries are disabled for this authorized run so the global attempt ceiling cannot be exceeded.",
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "request_manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+  "authorized_scope": {
+    "stage": "paid_smoke_only",
+    "system_question_pairs": 48,
+    "maximum_total_api_attempts_including_retries": 48,
+    "maximum_retries_per_request": 0,
+    "heldout_evaluation": false,
+    "llm_judge": false
+  },
+  "generation_unchanged": {
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0,
+    "top_p": 1,
+    "reasoning_effort": "medium",
+    "max_output_tokens": 800,
+    "response_format": "strict JSON schema"
+  },
+  "cost_verification": {
+    "pricing_verified_date": "2026-09-08",
+    "official_source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "input_usd_per_million": 0.15,
+    "cached_input_usd_per_million": 0.075,
+    "output_usd_per_million": 0.60,
+    "authorization_cost_ceiling_usd": 0.0432,
+    "exact_preflight_input_tokens_all_48_requests": 68649,
+    "maximum_preflight_input_tokens_single_request": 1988,
+    "requests_over_2800_input_tokens": 0,
+    "maximum_cost_at_preflight_input_and_800_output_tokens_each_usd": 0.03333735
+  },
+  "tokenizer": {
+    "repository": "openai/gpt-oss-120b",
+    "local_path": "models/gpt-oss-120b-tokenizer",
+    "tokenizer_json_sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3",
+    "method": "official chat template plus serialized strict response schema"
+  },
+  "failure_policy": "A failed API attempt is recorded and stops the current process. With no automatic retry, no execution path can exceed 48 cumulative attempts. Any later retry requires unused global attempt capacity and cannot complete all 48 pairs within this authorization.",
+  "historical_protocol_preserved": true
+}

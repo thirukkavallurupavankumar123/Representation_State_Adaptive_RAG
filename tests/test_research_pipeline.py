@@ -19,6 +19,7 @@ from sar_rag.groq import (
     GroqAnswerGenerator, GroqEvidenceJudge, GroqOneCallAnswerGenerator,
     GroqRequirementExtractor,
 )
+from sar_rag.index import HierarchicalVectorIndex
 from sar_rag.models import (
     Candidate, Chunk, Document, EvidenceItem, Finding, Judgment, QueryAnalysis,
     FinalAnswerDecision, Requirement,
@@ -207,6 +208,23 @@ class OneCallPipelineTests(unittest.TestCase):
         chunks = artifacts.indexes["hierarchical"].chunks
         self.assertGreater(len(chunks), 1)
         self.assertTrue(all(chunk.metadata["original_embedding_tokens"] < 300 for chunk in chunks))
+
+    def test_hierarchical_v2_is_versioned_and_keeps_headings_out_of_evidence(self) -> None:
+        document = Document(
+            "policy", "v1", "Policy title",
+            "# Eligibility\n\nApplicants qualify when registration is active. "
+            "Evidence must be retained.\n\nRenewal happens annually.",
+        )
+        artifacts = build_corpus([document], HashingEncoder(), ("hierarchical_v2",))
+        index = artifacts.indexes["hierarchical_v2"]
+        self.assertIsInstance(index, HierarchicalVectorIndex)
+        self.assertGreater(index.vector_nbytes, index.vectors.nbytes)
+        self.assertTrue(index.chunks)
+        for chunk in index.chunks:
+            self.assertEqual(chunk.metadata["hierarchy_version"], 2)
+            self.assertNotIn("Eligibility\n", chunk.evidence_text)
+            self.assertIn("Applicants qualify", chunk.evidence_text)
+            self.assertIn("Section heading: Eligibility", chunk.metadata["hierarchy_parent_embedding_text"])
 
 
 class _FakeGroqClient:

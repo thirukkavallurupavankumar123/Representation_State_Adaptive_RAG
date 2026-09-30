@@ -312,55 +312,66 @@ def main(argv: list[str] | None = None) -> int:
     encoder = SentenceTransformerEncoder(str(local) if local.is_dir() else base.embedding_model,
                                          revision=base.embedding_revision)
     answerer = RetrievalOnlyAnswerer()
-    corpora = []
-    corpus_cache = {}
+    parameter_sets = parameter_candidates(args.search_trials, args.seed)
+    baseline_ks = sorted(set(args.baseline_k))
+    # Retain only the active corpus.  Holding every sampled corpus (and both its
+    # index families) for the whole search made peak memory grow with the sample
+    # size.  Every (example, configuration) evaluation is independent given the
+    # corpus, so iterating examples outermost yields identical per-example rows
+    # in identical order while bounding resident indexes to one example.
+    proposed_rows: list[list[dict]] = [[] for _ in parameter_sets]
+    baseline_rows: dict[int, list[dict]] = {k: [] for k in baseline_ks}
+    active_key = None
+    active: tuple | None = None
+    corpora_built = 0
     for position, row in enumerate(sample, 1):
         documents = _documents(row)
         corpus_key = sha256(json.dumps(
             [{"document_id": value.document_id, "version_id": value.version_id}
              for value in documents], sort_keys=True
         ).encode()).hexdigest()
-        if corpus_key not in corpus_cache:
-            corpus_cache[corpus_key] = (
+        if corpus_key != active_key:
+            active = (
                 build_corpus(documents, encoder, base.enabled_representations),
                 build_corpus(documents, encoder, ("sliding_window",)),
             )
-        proposed, baseline = corpus_cache[corpus_key]
-        corpora.append((row, proposed, baseline))
-        print(json.dumps({"stage": "indexing", "completed": position, "total": len(sample),
-                          "unique_corpora": len(corpus_cache)}), flush=True)
+            active_key = corpus_key
+            corpora_built += 1
+        proposed_artifacts, baseline_artifacts = active
+        for index, parameters in enumerate(parameter_sets):
+            config = replace(base, **parameters)
+            result = SarRagSystem(proposed_artifacts, encoder, answerer, config).ask(row["query"])
+            proposed_rows[index].append(retrieval_row(result, row))
+        for k in baseline_ks:
+            baseline_rows[k].append(
+                _baseline_metrics(baseline_artifacts, encoder, row,
+                                  k, base.max_final_context_tokens)
+            )
+        print(json.dumps({"stage": "example_evaluated", "completed": position,
+                          "total": len(sample), "corpora_built": corpora_built,
+                          "configurations": len(parameter_sets)}), flush=True)
 
-    proposed_results = []
-    for parameters in parameter_candidates(args.search_trials, args.seed):
-        config = replace(base, **parameters)
-        rows = []
-        for row, artifacts, _ in corpora:
-            result = SarRagSystem(artifacts, encoder, answerer, config).ask(row["query"])
-            rows.append(retrieval_row(result, row))
-        tuning = [value for value, (row, _, _) in zip(rows, corpora)
+    def _split(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+        tuning = [value for value, row in zip(rows, sample)
                   if partitions[row["example_id"]] == "tuning"]
-        selection = [value for value, (row, _, _) in zip(rows, corpora)
+        selection = [value for value, row in zip(rows, sample)
                      if partitions[row["example_id"]] == "selection"]
         # A tiny smoke sample may contain only selection members. It remains non-freezing.
-        tuning = tuning or rows
-        selection = selection or rows
+        return tuning or rows, selection or rows
+
+    proposed_results = []
+    for parameters, rows in zip(parameter_sets, proposed_rows):
+        tuning, selection = _split(rows)
         proposed_results.append({
             "parameters": parameters,
             "tuning_metrics": summarize(tuning),
             "selection_metrics": summarize(selection),
         })
-        print(json.dumps({"stage": "proposed_search", "completed": len(proposed_results),
-                          "total": args.search_trials}), flush=True)
     proposed_choice = select_from_heldback_training(proposed_results)
 
     baseline_results = []
-    for k in sorted(set(args.baseline_k)):
-        rows = [_baseline_metrics(baseline, encoder, row, k, base.max_final_context_tokens)
-                for row, _, baseline in corpora]
-        tuning = [value for value, (row, _, _) in zip(rows, corpora)
-                  if partitions[row["example_id"]] == "tuning"] or rows
-        selection = [value for value, (row, _, _) in zip(rows, corpora)
-                     if partitions[row["example_id"]] == "selection"] or rows
+    for k in baseline_ks:
+        tuning, selection = _split(baseline_rows[k])
         baseline_results.append({
             "parameters": {"static_k": k},
             "tuning_metrics": summarize(tuning),
@@ -384,6 +395,11 @@ def main(argv: list[str] | None = None) -> int:
         },
         "population_strata": population,
         "sample_size": len(sample),
+        "corpus_cache_policy": {
+            "policy": "one active corpus; resident indexes do not grow with sample size",
+            "corpora_built": corpora_built,
+            "note": "a corpus repeated non-adjacently in sample order is rebuilt; results are unaffected because each (example, configuration) evaluation is independent given the corpus",
+        },
         "sample_ids": [row["example_id"] for row in sample],
         "sample_partitions": partitions,
         "embedding": {"model": base.embedding_model, "revision": base.embedding_revision},

@@ -1,0 +1,15 @@
+{
+  "authorized_stage": "heldout_generation_v1_1_free_quota_only",
+  "billing_upgrade_or_credit_purchase_authorized": false,
+  "counterfactual_list_price_cost_ceiling_usd": 67.34853315,
+  "free_quota_only": true,
+  "maximum_attempts_per_pair_including_first": 3,
+  "maximum_billed_cost_usd": 0.0,
+  "maximum_total_api_attempts_including_retries": 56160,
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "quota_plan_fingerprint": "6917525a61217bbd1e5ad093faf981627c46858c237eaf37adfdb2ff8e5ad92e",
+  "request_manifest_fingerprint": "38ec0a6fe0d319982d1b90d5601b0c12c82e870c00065765f27e61ba15d8f106",
+  "run_manifest_fingerprint": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85",
+  "status": "DISABLED_PROPOSAL_NOT_AUTHORIZATION",
+  "user_authorized": false
+}

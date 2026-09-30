@@ -1,0 +1,80 @@
+{
+  "api_calls": 0,
+  "artifacts": {
+    "DATASET_ELIGIBILITY_AND_EXPOSURE.json": "a170d346ec059a056b90a0dc5a736811ea91d8437bcbf1641cd9052c2fcd5b5f",
+    "FINAL_EVALUATION_PROTOCOL_AMENDMENT_V1_1.json": "146a6cc660bc804d5bd127106f7ed4bf7a032bfdb4749c53db1fd1f6abd1bf5b",
+    "FROZEN_QUESTION_SYSTEM_MANIFEST.json": "3e1eeb9df109eae9cebeda568b90dec4329a70577371657bd531a4ed71b0b4c8",
+    "GENERATION_DOCUMENTS.jsonl": "588185d094afb689a9e4def619e66036ff02156e5d46d0e381191691a9e3fa5b",
+    "GENERATION_QUESTIONS.jsonl": "52c350243694734d68a43cfa47d8898bf86b1ad5e64a0c23b8c22fca57aaf929",
+    "PROPOSED_AUTHORIZATION_DISABLED.json": "42bcd09c35d3ce109e1fd87fc511a5dc6f4c815c1bbdd45796985f9d3122f9e2"
+  },
+  "cost_and_attempt_plan": {
+    "actual_invoice_note": "Actual invoiced charges are unavailable before execution and may differ from estimates; verify provider billing after execution.",
+    "conservative_initial_round_cost_usd": 25.8336,
+    "conservative_maximum_cost_usd": 77.5008,
+    "conservative_per_attempt": {
+      "cost_usd": 0.00138,
+      "input_tokens": 2800,
+      "output_tokens": 1600
+    },
+    "estimated_initial_cost_usd": 10.0952865,
+    "expected_tokens_based_on_v1_1_smoke_means": {
+      "basis": "48-pair successful v1.1 smoke; planning estimate, not a guarantee",
+      "input": 29599830,
+      "output": 9425520,
+      "total": 39025350
+    },
+    "initial_api_attempts": 18720,
+    "maximum_api_attempts_including_retries": 56160,
+    "maximum_attempts_per_pair_including_first": 3,
+    "pricing": {
+      "cached_input_per_million": 0.075,
+      "currency": "USD",
+      "input_per_million": 0.15,
+      "output_per_million": 0.6,
+      "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+      "verified_date": "2026-09-26"
+    },
+    "runtime": {
+      "base_free_plan_rpd_scenario_days_initial": 18.72,
+      "base_free_plan_rpd_scenario_days_maximum": 56.16,
+      "initial_round_serial_hours_at_frozen_pacing": 156.0,
+      "maximum_serial_hours_at_frozen_pacing": 468.0,
+      "minimum_seconds_between_attempt_starts": 30,
+      "note": "Exact organization limits must be checked in Groq settings before authorization. The 30-second pacing policy is more conservative than the documented RPM limits but a 1,000-RPD account limit would dominate elapsed time."
+    }
+  },
+  "counts": {
+    "dataset_counts": {
+      "musique_full": 4832,
+      "qasper": 1408
+    },
+    "document_records": 5247,
+    "musique_dependency_groups": 2416,
+    "qasper_document_clusters": 415,
+    "question_count": 6240
+  },
+  "gold_labels_accessed": false,
+  "manifest_fingerprint": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85",
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "smoke": {
+    "answers_sha256": "fd0a299b25dc3af6cdccb6aeb5559c1b115788dc75735c85e23912317540add5",
+    "attempt_ledger_sha256": "c973a0ab9717bd876af5d29a12a0c3fe6add76f2e85c950e6e4200fb308ec178",
+    "checks": {
+      "all_answers_first_attempt": true,
+      "all_attempts_valid": true,
+      "answer_records_48": true,
+      "attempt_records_48": true,
+      "manifest_fingerprint_valid": true,
+      "protocol_fingerprint_valid": true,
+      "protocol_manifest_link_valid": true,
+      "reported_first_attempt_valid_48": true,
+      "validation_artifact_hashes_valid": true,
+      "validation_status_passed": true
+    },
+    "manifest_fingerprint": "75a0047c16fa631e2e50ebbe76644867d9d147f94e56d77d3b4fd613b8c11a80",
+    "protocol_fingerprint": "c915bed876a3e1394e09d160caa4bffac6c5df60763da0d5186674421c326a79",
+    "status": "VERIFIED_48_OF_48_FIRST_ATTEMPT_VALID"
+  },
+  "status": "PREPARED_NO_API_CALLS_NO_GOLD_LABEL_ACCESS"
+}

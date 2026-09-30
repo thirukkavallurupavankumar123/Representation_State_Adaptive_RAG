@@ -1,0 +1,704 @@
+{
+  "status": "DEVELOPMENT_SELECTION_ONLY_NOT_HELD_OUT",
+  "selected_configuration_id": "adaptive-c991560f562d12af41a1",
+  "selected_metrics": {
+    "representation": "paragraph",
+    "token_point": "1600",
+    "evidence_recall": "0.7380952380952381",
+    "answerable_CER": "0.5",
+    "insufficient_residual_support_complete_recovery": "0.8095238095238095",
+    "context_tokens": "1199.2063492063492",
+    "final_k": "15.0",
+    "candidates_examined": "17.904761904761905",
+    "retrieval_rounds": "5.063492063492063"
+  },
+  "matched_actual_token_rule": "mean actual tokens within 10% of selected v2 on identical 63 selection queries",
+  "matched_configuration_count": 7,
+  "pareto_front_configuration_ids": [
+    "adaptive-0102cc983087dd384c20",
+    "adaptive-16c19cff7148bac6d324",
+    "adaptive-4e846be1eec02c265086",
+    "adaptive-c1edd6e7ac894a88d430",
+    "adaptive-ca094c4245c546d80a4f",
+    "fixed_k10-4e846be1eec02c265086",
+    "fixed_k10-c1edd6e7ac894a88d430",
+    "fixed_k10-ca094c4245c546d80a4f",
+    "fixed_k20-e53d20520a69ba17e9bd",
+    "probe_only-015a15d1087bba94ba1a",
+    "probe_only-28d037820a409a086783",
+    "probe_only-309f6931a35d7220dd12",
+    "probe_only-64ecf0a639f50e06a977",
+    "probe_only-7e1698eb6bffdf63586e",
+    "probe_only-bfdbbcb1a3424ce1d881",
+    "probe_only-cf26273b40b6023d7ddc",
+    "probe_only-f3b7d9269dd2ad543ce2",
+    "probe_only-ff22d479825aeaf9c2ce",
+    "v1_full_frozen"
+  ],
+  "selected_is_pareto_nondominated": false,
+  "dominated_conditions": [
+    {
+      "configuration_id": "fixed_k20-4e846be1eec02c265086",
+      "dominated_by": [
+        "fixed_k10-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-ca094c4245c546d80a4f",
+      "dominated_by": [
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-e53d20520a69ba17e9bd",
+      "dominated_by": [
+        "adaptive-c991560f562d12af41a1",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-e53d20520a69ba17e9bd",
+      "dominated_by": [
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-c1edd6e7ac894a88d430",
+      "dominated_by": [
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-c991560f562d12af41a1",
+      "dominated_by": [
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-c991560f562d12af41a1",
+      "dominated_by": [
+        "fixed_k10-c1edd6e7ac894a88d430"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-c991560f562d12af41a1",
+      "dominated_by": [
+        "fixed_k20-e53d20520a69ba17e9bd",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-f2c7bb3ab8e14be16d6c",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-f9feb59dcc8492b6ee73",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-ca094c4245c546d80a4f",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-89b2bfa61cab50b1afb9",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-b7a0285e47fa5d399e3f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-c991560f562d12af41a1",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "fixed_k20-e53d20520a69ba17e9bd",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-0102cc983087dd384c20",
+      "dominated_by": [
+        "adaptive-0102cc983087dd384c20",
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-0102cc983087dd384c20",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-0102cc983087dd384c20",
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-4e846be1eec02c265086",
+        "adaptive-b7a0285e47fa5d399e3f",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-b347aa2355d19d1c6f72",
+        "fixed_k10-b7a0285e47fa5d399e3f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086",
+        "v1_full_frozen"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-16c19cff7148bac6d324",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0102cc983087dd384c20",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-16c19cff7148bac6d324",
+      "dominated_by": [
+        "adaptive-b347aa2355d19d1c6f72",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-ca094c4245c546d80a4f",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "fixed_k20-e53d20520a69ba17e9bd",
+        "v1_full_frozen"
+      ]
+    }
+  ],
+  "primary_v2_and_fixed_comparator_pareto_front": [
+    "adaptive-0102cc983087dd384c20",
+    "adaptive-16c19cff7148bac6d324",
+    "adaptive-4e846be1eec02c265086",
+    "adaptive-c1edd6e7ac894a88d430",
+    "adaptive-c991560f562d12af41a1",
+    "adaptive-ca094c4245c546d80a4f",
+    "fixed_k10-4e846be1eec02c265086",
+    "fixed_k10-c1edd6e7ac894a88d430",
+    "fixed_k10-ca094c4245c546d80a4f",
+    "fixed_k20-c1edd6e7ac894a88d430",
+    "fixed_k20-ca094c4245c546d80a4f",
+    "fixed_k20-e53d20520a69ba17e9bd",
+    "probe_only-015a15d1087bba94ba1a",
+    "probe_only-28d037820a409a086783",
+    "probe_only-309f6931a35d7220dd12",
+    "probe_only-64ecf0a639f50e06a977",
+    "probe_only-7e1698eb6bffdf63586e",
+    "probe_only-bfdbbcb1a3424ce1d881",
+    "probe_only-cf26273b40b6023d7ddc",
+    "probe_only-f3b7d9269dd2ad543ce2",
+    "probe_only-ff22d479825aeaf9c2ce"
+  ],
+  "selected_is_nondominated_excluding_descriptive_v1": true,
+  "primary_v2_and_fixed_comparator_dominated_conditions": [
+    {
+      "configuration_id": "fixed_k20-4e846be1eec02c265086",
+      "dominated_by": [
+        "fixed_k10-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-e53d20520a69ba17e9bd",
+      "dominated_by": [
+        "adaptive-c991560f562d12af41a1"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-e53d20520a69ba17e9bd",
+      "dominated_by": [
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-0b14e4212951e49bab6d",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-c991560f562d12af41a1",
+      "dominated_by": [
+        "fixed_k10-c1edd6e7ac894a88d430"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-c991560f562d12af41a1",
+      "dominated_by": [
+        "fixed_k20-e53d20520a69ba17e9bd"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-f2c7bb3ab8e14be16d6c",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-1e423adadb6fa4de5739",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-f9feb59dcc8492b6ee73",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b7a0285e47fa5d399e3f",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-ca094c4245c546d80a4f",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f"
+      ]
+    },
+    {
+      "configuration_id": "probe_only-89b2bfa61cab50b1afb9",
+      "dominated_by": [
+        "probe_only-015a15d1087bba94ba1a",
+        "probe_only-309f6931a35d7220dd12",
+        "probe_only-64ecf0a639f50e06a977",
+        "probe_only-7e1698eb6bffdf63586e",
+        "probe_only-cf26273b40b6023d7ddc",
+        "probe_only-ff22d479825aeaf9c2ce"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-b7a0285e47fa5d399e3f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b347aa2355d19d1c6f72",
+      "dominated_by": [
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-c991560f562d12af41a1",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "fixed_k20-e53d20520a69ba17e9bd"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-0102cc983087dd384c20",
+      "dominated_by": [
+        "adaptive-0102cc983087dd384c20",
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-0102cc983087dd384c20",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "adaptive-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-0102cc983087dd384c20",
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-b47177b176e3ac93ef48",
+      "dominated_by": [
+        "adaptive-16c19cff7148bac6d324",
+        "adaptive-4e846be1eec02c265086",
+        "adaptive-b7a0285e47fa5d399e3f",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-ca094c4245c546d80a4f",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-b347aa2355d19d1c6f72",
+        "fixed_k10-b7a0285e47fa5d399e3f",
+        "fixed_k10-c1edd6e7ac894a88d430",
+        "fixed_k10-c991560f562d12af41a1",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0b14e4212951e49bab6d",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k10-16c19cff7148bac6d324",
+      "dominated_by": [
+        "adaptive-0b14e4212951e49bab6d",
+        "adaptive-1e423adadb6fa4de5739",
+        "adaptive-4e846be1eec02c265086",
+        "fixed_k10-0b14e4212951e49bab6d",
+        "fixed_k10-1e423adadb6fa4de5739",
+        "fixed_k10-4e846be1eec02c265086",
+        "fixed_k10-ca094c4245c546d80a4f",
+        "fixed_k10-e53d20520a69ba17e9bd",
+        "fixed_k20-0102cc983087dd384c20",
+        "fixed_k20-4e846be1eec02c265086"
+      ]
+    },
+    {
+      "configuration_id": "fixed_k20-16c19cff7148bac6d324",
+      "dominated_by": [
+        "adaptive-b347aa2355d19d1c6f72",
+        "adaptive-c1edd6e7ac894a88d430",
+        "adaptive-c991560f562d12af41a1",
+        "adaptive-ca094c4245c546d80a4f",
+        "adaptive-e53d20520a69ba17e9bd",
+        "fixed_k20-c1edd6e7ac894a88d430",
+        "fixed_k20-ca094c4245c546d80a4f",
+        "fixed_k20-e53d20520a69ba17e9bd"
+      ]
+    }
+  ],
+  "scope_specific_conclusions": {
+    "quality_vs_probe": {
+      "recall_gain": 0.2923280423280423,
+      "holm_p": 0.00014999250037498125,
+      "supported": true
+    },
+    "quality_vs_same_view_k10": {
+      "recall_gain": 0.07142857142857142,
+      "context_increase": 382.3809523809524,
+      "holm_p_recall": 0.002199890005499725,
+      "supported_with_more_context": true
+    },
+    "efficiency_vs_same_view_k20": {
+      "recall_difference": -0.005291005291005292,
+      "recall_ci": [
+        -0.015873015873015872,
+        0.0
+      ],
+      "context_reduction_percent": 17.638722337294233,
+      "holm_p_tokens": 0.00014999250037498125,
+      "supported_under_noninferiority": true
+    }
+  },
+  "stop_reasons": {
+    "patience_no_gain": 40,
+    "context_token_safety_cap": 17,
+    "final_chunk_safety_cap": 6
+  },
+  "final_k_range": [
+    7,
+    20
+  ],
+  "failure_counts": {
+    "total_miss": 10,
+    "partial": 15,
+    "complete": 38
+  },
+  "overall_classification": "unsupported",
+  "overall_classification_reason": "Frozen v1 point-dominates selected v2 on mean recall and mean actual tokens. The paired differences are not statistically significant and the nominal maxima differ, so this is not evidence that v1 is superior; it is sufficient to block a v2 replacement/superiority claim.",
+  "paper_safe_interpretation": "On a fresh but development-exposed training selection sample, the frozen v2 rule chose paragraph retrieval at the 1,600-token operating point. It improves retrieval over the shallow probe and same-view k=10, but the k=10 comparison uses less context. Relative to same-view k=20, v2 is recall-noninferior within the preregistered margin and uses less context. However, frozen v1 has slightly higher recall and lower actual tokens on point estimates, so the v2 replacement claim is unsupported. The scoped comparator results are developmental, not held-out answer-quality evidence."
+}

@@ -1,0 +1,10 @@
+ci_high,ci_low,difference,dimension,group,metric,p_value,paired_n,sar_rag,traditional
+0.09375000000000001,-0.17647058823529407,-0.04136029411764703,dataset,qasper,answer_token_f1,1.0,2,0.10569852941176472,0.14705882352941174
+0.25,0.0,0.125,dataset,qasper,evidence_set_recall,1.0,2,0.25,0.125
+-201.0,-248.0,-224.5,dataset,qasper,context_tokens,0.48375812093953025,2,1735.5,1960.0
+0.09375000000000001,-0.17647058823529407,-0.04136029411764703,answerability,ANSWERABLE,answer_token_f1,1.0,2,0.10569852941176472,0.14705882352941174
+0.25,0.0,0.125,answerability,ANSWERABLE,evidence_set_recall,1.0,2,0.25,0.125
+-201.0,-248.0,-224.5,answerability,ANSWERABLE,context_tokens,0.48375812093953025,2,1735.5,1960.0
+0.09375000000000001,-0.17647058823529407,-0.04136029411764703,selected_representation_count,2,answer_token_f1,1.0,2,0.10569852941176472,0.14705882352941174
+0.25,0.0,0.125,selected_representation_count,2,evidence_set_recall,1.0,2,0.25,0.125
+-201.0,-248.0,-224.5,selected_representation_count,2,context_tokens,0.48375812093953025,2,1735.5,1960.0

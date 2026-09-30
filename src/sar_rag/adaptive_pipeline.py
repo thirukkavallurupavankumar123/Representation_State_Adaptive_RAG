@@ -307,6 +307,19 @@ class SarRagSystem:
                 largest_gap = raw_largest_gap / self.artifacts.indexes[representation].score_scale(query_text)
                 previous_score[representation] = batch[-1].raw_score
                 empty_batches[representation] = 0 if added else empty_batches[representation] + 1
+                # Observational only: records every batch so the gap rule's
+                # non-firing can be distinguished from it never being evaluated.
+                trace.append({
+                    "event": "batch_evaluated_without_llm",
+                    "representation": representation,
+                    "batch_size": len(batch),
+                    "accepted_in_batch": added,
+                    "standardized_gap": largest_gap,
+                    "consecutive_empty_batches": empty_batches[representation],
+                    "gap_rule_eligible": added == 0,
+                    "gap_would_fire": added == 0 and largest_gap >= self.config.similarity_gap_threshold,
+                    "patience_would_fire": empty_batches[representation] >= self.config.empty_batch_patience,
+                })
                 reason = None
                 if empty_batches[representation] >= self.config.empty_batch_patience:
                     reason = "no_marginal_utility_for_patience_batches"

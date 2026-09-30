@@ -1,0 +1,81 @@
+==============================================================================
+DATASET: musique   query: What year did the writer of Crazy Little Thing Called Love die?
+------------------------------------------------------------------------------
+[paragraph] 24 chunks
+  chunk words=85 embed_tokens=97
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: All Things in Time
+    | Section: All Things in Time
+    | All Things in Time is an album by American R&B singer Lou Rawls, released in June 1976 on the Philadelphia Int
+    | Coming after a career lull in the years immediately preceding, "All Things in Time" was Rawls' first album for
+    | The album includes Rawls' most famous hit song "You'll Never Find Another Love Like Mine".
+
+  chunk words=87 embed_tokens=96
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Goin' Out of My Head
+    | Section: Goin' Out of My Head
+    | ``Goin 'Out of My Head ''is a song written by Teddy Randazzo and Bobby Weinstein, initially recorded by Little
+    | Randazzo, a childhood friend of the group, wrote the song especially for them, having also supplied the group 
+    | Their original version of the song was a Billboard Top 10 Pop hit, reaching # 6 on the Billboard Hot 100, and 
+
+------------------------------------------------------------------------------
+[hierarchical] 24 chunks
+  chunk words=89 embed_tokens=101
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: All Things in Time
+    | Section: All Things in Time
+    | All Things in Time
+    | All Things in Time is an album by American R&B singer Lou Rawls, released in June 1976 on the Philadelphia Int
+    | Coming after a career lull in the years immediately preceding, "All Things in Time" was Rawls' first album for
+    | The album includes Rawls' most famous hit song "You'll Never Find Another Love Like Mine".
+
+  chunk words=92 embed_tokens=101
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Goin' Out of My Head
+    | Section: Goin' Out of My Head
+    | Goin' Out of My Head
+    | ``Goin 'Out of My Head ''is a song written by Teddy Randazzo and Bobby Weinstein, initially recorded by Little
+    | Randazzo, a childhood friend of the group, wrote the song especially for them, having also supplied the group 
+    | Their original version of the song was a Billboard Top 10 Pop hit, reaching # 6 on the Billboard Hot 100, and 
+
+==============================================================================
+DATASET: qasper   query: What is the seed lexicon?
+------------------------------------------------------------------------------
+[paragraph] 60 chunks
+  chunk words=95 embed_tokens=116
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Minimally Supervised Learning of Affective Events Using Discourse Relations
+    | Section: Minimally Supervised Learning of Affective Events Using Discourse Relations > Abstract
+    | Recognizing affective events that trigger positive or negative sentiment has a wide range of natural language 
+    | In this paper, we propose to propagate affective polarity using discourse relations.
+    | Our method is simple and only requires a very small seed lexicon and a large raw corpus.
+    | Our experiments using Japanese data show that our method learns affective events effectively without manually 
+
+  chunk words=85 embed_tokens=108
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Minimally Supervised Learning of Affective Events Using Discourse Relations
+    | Section: Minimally Supervised Learning of Affective Events Using Discourse Relations > Introduction
+    | Affective events BIBREF0 are events that typically affect people in positive or negative ways.
+    | For example, getting money and playing sports are usually positive to the experiencers; catching cold and losi
+    | Understanding affective events is important to various natural language processing (NLP) applications such as 
+    | In this paper, we work on recognizing the polarity of an affective event that is represented by a score rangin
+
+------------------------------------------------------------------------------
+[hierarchical] 36 chunks
+  chunk words=96 embed_tokens=117
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Minimally Supervised Learning of Affective Events Using Discourse Relations
+    | Section: Minimally Supervised Learning of Affective Events Using Discourse Relations > Abstract
+    | Abstract
+    | Recognizing affective events that trigger positive or negative sentiment has a wide range of natural language 
+    | In this paper, we propose to propagate affective polarity using discourse relations.
+    | Our method is simple and only requires a very small seed lexicon and a large raw corpus.
+
+  chunk words=86 embed_tokens=109
+  EMBEDDING TEXT (what is actually vectorised):
+    | Document: Minimally Supervised Learning of Affective Events Using Discourse Relations
+    | Section: Minimally Supervised Learning of Affective Events Using Discourse Relations > Introduction
+    | Introduction
+    | Affective events BIBREF0 are events that typically affect people in positive or negative ways.
+    | For example, getting money and playing sports are usually positive to the experiencers; catching cold and losi
+    | Understanding affective events is important to various natural language processing (NLP) applications such as 

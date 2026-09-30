@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "answers_sha256": "fd0a299b25dc3af6cdccb6aeb5559c1b115788dc75735c85e23912317540add5",
+    "attempt_ledger_sha256": "c973a0ab9717bd876af5d29a12a0c3fe6add76f2e85c950e6e4200fb308ec178",
+    "checkpoint_meta_sha256": "4957735372945e91e651f6f3a5e717bb32e95a8447ab7ab2f1650ae78bd092ec"
+  },
+  "attempts": {
+    "attempts_per_pair_distribution": {
+      "1": 48
+    },
+    "maximum_authorized": 144,
+    "maximum_per_pair": 3,
+    "remaining_authorized_attempts": 96,
+    "total": 48,
+    "transport_statuses": {
+      "success": 48
+    }
+  },
+  "integrity_and_operational_checks": {
+    "all_pairs_first_attempt_valid": true,
+    "all_pairs_valid": true,
+    "all_saved_request_fingerprints_valid": true,
+    "all_saved_responses_schema_and_semantic_valid": true,
+    "attempt_ceiling_respected": true,
+    "conservative_cost_ceiling_respected": true,
+    "heldout_checkpoint_absent": true,
+    "manifest_fingerprint_valid": true,
+    "operational_smoke_checks_passed": true,
+    "per_pair_ceiling_respected": true,
+    "preserved_artifact_hashes_match": true,
+    "protocol_fingerprint_valid": true,
+    "protocol_manifest_link_valid": true,
+    "resume_created_zero_duplicate_calls": true,
+    "secret_pattern_absent": true
+  },
+  "interpretation": "Operational smoke passed. No answer-quality or system-superiority conclusion is drawn.",
+  "latency_ms": {
+    "maximum": 4796.26,
+    "median": 1588.1
+  },
+  "scope": {
+    "held_out_evaluation_executed": false,
+    "pairs": 48,
+    "questions": 16,
+    "research_performance_scoring_performed": false,
+    "responses_by_dataset": {
+      "musique_full": 24,
+      "qasper": 24
+    },
+    "responses_by_system": {
+      "adaptive_single_view_v2": 16,
+      "sar_rag_v1": 16,
+      "traditional_k10": 16
+    },
+    "systems": 3
+  },
+  "status": "PASSED_OPERATIONAL_SMOKE_V1_1",
+  "usage_and_cost": {
+    "actual_invoice_note": "Not available from API logs; verify in Groq billing. Estimated charge is not an invoice.",
+    "actual_invoiced_charge_usd": null,
+    "authorized_cost_ceiling_usd": 0.17362485,
+    "conservative_reserved_cost_usd": 0.05787495,
+    "estimated_charge_usd_from_recorded_usage_and_published_rates": 0.02588535,
+    "recorded_input_tokens": 75897,
+    "recorded_output_tokens": 24168,
+    "recorded_total_tokens": 100065,
+    "remaining_conservative_allowance_usd": 0.1157499
+  },
+  "validity": {
+    "eventually_valid_pairs": 48,
+    "failure_records": 0,
+    "first_attempt_valid_pairs": 48,
+    "unresolved_pairs": []
+  }
+}

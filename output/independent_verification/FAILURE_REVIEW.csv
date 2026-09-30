@@ -1,0 +1,2 @@
+example_id,dataset,category,query,gold_evidence,traditional_evidence,sar_provisional_evidence,sar_final_evidence,selected_representations,stop_reason,dedup_provenance,reviewer_notes,status
+,,,,,,,,,,,,PENDING_REQUIRES_CONFIRMATORY_RUN

@@ -1,0 +1,12 @@
+{
+  "status": "EXPLICIT_USER_AUTHORIZATION_RECORDED",
+  "authorized_stage": "paid_smoke_only",
+  "user_authorized": true,
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "request_manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+  "authorization_amendment_sha256": "736bddbe1a22cce779cf557b530288a265fcc5de780d71bd9fa9d1cf91e4e7b7",
+  "maximum_total_api_attempts_including_retries": 48,
+  "maximum_retries_per_request": 0,
+  "maximum_cost_usd": 0.0432
+}

@@ -1,0 +1,235 @@
+{
+  "authorization": {
+    "full_heldout": "requires smoke pass, sealed smoke report, separately matching held-out authorization, frozen cost ceiling, and no protocol drift",
+    "paid_smoke": "requires a separate matching PAID_SMOKE_AUTHORIZATION.json and --execute-paid after explicit user authorization"
+  },
+  "cache": {
+    "cross_system_identical_context_reuse": false,
+    "failure_policy": "record failure separately; never convert it to an empty answer; retry at most twice, then leave the pair missing",
+    "fingerprint_fields": [
+      "dataset",
+      "question_id",
+      "system",
+      "evidence_hash",
+      "prompt_hash",
+      "model",
+      "decoding"
+    ],
+    "reason": "system identity remains in the estimand and fingerprint; each system-question pair receives its own call even when evidence bytes match",
+    "resume": "reuse only exact request and run fingerprints; reject logical-key or checkpoint-configuration mismatch"
+  },
+  "fairness": {
+    "actual_consumption_reported": true,
+    "common_answer_evidence_cap_tokens": 1600,
+    "identical": [
+      "question set",
+      "embedding model/revision",
+      "answer model",
+      "prompt",
+      "schema",
+      "decoding",
+      "maximum answer input context",
+      "metrics"
+    ],
+    "matched_actual_token_analysis": true,
+    "pareto_analysis": true,
+    "v1_policy": "run frozen v1 retrieval unchanged, then deterministically pack its ranked evidence to the common 1600-token answer-input cap; report native retrieval tokens and packed answer-input tokens separately"
+  },
+  "faithfulness_relevancy": {
+    "limitation": "lexical diagnostics are not semantic faithfulness proof",
+    "manual_validation": "60 prediction triples, stratified and selected by frozen hash after predictions are sealed",
+    "optional_llm_judge": {
+      "authorized": false,
+      "blind_system_names": true,
+      "maximum_calls": 6285,
+      "model": "openai/gpt-oss-120b",
+      "one_comparative_call_per_question": true,
+      "randomize_answer_order_by_hash": true,
+      "requires_separate_cost estimate and explicit authorization": true,
+      "separate_stage": true
+    },
+    "primary_free_measurements": [
+      "citation ID validity",
+      "fraction of claims with citations",
+      "cited-evidence lexical support diagnostic",
+      "answer-question token overlap diagnostic"
+    ]
+  },
+  "final_heldout": {
+    "dataset_specific_reporting": true,
+    "datasets": {
+      "musique_full": {
+        "id_only_count": 4834,
+        "split": "official validation/development"
+      },
+      "qasper": {
+        "id_only_count": 1451,
+        "split": "official test"
+      }
+    },
+    "label_policy": "retrieve and generate predictions first; seal prediction hashes; only then open gold labels for scoring; never tune or rerun from outcomes",
+    "maximum_answer_calls": 18855,
+    "question_count": 6285,
+    "systems": [
+      "traditional_k10",
+      "sar_rag_v1",
+      "adaptive_single_view_v2"
+    ]
+  },
+  "frozen_date": "2026-09-05",
+  "generation": {
+    "calls_per_system_question_pair": 1,
+    "max_output_tokens": 800,
+    "max_retries_after_initial_attempt": 2,
+    "model": "openai/gpt-oss-120b",
+    "model_source": ".env:GROQ_MODEL",
+    "reasoning_effort": "medium",
+    "response_format": "strict JSON schema",
+    "retry_backoff_seconds": [
+      1,
+      2
+    ],
+    "temperature": 0,
+    "timeout_seconds": 90,
+    "top_p": 1
+  },
+  "interpretation": {
+    "development_caveat": "retrieval-only development and smoke results are never held-out answer-quality evidence",
+    "efficiency improvement": "answer-F1 lower CI >=-0.02 and at least 10% reduction in tokens, latency, or cost",
+    "otherwise": "unsupported",
+    "outperforms": "answer-F1 paired CI excludes zero and mean gain >=0.02, with evidence recall/CER above frozen noninferiority margins and no unacceptable cost regression",
+    "pareto competitive": "no compared system improves a declared quality-efficiency dimension without worsening another"
+  },
+  "outcomes": {
+    "primary": [
+      "answer token F1",
+      "unique gold-evidence recall",
+      "answerable-only complete-evidence recovery",
+      "mean actual context tokens"
+    ],
+    "secondary": [
+      "Exact Match",
+      "answer precision",
+      "answer recall",
+      "evidence precision",
+      "MRR",
+      "nDCG with granularity caveat",
+      "answerability precision/recall/F1/accuracy",
+      "correct abstention",
+      "false-answer rate on insufficient",
+      "incorrect abstention",
+      "deterministic citation validity/coverage",
+      "answer relevancy",
+      "input/output/total tokens",
+      "latency mean/median/SD/p95",
+      "cost per question/total",
+      "final-k distribution",
+      "retrieval stop reasons"
+    ]
+  },
+  "phase_e_audit": {
+    "frozen_v1_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "frozen_v2_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+    "mean_paired_v2_minus_v1_recall": -0.007936507936507936,
+    "mean_paired_v2_minus_v1_tokens": 51.58730158730159,
+    "paired_n": 63,
+    "source_sha256": "d3120575c454dabbac987e31305ca1f787c79877baf4448d426899d2ea8649ba",
+    "status": "RECOMPUTED_FROM_SAVED_PER_EXAMPLE_ROWS",
+    "v1_evidence_recall": 0.746031746031746,
+    "v1_mean_actual_context_tokens": 1147.6190476190477,
+    "v2_evidence_recall": 0.7380952380952381,
+    "v2_mean_actual_context_tokens": 1199.2063492063492,
+    "v2_point_dominated_by_v1": true
+  },
+  "pricing": {
+    "cached_input_per_million": 0.075,
+    "currency": "USD",
+    "input_per_million": 0.15,
+    "output_per_million": 0.6,
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "unit": "per 1M tokens",
+    "verified_date": "2026-09-05"
+  },
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "protocol_version": "sar-rag-final-answer-evaluation-1.0.0",
+  "scope": "answer generation only after frozen deterministic retrieval; no tuning on smoke or held-out outcomes",
+  "smoke_test": {
+    "manifest": "output/final_evaluation/SMOKE_TEST_MANIFEST.json",
+    "maximum_calls": 48,
+    "pass_criteria": [
+      "strict response schema",
+      "no undeclared prompt/context truncation",
+      "INSUFFICIENT parses correctly",
+      "input/output/total token and latency accounting",
+      "bounded retry and checkpoint behavior",
+      "exact resume creates zero duplicate calls",
+      "evidence identifiers preserved",
+      "no secrets in artifacts",
+      "no configuration drift",
+      "identical answer model/prompt/decoding across systems"
+    ],
+    "purpose": "operational validation only; never research evidence",
+    "questions": 16,
+    "selection": "deterministic stratified hash sample from previously design-exposed training screening data, frozen before response generation",
+    "systems": [
+      "traditional_k10",
+      "sar_rag_v1",
+      "adaptive_single_view_v2"
+    ]
+  },
+  "statistics": {
+    "comparisons": [
+      "v2-v1",
+      "v1-traditional_k10",
+      "v2-traditional_k10"
+    ],
+    "methods": [
+      "paired bootstrap 95% CI",
+      "paired randomization",
+      "exact McNemar for binary outcomes"
+    ],
+    "multiplicity": "Holm correction across the three comparisons separately for each declared primary outcome",
+    "practical_margins": {
+      "answer_F1_gain": 0.02,
+      "answer_F1_noninferiority": -0.02,
+      "answerable_CER_noninferiority": -0.03,
+      "evidence_recall_noninferiority": -0.02,
+      "meaningful_token_latency_or_cost_reduction_percent": 10
+    },
+    "report": [
+      "valid paired n",
+      "dataset-specific results",
+      "answerable/insufficient subgroups",
+      "effect sizes",
+      "raw and Holm-adjusted p-values"
+    ]
+  },
+  "status": "FROZEN_BEFORE_ANY_PAID_EXECUTION",
+  "systems": {
+    "adaptive_single_view_v2": {
+      "manifest": "output/adaptive_single_view_v2/recalibration_seed20260905/FROZEN_V2_MANIFEST.json",
+      "manifest_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "max_context_tokens": 1600,
+      "patience": 1,
+      "recalibration": false,
+      "relevance_percentile": 0.45,
+      "representation": "paragraph"
+    },
+    "sar_rag_v1": {
+      "manifest": "output/calibration/frozen_manifest.json",
+      "manifest_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+      "recalibration": false
+    },
+    "traditional_k10": {
+      "embedding": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "fixed_k": 10,
+      "fixed_k_operating_points_predeclared": [
+        10,
+        20
+      ],
+      "reason": "k=10 is the development token-comparable baseline; k=20 remains retrieval-only Pareto context and receives no answer call",
+      "representation": "sentence_window",
+      "role": "primary traditional baseline"
+    }
+  }
+}

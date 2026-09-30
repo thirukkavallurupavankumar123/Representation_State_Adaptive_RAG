@@ -1,0 +1,2 @@
+dataset,metric,traditional,sar_rag,difference,ci_low,ci_high,randomization_p,holm_p,effect_size_dz,paired_n,mcnemar_p,status
+,,,,,,,,,,,,PENDING_REQUIRES_CONFIRMATORY_RUN

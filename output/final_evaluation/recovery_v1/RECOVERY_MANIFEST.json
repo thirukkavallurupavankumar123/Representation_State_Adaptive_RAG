@@ -1,0 +1,132 @@
+{
+  "configuration_change": false,
+  "consistent_full_48_pair_rerun_required": false,
+  "manifest_fingerprint": "2c48dcf61dc6e862c0cbe6a554618eda9ef3ce873707556d18a3ca0efb79e214",
+  "maximum_attempts_per_pair_including_initial": 3,
+  "maximum_cost_usd": 0.01704555,
+  "maximum_output_tokens": 800,
+  "maximum_retries_per_pair": 2,
+  "maximum_total_api_attempts_including_retries": 24,
+  "minimum_seconds_between_attempt_starts": 30,
+  "original_integrity_sha256": {
+    "FINAL_EVALUATION_PROTOCOL.json": "d96aaaa9066258a6a5291409d56858417b8415b18e4369739ca177115308cf82",
+    "SMOKE_TEST_MANIFEST.json": "d43d0f65befd192f89d0647548760f76066473d5e93e0d8b3dbababfa3f73675",
+    "SMOKE_TEST_REQUESTS.jsonl": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+    "SMOKE_TEST_REQUESTS_MANIFEST.json": "052945e1db3c0e30332cde4b917a0f39bc55231ee67d115730690f9cf5e1b617",
+    "paid_smoke_checkpoint/ANSWERS.jsonl": "e44ad14bf932976f26b7f03c1f76610169b55480f74bdb1d2b21a9ee7de275dd",
+    "paid_smoke_checkpoint/API_ATTEMPTS.jsonl": "c68ff3f07bcc57365855894747c68967d7e13fd9659127080006123c28d5b6c5",
+    "paid_smoke_checkpoint/CHECKPOINT_META.json": "fb471cf1af02120ca4bf862994e806b82597dd7a17c544d75ddc7320744c63d4",
+    "paid_smoke_checkpoint/FAILURES.jsonl": "44eae81a31adc899f7507dbf4d84305d6f5797745863172a3254823edc936ea3"
+  },
+  "pairs": [
+    {
+      "dataset": "musique_full",
+      "evidence_count": 10,
+      "logical_key": "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|traditional_k10",
+      "original_attempts": 1,
+      "original_failure_category": "http_400_json_validate_failed",
+      "preflight_input_tokens": 1177,
+      "question": "What is the average construction salary in the country that recognized Gaddafi's government early on along alongside the country that Eisenhower's vice president later served as president of?",
+      "question_id": "musique_full:train:4hop1__38130_8966_31714_41245:answerable",
+      "system": "traditional_k10"
+    },
+    {
+      "dataset": "musique_full",
+      "evidence_count": 15,
+      "logical_key": "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|sar_rag_v1",
+      "original_attempts": 1,
+      "original_failure_category": "http_400_json_validate_failed",
+      "preflight_input_tokens": 1708,
+      "question": "What is the average construction salary in the country that recognized Gaddafi's government early on along alongside the country that Eisenhower's vice president later served as president of?",
+      "question_id": "musique_full:train:4hop1__38130_8966_31714_41245:answerable",
+      "system": "sar_rag_v1"
+    },
+    {
+      "dataset": "musique_full",
+      "evidence_count": 10,
+      "logical_key": "musique_full|musique_full:train:2hop__838053_467995:insufficient|traditional_k10",
+      "original_attempts": 1,
+      "original_failure_category": "local_invalid_or_missing_citation",
+      "preflight_input_tokens": 852,
+      "question": "What is the record label for the performer of Blank Page?",
+      "question_id": "musique_full:train:2hop__838053_467995:insufficient",
+      "system": "traditional_k10"
+    },
+    {
+      "dataset": "musique_full",
+      "evidence_count": 14,
+      "logical_key": "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|sar_rag_v1",
+      "original_attempts": 1,
+      "original_failure_category": "http_400_json_validate_failed",
+      "preflight_input_tokens": 1882,
+      "question": "Who became the leader of the country Marooned in Al-Mu'tamid's follower's country of citizenship is set?",
+      "question_id": "musique_full:train:4hop1__493923_300471_136629_85446:insufficient",
+      "system": "sar_rag_v1"
+    },
+    {
+      "dataset": "musique_full",
+      "evidence_count": 14,
+      "logical_key": "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|adaptive_single_view_v2",
+      "original_attempts": 1,
+      "original_failure_category": "http_400_json_validate_failed",
+      "preflight_input_tokens": 1882,
+      "question": "Who became the leader of the country Marooned in Al-Mu'tamid's follower's country of citizenship is set?",
+      "question_id": "musique_full:train:4hop1__493923_300471_136629_85446:insufficient",
+      "system": "adaptive_single_view_v2"
+    },
+    {
+      "dataset": "qasper",
+      "evidence_count": 10,
+      "logical_key": "qasper|qasper:train:b24767fe7e6620369063e646fd3048dc645a8348|traditional_k10",
+      "original_attempts": 1,
+      "original_failure_category": "local_insufficient_with_claims",
+      "preflight_input_tokens": 1178,
+      "question": "Which dialogue acts are more suited to the twitter domain?",
+      "question_id": "qasper:train:b24767fe7e6620369063e646fd3048dc645a8348",
+      "system": "traditional_k10"
+    },
+    {
+      "dataset": "qasper",
+      "evidence_count": 19,
+      "logical_key": "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|adaptive_single_view_v2",
+      "original_attempts": 1,
+      "original_failure_category": "http_400_json_validate_failed",
+      "preflight_input_tokens": 1776,
+      "question": "What is specific to Chinese-oriented ABSA task, how is it different from other languages?",
+      "question_id": "qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf",
+      "system": "adaptive_single_view_v2"
+    },
+    {
+      "dataset": "qasper",
+      "evidence_count": 18,
+      "logical_key": "qasper|qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8|adaptive_single_view_v2",
+      "original_attempts": 0,
+      "original_failure_category": "not_attempted_attempt_ceiling",
+      "preflight_input_tokens": 1824,
+      "question": "How is the data annotated?",
+      "question_id": "qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8",
+      "system": "adaptive_single_view_v2"
+    }
+  ],
+  "pricing": {
+    "cached_input_per_million": 0.075,
+    "currency": "USD",
+    "input_per_million": 0.15,
+    "output_per_million": 0.6,
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "unit": "per 1M tokens",
+    "verified_date": "2026-09-05"
+  },
+  "prohibitions": [
+    "do not modify or append to the original paid_smoke_checkpoint",
+    "do not run held-out evaluation",
+    "do not score or draw research-performance conclusions"
+  ],
+  "prompt_schema_model_decoding_unchanged": true,
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "retry_order": "round-robin: all missing pairs once before second or third attempts",
+  "scope": "only the eight system-question pairs missing from the original paid smoke",
+  "status": "FROZEN_AWAITING_SEPARATE_AUTHORIZATION",
+  "total_preflight_input_tokens_one_attempt_each": 12279,
+  "version": "paid-smoke-recovery-v1"
+}

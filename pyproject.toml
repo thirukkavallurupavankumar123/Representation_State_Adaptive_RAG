@@ -22,6 +22,7 @@ sar-rag-calibrate = "sar_rag.calibration:main"
 sar-rag-evaluate = "sar_rag.experiments:main"
 sar-rag-q2-analysis = "sar_rag.q2_analysis:main"
 sar-rag-leakage-audit = "sar_rag.leakage_audit:main"
+sar-rag-v2-retrieve = "sar_rag.adaptive_single_view_v2:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

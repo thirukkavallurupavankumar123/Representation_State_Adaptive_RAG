@@ -1,0 +1,70 @@
+{
+  "experiment": {
+    "artifact_sha256": {
+      "FAILURE_ANALYSIS.csv": "9d6c62d9d31172a25383f57c2de3920d05365864db9c77606bca3dee02227ed0",
+      "FINAL_K_HISTOGRAM.png": "c1e2c60e956a867f392148512cea15f1905924839d82e67614cfcf4d420a70d0",
+      "FROZEN_V2_MANIFEST.json": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+      "PAIRED_UNCERTAINTY.csv": "23bea2067bc27b61fecf1712da41e8a1781191197366f94eefcf576696ab0d6c",
+      "RECALL_TOKEN_PARETO.png": "9cd05e08efe2e3d1f166338ad57e9526adefa1861cea050146d0c55c7caf3816",
+      "REPRODUCTION_PER_EXAMPLE.csv": "5619b849bd8817de92ac4346fbbed1d34dd568e9abbf9b220ca1dd6d26fced77",
+      "REPRODUCTION_VALIDATION.json": "494780239f9a823536247e15a0cfb55ddab63df32e385cc61b4556123786dc23",
+      "SAMPLE.jsonl": "db74d090948fbe28d8d6e11362fd1e74e5ffaaf53ff5f5ca68d946a27bacf791",
+      "SAMPLE_MANIFEST.json": "f3e0528adb269f791cb4695701f8950957249f6c122dee8d26a432743e440d63",
+      "SELECTION_AGGREGATE.csv": "b28f6ae91ad2e8bc16ac61003e86a7ddd84045cecf9a14c3b3b3939873bb88f3",
+      "SELECTION_PER_EXAMPLE.csv": "d3120575c454dabbac987e31305ca1f787c79877baf4448d426899d2ea8649ba",
+      "STOP_REASON_DISTRIBUTION.png": "b9bdbec97f69566e707ef5d555f882b6c65dcd0222705ed9d4dd5083b3c1419b",
+      "SUBGROUP_RESULTS.csv": "f41a875f86ba0b2cd026bfb77b9277cc070fdd129477fc559304ee6662a6e00b",
+      "TUNING_AGGREGATE.csv": "c925a4d2456999e69263f8bd0d13dce8cdfc021332c7ad9d3ef0434fe46d5362",
+      "TUNING_PER_EXAMPLE.csv": "c4416f4efa4d948d44dea1eb6be7dec348443ec4864a7492a2d220751391867b",
+      "TUNING_SELECTED_CONFIGS.json": "9b46eee499acae4c26cb38e24caf1363098dd3fee445d974117aade641bf7b3e"
+    },
+    "exact_command": ".venv\\Scripts\\python.exe tools\\run_adaptive_single_view_v2_recalibration.py --output-dir output\\adaptive_single_view_v2\\recalibration_seed20260905",
+    "fingerprint": "7bbee5d1071c2e549be0804d391c4764265e29aae66fa2a695d7771100f362a7",
+    "packages": {
+      "matplotlib": "3.9.2",
+      "numpy": "1.26.4",
+      "pytest": "9.1.1",
+      "torch": "2.7.1",
+      "transformers": "4.53.3"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "frozen_v1": {
+    "actual_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "expected_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "matches": true,
+    "path": "output/calibration/frozen_manifest.json"
+  },
+  "paid_execution": {
+    "failures": [],
+    "held_out_answer_generation": "NOT_RUN",
+    "retries": 0,
+    "run_manifest_llm_calls": 0,
+    "suspicious_new_output_filenames": []
+  },
+  "protected_tracked_differences": [],
+  "raw_screening": {
+    "file_count": 4,
+    "file_sha256": {
+      "output/independent_verification/screening_v3_n286/GATE_INSTRUMENTATION_PER_EXAMPLE.csv": "e37ac101fcc2a2a3f6774a3630809a9514a4eb6f85859f5004558897652fdd1e",
+      "output/independent_verification/screening_v3_n286/ORACLE_ROUTING_REGRET.csv": "4a53e9df901fe4486511ba0d179aba2f6b2561c3e3ac84485957799174e6dfcd",
+      "output/independent_verification/screening_v3_n286/SCREENING_V2_INFERENCE.json": "9d3674be4e45fc35389653f52fadacf6623e91b8bae240a85b811dac8bf1ca1b",
+      "output/independent_verification/screening_v3_n286/SCREENING_V2_PER_EXAMPLE.csv": "64e9e5dc752f1b72cc882ba97c123b786ae6faedf496410e62d790b84678a18f"
+    },
+    "path": "output/independent_verification/screening_v3_n286"
+  },
+  "secrets": {
+    "env_contents_read": false,
+    "env_tracked": false
+  },
+  "status": "PHASE_E_VALIDATED",
+  "tests": {
+    "duration_seconds": 47.22,
+    "failed": 0,
+    "passed": 104,
+    "warnings": 14
+  },
+  "worktree_entry_count": 151,
+  "worktree_inventory": "output/adaptive_single_view_v2/WORKTREE_FILE_INVENTORY.txt"
+}

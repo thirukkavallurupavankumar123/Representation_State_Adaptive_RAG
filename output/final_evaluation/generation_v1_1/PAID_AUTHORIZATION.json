@@ -1,0 +1,10 @@
+{
+  "authorized_stage": "paid_smoke_generation_v1_1_only",
+  "maximum_attempts_per_pair_including_first": 3,
+  "maximum_cost_usd": 0.17362485,
+  "maximum_total_api_attempts_including_retries": 144,
+  "protocol_fingerprint": "c915bed876a3e1394e09d160caa4bffac6c5df60763da0d5186674421c326a79",
+  "run_manifest_fingerprint": "75a0047c16fa631e2e50ebbe76644867d9d147f94e56d77d3b4fd613b8c11a80",
+  "status": "EXPLICIT_USER_AUTHORIZATION_RECORDED",
+  "user_authorized": true
+}

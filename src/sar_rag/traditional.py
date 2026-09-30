@@ -80,8 +80,16 @@ class TraditionalRagSystem:
             unresolved_requirements=unresolved,
             stop_reason="static_top_k",
             trace=[{
+                # `candidates_examined` must report the candidates this method actually
+                # scored (the static top-k it requested), not the smaller number that
+                # survived the shared context-token budget.  Reporting final_k here
+                # understated the baseline's retrieval work in the efficiency comparison.
                 "event": "run_completed", "retrieved_k": len(candidates),
+                "candidates_examined": len(candidates),
+                "retrieval_rounds": 1,
+                "retrieved_before_deduplication": len(evidence),
                 "final_k": len(evidence), "context_tokens": used_tokens,
+                "final_context_tokens": used_tokens,
             }],
             run_metadata={
                 "method": "traditional_dense_static_rag",

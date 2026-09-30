@@ -1,0 +1,236 @@
+{
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "protocol_version": "adaptive-single-view-v2.0.0",
+  "frozen_date": "2026-09-05",
+  "scope": "training-only retrieval recalibration; no LLM calls; no held-out access",
+  "research_question": "Can a deterministically configured adaptive single-view retriever preserve retrieval quality while improving actual context efficiency relative to declared fixed-k and shallow-probe comparators?",
+  "hypotheses": {
+    "H1_retrieval": "At least one preregistered single-view operating point improves unique gold-span recall by >=0.02 over the shallow-probe comparator.",
+    "H2_efficiency": "At recall noninferiority margin -0.02, adaptive retrieval reduces mean actual context tokens by >=10% relative to a fixed-k comparator at the same safety maximum.",
+    "H3_answerable_CER": "The selected method improves answerable-only complete-evidence recovery by >=0.03 over the shallow-probe comparator.",
+    "null_safe": "If neither quality nor efficiency criteria are met, the method is reported as Pareto competitive or unsupported; no superiority claim is permitted."
+  },
+  "partitions": {
+    "design_exposed": {
+      "definition": "Every example ID discoverable in prior calibration, pilot, screening, diagnostic, analysis, or normalized-sample artifacts at freeze time.",
+      "file": "DESIGN_EXPOSED_IDS.json",
+      "count": 7766,
+      "ids_sha256": "fea896e70422102c74978a8bbb81358d73c71ca0de9810d9ff84a3985966d1b4",
+      "use": "method design only; excluded from v2 tuning and selection"
+    },
+    "development_population": "Official QASPER train and MuSiQue-Full train only, after all exclusions.",
+    "v2_tuning": "18 examples per stratum (162 total), assigned by deterministic within-stratum hash; fits relevance threshold and patience.",
+    "v2_selection": "7 examples per stratum (63 total), assigned before execution; used once by the frozen selection rule.",
+    "final_held_out": {
+      "locked": [
+        "QASPER official test",
+        "MuSiQue-Full official development/validation for locally scored confirmation",
+        "MuSiQue-Full official test for hidden-label submission only"
+      ],
+      "access_during_v2_development": "forbidden",
+      "id_disjointness": "v2 IDs must contain the literal split tag ':train:'; QASPER test IDs contain ':test:', proving structural disjointness without opening test records."
+    }
+  },
+  "sample": {
+    "seed": 20260905,
+    "sampling": "streaming bottom-SHA256, deterministic within stratum",
+    "per_stratum": 25,
+    "tuning_per_stratum": 18,
+    "selection_per_stratum": 7,
+    "expected_strata": 9,
+    "expected_total": 225,
+    "expected_tuning": 162,
+    "expected_selection": 63,
+    "strata": [
+      "qasper|ANSWERABLE|short",
+      "qasper|ANSWERABLE|medium",
+      "qasper|ANSWERABLE|long",
+      "musique_full|ANSWERABLE|2hop",
+      "musique_full|ANSWERABLE|3hop",
+      "musique_full|ANSWERABLE|4hop",
+      "musique_full|INSUFFICIENT|2hop",
+      "musique_full|INSUFFICIENT|3hop",
+      "musique_full|INSUFFICIENT|4hop"
+    ]
+  },
+  "inclusion_exclusion": {
+    "include": [
+      "official training records",
+      "non-empty query",
+      "non-empty parsed document",
+      "at least one gold evidence span"
+    ],
+    "exclude": [
+      "all design-exposed IDs",
+      "all frozen v1 calibration IDs",
+      "all prior diagnostic/screening IDs",
+      "any non-train split",
+      "QASPER insufficient questions with zero gold evidence spans",
+      "malformed or duplicate IDs"
+    ],
+    "answerable": "included; answerable-only CER is primary",
+    "insufficient": "MuSiQue insufficient examples with residual gold support are included; residual-support complete recovery is secondary and never mixed with answerable CER"
+  },
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "local_path": "models/all-MiniLM-L6-v2",
+    "dimension": 384,
+    "weight_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "implementation": "Hugging Face Transformers/SentenceTransformers-compatible local snapshot; L2-normalized mean pooling"
+  },
+  "candidate_representations": [
+    "semantic",
+    "paragraph",
+    "hierarchical_v2",
+    "sentence_window"
+  ],
+  "primary_method": {
+    "representation_scope": "exactly one predeclared run-level representation",
+    "per_query_router": false,
+    "rrf": false,
+    "representation_pairs": false,
+    "initial_probe_depth": 3,
+    "adaptive_batch_size": 3,
+    "relevance": "empirical percentile-normalized cosine relevance, deterministic",
+    "retained_stops": [
+      "relevance threshold",
+      "empty-batch/no-gain patience",
+      "token safety maximum",
+      "retrieval-round cap",
+      "candidate cap",
+      "chunk cap"
+    ],
+    "removed_primary_controls": [
+      "novelty gate",
+      "similarity-gap gate",
+      "marginal-utility gate",
+      "redundancy gate"
+    ],
+    "deduplication": "after adaptive retrieval and before final context accounting/output; efficiency mechanism only",
+    "final_k": "emergent; never selected or fixed as a tuning parameter",
+    "llm_policy": "zero LLM calls during selection, retrieval, tuning, or this recalibration; Groq is permitted only for a separately authorized final answer call"
+  },
+  "token_operating_points": [
+    800,
+    1200,
+    1600
+  ],
+  "token_safety_maximum": 2000,
+  "recalibration_grid": {
+    "relevance_percentile_threshold": [
+      0.45,
+      0.55,
+      0.65,
+      0.75
+    ],
+    "empty_batch_patience": [
+      1,
+      2,
+      3
+    ],
+    "max_retrieval_rounds": [
+      6,
+      8
+    ],
+    "max_candidates_examined": [
+      30,
+      60
+    ],
+    "max_final_chunks": [
+      12,
+      20
+    ],
+    "fixed": {
+      "probe_depth": 3,
+      "adaptive_batch_size": 3,
+      "deduplicate_after_retrieval": true
+    },
+    "fit_partition": "v2_tuning only"
+  },
+  "metrics": {
+    "primary": [
+      "unique gold-span recall over all evidence-scored questions",
+      "answerable-only complete-evidence recovery",
+      "actual context tokens",
+      "answer token F1 only after paid authorization"
+    ],
+    "secondary": [
+      "evidence precision",
+      "residual-support complete recovery for insufficient questions",
+      "MRR",
+      "nDCG (reported with chunk-granularity caveat)",
+      "pre/post-dedup k and final k",
+      "latency",
+      "stop-reason distribution"
+    ]
+  },
+  "fair_comparison": {
+    "requirements": [
+      "identical query set",
+      "identical embedding model and snapshot",
+      "identical maximum context allowance",
+      "same answer model and prompt in any paid phase",
+      "actual context consumption reported",
+      "recall-versus-token Pareto frontier",
+      "matched actual-token comparisons"
+    ],
+    "matched_actual_tokens": "mean context tokens within 10% on identical queries; paired token differences also reported",
+    "no_full_budget_requirement": "adaptive systems need not consume the 2,000-token safety maximum"
+  },
+  "inference": {
+    "paired_bootstrap_resamples": 20000,
+    "paired_bootstrap_seed": 20260905,
+    "paired_randomization_resamples": 20000,
+    "binary_test": "exact McNemar",
+    "multiple_testing": "Holm correction across declared primary comparisons within each primary metric",
+    "interval": 0.95
+  },
+  "practical_effect_margins": {
+    "meaningful_recall_gain": 0.02,
+    "recall_noninferiority": -0.02,
+    "meaningful_answerable_CER_gain": 0.03,
+    "meaningful_context_reduction_percent": 10.0,
+    "meaningful_answer_token_F1_gain_after_authorization": 0.02
+  },
+  "frozen_selection_rule": {
+    "tuning_stage": "For each representation and token point, retain the parameter tuple with highest tuning recall; treat differences <=0.01 as tied, then maximize answerable CER, minimize actual tokens, minimize candidates, and use canonical tuple order as final tie-break.",
+    "selection_stage": "Evaluate only the 12 tuning-selected representation/token candidates. Shortlist candidates within 0.01 of the highest selection recall; then maximize answerable CER, minimize actual tokens, minimize candidates, and break exact ties by the preregistered representation order [semantic, paragraph, hierarchical_v2, sentence_window] followed by ascending token point.",
+    "prior_screening_guard": "The representation order is only an exact tie-break. Semantic receives no score bonus and is not selected merely because it led the design-exposed screening sample.",
+    "classification": {
+      "better_on_retrieval_quality": "recall gain >=0.02 with Holm-adjusted p<0.05, or answerable CER gain >=0.03 with adjusted p<0.05, versus the declared comparator",
+      "better_only_on_efficiency": "recall lower CI >=-0.02 and context reduction >=10% with paired token p<0.05, without a quality win",
+      "pareto_competitive": "non-dominated in recall versus actual-token space but neither superiority rule passes",
+      "unsupported": "dominated or fails both noninferiority and quality criteria"
+    }
+  },
+  "comparators": [
+    "probe-only k=3 for the same representation",
+    "fixed k=10",
+    "fixed k=20",
+    "v1 full SAR-RAG descriptive only"
+  ],
+  "run_integrity": {
+    "required_records": [
+      "exact command",
+      "configuration",
+      "seed",
+      "package versions",
+      "input hashes",
+      "failures and retries",
+      "artifact hashes",
+      "configuration fingerprint",
+      "embedding fingerprint"
+    ],
+    "resume": "append-only per-example output; reject if protocol, configuration, embedding, input, sample, seed, or code fingerprint differs; never mix configurations",
+    "failed_runs": "record failure row and retry count; deterministic retry only under identical fingerprints; otherwise start a new versioned run directory"
+  },
+  "paid_smoke_test_gate": {
+    "condition": "All retrieval-only v2 artifacts complete; full tests pass; frozen manifest reproduces exactly; overlap audit is zero; no unresolved failures; answer prompt/model fingerprints are frozen; user gives explicit paid-run authorization with a call ceiling and cost ceiling.",
+    "data": "design-exposed training examples only; never final held-out records"
+  },
+  "final_held_out_gate": {
+    "condition": "Paid smoke passes without method changes; all protocol/manifest/code/prompt/model hashes remain frozen; exact run cost and resume plan are recorded; user gives a separate explicit authorization for final held-out evaluation.",
+    "after_access": "No tuning, selection, threshold, representation, prompt, or analysis-rule changes are allowed; deviations require a new protocol and the accessed examples remain exposed."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "selected_manifest_sha256": "b3f703627fd199a52db7a90d8055713ce9bca42bca64ac12b408ab3338149dcc",
+  "original_signature": "837aa722efeecf10c9a3ddd9776a4a4a6f275fb55ca7a42af89f6ea3d8493ab0",
+  "reproduced_signature": "b5b267ee4d70caa74f8e0d40e6c21987592fbe7399988afc78a425b43e42f925",
+  "identical": false,
+  "substantive_original_signature": "6abfaa41995e1c2459b5e0565f7ae1d41ca873014f1ace2a39f81ee0b45ccc67",
+  "substantive_reproduced_signature": "6abfaa41995e1c2459b5e0565f7ae1d41ca873014f1ace2a39f81ee0b45ccc67",
+  "substantive_identical": true
+}

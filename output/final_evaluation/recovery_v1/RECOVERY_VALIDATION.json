@@ -1,0 +1,107 @@
+{
+  "attempts": {
+    "by_pair": {
+      "musique_full|musique_full:train:2hop__838053_467995:insufficient|traditional_k10": 1,
+      "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|sar_rag_v1": 3,
+      "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|traditional_k10": 3,
+      "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|adaptive_single_view_v2": 2,
+      "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|sar_rag_v1": 1,
+      "qasper|qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8|adaptive_single_view_v2": 1,
+      "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|adaptive_single_view_v2": 1,
+      "qasper|qasper:train:b24767fe7e6620369063e646fd3048dc645a8348|traditional_k10": 2
+    },
+    "failure_statuses": {
+      "api_error": 7,
+      "local_validation_error": 1
+    },
+    "maximum_authorized": 24,
+    "remaining_global_allowance": 10,
+    "total": 14,
+    "transport_statuses": {
+      "api_error": 7,
+      "success": 7
+    },
+    "unresolved_pairs_exhausted_three_attempt_limit": true
+  },
+  "integrity_and_operational_checks": {
+    "all_48_pairs_validated": false,
+    "attempt_ceiling_respected": true,
+    "cost_ceiling_respected_conservatively": true,
+    "generation_configuration_unchanged": true,
+    "operational_smoke_checks_passed": false,
+    "original_artifact_hashes_match": true,
+    "recovery_scope_exact": true,
+    "saved_recovery_responses_valid": true,
+    "saved_request_fingerprints_valid": true,
+    "secret_pattern_absent": true
+  },
+  "interpretation": "Operational recovery only; incomplete and not evidence of research superiority.",
+  "scope": {
+    "combined_original_plus_recovery_validated_pairs": 46,
+    "eligible_pairs": 8,
+    "held_out_evaluation_executed": false,
+    "research_performance_scoring_performed": false,
+    "unresolved_pairs": [
+      "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|sar_rag_v1",
+      "musique_full|musique_full:train:4hop1__38130_8966_31714_41245:answerable|traditional_k10"
+    ],
+    "validated_recovery_pairs": 6
+  },
+  "status": "RECOVERY_INCOMPLETE_PER_PAIR_RETRY_LIMIT_REACHED",
+  "usage_and_cost": {
+    "authorized_cost_ceiling_usd": 0.01704555,
+    "billing_note": "Seven HTTP 400 attempts expose no usage; invoiced cost must be checked in Groq billing.",
+    "cumulative_authorized_worst_case_cost_usd": 0.00988635,
+    "recorded_input_tokens_all_http_successes": 11041,
+    "recorded_output_tokens_all_http_successes": 3896,
+    "recorded_token_cost_usd": 0.00399375,
+    "remaining_conservative_cost_allowance_usd": 0.0071592,
+    "validated_answer_estimated_cost_usd": 0.0033852,
+    "validated_answer_input_tokens": 9796,
+    "validated_answer_output_tokens": 3193
+  },
+  "validated_pairs": [
+    {
+      "attempt_for_pair": 1,
+      "estimated_cost_usd": 0.00033705,
+      "input_tokens": 919,
+      "logical_key": "musique_full|musique_full:train:2hop__838053_467995:insufficient|traditional_k10",
+      "output_tokens": 332
+    },
+    {
+      "attempt_for_pair": 1,
+      "estimated_cost_usd": 0.0006433499999999999,
+      "input_tokens": 1949,
+      "logical_key": "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|sar_rag_v1",
+      "output_tokens": 585
+    },
+    {
+      "attempt_for_pair": 1,
+      "estimated_cost_usd": 0.0006844500000000001,
+      "input_tokens": 1843,
+      "logical_key": "qasper|qasper:train:3be8859103016ce2afe4c0a8552b9d980f7958bf|adaptive_single_view_v2",
+      "output_tokens": 680
+    },
+    {
+      "attempt_for_pair": 1,
+      "estimated_cost_usd": 0.0005050499999999999,
+      "input_tokens": 1891,
+      "logical_key": "qasper|qasper:train:2ec640e6b4f1ebc158d13ee6589778b4c08a04c8|adaptive_single_view_v2",
+      "output_tokens": 369
+    },
+    {
+      "attempt_for_pair": 2,
+      "estimated_cost_usd": 0.0007189499999999999,
+      "input_tokens": 1949,
+      "logical_key": "musique_full|musique_full:train:4hop1__493923_300471_136629_85446:insufficient|adaptive_single_view_v2",
+      "output_tokens": 711
+    },
+    {
+      "attempt_for_pair": 2,
+      "estimated_cost_usd": 0.00049635,
+      "input_tokens": 1245,
+      "logical_key": "qasper|qasper:train:b24767fe7e6620369063e646fd3048dc645a8348|traditional_k10",
+      "output_tokens": 516
+    }
+  ]
+}

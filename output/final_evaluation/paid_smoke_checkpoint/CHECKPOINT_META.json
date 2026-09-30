@@ -1,0 +1,14 @@
+{
+  "generation": {
+    "decoding": {
+      "max_output_tokens": 800,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "model": "openai/gpt-oss-120b"
+  },
+  "generation_fingerprint": "008c1fe85a6abcdb528251bc04be4163602a7b0e97485b35ab7c5dcbdfcaf03f",
+  "run_fingerprint": "678c77156bfbecfb836d53546646be9e36c25b9a5def26cc58b187f819610994"
+}

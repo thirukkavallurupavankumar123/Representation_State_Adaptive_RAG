@@ -42,20 +42,32 @@ Retrieve ranks 1-3 from every representation. This is diagnostic probe depth, ne
 final retrieval `k`. Align candidates into evidence groups when their canonical units
 are equal, contained, or have Jaccard overlap at least 0.5.
 
-For group `g`:
+For group `g`, and for representation `r` with membership set `G(r)`:
 
 ```text
-RRF(g) = sum over representations r retrieving g of 1 / (c + rank_r(g))
+RRF(g)  = sum over representations r retrieving g of 1 / (c + rank_r(g))
 NRRF(g) = RRF(g) / (number_of_representations / (c + 1))
+
+coverage(r)      = sum of NRRF(g) for g in G(r)   /   sum of NRRF(g) over ALL probe groups
+marginal_gain(r) = sum of NRRF(g) for g in G(r) \ G(first)  /  sum of NRRF(g) over ALL probe groups
 ```
 
-The primary default is `c=3` because the probe contains three ranks. Freeze `c` on
-training data and report `{1, 3, 10, 60}` as a sensitivity analysis.
+**Both normalization steps are load-bearing and must be stated together.** The first
+divides by the maximum attainable group score; the second divides by the total NRRF mass
+of the aligned probe. Consequently the frozen marginal-gain threshold **0.2437 is a
+fraction of the total aligned probe mass**, not a raw NRRF quantity. Describing it as a
+raw NRRF value misstates the method. These are ranking quantities and must never be
+described as calibrated probabilities.
 
-Select the first representation by maximum total normalized-RRF group coverage. Then
-calculate each remaining representation's normalized-RRF mass from groups not covered
-by the first. Select a second only when this marginal gain reaches the frozen training
-threshold. Resolve ties by lower mean probe-token cost and stable representation ID.
+The primary default is `c=3` because the probe contains three ranks. Freeze `c` on
+training data and report `{1, 3, 10, 60}` as a sensitivity analysis. Training-only
+retrieval screening shows the method is nearly insensitive to `c` across that range, so
+`c=3` must be reported as a robustness result rather than a tuned advantage.
+
+Select the first representation by maximum `coverage(r)`. Then calculate each remaining
+representation's `marginal_gain(r)`. Select a second only when this marginal gain reaches
+the frozen training threshold. Resolve ties by lower mean probe **word** count (the
+implementation uses `word_count`, not tokenizer tokens) and then stable representation ID.
 
 ## Phase C: adaptive retrieval without fixed final k
 
@@ -77,9 +89,16 @@ relevance-percentile, novelty and marginal-utility
 thresholds, is not a high-overlap/high-semantic-similarity duplicate, and fits the
 token/chunk safety budgets.
 
-Pause a representation after two consecutive batches add no candidate. A large
-similarity gap may pause it earlier only when the same batch adds no marginal utility.
-Never stop on similarity gap alone when useful evidence was added.
+Pause a representation after `empty_batch_patience` consecutive batches add no candidate.
+The dataclass default is 2, but the **frozen calibrated value is 3**; documentation must
+quote the frozen manifest, not the executable defaults. A large similarity gap may pause a
+representation earlier only when the same batch adds no marginal utility. Never stop on
+similarity gap alone when useful evidence was added.
+
+Training-only retrieval screening records that, at the frozen thresholds, the novelty rule
+(0.2292) and the standardized similarity-gap rule (1.9052) **never bind**: disabling either
+reproduces the full system exactly. Neither may be presented as a contributing component
+without end-to-end evidence to the contrary.
 
 Global stopping occurs when all selected representations pause or when a candidate,
 retrieval-round, final-chunk or tokenizer-token safety cap is reached. These are maximum

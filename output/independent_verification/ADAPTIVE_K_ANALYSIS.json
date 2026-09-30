@@ -1,0 +1,34 @@
+{
+  "status": "PENDING_REQUIRES_CONFIRMATORY_RUN",
+  "reason": "Requires per-question held-out records from a completed confirmatory run. No such run exists.",
+  "required_fields": [
+    "mean",
+    "median",
+    "sd",
+    "min",
+    "max",
+    "p25",
+    "p75",
+    "p95",
+    "histogram",
+    "percentage_at_chunk_cap",
+    "percentage_at_token_cap",
+    "stop_reason_counts",
+    "representation_pause_reason_counts",
+    "final_k_by_dataset",
+    "final_k_by_answerability",
+    "final_k_by_document_length",
+    "final_k_by_hop_count",
+    "spearman_final_k_vs_hop_count",
+    "spearman_final_k_vs_gold_evidence_count"
+  ],
+  "available_now_retrieval_only_training_screening": {
+    "source": "RETRIEVAL_ONLY_ABLATIONS.csv (60 training examples, 0 Groq calls)",
+    "scope": "TRAINING data, retrieval only. NOT a held-out result.",
+    "full_condition_mean_final_k": 15.15,
+    "final_chunk_safety_cap_percent": 30.0,
+    "retrieval_round_safety_cap_percent": 6.7,
+    "adaptive_pause_percent": 63.3,
+    "interpretation": "36.7% of queries terminate on a safety cap rather than adaptively. A majority still stops adaptively, so the system is not purely a capped retriever, but this materially weakens the no-fixed-k framing."
+  }
+}

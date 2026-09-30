@@ -26,17 +26,36 @@
 - Streaming bottom-hash sampling, independent of file order.
 - Strata: dataset, answerability, and QASPER length or MuSiQue hop count.
 - Default: five examples per stratum.
-- Each stratum is partitioned 70% tuning / 30% held-back selection where possible.
+- Each stratum is partitioned by a `selection_fraction` of 0.30.
+
+**Correction (independent verification, version 1).** The realized partition is
+**60% tuning / 40% held-back selection**, not 70/30. With five examples per stratum,
+`round(5 * 0.30) = 2` under banker's rounding, so each stratum yields 3 tuning and 2
+selection examples: **36 tuning / 24 selection** over the 60-example sample. The larger
+held-back partition is conservative and does not invalidate version 1, but the 70/30
+description was wrong. A clean 70/30 design requires a preregistered per-stratum size that
+divides evenly — for example **10 per stratum (7 tuning / 3 selection, 120 examples)** —
+and must be preregistered rather than retrofitted.
 
 ## Selection rule
 
 1. On tuning data, retain configurations within 0.01 macro gold-evidence recall of the
    best observed configuration.
-2. On the held-back training selection data, maximize complete-evidence recovery.
-3. Then maximize evidence precision.
-4. Then minimize context tokens.
-5. Then minimize candidates examined.
-6. Use serialized parameter order only as the final deterministic tie-breaker.
+2. **On the held-back selection data, retain configurations within 0.01 macro gold-evidence
+   recall of the best observed configuration on that partition.**
+3. Then maximize complete-evidence recovery.
+4. Then maximize evidence precision.
+5. Then minimize context tokens.
+6. Then minimize candidates examined.
+7. Use serialized parameter order only as the final deterministic tie-breaker.
+
+**Correction (independent verification, version 1).** Step 2 was previously undocumented.
+`choose_configuration` re-applies the recall tolerance on the held-back partition before
+the lexicographic order is evaluated. This implemented rule is adopted as the documented
+rule because it is strictly more recall-protective: without it, a configuration with
+materially lower held-back recall could win on a complete-evidence tie, contradicting the
+stated priority that evidence coverage outranks efficiency. The selected configuration is
+unchanged under either reading for the version-1 sample.
 
 This prioritizes evidence coverage but refuses to treat unlimited retrieval as free.
 

@@ -1,0 +1,549 @@
+{
+  "actual_token_comparison": {
+    "definition": "Mean actual context tokens within 10% of SAR-RAG on the identical selection queries.",
+    "dominated_conditions": [
+      {
+        "condition": "sar_rag:all_representations_no_rrf",
+        "dominated_by": [
+          "traditional:sliding_window_matched_k10"
+        ]
+      },
+      {
+        "condition": "sar_rag:candidate_pair_paragraph__hierarchical_v2",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2"
+        ]
+      },
+      {
+        "condition": "sar_rag:candidate_pair_paragraph__semantic",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:paragraph_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:candidate_pair_semantic__hierarchical_v2",
+        "dominated_by": [
+          "sar_rag:candidate_pair_paragraph__hierarchical_v2",
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:full",
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:hierarchical_v2_only",
+          "sar_rag:no_novelty",
+          "sar_rag:no_post_retrieval_deduplication",
+          "sar_rag:no_similarity_gap",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:paragraph_only",
+          "sar_rag:probe_depth_5",
+          "sar_rag:select_one_representation",
+          "sar_rag:semantic_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:candidate_pair_sentence_window__hierarchical_v2",
+        "dominated_by": [
+          "sar_rag:candidate_pair_paragraph__semantic",
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_paragraph__semantic",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:paragraph_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:candidate_pair_sentence_window__semantic",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__paragraph"
+        ]
+      },
+      {
+        "condition": "sar_rag:full",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:probe_depth_5"
+        ]
+      },
+      {
+        "condition": "sar_rag:hierarchical_only",
+        "dominated_by": [
+          "sar_rag:all_representations_no_rrf",
+          "sar_rag:candidate_pair_paragraph__hierarchical_v2",
+          "sar_rag:candidate_pair_paragraph__semantic",
+          "sar_rag:candidate_pair_semantic__hierarchical_v2",
+          "sar_rag:candidate_pair_sentence_window__hierarchical_v2",
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:candidate_pair_sentence_window__semantic",
+          "sar_rag:full",
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:hierarchical_v2_only",
+          "sar_rag:no_novelty",
+          "sar_rag:no_post_retrieval_deduplication",
+          "sar_rag:no_similarity_gap",
+          "sar_rag:pair_paragraph__hierarchical",
+          "sar_rag:pair_paragraph__semantic",
+          "sar_rag:pair_semantic__hierarchical",
+          "sar_rag:pair_sentence_window__hierarchical",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__semantic",
+          "sar_rag:paragraph_only",
+          "sar_rag:probe_depth_5",
+          "sar_rag:select_one_representation",
+          "sar_rag:semantic_only",
+          "sar_rag:sentence_window_only",
+          "traditional:sliding_window_k10",
+          "traditional:sliding_window_k5",
+          "traditional:sliding_window_matched_k10",
+          "traditional:sliding_window_matched_k5"
+        ]
+      },
+      {
+        "condition": "sar_rag:hierarchical_v2_only",
+        "dominated_by": [
+          "sar_rag:full",
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:no_novelty",
+          "sar_rag:no_similarity_gap",
+          "sar_rag:probe_depth_5",
+          "sar_rag:semantic_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:no_novelty",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:probe_depth_5"
+        ]
+      },
+      {
+        "condition": "sar_rag:no_post_retrieval_deduplication",
+        "dominated_by": [
+          "sar_rag:candidate_pair_paragraph__hierarchical_v2",
+          "sar_rag:full",
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:no_novelty",
+          "sar_rag:no_similarity_gap",
+          "sar_rag:probe_depth_5",
+          "sar_rag:semantic_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:no_similarity_gap",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:probe_depth_5"
+        ]
+      },
+      {
+        "condition": "sar_rag:pair_paragraph__hierarchical",
+        "dominated_by": [
+          "sar_rag:all_representations_no_rrf",
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:candidate_pair_sentence_window__semantic",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__semantic",
+          "traditional:sliding_window_matched_k10"
+        ]
+      },
+      {
+        "condition": "sar_rag:pair_paragraph__semantic",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:paragraph_only"
+        ]
+      },
+      {
+        "condition": "sar_rag:pair_semantic__hierarchical",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:candidate_pair_sentence_window__semantic",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__semantic",
+          "sar_rag:paragraph_only",
+          "traditional:sliding_window_k10",
+          "traditional:sliding_window_matched_k10"
+        ]
+      },
+      {
+        "condition": "sar_rag:pair_sentence_window__hierarchical",
+        "dominated_by": [
+          "sar_rag:candidate_pair_paragraph__semantic",
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:candidate_pair_sentence_window__semantic",
+          "sar_rag:pair_paragraph__semantic",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__semantic",
+          "sar_rag:paragraph_only",
+          "sar_rag:sentence_window_only",
+          "traditional:sliding_window_k10",
+          "traditional:sliding_window_matched_k10"
+        ]
+      },
+      {
+        "condition": "sar_rag:pair_sentence_window__semantic",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__paragraph"
+        ]
+      },
+      {
+        "condition": "sar_rag:probe_depth_5",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2"
+        ]
+      },
+      {
+        "condition": "sar_rag:select_one_representation",
+        "dominated_by": [
+          "sar_rag:full",
+          "sar_rag:full_hierarchical_v2",
+          "sar_rag:no_novelty",
+          "sar_rag:no_similarity_gap",
+          "sar_rag:probe_depth_5"
+        ]
+      },
+      {
+        "condition": "sar_rag:semantic_only",
+        "dominated_by": [
+          "sar_rag:full_hierarchical_v2"
+        ]
+      },
+      {
+        "condition": "sar_rag:sentence_window_only",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:candidate_pair_sentence_window__semantic",
+          "sar_rag:pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__semantic",
+          "sar_rag:paragraph_only",
+          "traditional:sliding_window_k10"
+        ]
+      },
+      {
+        "condition": "traditional:sliding_window_k10",
+        "dominated_by": [
+          "sar_rag:candidate_pair_sentence_window__paragraph",
+          "sar_rag:pair_sentence_window__paragraph"
+        ]
+      },
+      {
+        "condition": "traditional:sliding_window_k3",
+        "dominated_by": [
+          "sar_rag:rrf_probe_only_no_adaptive"
+        ]
+      }
+    ],
+    "interpretation": "The Boolean above tests a positive SAR advantage only; absence of a significantly superior traditional condition is not evidence of a SAR advantage.",
+    "matched_traditional_operating_points": {
+      "traditional:sliding_window_k10": {
+        "absolute_token_difference_pct": 4.6762829588420525,
+        "mean_context_tokens": 1244.1195652173913,
+        "mean_recall": 0.6915422885572139,
+        "recall_ci": [
+          -0.06965174129353233,
+          -0.0037313432835820895
+        ],
+        "recall_difference_condition_minus_sar": -0.03109452736318408,
+        "recall_holm_p": 1.0,
+        "recall_p": 0.12494375281235938
+      }
+    },
+    "sar_has_significant_matched_actual_token_advantage": false,
+    "selection_pareto_front": [
+      "sar_rag:candidate_pair_sentence_window__paragraph",
+      "sar_rag:full_hierarchical_v2",
+      "sar_rag:pair_sentence_window__paragraph",
+      "sar_rag:paragraph_only",
+      "sar_rag:rrf_probe_only_no_adaptive",
+      "traditional:sliding_window_k20",
+      "traditional:sliding_window_k5",
+      "traditional:sliding_window_matched_k10",
+      "traditional:sliding_window_matched_k20",
+      "traditional:sliding_window_matched_k3",
+      "traditional:sliding_window_matched_k5"
+    ]
+  },
+  "answerability_counts": {
+    "musique_full|answerable": 75,
+    "musique_full|insufficient": 75,
+    "qasper|answerable": 75,
+    "qasper|insufficient": 61
+  },
+  "condition_count": 34,
+  "dataset_counts": {
+    "musique_full": 150,
+    "qasper": 136
+  },
+  "duplicate_keys": 0,
+  "evidence_scored_counts": {
+    "all": 210,
+    "selection": 67,
+    "selection_answerable": 46,
+    "selection_insufficient_with_residual_support": 21,
+    "tuning": 143
+  },
+  "expected_row_count": 9724,
+  "failure_reachability": {
+    "hierarchical_v2_full_all_scored": {
+      "complete_misses": 25,
+      "reachable_by_perfect_candidate_routing": 7,
+      "unreachable_by_any_candidate_single_or_pair": 18
+    },
+    "hierarchical_v2_full_selection_scored": {
+      "complete_misses": 10,
+      "reachable_by_perfect_candidate_routing": 1,
+      "unreachable_by_any_candidate_single_or_pair": 9
+    },
+    "original_full_all_scored": {
+      "complete_misses": 26,
+      "reachable_by_perfect_candidate_routing": 8,
+      "unreachable_by_any_candidate_single_or_pair": 18
+    }
+  },
+  "frozen_v1_manifest_hash_matches_expected": true,
+  "frozen_v1_manifest_sha256": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+  "gate_binding_counts": {
+    "candidates_scored": 6989,
+    "gap_would_fire": 0,
+    "maximum_standardized_gap": 1.092481809821353,
+    "novelty_binding": 107,
+    "redundancy_binding": 0,
+    "utility_binding": 0
+  },
+  "gate_output_change_counts": {
+    "no_novelty": {
+      "candidates_examined": 0,
+      "complete_evidence": 0,
+      "context_tokens": 0,
+      "evidence_precision": 0,
+      "evidence_recall": 0,
+      "final_k": 0,
+      "retrieval_rounds": 0,
+      "stop_reason": 0
+    },
+    "no_post_retrieval_deduplication": {
+      "candidates_examined": 0,
+      "complete_evidence": 0,
+      "context_tokens": 56,
+      "evidence_precision": 26,
+      "evidence_recall": 0,
+      "final_k": 56,
+      "retrieval_rounds": 0,
+      "stop_reason": 0
+    },
+    "no_similarity_gap": {
+      "candidates_examined": 0,
+      "complete_evidence": 0,
+      "context_tokens": 0,
+      "evidence_precision": 0,
+      "evidence_recall": 0,
+      "final_k": 0,
+      "retrieval_rounds": 0,
+      "stop_reason": 0
+    }
+  },
+  "mean_context_tokens_selection": {
+    "sar_rag:all_representations_no_rrf": 1043.9239130434783,
+    "sar_rag:candidate_pair_paragraph__hierarchical_v2": 1348.5434782608695,
+    "sar_rag:candidate_pair_paragraph__semantic": 1270.108695652174,
+    "sar_rag:candidate_pair_semantic__hierarchical_v2": 1371.6739130434783,
+    "sar_rag:candidate_pair_sentence_window__hierarchical_v2": 1301.9673913043478,
+    "sar_rag:candidate_pair_sentence_window__paragraph": 1212.4673913043478,
+    "sar_rag:candidate_pair_sentence_window__semantic": 1217.5760869565217,
+    "sar_rag:full": 1305.1521739130435,
+    "sar_rag:full_hierarchical_v2": 1302.0,
+    "sar_rag:hierarchical_only": 1372.3369565217392,
+    "sar_rag:hierarchical_v2_only": 1334.3478260869565,
+    "sar_rag:no_novelty": 1305.1521739130435,
+    "sar_rag:no_post_retrieval_deduplication": 1356.2826086956522,
+    "sar_rag:no_similarity_gap": 1305.1521739130435,
+    "sar_rag:pair_paragraph__hierarchical": 1233.5217391304348,
+    "sar_rag:pair_paragraph__semantic": 1270.108695652174,
+    "sar_rag:pair_semantic__hierarchical": 1257.1521739130435,
+    "sar_rag:pair_sentence_window__hierarchical": 1273.3369565217392,
+    "sar_rag:pair_sentence_window__paragraph": 1212.4673913043478,
+    "sar_rag:pair_sentence_window__semantic": 1217.5760869565217,
+    "sar_rag:paragraph_only": 1253.2173913043478,
+    "sar_rag:probe_depth_5": 1304.2173913043478,
+    "sar_rag:rrf_probe_only_no_adaptive": 284.0,
+    "sar_rag:select_one_representation": 1309.3369565217392,
+    "sar_rag:semantic_only": 1312.8478260869565,
+    "sar_rag:sentence_window_only": 1257.804347826087,
+    "traditional:sliding_window_k10": 1244.1195652173913,
+    "traditional:sliding_window_k20": 1857.7391304347825,
+    "traditional:sliding_window_k3": 410.92391304347825,
+    "traditional:sliding_window_k5": 658.9565217391304,
+    "traditional:sliding_window_matched_k10": 949.0978260869565,
+    "traditional:sliding_window_matched_k20": 1780.2391304347825,
+    "traditional:sliding_window_matched_k3": 277.92391304347825,
+    "traditional:sliding_window_matched_k5": 469.7608695652174
+  },
+  "nan_metric_cells": {
+    "complete_evidence": 2584,
+    "evidence_precision": 2584,
+    "evidence_recall": 2584
+  },
+  "oracle_complementarity": {
+    "hierarchical_v2_candidate": {
+      "all|both": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 210,
+        "oracle_at_1": 0.814654195011338,
+        "oracle_at_2": 0.814654195011338
+      },
+      "all|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 140,
+        "oracle_at_1": 0.8797619047619047,
+        "oracle_at_2": 0.8797619047619047
+      },
+      "all|qasper": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 70,
+        "oracle_at_1": 0.6844387755102039,
+        "oracle_at_2": 0.6844387755102039
+      },
+      "selection|both": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 67,
+        "oracle_at_1": 0.7574626865671642,
+        "oracle_at_2": 0.7574626865671642
+      },
+      "selection|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 45,
+        "oracle_at_1": 0.8462962962962962,
+        "oracle_at_2": 0.8462962962962962
+      },
+      "selection|qasper": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 22,
+        "oracle_at_1": 0.5757575757575757,
+        "oracle_at_2": 0.5757575757575757
+      },
+      "tuning|both": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 143,
+        "oracle_at_1": 0.8414502164502166,
+        "oracle_at_2": 0.8414502164502166
+      },
+      "tuning|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 95,
+        "oracle_at_1": 0.8956140350877194,
+        "oracle_at_2": 0.8956140350877194
+      },
+      "tuning|qasper": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 48,
+        "oracle_at_1": 0.7342509920634921,
+        "oracle_at_2": 0.7342509920634921
+      }
+    },
+    "legacy": {
+      "all|both": {
+        "examples_with_positive_pair_gain": 1,
+        "maximum_example_pair_gain": 0.1428571428571429,
+        "mean_pair_complementarity_gain": 0.0006802721088435377,
+        "n": 210,
+        "oracle_at_1": 0.8189625850340136,
+        "oracle_at_2": 0.8196428571428571
+      },
+      "all|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 140,
+        "oracle_at_1": 0.8797619047619047,
+        "oracle_at_2": 0.8797619047619047
+      },
+      "all|qasper": {
+        "examples_with_positive_pair_gain": 1,
+        "maximum_example_pair_gain": 0.1428571428571429,
+        "mean_pair_complementarity_gain": 0.002040816326530613,
+        "n": 70,
+        "oracle_at_1": 0.6973639455782313,
+        "oracle_at_2": 0.6994047619047619
+      },
+      "selection|both": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 67,
+        "oracle_at_1": 0.7574626865671642,
+        "oracle_at_2": 0.7574626865671642
+      },
+      "selection|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 45,
+        "oracle_at_1": 0.8462962962962962,
+        "oracle_at_2": 0.8462962962962962
+      },
+      "selection|qasper": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 22,
+        "oracle_at_1": 0.5757575757575757,
+        "oracle_at_2": 0.5757575757575757
+      },
+      "tuning|both": {
+        "examples_with_positive_pair_gain": 1,
+        "maximum_example_pair_gain": 0.1428571428571429,
+        "mean_pair_complementarity_gain": 0.0009990009990009994,
+        "n": 143,
+        "oracle_at_1": 0.8477772227772228,
+        "oracle_at_2": 0.8487762237762237
+      },
+      "tuning|musique_full": {
+        "examples_with_positive_pair_gain": 0,
+        "maximum_example_pair_gain": 0.0,
+        "mean_pair_complementarity_gain": 0.0,
+        "n": 95,
+        "oracle_at_1": 0.8956140350877194,
+        "oracle_at_2": 0.8956140350877194
+      },
+      "tuning|qasper": {
+        "examples_with_positive_pair_gain": 1,
+        "maximum_example_pair_gain": 0.1428571428571429,
+        "mean_pair_complementarity_gain": 0.0029761904761904773,
+        "n": 48,
+        "oracle_at_1": 0.7531001984126985,
+        "oracle_at_2": 0.7560763888888888
+      }
+    }
+  },
+  "partition_counts": {
+    "selection": 92,
+    "tuning": 194
+  },
+  "row_count": 9724,
+  "source_csv_sha256": "64e9e5dc752f1b72cc882ba97c123b786ae6faedf496410e62d790b84678a18f",
+  "stop_reasons_full_selection": {
+    "all_selected_representations_paused": 58,
+    "final_chunk_safety_cap": 28,
+    "retrieval_round_safety_cap": 6
+  },
+  "unique_examples": 286
+}

@@ -1,0 +1,38 @@
+{
+  "generation": {
+    "decoding": {
+      "max_output_tokens": 1600,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "maximum_completion_tokens": 1600,
+    "model": "openai/gpt-oss-120b",
+    "outgoing_fields": [
+      "model",
+      "messages",
+      "temperature",
+      "top_p",
+      "max_completion_tokens",
+      "reasoning_effort",
+      "response_format"
+    ],
+    "prompt": "final-evaluation-answer-v1.1",
+    "prompt_version": "final-evaluation-answer-v1.1",
+    "same_for_every_system": true,
+    "schema": "frozen_final_answer_v1_1",
+    "schema_name": "frozen_final_answer_v1_1",
+    "settings": {
+      "model": "openai/gpt-oss-120b",
+      "reasoning_effort": "medium",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "strict": true
+  },
+  "pair_count": 18720,
+  "protocol_fingerprint": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893",
+  "request_manifest_fingerprint": "280bd0521f12ab9ae16f8cb055d4de3001eb9d71f97be93b652e244ba8953778",
+  "run_manifest_fingerprint": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85"
+}

@@ -1,0 +1,104 @@
+{
+  "artifact": "SAR-RAG independent verification run manifest",
+  "baseline_commit": "5cb4cd7dc85f9c4bd87f22cfa840494d98b6a9d5",
+  "paid_groq_calls_made": 0,
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "interpreter": ".venv/Scripts/python.exe",
+    "key_packages": {
+      "numpy": "1.26.4",
+      "torch": "2.7.1",
+      "transformers": "4.53.3",
+      "tokenizers": "0.21.4",
+      "matplotlib": "3.9.2",
+      "pytest": "9.1.1",
+      "reportlab": "5.0.0",
+      "pymupdf": "1.28.2"
+    }
+  },
+  "embedding_model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "expected_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "local_snapshot": "models/all-MiniLM-L6-v2",
+    "weight_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "provenance_match": true,
+    "caveat": "revision= is ignored by Hugging Face when loading from a local directory; provenance rests on the verified weight hash"
+  },
+  "secrets": {
+    "GROQ_API_KEY": "present (value never read, printed or stored)",
+    "GROQ_MODEL": "openai/gpt-oss-120b (unchanged)",
+    "cost_rate_variables": "absent - confirmatory runs correctly refuse to start",
+    "env_tracked_in_git": false,
+    "api_key_found_in_tracked_files": false
+  },
+  "inputs": {
+    "qasper_train": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4",
+    "qasper_test": "6e29ad410e6e39aa1936017fb965b30a20eb2e7751997f55b97c9d281aa884e5",
+    "musique_train": "b1cd998f7e0e2838d6fda024e4ad1eb0e7fc3edefdadb0bd9b5b10b0907f2034",
+    "musique_dev": "8cab31d56a3a1c4ef491b205a8dab3f1ac9c66e472098c6cf1de4e20294f7a4a",
+    "qasper_test_normalized": "4a5c1c3cfba88eb563753a35445c1cf2d201eaa5b150b286fa721912a5ceb72a",
+    "musique_validation_normalized": "e6a1c8d60db458cd7d48d41510185cbb00ad42e5067bd5b6d10e86a7de6c33b0"
+  },
+  "preserved_version1_artifacts": {
+    "output/calibration/frozen_manifest.json": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "note": "never modified during this audit"
+  },
+  "produced_artifacts": {
+    "ABLATION_RESULTS.csv": "b635a46a23c101261a7da649b807741db0c6710ed6f382e34dd0a5f5bbff47ce",
+    "ADAPTIVE_K_ANALYSIS.json": "23ac4056cdfa381a764cbc6093563f3ea17146d94b42bfe7f00ffa928029419e",
+    "AUDIT_REPORT.md": "581a22d69d53c950639abb05ca5f41a8f2b3b8796d94390798569276beab0bea",
+    "calibration_v1_reproduction.json": "5c570ec2b4c52e1b0ea0f2152a6f8fb6f1fa1c1575e58cfb58bde2c434a54d05",
+    "calibration_v2_manifest.json": "6639bd3b10032c8f8d342fa283984e2a50983e8ef8e20fe06ec41e05376358b0",
+    "CODE_PROTOCOL_TRACEABILITY.csv": "7f7d28253ad3f66b44c6a3f84a9c29454108f0f413dc86f30ae7e11f62c78603",
+    "DATASET_LEAKAGE_AUDIT.json": "729ee4b9f8a80ac44bf8e791f6d3e0126b67e2b14b4998385c096e76d0371522",
+    "DEFECT_REMEDIATION_LOG.csv": "82c5d10157345875cf1cd24ce13cdb5e7bc744f966dcfeab2430306f41aaf639",
+    "EFFICIENCY_RESULTS.csv": "3b237c5a8b6ecb0946bb4a27b349bef1249da631a0dd2ec061f1533c8952dde0",
+    "EXACT_PAID_EXECUTION_PLAN.md": "1af1a04bcf0ad4d05cacf3d6da48cd1df2c35a2951a41164a9f5679c03e27eab",
+    "FAILURE_REVIEW.csv": "a95eec5b0f9a4a0775672c2198c420cb7a8781222b2504d9b03602724042002b",
+    "MAIN_RESULTS.csv": "a282e3d0b772552f0495821457ed7c4c4681a9f453581833f07eb6d19d92f33b",
+    "REPRESENTATION_ANALYSIS.csv": "85dbb618a425de80cf990b85bf92e3dbbad339eb51bd477937e11da228343fbd",
+    "REPRESENTATION_ROUTING_PER_EXAMPLE.csv": "7f9587255d13f14338896122213f21c96cb42232e13f06916671d62f59def801",
+    "REPRESENTATION_SELECTION_DIAGNOSTICS.json": "5d37a81abc1f288490b6eda0f65b6f3790d30811818cac8f0bbf9c2517fc00dd",
+    "RETRIEVAL_ONLY_ABLATIONS.csv": "1511bbb6db2a53f6a7771cdd079658760b8030e40a8506cd786a6638c3309358",
+    "SAR_RAG_INDEPENDENT_VERIFICATION.pdf": "8d0ae01657359d8c24ec9a49122058b7992e159e622a0b93abc282f1dd5a4035",
+    "STATISTICAL_TESTS.csv": "11e36d1bc6939ab635ae97848c9b6712bc567bc61ba6640bd464283c4b77ee66",
+    "SUBGROUP_RESULTS.csv": "c022400cfc57960119615ef88467946c6b1b27a289f93decedb529dfb1d152fc",
+    "TEST_REPORT.txt": "32bf60962b358f1fbca0dec8eb2a1b4cf67b3f673bdfb445ad19baecabc5195d",
+    "VERSION1_VS_VERSION2_CALIBRATION.json": "0d7a6dc261d3712bb38e978c8d1796d51d37dcb4fdfd5b059630ae30abdc4e5c"
+  },
+  "evaluation_scope": {
+    "qasper_test_questions": 1451,
+    "musique_dev_questions": 4834,
+    "total": 6285,
+    "confirmatory_runs_completed": 0,
+    "valid_paired_n_by_primary_outcome": {
+      "answer_token_f1": 3789,
+      "evidence_set_recall": 5645,
+      "complete_evidence_recovery": 5645,
+      "context_tokens": 6285
+    }
+  },
+  "tests": {
+    "suite_size": 73,
+    "interpreter": ".venv",
+    "result": "73 passed",
+    "pre_audit": {
+      "suite_size": 23,
+      "interpreter": "anaconda",
+      "note": "never validated the research environment"
+    }
+  },
+  "calibration": {
+    "v0_vs_v1_identical": true,
+    "v1_vs_v2_identical": true,
+    "thresholds_changed": 0
+  },
+  "screening": {
+    "groq_calls": 0,
+    "sample": "60 official TRAINING examples, seed 20260804",
+    "scored": 43,
+    "conditions": 23,
+    "evaluation_splits_touched": "none"
+  }
+}

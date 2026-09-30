@@ -73,7 +73,8 @@ def sentence_windows(document: Document, units: list[CanonicalUnit], before=1, a
     return result
 
 
-def sliding_windows(document: Document, units: list[CanonicalUnit], size=256, overlap=64) -> list[Chunk]:
+def sliding_windows(document: Document, units: list[CanonicalUnit], size=256, overlap=64,
+                    representation: str = "sliding_window") -> list[Chunk]:
     source = [u for u in units if u.unit_type != "heading"]
     result: list[Chunk] = []
     start = 0
@@ -93,7 +94,7 @@ def sliding_windows(document: Document, units: list[CanonicalUnit], size=256, ov
             count += words
             end += 1
         if current:
-            result.append(_make_chunk("sliding_window", document, current, suffix=str(start)))
+            result.append(_make_chunk(representation, document, current, suffix=str(start)))
         if end >= len(source):
             break
         retained = 0
@@ -148,6 +149,7 @@ def semantic_chunks(document: Document, units: list[CanonicalUnit], encoder: Enc
 
 
 def hierarchy(document: Document, units: list[CanonicalUnit]) -> list[Chunk]:
+    """Legacy version-1 section chunks retained for exact reproducibility."""
     grouped: dict[str | None, list[CanonicalUnit]] = defaultdict(list)
     headings = {u.unit_id: u for u in units if u.unit_type == "heading"}
     for unit in units:
@@ -166,6 +168,56 @@ def hierarchy(document: Document, units: list[CanonicalUnit]) -> list[Chunk]:
     return result
 
 
+def hierarchy_v2(document: Document, units: list[CanonicalUnit]) -> list[Chunk]:
+    """Versioned two-level hierarchy candidate with clean child evidence.
+
+    Version 1 inserted the immediate heading into both ``evidence_text`` and an
+    embedding string that already contained the section path.  On MuSiQue this
+    repeated the title three times and behaved like a distorted paragraph view.
+
+    This candidate keeps evidence children free of synthetic heading text and
+    records one parent-section embedding for two-level rank fusion in
+    ``HierarchicalVectorIndex``.  It is deliberately *not* substituted for the
+    frozen ``hierarchical`` representation until fresh training-only screening
+    and calibration support that change.
+    """
+    headings = {unit.unit_id: unit for unit in units if unit.unit_type == "heading"}
+    grouped: dict[str | None, list[CanonicalUnit]] = defaultdict(list)
+    for unit in units:
+        if unit.unit_type != "heading":
+            grouped[unit.parent_id].append(unit)
+
+    result: list[Chunk] = []
+    for parent_id, children in grouped.items():
+        if not children:
+            continue
+        section_path = " > ".join(children[0].section_path) or document.title
+        parent_heading = headings[parent_id].raw_text if parent_id in headings else document.title
+        parent_key = _chunk_id(
+            "hierarchical_v2_parent", document.version_id,
+            [parent_id or document.document_id],
+        )
+        parent_embedding_text = (
+            f"Document: {document.title}\n"
+            f"Section path: {section_path}\n"
+            f"Section heading: {parent_heading}\n"
+            + "\n".join(child.raw_text for child in children)
+        )
+        for part, bounded_children in enumerate(_bounded_groups(children)):
+            result.append(_make_chunk(
+                "hierarchical_v2", document, bounded_children,
+                suffix=f"{parent_id or 'root'}:{part}",
+                metadata={
+                    "hierarchy_parent_id": parent_key,
+                    "hierarchy_parent_embedding_text": parent_embedding_text,
+                    "structural_parent_id": parent_id,
+                    "structural_part": part,
+                    "hierarchy_version": 2,
+                },
+            ))
+    return result
+
+
 def build_all(document: Document, units: list[CanonicalUnit], encoder: Encoder,
               enabled: tuple[str, ...] | None = None) -> dict[str, list[Chunk]]:
     requested = set(enabled or (
@@ -174,9 +226,20 @@ def build_all(document: Document, units: list[CanonicalUnit], encoder: Encoder,
     builders = {
         "sentence_window": lambda: sentence_windows(document, units),
         "sliding_window": lambda: sliding_windows(document, units),
+        # Matched-granularity control.  The four adaptive views are bounded to ~95
+        # words while the baseline sliding window is 256, so a context-token
+        # difference between the methods confounds chunk size with adaptive
+        # retrieval.  This variant holds granularity fixed at the adaptive views'
+        # bound (overlap scaled by the same 0.25 ratio) so the two effects can be
+        # separated.  It is a retrieval-only control, not a fifth primary view.
+        "sliding_window_matched": lambda: sliding_windows(
+            document, units, size=95, overlap=24,
+            representation="sliding_window_matched",
+        ),
         "paragraph": lambda: paragraphs(document, units),
         "semantic": lambda: semantic_chunks(document, units, encoder),
         "hierarchical": lambda: hierarchy(document, units),
+        "hierarchical_v2": lambda: hierarchy_v2(document, units),
     }
     unknown = requested - builders.keys()
     if unknown:

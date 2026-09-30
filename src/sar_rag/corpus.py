@@ -4,7 +4,7 @@ from dataclasses import dataclass, replace
 from typing import Iterable
 
 from .encoding import Encoder
-from .index import ExactVectorIndex
+from .index import ExactVectorIndex, HierarchicalVectorIndex
 from .ingestion import parse_document
 from .models import Chunk, Document
 from .representations import build_all
@@ -18,7 +18,7 @@ class CorpusArtifacts:
 
     @property
     def index_vector_bytes(self) -> int:
-        return sum(index.vectors.nbytes for index in self.indexes.values())
+        return sum(index.vector_nbytes for index in self.indexes.values())
 
     @property
     def indexed_chunks(self) -> int:
@@ -48,5 +48,11 @@ def build_corpus(documents: Iterable[Document], encoder: Encoder,
                     "embedding_was_truncated": was_truncated,
                 }, embedding_text=embedding_text))
     chunks = {chunk.chunk_id: chunk for values in by_rep.values() for chunk in values}
-    indexes = {rep: ExactVectorIndex(rep, values, encoder) for rep, values in by_rep.items()}
+    indexes = {
+        rep: (
+            HierarchicalVectorIndex(rep, values, encoder)
+            if rep == "hierarchical_v2" else ExactVectorIndex(rep, values, encoder)
+        )
+        for rep, values in by_rep.items()
+    }
     return CorpusArtifacts(all_units, chunks, indexes)

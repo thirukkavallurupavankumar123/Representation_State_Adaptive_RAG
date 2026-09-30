@@ -1,0 +1,17 @@
+{
+  "api_key_available_but_not_recorded": true,
+  "authorization_matches": true,
+  "eligible_pairs": 48,
+  "heldout_checkpoint_exists": false,
+  "manifest_fingerprint_valid": true,
+  "maximum_attempts_per_pair": 3,
+  "maximum_cost_usd": 0.17362485,
+  "maximum_total_attempts": 144,
+  "preserved_artifact_hashes_match": true,
+  "prior_attempts": 0,
+  "protocol_fingerprint_valid": true,
+  "protocol_manifest_link_valid": true,
+  "remaining_attempt_allowance": 144,
+  "remaining_conservative_cost_allowance_usd": 0.17362485,
+  "status": "VERIFIED_READY_FOR_AUTHORIZED_V1_1_SMOKE"
+}

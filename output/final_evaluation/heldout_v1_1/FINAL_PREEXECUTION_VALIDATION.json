@@ -1,0 +1,58 @@
+{
+  "artifact_sha256": {
+    "COST_AND_RUNTIME_PLAN.md": "d83f94f9a0b820d93b54c936b3124f644c2b1bb5c71e409f7a6efb8161f0d960",
+    "DATASET_ELIGIBILITY_AND_EXPOSURE.json": "a170d346ec059a056b90a0dc5a736811ea91d8437bcbf1641cd9052c2fcd5b5f",
+    "DRY_RUN_VALIDATION.json": "7b773aa50a5e5946eccf678285bf85bec905f18868c7c967b5c13392ffe76203",
+    "EXECUTION_AND_SCORING_COMMANDS.md": "eb543ab9bb7dbb2cba9bd67e25f7ca108eca8741b45357e63f437d220ebd8cf6",
+    "FINAL_EVALUATION_PROTOCOL_AMENDMENT_V1_1.json": "146a6cc660bc804d5bd127106f7ed4bf7a032bfdb4749c53db1fd1f6abd1bf5b",
+    "FINAL_EVALUATION_PROTOCOL_AMENDMENT_V1_1.md": "6930f8182925897e3cc56b3f4cfd2373e0d03498e8b31f5a35e1b65741a43710",
+    "FROZEN_QUESTION_SYSTEM_MANIFEST.json": "3e1eeb9df109eae9cebeda568b90dec4329a70577371657bd531a4ed71b0b4c8",
+    "GENERATION_DOCUMENTS.jsonl": "588185d094afb689a9e4def619e66036ff02156e5d46d0e381191691a9e3fa5b",
+    "GENERATION_QUESTIONS.jsonl": "52c350243694734d68a43cfa47d8898bf86b1ad5e64a0c23b8c22fca57aaf929",
+    "PROPOSED_AUTHORIZATION_DISABLED.json": "42bcd09c35d3ce109e1fd87fc511a5dc6f4c815c1bbdd45796985f9d3122f9e2"
+  },
+  "checks": {
+    "all_original_and_recovery_artifacts_preserved": true,
+    "authorization_disabled": true,
+    "dry_resume_zero_duplicate_calls": true,
+    "dry_run_18720_passed": true,
+    "exposure_exclusions_applied": true,
+    "generation_question_gold_fields_absent": true,
+    "heldout_paid_checkpoint_absent": true,
+    "heldout_scoring_output_absent": true,
+    "manifest_fingerprint_valid": true,
+    "maximum_attempts_56160": true,
+    "maximum_cost_77_5008": true,
+    "paid_requests_not_built": true,
+    "pairs_18720": true,
+    "protocol_fingerprint_valid": true,
+    "protocol_manifest_link_valid": true,
+    "questions_6240": true,
+    "smoke_48_first_attempt_verified": true
+  },
+  "fingerprints": {
+    "manifest": "d9a5cc25f29ecdefbd40a89946214cf56a546417c87378589b44a8e693f7ed85",
+    "protocol": "e4836e675a057cee20856d58f07db5f927340cfa5926fb2905e93880504dc893"
+  },
+  "gold_labels_accessed_during_preparation": false,
+  "heldout_generation_executed": false,
+  "heldout_scoring_executed": false,
+  "scope": {
+    "initial_attempts": 18720,
+    "maximum_attempts": 56160,
+    "maximum_cost_usd": 77.5008,
+    "questions": 6240,
+    "systems": 3
+  },
+  "status": "READY_FOR_OFFLINE_RETRIEVAL_REQUEST_FREEZE_NOT_AUTHORIZED_FOR_PAID_EXECUTION",
+  "test_results": {
+    "api_calls": 0,
+    "focused": "21 passed",
+    "full_regression": "132 passed, 14 warnings"
+  },
+  "unresolved_before_authorization": [
+    "run the deterministic offline retrieval/request builder and seal its request-manifest fingerprint",
+    "verify the account-specific Groq RPM/TPM/RPD/TPD limits in provider settings",
+    "review the 43 exact-question-text and one MuSiQue source-group exclusions"
+  ]
+}

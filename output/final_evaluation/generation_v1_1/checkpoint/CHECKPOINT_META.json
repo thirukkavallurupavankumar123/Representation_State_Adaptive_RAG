@@ -1,0 +1,18 @@
+{
+  "generation": {
+    "decoding": {
+      "max_output_tokens": 1600,
+      "reasoning_effort": "medium",
+      "response_format": "strict JSON schema",
+      "temperature": 0,
+      "top_p": 1
+    },
+    "model": "openai/gpt-oss-120b",
+    "prompt_version": "final-evaluation-answer-v1.1",
+    "schema_name": "frozen_final_answer_v1_1",
+    "strict": true
+  },
+  "pair_count": 48,
+  "protocol_fingerprint": "c915bed876a3e1394e09d160caa4bffac6c5df60763da0d5186674421c326a79",
+  "run_manifest_fingerprint": "75a0047c16fa631e2e50ebbe76644867d9d147f94e56d77d3b4fd613b8c11a80"
+}

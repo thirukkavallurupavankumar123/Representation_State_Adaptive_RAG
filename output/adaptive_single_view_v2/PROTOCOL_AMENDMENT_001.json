@@ -1,0 +1,24 @@
+{
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "amendment": "001",
+  "date": "2026-09-05",
+  "reason": "The initial artifact scanner conservatively placed validation/test identifiers in a file named DESIGN_EXPOSED_IDS. Identifier-only overlap checking is required, but those identifiers are not development examples and no held-out text, labels, or outcomes were inspected. This amendment separates the active training exclusion registry from the locked held-out ID-only registry.",
+  "supersedes": {
+    "PROTOCOL.json.partitions.design_exposed.file": "DESIGN_EXPOSED_TRAIN_IDS.json",
+    "PROTOCOL.json.partitions.design_exposed.count": 475,
+    "PROTOCOL.json.partitions.design_exposed.ids_sha256": "dd263a56ad4ad826f9de53ac5a73ec391b5f1f11a8911c58c6a9ac64e421aab6"
+  },
+  "heldout_overlap_registry": {
+    "file": "HELDOUT_ID_REGISTRY.json",
+    "count": 7291,
+    "ids_sha256": "e126c7cc41b59ef58a9a909cf31718925601147753cf8f19ba7297392f3ca808",
+    "permitted_use": "set-intersection of example IDs only",
+    "forbidden_use": "loading documents, questions, labels, evidence, answers, or metrics during development"
+  },
+  "original_files_preserved": [
+    "PROTOCOL.json",
+    "PROTOCOL.md",
+    "DESIGN_EXPOSED_IDS.json"
+  ],
+  "method_or_selection_rule_change": false
+}

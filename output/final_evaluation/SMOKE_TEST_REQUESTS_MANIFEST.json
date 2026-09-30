@@ -1,0 +1,20 @@
+{
+  "common_packed_evidence_cap_tokens": 1600,
+  "existing_requests_preserved": true,
+  "gold_sha256": "4a69fe256c6e1d896ebc2e37729bfb18966befaf45141dffb20e5935fc06a24d",
+  "groq_client_imported_or_invoked": false,
+  "manifest_fingerprint": "c6aba531e02404a00f903724e7ca4fa2532420c4c1df81ab5aaf0c82c72eda42",
+  "maximum_observed_packed_context_tokens": 1597,
+  "protocol_fingerprint": "411bf416e795ac63559ce1a387ab77c8c8494c579a35c65125ab9081dbf0703e",
+  "question_count": 16,
+  "request_count": 48,
+  "requests_sha256": "509d74568a6f34584a0931eb57db4b63dd4edaf1f2b3053e5f3387f36b47e462",
+  "retrieval_only": true,
+  "smoke_manifest_fingerprint": "43b3b9c787013e03cf284aba6cc584c4f8f8cf9b023e2621e5881055233725c2",
+  "status": "FROZEN_RETRIEVAL_CONTEXTS_ZERO_LLM_CALLS",
+  "systems": [
+    "traditional_k10",
+    "sar_rag_v1",
+    "adaptive_single_view_v2"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "amendment": "001",
+  "timestamp_phase": "after deterministic sampling count, before embeddings, retrieval, metrics or inference",
+  "reason": "The frozen request of 25 examples per stratum is infeasible after all prior-design IDs are excluded. QASPER INSUFFICIENT long has only 11 eligible training examples; the other 11 strata each have at least 25.",
+  "original_protocol_preserved": "output/independent_verification/SCREENING_V3_PROTOCOL.json",
+  "observed_eligible_population": {
+    "musique_full|ANSWERABLE|2hop": 14360,
+    "musique_full|ANSWERABLE|3hop": 4371,
+    "musique_full|ANSWERABLE|4hop": 1159,
+    "musique_full|INSUFFICIENT|2hop": 14360,
+    "musique_full|INSUFFICIENT|3hop": 4371,
+    "musique_full|INSUFFICIENT|4hop": 1159,
+    "qasper|ANSWERABLE|long": 198,
+    "qasper|ANSWERABLE|medium": 1854,
+    "qasper|ANSWERABLE|short": 222,
+    "qasper|INSUFFICIENT|long": 11,
+    "qasper|INSUFFICIENT|medium": 187,
+    "qasper|INSUFFICIENT|short": 28
+  },
+  "amended_sample": {
+    "rule": "retain the frozen cap of 25 per stratum and exhaust every eligible item when a stratum contains fewer than 25",
+    "actual_n": 286,
+    "tuning_n_expected": 194,
+    "selection_n_expected": 92,
+    "qasper_insufficient_long": {
+      "n": 11,
+      "tuning": 7,
+      "selection": 4
+    },
+    "each_other_stratum": {
+      "n": 25,
+      "tuning": 17,
+      "selection": 8
+    }
+  },
+  "analysis_impact": "No result-dependent choice occurred. Dataset and subgroup results must report the unequal stratum size. The small QASPER-insufficient-long subgroup cannot support standalone strong claims.",
+  "unchanged": [
+    "seed 20260807",
+    "bottom-hash sampling",
+    "all exclusion files",
+    "systems and representation conditions",
+    "primary and secondary outcomes",
+    "statistical tests and multiplicity correction",
+    "practical margins and decision rules",
+    "zero-LLM policy"
+  ],
+  "amended_output_directory": "output/independent_verification/screening_v3_n286"
+}

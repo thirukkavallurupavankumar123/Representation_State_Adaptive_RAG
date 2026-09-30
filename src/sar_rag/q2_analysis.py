@@ -93,12 +93,20 @@ def correlation(x, y) -> dict:
     return {"n": len(pairs), "pearson_r": pearson, "spearman_rho": spearman}
 
 
-def _write_csv(path: Path, rows: list[dict]) -> None:
-    if not rows:
-        return
-    fields = sorted(set().union(*(row.keys() for row in rows)))
+def _write_csv(path: Path, rows: list[dict], fields: list[str] | None = None) -> None:
+    """Always emit the file, even with no rows.
+
+    Silently skipping an empty table made a table that could not be computed
+    indistinguishable from a table that was never requested, which is how the
+    failure-analysis outputs went missing without any error being reported.  An
+    empty analysis now produces a header-only CSV that is visibly empty.
+    """
+    header = fields or (sorted(set().union(*(row.keys() for row in rows))) if rows else [])
     with path.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        if not header:
+            stream.write("no_rows_produced\n")
+            return
+        writer = csv.DictWriter(stream, fieldnames=header, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -399,6 +407,9 @@ def ablation_table(records: list[dict]) -> list[dict]:
 
 
 def make_figures(records: list[dict], output: Path) -> list[str]:
+    # Non-interactive backend: figures are written to disk, never displayed.
+    import matplotlib
+    matplotlib.use("Agg", force=True)
     import matplotlib.pyplot as plt
     output.mkdir(parents=True, exist_ok=True)
     full = [record for record in records if record["condition"] == "full"]
@@ -512,8 +523,12 @@ def main(argv: list[str] | None = None) -> int:
     _write_csv(args.output_dir / "table_representation_states.csv", representation_rows)
     _write_csv(args.output_dir / "table_subgroups.csv", subgroup_rows)
     _write_csv(args.output_dir / "table_quality_efficiency_reductions.csv", reductions)
-    _write_csv(args.output_dir / "table_failures.csv", failure_rows)
-    _write_csv(args.output_dir / "manual_failure_review_sample.csv", failure_sample)
+    _write_csv(args.output_dir / "table_failures.csv", failure_rows,
+               fields=["category", "count"])
+    _write_csv(args.output_dir / "manual_failure_review_sample.csv", failure_sample,
+               fields=["example_id", "dataset", "categories", "query",
+                       "traditional_answer", "sar_answer", "traditional_evidence_recall",
+                       "sar_evidence_recall", "manual_review_status"])
     _write_csv(args.output_dir / "table_ablations.csv", ablation_rows)
     print(json.dumps({"output": str(args.output_dir), "status": payload["status"], "records": len(records)}))
     return 0

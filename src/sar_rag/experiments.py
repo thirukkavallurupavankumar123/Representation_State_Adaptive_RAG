@@ -88,9 +88,22 @@ def _windows_peak_working_set_bytes() -> int | None:
                 ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t), ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
                 ("PagefileUsage", ctypes.c_size_t), ("PeakPagefileUsage", ctypes.c_size_t),
             ]
+        # HANDLE is pointer-sized.  Leaving ctypes' default 32-bit int restype on
+        # GetCurrentProcess truncated the (HANDLE)-1 pseudo-handle, so on 64-bit
+        # Windows GetProcessMemoryInfo always failed with ERROR_INVALID_HANDLE and
+        # the peak working set was silently recorded as null.
+        kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        psapi = ctypes.WinDLL("psapi", use_last_error=True)
+        kernel32.GetCurrentProcess.argtypes = []
+        kernel32.GetCurrentProcess.restype = wintypes.HANDLE
+        psapi.GetProcessMemoryInfo.argtypes = [
+            wintypes.HANDLE, ctypes.POINTER(Counters), wintypes.DWORD,
+        ]
+        psapi.GetProcessMemoryInfo.restype = wintypes.BOOL
         counters = Counters(); counters.cb = ctypes.sizeof(Counters)
-        process = ctypes.windll.kernel32.GetCurrentProcess()
-        if not ctypes.windll.psapi.GetProcessMemoryInfo(process, ctypes.byref(counters), counters.cb):
+        if not psapi.GetProcessMemoryInfo(
+            kernel32.GetCurrentProcess(), ctypes.byref(counters), counters.cb
+        ):
             return None
         return int(counters.PeakWorkingSetSize)
     except (AttributeError, OSError):
@@ -355,6 +368,11 @@ def _representation_gold_diagnostic(system, query: str, gold_spans: tuple[str, .
 
 
 def save_graphs(statistics: dict, output: Path) -> None:
+    # Figures are written to disk and never displayed.  Selecting the default
+    # interactive backend made an unrelated broken Tk installation abort the run
+    # after every paid API call had already been made.
+    import matplotlib
+    matplotlib.use("Agg", force=True)
     import matplotlib.pyplot as plt
     quality_names = [x for x in ("answer_token_f1", "evidence_set_recall", "faithfulness",
                                  "answer_relevancy") if x in statistics]
